@@ -1,4 +1,11 @@
+@import "./variables.scss";
+
 .app {
   height: 400vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: darkorange;
+  position: relative;
+  @extend %body;
 }

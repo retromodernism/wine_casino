@@ -1,11 +1,7 @@
-import burger from "./burger";
-import header from "./header";
-import scroll from "./scroll";
+import headerSocialsHover from "./headerSocialsHover";
 
 const rootReducers = {
-  burger,
-  header,
-  scroll,
+  headerSocialsHover
 };
 
 export default rootReducers;

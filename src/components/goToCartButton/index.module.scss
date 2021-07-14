@@ -1,0 +1,33 @@
+@import "./../../variables.scss";
+
+.goToCartButton {
+  @extend %buttons_2;
+  grid-column: 7;
+  align-self: center;
+  width: 277px;
+  height: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $black;
+  background: none;
+
+  transition: color ease-in-out 0.3s, background ease-in-out 0.3s;
+}
+
+.hover {
+  border: none;
+  background: $black;
+  color: #ffffff;
+  ._icon {
+    background: url(./src/addToCart_active.svg) 100% 100% no-repeat;
+  }
+}
+
+._icon {
+  height: 19.93px;
+  width: 15.8px;
+  background: url(./src/addToCart.svg) 100% 100% no-repeat;
+  margin-left: 14px;
+  transition: background 0.3s;
+}
