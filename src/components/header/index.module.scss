@@ -43,7 +43,7 @@
 ._navListItem_arrow {
   display: flex;
   align-items: center;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 ._catalog {
@@ -54,6 +54,10 @@
   height: 10px;
   width: 21px;
   background: url(./src/arrow.svg) 100% 100% no-repeat;
+}
+
+._navListArrow_hover {
+  position: relative;
 }
 
 ._navSearchBar {

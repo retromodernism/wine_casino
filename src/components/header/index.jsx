@@ -7,14 +7,21 @@ import { ReactComponent as Viber } from "./src/viber.svg";
 import GoToCartButton from "../goToCartButton";
 import HeaderSearchBar from "../headerSearchBar";
 import { connect } from "react-redux";
-import { setHover } from "../../redux/modules/headerSocialsHover";
+import { setSocialsHover } from "../../redux/modules/headerSocialsHover";
+import { setCatalogHover } from "../../redux/modules/catalogHover";
+import CatalogHoverPanel from "../catalogHoverPanel";
 
 const phone = {
   tel: "74950857604",
   title: "+7 (495) 085-76-04",
 };
 
-const Header = ({ socialsIsHovered, setSocialsHover }) => {
+const Header = ({
+  socialsIsHovered,
+  catalogIsHovered,
+  setSocialsHover,
+  setCatalogHover,
+}) => {
   return (
     <div className={s.header}>
       <a href="/" className={s._logoWrapper}>
@@ -22,11 +29,16 @@ const Header = ({ socialsIsHovered, setSocialsHover }) => {
       </a>
       <nav className={s._nav}>
         <ul className={s._navList}>
-          <li className={classnames(s._navListItem, s._navListItem_arrow)}>
-            <a href="/" className={s._catalog}>
-              Каталог казино
-            </a>
+          <li
+            className={classnames(s._navListItem, s._navListItem_arrow, {
+              [s._navListArrow_hover]: catalogIsHovered,
+            })}
+            onMouseEnter={setCatalogHover.bind(null, true)}
+            onMouseLeave={setCatalogHover.bind(null, false)}
+          >
+            <div className={s._catalog}>Каталог казино</div>
             <div className={s._catalogArrow}></div>
+            {catalogIsHovered && <CatalogHoverPanel />}
           </li>
           <li className={s._navListItem}>
             <a href="/" className={s._catalog}>
@@ -99,6 +111,7 @@ const Header = ({ socialsIsHovered, setSocialsHover }) => {
 export default connect(
   (state) => ({
     socialsIsHovered: state.headerSocialsHover.isHovered,
+    catalogIsHovered: state.catalogHover.isHovered,
   }),
-  { setSocialsHover: setHover }
+  { setSocialsHover, setCatalogHover }
 )(Header);

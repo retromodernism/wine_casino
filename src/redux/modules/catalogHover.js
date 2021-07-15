@@ -1,4 +1,4 @@
-const moduleName = "headerSocialsHover";
+const moduleName = "catalogHover";
 
 const SET_HOVER = `${moduleName}/SET_HOVER`;
 
@@ -20,6 +20,6 @@ const reducer = (state = initialState, { type, payload }) => {
 
 export default reducer;
 
-export const setSocialsHover = (isHovered) => async (dispatch) => {
+export const setCatalogHover = (isHovered) => async (dispatch) => {
   dispatch({ type: SET_HOVER, payload: isHovered });
 };

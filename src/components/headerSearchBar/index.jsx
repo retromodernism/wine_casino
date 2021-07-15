@@ -3,6 +3,7 @@ import classnames from "classnames";
 import Select, { components } from "react-select";
 import { ReactComponent as Loupe } from "./src/loupe.svg";
 import { ReactComponent as Loading } from "./src/loading.svg";
+import { ReactComponent as XIcon } from "./src/xIcon.svg";
 
 const options = [
   { value: "craps", label: "крэпс" },
@@ -90,8 +91,11 @@ const customStyles = {
 const DropdownIndicator = (props) => {
   return (
     <components.DropdownIndicator {...props}>
-      {!props.isFocused && <Loupe />}
-      {props.isFocused && <Loading />}
+      {!props.selectProps.menuIsOpen && !props.hasValue && <Loupe />}
+      {!props.hasValue && props.selectProps.menuIsOpen && <Loading />}
+      {props.hasValue && (
+        <XIcon onClick={props.clearValue} style={{ marginRight: "5px" }} />
+      )}
     </components.DropdownIndicator>
   );
 };
