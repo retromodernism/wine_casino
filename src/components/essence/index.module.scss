@@ -1,0 +1,80 @@
+@import "./../../variables.scss";
+
+.essence {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+._bg1 {
+  width: 88.11px;
+  height: 83.56px;
+  position: absolute;
+  top: 48.87%;
+  left: 8.46%;
+  background: url(./src/bg1.svg);
+}
+._bg2 {
+  width: 96.65px;
+  height: 94.78px;
+  position: absolute;
+  top: 23.89%;
+  right: 6.98%;
+  background: url(./src/bg2.svg);
+}
+
+._content {
+  width: 1285px;
+}
+
+._title {
+  @extend %h2;
+  color: $black;
+}
+
+._items {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 150px 25px;
+}
+
+._item {
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  grid-template-rows: 60px 1fr;
+  gap: 25px 50px;
+}
+
+._itemImage {
+  height: 385.46px;
+  width: 100%;
+  grid-row: 1/3;
+  position: relative;
+}
+
+._itemImageBefore {
+  position: absolute;
+  width: 83.61px;
+  height: 124.09px;
+  right: 0;
+  top: -6px;
+  background: $green;
+  padding: 0 17px;
+
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 126.728px;
+  line-height: 120px;
+
+  color: #ffffff;
+}
+
+._itemTitle {
+  @extend %h2;
+  color: $green;
+}
+
+._itemText {
+}
