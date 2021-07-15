@@ -1,0 +1,173 @@
+@import "./../../variables.scss";
+
+.home {
+  margin-top: 39px;
+  height: 839px;
+  width: 100%;
+  // background: olive;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+._bg0 {
+  width: 696px;
+  height: 553px;
+  position: absolute;
+  right: 0;
+  top: 185px;
+  background: $green;
+}
+
+._bg1 {
+  width: 96.65px;
+  height: 94.78px;
+  background: url(./src/bg1.svg);
+  position: absolute;
+  top: 10.37%;
+  left: 5.47%;
+}
+
+._bg2 {
+  width: 88.11px;
+  height: 83.56px;
+  background: url(./src/bg2.svg);
+  position: absolute;
+  top: 55.9%;
+  left: 12.97%;
+}
+
+._bg3 {
+  width: 105px;
+  height: 99.12px;
+  background: url(./src/bg3.svg);
+  position: absolute;
+  top: 69.25%;
+  left: 44.84%;
+}
+
+._bg4 {
+  width: 74.74px;
+  height: 98.31px;
+  background: url(./src/bg4.svg);
+  position: absolute;
+  top: 39.69%;
+  left: 62.24%;
+}
+
+._bg5 {
+  width: 96.65px;
+  height: 94.78px;
+  background: url(./src/bg5.svg);
+  position: absolute;
+  top: 13.35%;
+  right: 8.28%;
+}
+
+._bg6 {
+  width: 70.69px;
+  height: 93.08px;
+  background: url(./src/bg6.svg);
+  position: absolute;
+  top: 87.37%;
+  left: 72.6%;
+}
+
+._bg {
+  width: 732px;
+  height: 469px;
+  position: absolute;
+  right: 10.42%;
+  top: 225px;
+  background: url(./src/bg.png) 100% 100% no-repeat;
+}
+
+._content {
+  height: 100%;
+  width: 1285px;
+  // border: 2px dotted mediumorchid;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+._title {
+  margin-top: 221px;
+  @extend %h1;
+
+  color: #a2000c;
+}
+
+._subtitle {
+  margin-top: 32px;
+  @extend %body_2;
+  opacity: 0.5;
+}
+
+._typingText {
+  margin-top: 27px;
+  @extend %h2;
+}
+
+._videoButton {
+  margin-top: 72px;
+  width: 278px;
+  height: 69px;
+  background: $darkRed;
+  @extend %buttons;
+  color: white;
+  padding: 0 20px 0 33.45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+._videoButton_hover {
+  background: unset;
+  box-shadow: 0 0 0 2px $darkRed;
+  color: $black;
+  ._videoButtonIcon {
+    background: url(./src/video_hover.svg);
+  }
+}
+
+._videoButtonIcon {
+  width: 23px;
+  height: 26px;
+  background: url(./src/video.svg);
+}
+
+._features {
+  display: flex;
+  margin-top: 72px;
+}
+
+._feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+._featureNumber {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 70px;
+  line-height: 84px;
+
+  color: $darkRed;
+}
+
+._featureTitle {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: $black;
+}
