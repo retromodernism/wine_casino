@@ -19,7 +19,9 @@ const Essence = (props) => {
                 background: `url(${image1}) 100% 100% no-repeat`,
               }}
             >
-              <div className={s._itemImageBefore}>1</div>
+              <div className={s._itemImageBefore} style={{ padding: "0 17px" }}>
+                1
+              </div>
             </div>
             <div className={s._itemTitle}>Дегустация</div>
             <div className={s._itemText}>
