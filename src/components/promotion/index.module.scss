@@ -1,0 +1,61 @@
+@import "./../../variables.scss";
+
+.promotion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  // height: 626px;
+}
+
+._bg {
+  position: absolute;
+  width: 761px;
+  height: 459px;
+  background: url(./src/bg.png) 100% 100% no-repeat;
+  top: 0;
+  left: -8.125%;
+}
+
+._content {
+  position: relative;
+  margin-top: 245px;
+  width: 100%;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px -4px 19px rgba(0, 0, 0, 0.15);
+  background: #f1f1f1;
+}
+
+._item {
+  height: 220px;
+  width: 420px;
+  border-radius: 20px;
+  background: $darkRed;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.17);
+  padding: 56px 0 0 45px;
+  position: relative;
+  overflow: hidden;
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+
+._itemTitle {
+  @extend %h3;
+  color: #ffffff;
+}
+
+._itemDescription {
+  margin-top: 32px;
+  @extend %h3;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #ffffff;
+}
+
+._itemIcon {
+  position: absolute;
+}

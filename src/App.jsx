@@ -4,6 +4,7 @@ import Essence from "./components/essence";
 import Header from "./components/header";
 import Home from "./components/home";
 import Masterclass from "./components/masterclass";
+import Promotion from "./components/promotion";
 
 const App = (props) => {
   return (
@@ -14,6 +15,7 @@ const App = (props) => {
         <BackToAll />
         <Essence />
         <Masterclass />
+        <Promotion />
       </main>
     </div>
   );
