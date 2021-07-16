@@ -5,6 +5,7 @@ import Header from "./components/header";
 import Home from "./components/home";
 import Masterclass from "./components/masterclass";
 import Promotion from "./components/promotion";
+import Variants from "./components/variants";
 
 const App = (props) => {
   return (
@@ -16,6 +17,7 @@ const App = (props) => {
         <Essence />
         <Masterclass />
         <Promotion />
+        <Variants />
       </main>
     </div>
   );
