@@ -22,6 +22,7 @@ const Variant = ({
           backgroundPosition: "center center",
         }}
       ></div>
+      {isPopular && <div className={s._popularLabel}>Популярный выбор</div>}
       <div className={s._title}>{title}</div>
       <div className={s._description}>{description}</div>
       <ul className={s._options}>
@@ -32,9 +33,13 @@ const Variant = ({
       <div className={s._footer}>
         <div className={s._footerTitle}>Цена:</div>
         <div className={s._price}>от 34 000 ₽</div>
-        <div className={s._minusIcon}>{isPopular ? <MinusPopular /> : <Minus />}</div>
+        <div className={s._minusIcon}>
+          {isPopular ? <MinusPopular /> : <Minus />}
+        </div>
         <div className={s._count}>100</div>
-        <div className={s._plusIcon}>{isPopular ? <PlusPopular /> : <Plus />}</div>
+        <div className={s._plusIcon}>
+          {isPopular ? <PlusPopular /> : <Plus />}
+        </div>
       </div>
     </div>
   );
