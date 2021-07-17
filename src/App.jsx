@@ -1,4 +1,5 @@
 import s from "./App.module.scss";
+import About from "./components/about";
 import Additionals from "./components/additionals";
 import BackToAll from "./components/backToAll";
 import Essence from "./components/essence";
@@ -26,6 +27,7 @@ const App = (props) => {
         <OtherCasinos />
         <HowItWas />
         <Tematic />
+        <About />
       </main>
     </div>
   );
