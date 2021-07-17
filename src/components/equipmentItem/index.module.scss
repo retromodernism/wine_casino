@@ -1,0 +1,60 @@
+@import "./../../variables.scss";
+
+.equipmentItem {
+  height: 406px;
+  width: 303px;
+  border-radius: 20px;
+  box-shadow: 0 0 0 2px $green;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 180px;
+}
+
+._image {
+}
+
+._footer {
+  padding: 22px 25px 15px 25px;
+  border-radius: 0 0 19px 19px;
+  background: $green;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 22px 36px 17px;
+  position: relative;
+}
+
+._title {
+  @extend %h4;
+  color: #ffffff;
+}
+
+._titlePrice {
+  @extend %h6;
+  color: #ffffff;
+}
+
+._price {
+  padding-top: 7px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+
+  color: #ffffff;
+}
+
+._count {
+  @extend %h7;
+  color: #ffffff;
+}
+
+._plus {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: url(./src/plus.svg) 100% 100% no-repeat;
+  right: 25px;
+  bottom: 25px;
+  cursor: pointer;
+}

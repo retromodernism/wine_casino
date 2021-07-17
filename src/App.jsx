@@ -1,4 +1,5 @@
 import s from "./App.module.scss";
+import Additionals from "./components/additionals";
 import BackToAll from "./components/backToAll";
 import Essence from "./components/essence";
 import Header from "./components/header";
@@ -18,6 +19,7 @@ const App = (props) => {
         <Masterclass />
         <Promotion />
         <Variants />
+        <Additionals />
       </main>
     </div>
   );
