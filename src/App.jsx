@@ -8,6 +8,7 @@ import HowItWas from "./components/howItWas";
 import Masterclass from "./components/masterclass";
 import OtherCasinos from "./components/otherCasinos";
 import Promotion from "./components/promotion";
+import Tematic from "./components/tematic";
 import Variants from "./components/variants";
 
 const App = (props) => {
@@ -24,6 +25,7 @@ const App = (props) => {
         <Additionals />
         <OtherCasinos />
         <HowItWas />
+        <Tematic />
       </main>
     </div>
   );
