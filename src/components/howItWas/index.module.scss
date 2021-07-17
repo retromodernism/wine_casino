@@ -1,0 +1,78 @@
+@import "./../../variables.scss";
+
+.howItWas {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 643px;
+  padding-top: 187px;
+}
+
+._bg {
+  position: absolute;
+  height: 630px;
+  width: 630px;
+  background: url(./src/bg.png) 100% 100% no-repeat;
+  top: -89px;
+  left: -15.47%;
+}
+._bg1 {
+  position: absolute;
+  height: 63px;
+  width: 67px;
+  background: url(./src/bg1.svg) 100% 100% no-repeat;
+  top: 92px;
+  right: 33.07%;
+}
+
+._content {
+  width: 1285px;
+}
+
+._slider {
+  margin-top: 90px;
+}
+
+._imageSlide {
+  width: 303px;
+  height: 303px;
+  // background: url(./src/image1.png) 100% 100% no-repeat;
+}
+
+._title {
+  @extend %h2;
+}
+
+._arrow {
+  width: 12px;
+  height: 22px;
+  &::before {
+    content: "";
+  }
+}
+
+._arrow_hover {
+  z-index: 10;
+  &::before {
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+  }
+}
+
+._arrow_next {
+  &::before {
+    background: url(./src/next_hover.svg);
+  }
+}
+._arrow_prev {
+  &::before {
+    background: url(./src/prev_hover.svg);
+  }
+}

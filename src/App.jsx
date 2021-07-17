@@ -4,6 +4,7 @@ import BackToAll from "./components/backToAll";
 import Essence from "./components/essence";
 import Header from "./components/header";
 import Home from "./components/home";
+import HowItWas from "./components/howItWas";
 import Masterclass from "./components/masterclass";
 import OtherCasinos from "./components/otherCasinos";
 import Promotion from "./components/promotion";
@@ -22,6 +23,7 @@ const App = (props) => {
         <Variants />
         <Additionals />
         <OtherCasinos />
+        <HowItWas />
       </main>
     </div>
   );
