@@ -5,6 +5,7 @@ import Essence from "./components/essence";
 import Header from "./components/header";
 import Home from "./components/home";
 import Masterclass from "./components/masterclass";
+import OtherCasinos from "./components/otherCasinos";
 import Promotion from "./components/promotion";
 import Variants from "./components/variants";
 
@@ -20,6 +21,7 @@ const App = (props) => {
         <Promotion />
         <Variants />
         <Additionals />
+        <OtherCasinos />
       </main>
     </div>
   );
