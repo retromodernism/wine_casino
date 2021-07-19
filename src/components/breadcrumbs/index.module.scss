@@ -1,0 +1,27 @@
+@import "./../../variables.scss";
+
+.breadcrumbs {
+  display: flex;
+}
+
+._item {
+  @extend %h6_1;
+  &:not(:last-child) {
+    position: relative;
+    margin-right: 40px;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 12px;
+      background: url(./src/arrow.svg);
+      top: 50%;
+      transform: translate(-50%, -50%);
+      right: -26px;
+    }
+  }
+}
+
+._current {
+  text-decoration: none;
+}

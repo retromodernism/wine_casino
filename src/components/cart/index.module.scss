@@ -1,7 +1,15 @@
 @import "./../../variables.scss";
 
 .cart {
+  padding-top: 233px;
   height: 100vh;
   width: 100%;
   background: blanchedalmond;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+._content {
+  width: 1285px;
 }
