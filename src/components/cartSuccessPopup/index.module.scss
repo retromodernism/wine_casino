@@ -1,0 +1,50 @@
+@import "./../../variables.scss";
+
+.cartSuccessPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 530px;
+  width: 530px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+}
+
+._content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+._closeIcon {
+  background: none;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+._title {
+  @extend %h3;
+  color: #000000;
+  text-align: center;
+}
+
+._desciption {
+  margin: 14px 0 53px 0;
+  max-width: 365px;
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+
+  color: #000000;
+}

@@ -257,6 +257,119 @@
   padding: 14px 40px;
   cursor: pointer;
   background: $green;
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+
   color: #ffffff;
+
   user-select: none;
+}
+
+// Confirmation form
+
+._confimationForm {
+  width: 100%;
+  min-height: 610px;
+}
+
+._confirmationFormTop {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 35px;
+}
+
+._confimationFormContent {
+  border: 0.5px solid #bdbdbd;
+  box-shadow: 0px 4px 8px rgba(84, 84, 84, 0.1);
+  min-height: 610px;
+  padding: 40px 50px;
+}
+
+._confimationFormReturnBack {
+  background: none;
+  height: 30px;
+}
+
+._confimationFormReturnBackText {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+
+  color: #000000;
+
+  position: absolute;
+  &::before {
+    position: absolute;
+    content: "";
+    width: 7px;
+    height: 13px;
+    background: url(./src/arrow.svg) 100% 100% no-repeat;
+    left: -20px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+._confirmationFormDescription {
+  margin: 45px 0 55px 0;
+  max-width: 400px;
+  color: #000000;
+}
+
+._confirmationFormInput {
+  @extend %body;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 0 0 2px $black;
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+._confirmationFormInput_error {
+  box-shadow: 0 0 0 2px #ed0e1c;
+}
+
+._confirmationFormSubmitWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+._confirmationFormSubmit {
+  background: $green;
+  padding: 14px 40px;
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+
+  color: #ffffff;
+}
+
+._confirmationFormConfid {
+  margin-top: 10px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+
+  color: #000000;
+  max-width: 216px;
+}
+
+._confirmationFormConfidAccent {
+  color: $green;
 }

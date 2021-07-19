@@ -2,17 +2,23 @@ import s from "./index.module.scss";
 import Breadcrumbs from "../breadcrumbs";
 import Cart from "../cart";
 import Recomendations from "../recomendations";
+import { connect } from "react-redux";
+import { Fragment } from "react";
+import CartSuccessPopup from "../cartSuccessPopup";
 
-const CartPage = (props) => {
-  console.log(props);
-
+const CartPage = ({ cartPopupIsOpen, ...props }) => {
   return (
-    <main className={s.cartPage}>
-      <Breadcrumbs />
-      <Cart />
-      <Recomendations />
-    </main>
+    <Fragment>
+      <main className={s.cartPage}>
+        <Breadcrumbs />
+        <Cart />
+        <Recomendations />
+      </main>
+      {cartPopupIsOpen && <CartSuccessPopup />}
+    </Fragment>
   );
 };
 
-export default CartPage;
+export default connect((state) => ({
+  cartPopupIsOpen: state.popup.cartPopupIsOpen,
+}))(CartPage);

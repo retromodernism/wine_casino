@@ -1,17 +1,28 @@
-const moduleName = 'plug';
+const moduleName = "plug";
 
-const PLUG_ACTION = `${moduleName}/GET_CASINOS`;
+const ADD_POSITION = `${moduleName}/ADD_POSITION`;
+const REMOVE_POSITION = `${moduleName}/REMOVE_POSITION`;
+const RESET_CART = `${moduleName}/RESET_CART`;
 
 const initialState = {
-  plug: null,
+  positions: [],
 };
 
 const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case PLUG_ACTION:
+    case ADD_POSITION:
       return {
         ...state,
-        plug: payload,
+        cart: [payload.position, ...state.cart],
+      };
+    case REMOVE_POSITION:
+      return {
+        ...state,
+        positions: [...state.positions.filter(({ id }) => id !== payload.id)],
+      };
+    case RESET_CART:
+      return {
+        ...initialState,
       };
     default:
       return state;
@@ -22,6 +33,12 @@ export default reducer;
 
 // Hooks
 
-export const plugHook = () => async (dispatch) => {
-  dispatch({ type: PLUG_ACTION, payload: [] });
+export const addPosition = (positionId) => async (dispatch, getState) => {
+  const positions = getState().positions.positions;
+  const pickedPosition = positions.filter(({ id }) => id === positionId)[0];
+  dispatch({ type: ADD_POSITION, payload: { position: pickedPosition } });
+};
+
+export const removePosition = (positionId) => async (dispatch) => {
+  dispatch({ type: REMOVE_POSITION, payload: { positionId } });
 };
