@@ -18,7 +18,10 @@
 .hover {
   border: none;
   background: $black;
-  color: #ffffff;
+
+  span {
+    color: #ffffff;
+  }
   ._icon {
     background: url(./src/addToCart_active.svg) 100% 100% no-repeat;
   }

@@ -6,6 +6,8 @@ import { ReactComponent as Fb } from "./src/fb.svg";
 import { ReactComponent as Vk } from "./src/vk.svg";
 import { ReactComponent as Inst } from "./src/inst.svg";
 import { useState } from "react";
+import * as Router from "react-router-dom";
+import * as Scroll from "react-scroll";
 
 const Submit = () => {
   const [isHovered, setHover] = useState();
@@ -23,6 +25,8 @@ const Submit = () => {
 };
 
 const Footer = (props) => {
+  const isMainPage = Router.useLocation().pathname === "/";
+
   return (
     <footer className={s.footer}>
       <div className={s._content}>
@@ -102,7 +106,16 @@ const Footer = (props) => {
           <div className={s._rectangle}></div>
         </div>
         <div className={s._right}>
-          <a href="/" className={s._logo}><div className={s._logoImage}></div></a>
+          {isMainPage ? (
+            <Scroll.Link to="header" smooth className={s._logo}>
+              <div className={s._logoImage}></div>
+            </Scroll.Link>
+          ) : (
+            <Router.Link to="/" className={s._logo}>
+              <div className={s._logoImage}></div>
+            </Router.Link>
+          )}
+
           <div className={s._links}>
             <a href="/" className={s._link}>
               <span className={s._linkText}>Кулинарное казино</span>

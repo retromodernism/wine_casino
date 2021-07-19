@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { setSocialsHover } from "../../redux/modules/headerSocialsHover";
 import { setCatalogHover } from "../../redux/modules/catalogHover";
 import CatalogHoverPanel from "../catalogHoverPanel";
+import { Link } from "react-router-dom";
 
 const phone = {
   tel: "74950857604",
@@ -23,10 +24,10 @@ const Header = ({
   setCatalogHover,
 }) => {
   return (
-    <div className={s.header}>
-      <a href="/" className={s._logoWrapper}>
+    <div className={s.header} name="header">
+      <Link to="/" className={s._logoWrapper}>
         <Logo className={s._logo} />
-      </a>
+      </Link>
       <nav className={s._nav}>
         <ul className={s._navList}>
           <li
