@@ -35,3 +35,10 @@
   font-weight: 700;
   src: url("./Lato-Bold.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./ProximaNova-Regular.woff2") format("woff2");
+}

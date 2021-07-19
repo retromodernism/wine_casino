@@ -1,6 +1,14 @@
 @import "./../../variables.scss";
 
 .breadcrumbs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+._content {
+  width: 1285px;
   display: flex;
 }
 

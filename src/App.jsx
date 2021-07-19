@@ -2,7 +2,7 @@ import s from "./App.module.scss";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import MainPage from "./components/mainPage";
-import Cart from "./components/cart";
+import CartPage from "./components/cartPage";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import ScrollToTop from "./components/scrollToTop";
 
@@ -14,7 +14,7 @@ const App = (props) => {
         <Header />
         <Switch>
           <Route exact path="/" component={MainPage} />
-          <Route path="/cart" component={Cart} />
+          <Route path="/cart" component={CartPage} />
           <Redirect to="/" />
         </Switch>
         <Footer />
