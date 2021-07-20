@@ -97,7 +97,7 @@ const Footer = (props) => {
           </div>
           <a
             href="/"
-            classname={s._confidLink}
+            className={s._confidLink}
             target="_blank"
             rel="noopener noreferrer"
           >

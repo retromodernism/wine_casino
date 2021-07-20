@@ -8,8 +8,12 @@ import pitBoss from "./src/pitBoss.png";
 import magician from "./src/magician.png";
 import thimblerigger from "./src/thimblerigger.png";
 import ServiceItem from "../serviceItem";
+import { connect } from "react-redux";
 
-const Additionals = (props) => {
+const Additionals = ({ positions, props }) => {
+  const equipments = positions.filter(({ type }) => type === "equipment");
+  const services = positions.filter(({ type }) => type === "service");
+
   return (
     <section className={s.additionals}>
       <div className={s._bg}></div>
@@ -18,51 +22,16 @@ const Additionals = (props) => {
         <div className={s._title}>Так же вы можете добавить</div>
         <div className={s._subtitle}>Наше оборудование</div>
         <div className={s._equipment}>
-          <EquipmentItem
-            image={chairClassic}
-            title="Стул-классика"
-            price={1500}
-          />
-          <EquipmentItem image={chair} title="Стул-кьяра" price={2000} />
-          <EquipmentItem
-            image={leatherChair}
-            title="Кожаный стул"
-            price={2500}
-          />
-          <EquipmentItem
-            image={cash}
-            title="Брендированные фан-мани"
-            price={500}
-            count="100 купюр"
-          />
-          {/* <EquipmentItem
-            image={chairClassic}
-            title="Стул-классика"
-            price={1500}
-          /> */}
+          {equipments.map((item, index) => (
+            <EquipmentItem {...item} key={index} />
+          ))}
           <div className={s._showMore}>Показать еще</div>
         </div>
         <div className={s._subtitle}>Наш услуги</div>
         <div className={s._service}>
-          <ServiceItem
-            image={pitBoss}
-            title="Пит-босс"
-            description="курирует работу крупье"
-            price={8000}
-          />
-          <ServiceItem
-            image={magician}
-            title="Фокусник"
-            description="проведет незабываемое шоу"
-            price={8000}
-          />
-          <ServiceItem
-            image={thimblerigger}
-            title="Наперсточник"
-            description="сделает ваш вечер более запутанным, но интригующим"
-            price={8000}
-          />
-          {/* <ServiceItem image={pitBoss} /> */}
+          {services.map((item, index) => (
+            <ServiceItem {...item} key={index} />
+          ))}
           <div className={s._showMore}>Показать еще</div>
         </div>
       </div>
@@ -70,4 +39,6 @@ const Additionals = (props) => {
   );
 };
 
-export default Additionals;
+export default connect((state) => ({
+  positions: state.positions.positions,
+}))(Additionals);

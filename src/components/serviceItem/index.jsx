@@ -1,11 +1,15 @@
 import s from "./index.module.scss";
+import { connect } from "react-redux";
+import { addPosition } from "../../redux/modules/cart";
 
-const ServiceItem = ({ image, title, description, price }) => {
+const ServiceItem = ({ image, title, description, price, id, addPosition }) => {
+  const addToCart = addPosition.bind(null, id);
+
   return (
     <div className={s.serviceItem}>
       <div
         className={s._image}
-        style={{ background: `url(${image}) 100% 100% no-repeat` }}
+        style={{ background: `url(${image.normal}) 100% 100% no-repeat` }}
       ></div>
       <div className={s._info}>
         <div className={s._title}>{title}</div>
@@ -14,10 +18,10 @@ const ServiceItem = ({ image, title, description, price }) => {
           <div className={s._priceTitle}>Цена:</div>
           <div className={s._price}>{price.toLocaleString()} ₽</div>
         </div>
-        <div className={s._plus}></div>
+        <div className={s._plus} onClick={addToCart}></div>
       </div>
     </div>
   );
 };
 
-export default ServiceItem;
+export default connect(null, { addPosition })(ServiceItem);

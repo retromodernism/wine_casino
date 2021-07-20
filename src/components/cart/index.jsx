@@ -13,8 +13,19 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { openCartSuccessPopup } from "../../redux/modules/popup";
+import { removePosition, resetCart } from "../../redux/modules/cart";
+import { changePositionCount } from "../../redux/modules/positions";
+import { Fragment } from "react";
 
-const Cart = ({ openCartSuccessPopup, ...props }) => {
+const Cart = ({
+  positions,
+  cartPositionsIds,
+  openCartSuccessPopup,
+  removePosition,
+  resetCart,
+  changePositionCount,
+  ...props
+}) => {
   // "picking positions" / "confirmation form processing"
   const [cartStatus, setCartStatus] = useState("picking positions");
 
@@ -63,174 +74,143 @@ const Cart = ({ openCartSuccessPopup, ...props }) => {
     }
   };
 
+  // Working with state
+
+  const cartPositions = positions.filter(({ id }) =>
+    cartPositionsIds.includes(id)
+  );
+
+  let finalPrice = 0;
+  cartPositions.forEach(
+    ({ price, count }) => (finalPrice += price * count.value)
+  );
+
+  const getPositionById = (positionId) => {
+    return positions.filter(({ id }) => positionId === id)[0];
+  };
+
+  const cartPositionsCategories = {};
+
+  cartPositionsIds.forEach((positionId) => {
+    const position = getPositionById(positionId);
+    const category = position.type;
+
+    if (cartPositionsCategories.hasOwnProperty(category)) {
+      cartPositionsCategories[category].push(position);
+    } else {
+      cartPositionsCategories[category] = [position];
+    }
+  });
+
+  const cartPositionsCategoriesArray = [];
+  const categorySinonyms = {
+    casino: "Вид казино",
+    equipment: "Оборудование",
+    service: "Услуги",
+  };
+
+  for (const category in cartPositionsCategories) {
+    cartPositionsCategoriesArray.push({
+      category: categorySinonyms[category],
+      positions: cartPositionsCategories[category],
+    });
+  }
+
   return (
     <section className={s.cart}>
       <div className={s._content}>
         <div className={s._title}>Корзина</div>
         <div className={s._items}>
-          <div className={s._itemsTitle}>Оборудование </div>
-
-          <div className={s._item}>
-            <div className={s._itemImgWrapper}>
-              <img className={s._itemImg} src={chair} alt="" />
-            </div>
-            <div className={s._itemInfo}>
-              <button className={s._deleteItemFromCart}>
-                <XIcon />
-              </button>
-              <div className={s._itemHeader}>
-                <div className={s._itemTitle}>Стул-классика</div>
-                <div className={s._itemOption}></div>
-              </div>
-              <div className={s._itemFooter}>
-                <div className={s._itemPrice}>52 500 ₽</div>
-                <div className={s._itemCountWrapper}>
-                  <Minus className={s._itemCountIcon} />
-                  <div className={s._itemCount}>1</div>
-                  <Plus className={s._itemCountIcon} />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={s._item}>
-            <div className={s._itemImgWrapper}>
-              <img className={s._itemImg} src={leatherChair} alt="" />
-            </div>
-            <div className={s._itemInfo}>
-              <button className={s._deleteItemFromCart}>
-                <XIcon />
-              </button>
-              <div className={s._itemHeader}>
-                <div className={s._itemTitle}>Кожаный стул</div>
-                <div className={s._itemOption}></div>
-              </div>
-              <div className={s._itemFooter}>
-                <div className={s._itemPrice}>150 000 ₽</div>
-                <div className={s._itemCountWrapper}>
-                  <Minus className={s._itemCountIcon} />
-                  <div className={s._itemCount}>60</div>
-                  <Plus className={s._itemCountIcon} />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={s._itemsTitle}>Вид казино </div>
-
-          <div className={s._item}>
-            <div className={s._itemImgWrapper}>
-              <img className={s._itemImg} src={wineCasinoImage} alt="" />
-            </div>
-            <div className={s._itemInfo}>
-              <button className={s._deleteItemFromCart}>
-                <XIcon />
-              </button>
-              <div className={s._itemHeader}>
-                <div className={s._itemTitle}>Винное казино</div>
-                <div className={s._itemOption}>Maxi пакет</div>
-              </div>
-              <div className={s._itemFooter}>
-                <div className={s._itemPrice}>69 000 ₽</div>
-                <div className={s._itemCountWrapper}>
-                  <Minus className={s._itemCountIcon} />
-                  <div className={s._itemCount}>1</div>
-                  <Plus className={s._itemCountIcon} />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={s._item}>
-            <div className={s._itemImgWrapper}>
-              <img className={s._itemImg} src={whiskeyCasinoImage} alt="" />
-            </div>
-            <div className={s._itemInfo}>
-              <button className={s._deleteItemFromCart}>
-                <XIcon />
-              </button>
-              <div className={s._itemHeader}>
-                <div className={s._itemTitle}>Виски казино</div>
-                <div className={s._itemOption}>Mini пакет</div>
-              </div>
-              <div className={s._itemFooter}>
-                <div className={s._itemPrice}>39 000 ₽</div>
-                <div className={s._itemCountWrapper}>
-                  <Minus className={s._itemCountIcon} />
-                  <div className={s._itemCount}>1</div>
-                  <Plus className={s._itemCountIcon} />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={s._itemsTitle}>Услуги</div>
-
-          <div className={s._item}>
-            <div className={s._itemImgWrapper}>
-              <img className={s._itemImg} src={chips} alt="" />
-            </div>
-            <div className={s._itemInfo}>
-              <button className={s._deleteItemFromCart}>
-                <XIcon />
-              </button>
-              <div className={s._itemHeader}>
-                <div className={s._itemTitle}>Брендирование фишек</div>
-                <div className={s._itemOption}></div>
-              </div>
-              <div className={s._itemFooter}>
-                <div className={s._itemPrice}>10 000 ₽</div>
-                <div className={s._itemCountWrapper}>
-                  <Minus className={s._itemCountIcon} />
-                  <div className={s._itemCount}>200</div>
-                  <Plus className={s._itemCountIcon} />
-                </div>
-              </div>
-            </div>
-          </div>
+          {cartPositionsCategoriesArray.map(
+            ({ category, positions }, index) => (
+              <Fragment key={index}>
+                <div className={s._itemsTitle}>{category}</div>
+                {positions.map(
+                  (
+                    { image, cartTitle, cartItemDescription, price, id, count },
+                    index
+                  ) => (
+                    <div className={s._item} key={index}>
+                      <div className={s._itemImgWrapper}>
+                        <img className={s._itemImg} src={image.cart} alt="" />
+                      </div>
+                      <div className={s._itemInfo}>
+                        <button
+                          className={s._deleteItemFromCart}
+                          onClick={removePosition.bind(null, id)}
+                        >
+                          <XIcon />
+                        </button>
+                        <div className={s._itemHeader}>
+                          <div className={s._itemTitle}>{cartTitle}</div>
+                          <div className={s._itemOption}>
+                            {cartItemDescription}
+                          </div>
+                        </div>
+                        <div className={s._itemFooter}>
+                          <div className={s._itemPrice}>
+                            {(price * count.value).toLocaleString()} ₽
+                          </div>
+                          <div className={s._itemCountWrapper}>
+                            <button
+                              className={s._itemCountIconWrapper}
+                              onClick={changePositionCount.bind(
+                                null,
+                                count.value - 1,
+                                id
+                              )}
+                            >
+                              <Minus className={s._itemCountIcon} />
+                            </button>
+                            <div className={s._itemCount}>{count.value}</div>
+                            <button
+                              className={s._itemCountIconWrapper}
+                              onClick={changePositionCount.bind(
+                                null,
+                                count.value + 1,
+                                id
+                              )}
+                            >
+                              <Plus className={s._itemCountIcon} />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                )}
+              </Fragment>
+            )
+          )}
         </div>
 
         {cartStatus === "picking positions" && (
           <div className={s._order}>
             <div className={s._orderTop}>
               <p className={s._orderTitle}>Ваш заказ</p>
-              <button
-                className={s._clearCart}
-                onClick={(e) => {
-                  e.preventDefault();
-                  alert("Очистить корзину");
-                }}
-              >
+              <button className={s._clearCart} onClick={resetCart}>
                 <span className={s._clearCartText}>Очистить корзину</span>
               </button>
             </div>
             <div className={s._orderContent}>
               <div className={s._orderItems}>
-                <div className={s._orderItem}>
-                  <div className={s._orderItemTitle}>
-                    Стул-классика, с белой накидкой
-                  </div>
-                  <div className={s._orderItemDescription}>35 шт</div>
-                </div>
-                <div className={s._orderItem}>
-                  <div className={s._orderItemTitle}>Кожаный стул</div>
-                  <div className={s._orderItemDescription}>60 шт</div>
-                </div>
-                <div className={s._orderItem}>
-                  <div className={s._orderItemTitle}>Винное казино</div>
-                  <div className={s._orderItemDescription}>Maxi пакет</div>
-                </div>
-                <div className={s._orderItem}>
-                  <div className={s._orderItemTitle}>Виски казино</div>
-                  <div className={s._orderItemDescription}>Mini пакет</div>
-                </div>
-                <div className={s._orderItem}>
-                  <div className={s._orderItemTitle}>Брендирование фишек</div>
-                  <div className={s._orderItemDescription}>20 шт</div>
-                </div>
+                {cartPositions.map(
+                  ({ title, count, cartItemDescription }, index) => (
+                    <div className={s._orderItem} key={index}>
+                      <div className={s._orderItemTitle}>{title}</div>
+                      <div className={s._orderItemDescription}>
+                        {cartItemDescription
+                          ? cartItemDescription
+                          : `${count.value} шт`}
+                      </div>
+                    </div>
+                  )
+                )}
                 <div className={s._orderPriceWrapper}>
                   <div className={s._orderPriceTitle}>Цена:</div>
-                  <div className={s._orderPrice}>100 000 ₽</div>
+                  <div className={s._orderPrice}>
+                    {finalPrice.toLocaleString()} ₽
+                  </div>
                 </div>
                 <div className={s._orderCheckoutButtonWrapper}>
                   <button
@@ -315,4 +295,10 @@ const Cart = ({ openCartSuccessPopup, ...props }) => {
   );
 };
 
-export default connect(null, { openCartSuccessPopup })(Cart);
+export default connect(
+  (state) => ({
+    positions: state.positions.positions,
+    cartPositionsIds: state.cart.positionsIds,
+  }),
+  { openCartSuccessPopup, removePosition, resetCart, changePositionCount }
+)(Cart);

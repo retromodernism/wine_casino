@@ -5,8 +5,12 @@ import MainPage from "./components/mainPage";
 import CartPage from "./components/cartPage";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import ScrollToTop from "./components/scrollToTop";
+import { getPositions } from "./redux/modules/positions";
+import { connect } from "react-redux";
 
-const App = (props) => {
+const App = ({ getPositions, ...props }) => {
+  getPositions();
+
   return (
     <BrowserRouter>
       <ScrollToTop />
@@ -23,4 +27,4 @@ const App = (props) => {
   );
 };
 
-export default App;
+export default connect(null, { getPositions })(App);
