@@ -9,7 +9,7 @@ import CartSuccessPopup from "../cartSuccessPopup";
 const CartPage = ({ cartPopupIsOpen, ...props }) => {
   return (
     <Fragment>
-      <main className={s.cartPage}>
+      <main className={s.main}>
         <Breadcrumbs />
         <Cart />
         <Recomendations />
