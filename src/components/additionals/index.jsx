@@ -1,8 +1,24 @@
 import EquipmentItem from "../equipmentItem";
 import s from "./index.module.scss";
+import cx from "classnames";
 import ServiceItem from "../serviceItem";
 import { connect } from "react-redux";
 import { useState } from "react";
+
+const ShowMore = ({ onClick }) => {
+  const [isHovered, setHover] = useState(false);
+  return (
+    <div
+      className={cx(s._showMore, { [s._showMore_hover]: isHovered })}
+      onClick={onClick}
+      onMouseEnter={setHover.bind(null, true)}
+      onMouseLeave={setHover.bind(null, false)}
+    >
+      {" "}
+      Показать еще{" "}
+    </div>
+  );
+};
 
 const Additionals = ({ positions, props }) => {
   const equipments = positions.filter(({ type }) => type === "equipment");
@@ -28,15 +44,12 @@ const Additionals = ({ positions, props }) => {
             ) : null
           )}
           {equipmentsHasShowMore && (
-            <div
-              className={s._showMore}
+            <ShowMore
               onClick={setShowedEquipmentNumber.bind(
                 null,
                 showedEquipmentNumber + 4
               )}
-            >
-              Показать еще
-            </div>
+            />
           )}
         </div>
         <div className={s._subtitle}>Наш услуги</div>
@@ -47,15 +60,12 @@ const Additionals = ({ positions, props }) => {
             ) : null
           )}
           {servicesHasShowMore && (
-            <div
-              className={s._showMore}
+            <ShowMore
               onClick={setShowedServiceNumber.bind(
                 null,
                 showedServiceNumber + 3
               )}
-            >
-              Показать еще
-            </div>
+            />
           )}
         </div>
       </div>

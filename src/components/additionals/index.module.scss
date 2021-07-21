@@ -55,11 +55,23 @@
 ._showMore {
   @extend %h4_1;
   position: absolute;
-  bottom: 0;
+  bottom: 2px;
   left: 50%;
   transform: translate(-50%, 0);
   cursor: pointer;
   user-select: none;
+}
+
+._showMore_hover {
+  &::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    bottom: -2px;
+    background: $black;
+  }
 }
 
 ._service {
