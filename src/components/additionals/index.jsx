@@ -1,18 +1,18 @@
 import EquipmentItem from "../equipmentItem";
 import s from "./index.module.scss";
-import chairClassic from "./src/chairClassic.png";
-import chair from "./src/chair.png";
-import leatherChair from "./src/chairClassic.png";
-import cash from "./src/cash.png";
-import pitBoss from "./src/pitBoss.png";
-import magician from "./src/magician.png";
-import thimblerigger from "./src/thimblerigger.png";
 import ServiceItem from "../serviceItem";
 import { connect } from "react-redux";
+import { useState } from "react";
 
 const Additionals = ({ positions, props }) => {
   const equipments = positions.filter(({ type }) => type === "equipment");
   const services = positions.filter(({ type }) => type === "service");
+
+  const [showedEquipmentNumber, setShowedEquipmentNumber] = useState(4);
+  const equipmentsHasShowMore = equipments.length > showedEquipmentNumber;
+
+  const [showedServiceNumber, setShowedServiceNumber] = useState(3);
+  const servicesHasShowMore = services.length > showedServiceNumber;
 
   return (
     <section className={s.additionals}>
@@ -22,17 +22,41 @@ const Additionals = ({ positions, props }) => {
         <div className={s._title}>Так же вы можете добавить</div>
         <div className={s._subtitle}>Наше оборудование</div>
         <div className={s._equipment}>
-          {equipments.map((item, index) => (
-            <EquipmentItem {...item} key={index} />
-          ))}
-          <div className={s._showMore}>Показать еще</div>
+          {equipments.map((item, index) =>
+            index < showedEquipmentNumber ? (
+              <EquipmentItem {...item} key={index} />
+            ) : null
+          )}
+          {equipmentsHasShowMore && (
+            <div
+              className={s._showMore}
+              onClick={setShowedEquipmentNumber.bind(
+                null,
+                showedEquipmentNumber + 4
+              )}
+            >
+              Показать еще
+            </div>
+          )}
         </div>
         <div className={s._subtitle}>Наш услуги</div>
         <div className={s._service}>
-          {services.map((item, index) => (
-            <ServiceItem {...item} key={index} />
-          ))}
-          <div className={s._showMore}>Показать еще</div>
+          {services.map((item, index) =>
+            index < showedServiceNumber ? (
+              <ServiceItem {...item} key={index} />
+            ) : null
+          )}
+          {servicesHasShowMore && (
+            <div
+              className={s._showMore}
+              onClick={setShowedServiceNumber.bind(
+                null,
+                showedServiceNumber + 3
+              )}
+            >
+              Показать еще
+            </div>
+          )}
         </div>
       </div>
     </section>
