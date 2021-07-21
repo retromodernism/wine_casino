@@ -47,9 +47,9 @@ const Header = ({
             </a>
           </li>
           <li className={s._navListItem}>
-            <a href="/" className={s._catalog}>
+            <Link to="/contacts" className={s._catalog}>
               Контакты
-            </a>
+            </Link>
           </li>
         </ul>
         <HeaderSearchBar className={s._navSearchBar} />

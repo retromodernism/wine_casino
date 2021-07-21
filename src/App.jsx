@@ -3,6 +3,7 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import MainPage from "./components/mainPage";
 import CartPage from "./components/cartPage";
+import ContactsPage from "./components/contactsPage";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import ScrollToTop from "./components/scrollToTop";
 import { getPositions } from "./redux/modules/positions";
@@ -19,6 +20,7 @@ const App = ({ getPositions, ...props }) => {
         <Switch>
           <Route exact path="/" component={MainPage} />
           <Route path="/cart" component={CartPage} />
+          <Route path="/contacts" component={ContactsPage} />
           <Redirect to="/" />
         </Switch>
         <Footer />

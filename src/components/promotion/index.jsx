@@ -3,10 +3,10 @@ import camera from "./src/camera.svg";
 import photograph from "./src/photograph.svg";
 import sertificate from "./src/sertificate.svg";
 
-const Promotion = (props) => {
+const Promotion = ({ background = true }) => {
   return (
     <section className={s.promotion}>
-      <div className={s._bg}></div>
+      {background && <div className={s._bg}></div>}
       <div className={s._content}>
         <div className={s._item}>
           <div className={s._itemTitle}>Фотобудка в подарок</div>
