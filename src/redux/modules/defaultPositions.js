@@ -51,7 +51,7 @@ const positions = [
     cartTitle: "Брендированые фан-мани",
   },
   {
-    title: "Стул-классика",
+    title: "Стул-классика1",
     image: { normal: chairClassic, cart: chairClassic },
     price: 1500,
     count: { title: "за шт", value: 1, fixed: false },
@@ -59,7 +59,7 @@ const positions = [
     cartTitle: "Стул-классика",
   },
   {
-    title: "Стул-кьяра",
+    title: "Стул-кьяра1",
     image: { normal: chairKyara, cart: chairKyara },
     price: 2000,
     count: { title: "за шт", value: 1, fixed: false },
@@ -67,7 +67,7 @@ const positions = [
     cartTitle: "Стул-кьяра",
   },
   {
-    title: "Кожаный стул",
+    title: "Кожаный стул1",
     image: { normal: chairLeather, cart: chairLeather },
     price: 2500,
     count: { title: "за шт", value: 1, fixed: false },
@@ -75,7 +75,7 @@ const positions = [
     cartTitle: "Кожаный стул",
   },
   {
-    title: "Брендированые фан-мани",
+    title: "Брендированые фан-мани1",
     image: { normal: cash, cart: cash },
     price: 500,
     count: { title: "100 купюр", value: 100, fixed: false },
@@ -83,7 +83,7 @@ const positions = [
     cartTitle: "Брендированые фан-мани",
   },
   {
-    title: "Стул-классика",
+    title: "Стул-классика2",
     image: { normal: chairClassic, cart: chairClassic },
     price: 1500,
     count: { title: "за шт", value: 1, fixed: false },
@@ -91,7 +91,7 @@ const positions = [
     cartTitle: "Стул-классика",
   },
   {
-    title: "Стул-кьяра",
+    title: "Стул-кьяра2",
     image: { normal: chairKyara, cart: chairKyara },
     price: 2000,
     count: { title: "за шт", value: 1, fixed: false },
@@ -99,7 +99,7 @@ const positions = [
     cartTitle: "Стул-кьяра",
   },
   {
-    title: "Кожаный стул",
+    title: "Кожаный стул2",
     image: { normal: chairLeather, cart: chairLeather },
     price: 2500,
     count: { title: "за шт", value: 1, fixed: false },
@@ -107,7 +107,7 @@ const positions = [
     cartTitle: "Кожаный стул",
   },
   {
-    title: "Брендированые фан-мани",
+    title: "Брендированые фан-мани2",
     image: { normal: cash, cart: cash },
     price: 500,
     count: { title: "100 купюр", value: 100, fixed: false },
@@ -143,7 +143,7 @@ const positions = [
     cartTitle: "Напёрсточник",
   },
   {
-    title: "Пит-босс",
+    title: "Пит-босс1",
     image: { normal: pitBoss, cart: pitBoss },
     price: 8000,
     count: { fixed: true, value: 1 },
@@ -152,7 +152,7 @@ const positions = [
     cartTitle: "Пит-босс",
   },
   {
-    title: "Фокусник",
+    title: "Фокусник1",
     image: { normal: magician, cart: magician },
     price: 8000,
     count: { fixed: true, value: 1 },
@@ -161,7 +161,7 @@ const positions = [
     cartTitle: "Фокусник",
   },
   {
-    title: "Напёрсточник",
+    title: "Напёрсточник1",
     image: { normal: thimblerigger, cart: thimblerigger },
     price: 8000,
     count: { fixed: true, value: 1 },
@@ -170,7 +170,7 @@ const positions = [
     cartTitle: "Напёрсточник",
   },
   {
-    title: "Пит-босс",
+    title: "Пит-босс2",
     image: { normal: pitBoss, cart: pitBoss },
     price: 8000,
     count: { fixed: true, value: 1 },
@@ -179,7 +179,7 @@ const positions = [
     cartTitle: "Пит-босс",
   },
   {
-    title: "Фокусник",
+    title: "Фокусник2",
     image: { normal: magician, cart: magician },
     price: 8000,
     count: { fixed: true, value: 1 },
@@ -188,7 +188,7 @@ const positions = [
     cartTitle: "Фокусник",
   },
   {
-    title: "Напёрсточник",
+    title: "Напёрсточник2",
     image: { normal: thimblerigger, cart: thimblerigger },
     price: 8000,
     count: { fixed: true, value: 1 },
