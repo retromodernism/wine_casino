@@ -9,8 +9,15 @@ import classname from "classnames";
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
 import "react-modal-video/scss/modal-video.scss";
+import { useMediaQuery } from "react-responsive";
 
 const Masterclass = (props) => {
+  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1024px)" });
+  const isTablet = useMediaQuery({
+    query: "screen and (min-width: 768px) and (max-width: 1023px)",
+  });
+  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+
   const [buttonIsHover, setButtonIsHover] = useState(false);
   const [videoIsOpen, setVideoOpen] = useState(false);
   return (
@@ -46,7 +53,10 @@ const Masterclass = (props) => {
 
                 <p className={s._offerItemDesciption}>съедобная «рулетка»</p>
               </div>
-              <div className={s._offerItem} style={{ marginLeft: "54px" }}>
+              <div
+                className={s._offerItem}
+                style={{ marginLeft: isDesktop ? "54px" : "" }}
+              >
                 <div className={s._offerItemIcon}>
                   <Taste />
                 </div>
@@ -56,7 +66,7 @@ const Masterclass = (props) => {
               </div>
               <div
                 className={s._offerItem}
-                style={{ marginLeft: "25px", width: "235px" }}
+                style={{ marginLeft: isDesktop ? "25px" : "", width: "235px" }}
               >
                 <div className={s._offerItemIcon}>
                   <Beverage />
