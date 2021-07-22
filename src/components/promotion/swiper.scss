@@ -1,0 +1,14 @@
+.promotion {
+  overflow: hidden;
+  .swiper-container {
+    margin-left: 63px;
+    width: 590px;
+    overflow: unset;
+    .swiper-wrapper {
+      width: 100%;
+      .swiper-slide {
+        width: 286px;
+      }
+    }
+  }
+}

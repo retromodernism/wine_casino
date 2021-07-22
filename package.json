@@ -26,6 +26,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "sass": "^1.35.2",
+    "swiper": "^6.7.5",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

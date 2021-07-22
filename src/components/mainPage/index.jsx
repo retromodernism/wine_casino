@@ -18,8 +18,8 @@ const MainPage = (props) => {
       <BackToAll />
       <Essence />
       <Masterclass />
-      {/* <Promotion />
-      <Variants />
+      <Promotion />
+      {/* <Variants />
       <Additionals />
       <OtherCasinos />
       <HowItWas />
