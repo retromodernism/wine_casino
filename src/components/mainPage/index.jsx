@@ -16,8 +16,8 @@ const MainPage = (props) => {
     <main className={s.main}>
       <Home />
       <BackToAll />
-      {/* <Essence />
-      <Masterclass />
+      <Essence />
+      {/* <Masterclass />
       <Promotion />
       <Variants />
       <Additionals />

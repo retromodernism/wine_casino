@@ -1,10 +1,36 @@
 import s from "./index.module.scss";
-import image1 from "./src/image1.png";
-import image2 from "./src/image2.png";
-import image3 from "./src/image3.png";
-import image4 from "./src/image4.png";
+import cx from "classnames";
+import image1_desk from "./src/image1.png";
+import image2_desk from "./src/image2.png";
+import image3_desk from "./src/image3.png";
+import image4_desk from "./src/image4.png";
+import image1_tab from "./src/image1_tab.png";
+import image2_tab from "./src/image2_tab.png";
+import image3_tab from "./src/image3_tab.png";
+import image4_tab from "./src/image4_tab.png";
+import { useMediaQuery } from "react-responsive";
 
 const Essence = (props) => {
+  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1024px)" });
+  const isTablet = useMediaQuery({
+    query: "screen and (min-width: 768px) and (max-width: 1023px)",
+  });
+  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+
+  let image1, image2, image3, image4;
+  if (isDesktop) {
+    image1 = image1_desk;
+    image2 = image2_desk;
+    image3 = image3_desk;
+    image4 = image4_desk;
+  }
+  if (isTablet) {
+    image1 = image1_tab;
+    image2 = image2_tab;
+    image3 = image3_tab;
+    image4 = image4_tab;
+  }
+
   return (
     <section className={s.essence}>
       <div className={s._bg1}></div>
@@ -17,6 +43,7 @@ const Essence = (props) => {
               className={s._itemImage}
               style={{
                 background: `url(${image1}) 100% 100% no-repeat`,
+                backgroundSize: "cover",
               }}
             >
               <div className={s._itemImageBefore} style={{ padding: "0 17px" }}>
@@ -31,11 +58,12 @@ const Essence = (props) => {
               характеристики.
             </div>
           </div>
-          <div className={s._item}>
+          <div className={cx(s._item, { [s._item_odd]: isTablet })}>
             <div
-              className={s._itemImage}
+              className={cx(s._itemImage, { [s._itemImage_odd]: isTablet })}
               style={{
                 background: `url(${image2}) 100% 100% no-repeat`,
+                backgroundSize: "cover",
               }}
             >
               <div className={s._itemImageBefore}>2</div>
@@ -52,6 +80,7 @@ const Essence = (props) => {
               className={s._itemImage}
               style={{
                 background: `url(${image3}) 100% 100% no-repeat`,
+                backgroundSize: "cover",
               }}
             >
               <div className={s._itemImageBefore}>3</div>
@@ -63,11 +92,12 @@ const Essence = (props) => {
               нет. Распределяется выигрыш между участниками.
             </div>
           </div>
-          <div className={s._item}>
+          <div className={cx(s._item, { [s._item_odd]: isTablet })}>
             <div
-              className={s._itemImage}
+              className={cx(s._itemImage, { [s._itemImage_odd]: isTablet })}
               style={{
                 background: `url(${image4}) 100% 100% no-repeat`,
+                backgroundSize: "cover",
               }}
             >
               <div className={s._itemImageBefore}>4</div>
