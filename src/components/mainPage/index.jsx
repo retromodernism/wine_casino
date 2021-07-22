@@ -16,7 +16,7 @@ const MainPage = (props) => {
     <main className={s.main}>
       <Home />
       <BackToAll />
-      <Essence />
+      {/* <Essence />
       <Masterclass />
       <Promotion />
       <Variants />
@@ -24,7 +24,7 @@ const MainPage = (props) => {
       <OtherCasinos />
       <HowItWas />
       <Tematic />
-      <About />
+      <About /> */}
     </main>
   );
 };

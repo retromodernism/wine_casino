@@ -18,13 +18,13 @@ const App = ({burgerIsOpen,  getPositions, ...props }) => {
       <ScrollToTop />
       <div className={s.app}>
         <Header />
-        {/* <Switch>
+        <Switch>
           <Route exact path="/" component={MainPage} />
           <Route path="/cart" component={CartPage} />
           <Route path="/contacts" component={ContactsPage} />
           <Redirect to="/" />
         </Switch>
-        <Footer /> */}
+        {/* <Footer /> */}
         {burgerIsOpen && <BurgerMenu />}
       </div>
     </BrowserRouter>

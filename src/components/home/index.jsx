@@ -15,13 +15,14 @@ const Home = (props) => {
   return (
     <section className={s.home}>
       <div className={s._bg0}></div>
+      <div className={s._bg}></div>
       <div className={s._bg1}></div>
       <div className={s._bg2}></div>
       <div className={s._bg3}></div>
       <div className={s._bg4}></div>
       <div className={s._bg5}></div>
       <div className={s._bg6}></div>
-      <div className={s._bg}></div>
+      
       <div className={s._content}>
         <div className={s._title}>
           Винное
@@ -32,22 +33,6 @@ const Home = (props) => {
           * все законно, мы не используем настоящие деньги
         </div>
         <div className={s._typingText}>
-          {/* <Typical
-            steps={[
-              "для вечеринок",
-              3000,
-              "на день рождения",
-              3000,
-              "на свадьбу",
-              3000,
-              "на корпоратив",
-              3000,
-              "для частного мероприятия",
-              3000,
-            ]}
-            loop={Infinity}
-            wrapper="p"
-          /> */}
           <ReactTypingEffect
             typingDelay={0}
             speed={100}
