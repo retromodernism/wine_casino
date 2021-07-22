@@ -19,8 +19,8 @@ const MainPage = (props) => {
       <Essence />
       <Masterclass />
       <Promotion />
-      {/* <Variants />
-      <Additionals />
+      <Variants />
+      {/* <Additionals />
       <OtherCasinos />
       <HowItWas />
       <Tematic />
