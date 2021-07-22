@@ -1,0 +1,64 @@
+@import "./../../variables.scss";
+
+.burgerPopup {
+  width: 100%;
+  height: 100%;
+  background: $green;
+  padding: 125px 64px;
+}
+
+._closeButton {
+  background: none;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+}
+
+._content {
+}
+
+._item {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 99.5%;
+
+  color: #ffffff;
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+
+._item_expanded {
+  position: relative;
+  width: 465px;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 0;
+    transform: translate(0, -50%);
+    height: 22px;
+    width: 38px;
+    background: url(./src/arrow.svg) 100% 100% no-repeat;
+  }
+}
+
+._itemCasinos {
+  margin-top: 40px;
+  display: grid;
+  grid: max-content / max-content max-content;
+  gap: 38px 80px;
+  grid-auto-flow: row dense;
+}
+
+._casino {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 99.5%;
+  
+  color: #FFFFFF;
+}

@@ -3,6 +3,8 @@ import catalogHover from "./catalogHover";
 import cart from "./cart";
 import popup from "./popup";
 import positions from "./positions";
+import burger from "./burger";
+import tabletSearchBar from "./tabletSearchBar";
 
 const rootReducers = {
   headerSocialsHover,
@@ -10,6 +12,8 @@ const rootReducers = {
   cart,
   popup,
   positions,
+  burger,
+  tabletSearchBar,
 };
 
 export default rootReducers;

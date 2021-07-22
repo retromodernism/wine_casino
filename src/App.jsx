@@ -8,8 +8,9 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import ScrollToTop from "./components/scrollToTop";
 import { getPositions } from "./redux/modules/positions";
 import { connect } from "react-redux";
+import BurgerMenu from "./components/burgerMenu";
 
-const App = ({ getPositions, ...props }) => {
+const App = ({burgerIsOpen,  getPositions, ...props }) => {
   getPositions();
 
   return (
@@ -17,16 +18,20 @@ const App = ({ getPositions, ...props }) => {
       <ScrollToTop />
       <div className={s.app}>
         <Header />
-        <Switch>
+        {/* <Switch>
           <Route exact path="/" component={MainPage} />
           <Route path="/cart" component={CartPage} />
           <Route path="/contacts" component={ContactsPage} />
           <Redirect to="/" />
         </Switch>
-        <Footer />
+        <Footer /> */}
+        {burgerIsOpen && <BurgerMenu />}
       </div>
     </BrowserRouter>
   );
 };
 
-export default connect(null, { getPositions })(App);
+export default connect(
+  (state) => ({ burgerIsOpen: state.burger.burgerIsOpen }),
+  { getPositions }
+)(App);
