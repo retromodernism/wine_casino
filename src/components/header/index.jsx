@@ -53,7 +53,9 @@ const Header = ({
         <Link to="/" className={s._logoWrapper}>
           {isDesktop && <Logo className={s._logo} />}
           {isTablet && <LogoTablet className={s._logo} />}
-          {isMobile && <LogoMobile className={s._logo} />}
+          {isMobile && (
+            <LogoMobile className={s._logo} style={{ height: "33px" }} />
+          )}
         </Link>
       )}
       {searchBarIsOpen && <HeaderSearchBar />}
