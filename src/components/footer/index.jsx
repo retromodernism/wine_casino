@@ -8,6 +8,7 @@ import { ReactComponent as Inst } from "./src/inst.svg";
 import { useState } from "react";
 import * as Router from "react-router-dom";
 import * as Scroll from "react-scroll";
+import { useMediaQuery } from "react-responsive";
 
 const Submit = () => {
   const [isHovered, setHover] = useState();
@@ -27,56 +28,101 @@ const Submit = () => {
 const Footer = (props) => {
   const isMainPage = Router.useLocation().pathname === "/";
 
+  /* media Queries */
+
+  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1024px)" });
+  const isTablet = useMediaQuery({
+    query: "screen and (min-width: 768px) and (max-width: 1023px)",
+  });
+  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+
   return (
     <footer className={s.footer}>
+      {isTablet && (
+        <form
+          className={s._form}
+          onSubmit={(e) => {
+            e.preventDefault();
+            alert("Хендлер формы");
+          }}
+        >
+          <div className={s._formTitle}>Оставьте заявку</div>
+          <div className={s._formDescription}>
+            Оставляйте заявку и наши менеджеры проконсультуруют и помогут
+            подобрать оптимальное решение для вашего корпоратива.
+          </div>
+          <div className={s._formInputs}>
+            <label className={s._inputLabel}>
+              <input
+                type="text"
+                className={cx(s._formInput, s._formNameInput)}
+                placeholder="Ваше имя"
+              />
+            </label>
+            <label className={s._inputLabel}>
+              <input
+                type="text"
+                className={cx(s._formInput, s._formPhoneInput)}
+                placeholder="Ваш телефон"
+              />
+            </label>
+            <label className={s._inputLabel}>
+              <Submit />
+            </label>
+          </div>
+        </form>
+      )}
       <div className={s._content}>
         <div className={s._left}>
-          <div className={s._socials}>
-            <div className={s._socialsLeft}>
-              <a
-                href="/"
-                className={s._socialLink}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <Tg />
-              </a>
-              <a
-                href="/"
-                className={s._socialLink}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <Wa />
-              </a>
+          {isDesktop && (
+            <div className={s._socials}>
+              <div className={s._socialsLeft}>
+                <a
+                  href="/"
+                  className={s._socialLink}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <Tg />
+                </a>
+                <a
+                  href="/"
+                  className={s._socialLink}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <Wa />
+                </a>
+              </div>
+              <div className={s._socialsRight}>
+                <a
+                  href="/"
+                  className={s._socialLink}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <Fb />
+                </a>
+                <a
+                  href="/"
+                  className={s._socialLink}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <Vk />
+                </a>
+                <a
+                  href="/"
+                  className={s._socialLink}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <Inst />
+                </a>
+              </div>
             </div>
-            <div className={s._socialsRight}>
-              <a
-                href="/"
-                className={s._socialLink}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <Fb />
-              </a>
-              <a
-                href="/"
-                className={s._socialLink}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <Vk />
-              </a>
-              <a
-                href="/"
-                className={s._socialLink}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <Inst />
-              </a>
-            </div>
-          </div>
+          )}
+
           <div className={cx(s._contacts, s._contacts_top)}>
             <a href="tel:+74950857604" className={s._contactsPhone}>
               +7 (495) 085-76-04
@@ -95,6 +141,38 @@ const Footer = (props) => {
             </div>
             <div className={s._requestCall}>заказать звонок</div>
           </div>
+
+          {isTablet && (
+            <div className={s._socials}>
+              <div className={s._socialsRight}>
+                <a
+                  href="/"
+                  className={s._socialLink}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <Fb />
+                </a>
+                <a
+                  href="/"
+                  className={s._socialLink}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <Vk />
+                </a>
+                <a
+                  href="/"
+                  className={s._socialLink}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <Inst />
+                </a>
+              </div>
+            </div>
+          )}
+
           <a
             href="/"
             className={s._confidLink}
@@ -103,7 +181,7 @@ const Footer = (props) => {
           >
             <span className={s._confid}>Политика конфиденциальности</span>
           </a>
-          <div className={s._rectangle}></div>
+          {isDesktop && <div className={s._rectangle}></div>}
         </div>
         <div className={s._right}>
           {isMainPage ? (
@@ -133,38 +211,40 @@ const Footer = (props) => {
               <span className={s._linkText}>Новости</span>
             </a>
           </div>
-          <form
-            className={s._form}
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Хендлер формы");
-            }}
-          >
-            <div className={s._formTitle}>Оставьте заявку</div>
-            <div className={s._formDescription}>
-              Оставляйте заявку и наши менеджеры проконсультуруют и помогут
-              подобрать оптимальное решение для вашего корпоратива.
-            </div>
-            <label>
-              <input
-                type="text"
-                className={cx(s._formInput, s._formNameInput)}
-                placeholder="Ваше имя"
-              />
-            </label>
-            <div className={s._formPhoneInputWrapper}>
+          {isDesktop && (
+            <form
+              className={s._form}
+              onSubmit={(e) => {
+                e.preventDefault();
+                alert("Хендлер формы");
+              }}
+            >
+              <div className={s._formTitle}>Оставьте заявку</div>
+              <div className={s._formDescription}>
+                Оставляйте заявку и наши менеджеры проконсультуруют и помогут
+                подобрать оптимальное решение для вашего корпоратива.
+              </div>
               <label>
                 <input
                   type="text"
-                  className={cx(s._formInput, s._formPhoneInput)}
-                  placeholder="Ваш телефон"
+                  className={cx(s._formInput, s._formNameInput)}
+                  placeholder="Ваше имя"
                 />
               </label>
-            </div>
-            <label>
-              <Submit />
-            </label>
-          </form>
+              <div className={s._formPhoneInputWrapper}>
+                <label>
+                  <input
+                    type="text"
+                    className={cx(s._formInput, s._formPhoneInput)}
+                    placeholder="Ваш телефон"
+                  />
+                </label>
+              </div>
+              <label>
+                <Submit />
+              </label>
+            </form>
+          )}
         </div>
       </div>
     </footer>

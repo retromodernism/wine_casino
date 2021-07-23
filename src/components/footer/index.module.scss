@@ -1,182 +1,417 @@
 @import "./../../variables.scss";
 
-.footer {
-  margin: 120px 0 115px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-._content {
-  display: grid;
-  grid-template-columns: 523px 1fr;
-  width: 1308px;
-}
-
-._left {
-  position: relative;
-  padding: 22px 32px 35px;
-  background: $darkRed;
-  min-height: 463px;
-}
-
-._socials {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-._socialsLeft {
-  ._socialLink {
-    &:not(:last-child) {
-      margin-right: 18px;
-    }
-  }
-}
-
-._socialsRight {
-  ._socialLink {
-    &:not(:last-child) {
-      margin-right: 22px;
-    }
-  }
-}
-
-// ._socialLink {
-// }
-
 ._contactsPhone {
   @extend %h4;
-  color: #ffffff;
-}
-
-._contacts {
-}
-
-._contacts_top {
-  margin-top: 21px;
-}
-
-._contacts_bottom {
-  margin-top: 50px;
-  margin-bottom: 57px;
 }
 
 ._contactsDescription {
-  margin-top: 12px;
   @extend %h5;
-  color: #ffffff;
 }
 
 ._requestCall {
-  margin-top: 14px;
   @extend %h6_1;
-  color: #ffffff;
-  user-select: none;
-  cursor: pointer;
 }
-
-// ._confidLink {
-//   margin-top: 57px;
-// }
 
 ._confid {
-  color: #ffffff;
   @extend %h6_1;
-  user-select: none;
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-._rectangle {
-  width: 152px;
-  height: 52px;
-  background: #c4c4c4;
-  position: absolute;
-  right: 27px;
-  bottom: 84px;
-}
-
-._right {
-  position: relative;
-  padding: 21px 7px 0 53px;
-}
-
-._logo {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  cursor: pointer;
-}
-
-._logoImage {
-  width: 219px;
-  height: 73px;
-  background: url(./src/logo.svg) 100% 100% no-repeat;
-}
-
-._links {
-  display: grid;
-  grid-auto-flow: column;
-  grid: auto / min-content min-content;
-  gap: 24px 50px;
 }
 
 ._link {
   @extend %h5_1;
 }
 
-._linkText {
-  white-space: nowrap;
-  color: $darkRed;
-}
-
-._form {
-  margin-top: 87px;
-  display: grid;
-  grid: repeat(3, min-content) / repeat(3, 1fr);
-  gap: 0 20px;
-}
-
 ._formTitle {
-  grid-column: 1/-1;
   @extend %h5_1;
-  color: $darkRed;
 }
+
 ._formDescription {
-  grid-column: 1/-1;
   @extend %body_3;
-  color: $darkRed;
-  max-width: 492px;
-  margin-top: 20px;
-  margin-bottom: 30px;
 }
+
 ._formInput {
-  width: 100%;
-  border: 1px solid $darkRed;
-  padding: 15px 20px;
   @extend %h5;
-  &::-webkit-input-placeholder {
+}
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    margin: 120px 0 115px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ._content {
+    display: grid;
+    grid-template-columns: 523px 1fr;
+    width: 1308px;
+  }
+
+  ._left {
+    position: relative;
+    padding: 22px 32px 35px;
+    background: $darkRed;
+    min-height: 463px;
+  }
+
+  ._socials {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  ._socialsLeft {
+    ._socialLink {
+      &:not(:last-child) {
+        margin-right: 18px;
+      }
+    }
+  }
+
+  ._socialsRight {
+    ._socialLink {
+      &:not(:last-child) {
+        margin-right: 22px;
+      }
+    }
+  }
+
+  // ._socialLink {
+  // }
+
+  ._contactsPhone {
+    color: #ffffff;
+  }
+
+  ._contacts {
+  }
+
+  ._contacts_top {
+    margin-top: 21px;
+  }
+
+  ._contacts_bottom {
+    margin-top: 50px;
+    margin-bottom: 57px;
+  }
+
+  ._contactsDescription {
+    margin-top: 12px;
+    color: #ffffff;
+  }
+
+  ._requestCall {
+    margin-top: 14px;
+    color: #ffffff;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  // ._confidLink {
+  //   margin-top: 57px;
+  // }
+
+  ._confid {
+    color: #ffffff;
+    user-select: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ._rectangle {
+    width: 152px;
+    height: 52px;
+    background: #c4c4c4;
+    position: absolute;
+    right: 27px;
+    bottom: 84px;
+  }
+
+  ._right {
+    position: relative;
+    padding: 21px 7px 0 53px;
+  }
+
+  ._logo {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+  }
+
+  ._logoImage {
+    width: 219px;
+    height: 73px;
+    background: url(./src/logo.svg) 100% 100% no-repeat;
+  }
+
+  ._links {
+    display: grid;
+    grid-auto-flow: column;
+    grid: auto / min-content min-content;
+    gap: 24px 50px;
+  }
+
+  ._link {
+  }
+
+  ._linkText {
+    white-space: nowrap;
     color: $darkRed;
-    opacity: 0.7;
+  }
+
+  ._form {
+    margin-top: 87px;
+    display: grid;
+    grid: repeat(3, min-content) / repeat(3, 1fr);
+    gap: 0 20px;
+  }
+
+  ._formTitle {
+    grid-column: 1/-1;
+    color: $darkRed;
+  }
+  ._formDescription {
+    grid-column: 1/-1;
+    color: $darkRed;
+    max-width: 492px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  ._formInput {
+    width: 100%;
+    border: 1px solid $darkRed;
+    padding: 15px 20px;
+    &::-webkit-input-placeholder {
+      color: $darkRed;
+      opacity: 0.7;
+    }
+  }
+  // ._formNameInput {
+  // }
+  ._formPhoneInputWrapper {
+    position: relative;
+  }
+  ._formPhoneInput {
+    padding-right: 72px;
+  }
+  ._formSubmit {
+    background: $darkRed;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  ._formSubmit_hover {
+    background: unset;
+    color: $black;
   }
 }
-// ._formNameInput {
-// }
-._formPhoneInputWrapper {
-  position: relative;
-}
-._formPhoneInput {
-  padding-right: 72px;
-}
-._formSubmit {
-  background: $darkRed;
-  color: #ffffff;
-  cursor: pointer;
-}
-._formSubmit_hover {
-  background: unset;
-  color: $black;
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .footer {
+    width: 100%;
+    margin: 120px 0 115px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 63px;
+  }
+
+  ._content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // width: 1308px;
+    width: 100%;
+  }
+
+  ._left {
+    position: relative;
+    padding: 13px 65px 22px 20px;
+    background: $darkRed;
+    // min-height: 463px;
+  }
+
+  ._socials {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // ._socialsLeft {
+  //   ._socialLink {
+  //     &:not(:last-child) {
+  //       margin-right: 18px;
+  //     }
+  //   }
+  // }
+
+  ._socialsRight {
+    margin-top: 18px;
+    ._socialLink {
+      &:not(:last-child) {
+        margin-right: 28px;
+      }
+    }
+  }
+
+  // ._socialLink {
+  // }
+
+  ._contactsPhone {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 95%;
+  }
+
+  ._contacts {
+  }
+
+  ._contacts_top {
+    margin-top: 21px;
+  }
+
+  ._contacts_bottom {
+    margin-top: 28px;
+  }
+
+  ._contactsDescription {
+    margin-top: 12px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  ._requestCall {
+    margin-top: 14px;
+    color: #ffffff;
+    user-select: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  // ._confidLink {
+  //   margin-top: 57px;
+  // }
+
+  ._confid {
+    color: #ffffff;
+    user-select: none;
+    font-size: 14px;
+    line-height: 17px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ._rectangle {
+    width: 152px;
+    height: 52px;
+    background: #c4c4c4;
+    position: absolute;
+    right: 27px;
+    bottom: 84px;
+  }
+
+  ._right {
+    position: relative;
+    padding: 11px 0 0 41px;
+  }
+
+  ._logo {
+    position: absolute;
+    bottom: 0px;
+    right: 12px;
+    cursor: pointer;
+  }
+
+  ._logoImage {
+    width: 219px;
+    height: 73px;
+    background: url(./src/logo.svg) 100% 100% no-repeat;
+  }
+
+  ._links {
+    display: grid;
+    grid-auto-flow: column;
+    grid: auto / min-content min-content;
+    gap: 24px 40px;
+  }
+
+  ._link {
+  }
+
+  ._linkText {
+    white-space: nowrap;
+    color: $darkRed;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  ._form {
+    margin-bottom: 50px;
+    // display: grid;
+    // grid: repeat(3, min-content) / repeat(3, 1fr);
+    // gap: 0 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  ._formTitle {
+    grid-column: 1/-1;
+    color: $black;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+  }
+  ._formDescription {
+    grid-column: 1/-1;
+    color: $black;
+    max-width: 492px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  ._formInputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  ._inputLabel {
+    margin-top: 24px;
+    width: calc(50% - 6px);
+    &:nth-child(2n - 1) {
+      margin-right: 12px;
+    }
+  }
+  ._formInput {
+    width: 100%;
+    box-shadow: inset 0 0 0 1px $darkRed;
+    padding: 15px 20px;
+    &::-webkit-input-placeholder {
+      color: $darkRed;
+      opacity: 0.7;
+    }
+  }
+  // ._formNameInput {
+  // }
+  ._formPhoneInputWrapper {
+    position: relative;
+  }
+  ._formPhoneInput {
+    padding-right: 72px;
+  }
+  ._formSubmit {
+    background: $darkRed;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  ._formSubmit_hover {
+    background: unset;
+    color: $black;
+  }
 }

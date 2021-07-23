@@ -24,7 +24,7 @@ const App = ({burgerIsOpen,  getPositions, ...props }) => {
           <Route path="/contacts" component={ContactsPage} />
           <Redirect to="/" />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
         {burgerIsOpen && <BurgerMenu />}
       </div>
     </BrowserRouter>
