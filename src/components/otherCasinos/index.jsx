@@ -19,6 +19,7 @@ import honey from "./src/honey.png";
 import molecular from "./src/molecular.png";
 import wine from "./src/wine.png";
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const casinos = [
   {
@@ -111,7 +112,23 @@ const ShowMore = ({ onClick }) => {
 };
 
 const OtherCasinos = (props) => {
-  const [showedCasinosNumber, setShowedCasinoNumber] = useState(8);
+  /* Media Queries */
+
+  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1024px)" });
+  const isTablet = useMediaQuery({
+    query: "screen and (min-width: 768px) and (max-width: 1023px)",
+  });
+  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+
+  let showedCasinos, countAddedCasinos;
+  if (isDesktop) {
+    [showedCasinos, countAddedCasinos] = [8, 8];
+  }
+  if (isTablet) {
+    [showedCasinos, countAddedCasinos] = [9, 6];
+  }
+
+  const [showedCasinosNumber, setShowedCasinoNumber] = useState(showedCasinos);
   const hasShowMore = showedCasinosNumber < casinos.length;
 
   return (
@@ -128,7 +145,7 @@ const OtherCasinos = (props) => {
             <ShowMore
               onClick={setShowedCasinoNumber.bind(
                 null,
-                showedCasinosNumber + 8
+                showedCasinosNumber + countAddedCasinos
               )}
             />
           )}

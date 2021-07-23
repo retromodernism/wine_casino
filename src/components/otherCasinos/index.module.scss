@@ -1,73 +1,136 @@
 @import "./../../variables.scss";
 
-.otherCasinos {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 1187px;
-  padding: 187px 0 82px 0;
-}
-
-._bg1 {
-  position: absolute;
-  top: 984px;
-  left: 8.85%;
-  width: 43px;
-  height: 56px;
-  background: url(./src/bg1.svg) 100% 100% no-repeat;
-}
-._bg2 {
-  position: absolute;
-  top: 115px;
-  right: 11.61%;
-  width: 110px;
-  height: 105px;
-  background: url(./src/bg2.svg) 100% 100% no-repeat;
-}
-
-._content {
-  width: 1344px;
-}
 ._title {
-  padding-left: 25px;
   @extend %h2;
-}
-._items {
-  margin-top: 45px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 ._more {
-  width: 85px;
-  position: absolute;
-  bottom: 2px;
-  left: 50%;
-  transform: translate(-50%, 0);
   @extend %h4_1;
-  cursor: pointer;
-  user-select: none;
-  &::after {
-    content: "";
+}
+
+@media screen and (min-width: 1024px) {
+  .otherCasinos {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 1187px;
+    padding: 187px 0 82px 0;
+  }
+
+  ._bg1 {
     position: absolute;
-    background: url(./src/arrow.svg) 100% 100% no-repeat;
-    right: 0;
-    top: 50%;
-    transform: translate(0, -50%);
-    height: 12px;
-    width: 22px;
+    top: 984px;
+    left: 8.85%;
+    width: 43px;
+    height: 56px;
+    background: url(./src/bg1.svg) 100% 100% no-repeat;
+  }
+  ._bg2 {
+    position: absolute;
+    top: 115px;
+    right: 11.61%;
+    width: 110px;
+    height: 105px;
+    background: url(./src/bg2.svg) 100% 100% no-repeat;
+  }
+
+  ._content {
+    width: 1344px;
+  }
+  ._title {
+    padding-left: 25px;
+  }
+  ._items {
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  ._more {
+    width: 85px;
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    cursor: pointer;
+    user-select: none;
+    &::after {
+      content: "";
+      position: absolute;
+      background: url(./src/arrow.svg) 100% 100% no-repeat;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      height: 12px;
+      width: 22px;
+    }
+  }
+
+  ._more_hover {
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      left: 0;
+      bottom: -2px;
+      background: $black;
+    }
   }
 }
 
-._more_hover {
-  &::before {
-    content: "";
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .otherCasinos {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // min-height: 1187px;
+    padding: 40px 0 55px 0;
+  }
+
+  ._content {
+    // width: 1344px;
+  }
+  ._title {
+    padding-left: 25px;
+  }
+  ._items {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  ._more {
+    width: 85px;
     position: absolute;
-    height: 2px;
-    width: 100%;
-    left: 0;
-    bottom: -2px;
-    background: $black;
+    bottom: 2px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    cursor: pointer;
+    user-select: none;
+    &::after {
+      content: "";
+      position: absolute;
+      background: url(./src/arrow.svg) 100% 100% no-repeat;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      height: 12px;
+      width: 22px;
+    }
+  }
+
+  ._more_hover {
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      left: 0;
+      bottom: -2px;
+      background: $black;
+    }
   }
 }
