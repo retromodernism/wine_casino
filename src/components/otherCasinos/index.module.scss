@@ -8,7 +8,7 @@
   @extend %h4_1;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .otherCasinos {
     position: relative;
     display: flex;
@@ -80,7 +80,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1299px) {
   .otherCasinos {
     position: relative;
     display: flex;

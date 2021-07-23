@@ -13,7 +13,7 @@
   @extend %h6;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   ._variant {
     display: grid;
     grid-template-columns: 1fr;
@@ -234,7 +234,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1299px) {
   ._variant {
     width: 658px;
     min-height: 832px;

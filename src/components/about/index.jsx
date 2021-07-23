@@ -5,9 +5,9 @@ import image from "./src/image.png";
 const About = (props) => {
   /* Media Queries */
 
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1024px)" });
+  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1023px)",
+    query: "screen and (min-width: 768px) and (max-width: 1299px)",
   });
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 

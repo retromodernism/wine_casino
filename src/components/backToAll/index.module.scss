@@ -1,6 +1,6 @@
 @import "./../../variables.scss";
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .backToAll {
     padding: 75px 0 72px 13.23%;
     margin: auto;
@@ -26,7 +26,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1299px) {
   .backToAll {
     padding: 0 63px;
     margin: 87px 0 101px 0;

@@ -4,7 +4,7 @@
   @extend %h2;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .variants {
     display: flex;
     flex-direction: column;
@@ -54,7 +54,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1299px) {
   .variants {
     display: flex;
     flex-direction: column;

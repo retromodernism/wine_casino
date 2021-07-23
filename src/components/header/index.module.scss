@@ -19,7 +19,7 @@
   @extend %h6_1;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .header {
     position: absolute;
     top: 40px;
@@ -257,7 +257,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1299px) {
   .header {
     padding: 36px 50px;
     width: 100%;

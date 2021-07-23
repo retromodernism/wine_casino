@@ -168,10 +168,10 @@ const customStylesTablet = {
 const DropdownIndicator = connect(null, { closeSearchBar })(
   ({ closeSearchBar, ...props }) => {
     const isDesktop = useMediaQuery({
-      query: "screen and (min-width: 1024px)",
+      query: "screen and (min-width: 1300px)",
     });
     const isTablet = useMediaQuery({
-      query: "screen and (min-width: 768px) and (max-width: 1023px)",
+      query: "screen and (min-width: 768px) and (max-width: 1299px)",
     });
     const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
@@ -192,9 +192,9 @@ const DropdownIndicator = connect(null, { closeSearchBar })(
 );
 
 const HeaderSearchBar = ({ className, closeSearchBar }) => {
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1024px)" });
+  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1023px)",
+    query: "screen and (min-width: 768px) and (max-width: 1299px)",
   });
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 

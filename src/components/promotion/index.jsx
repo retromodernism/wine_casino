@@ -16,8 +16,8 @@ const sliderParams = {
 };
 
 const Promotion = ({ background = true }) => {
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1024px)" });
-  const isTablet = useMediaQuery({ query: "screen and (min-width: 768px) and (max-width: 1023px)" });
+  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
+  const isTablet = useMediaQuery({ query: "screen and (min-width: 768px) and (max-width: 1299px)" });
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
   let camera, photograph, sertificate;

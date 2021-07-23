@@ -8,7 +8,7 @@
   @extend %h6;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .serviceItem {
     height: 263px;
     border-radius: 20px;
@@ -77,7 +77,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1299px) {
   .serviceItem {
     height: 263px;
     width: 400px;

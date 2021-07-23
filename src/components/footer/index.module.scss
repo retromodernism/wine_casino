@@ -32,7 +32,7 @@
   @extend %h5;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .footer {
     margin: 120px 0 115px 0;
     display: flex;
@@ -207,7 +207,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1299px) {
   .footer {
     width: 100%;
     margin: 120px 0 115px 0;

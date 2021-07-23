@@ -4,7 +4,7 @@
   @extend %h3;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .casinoItem {
     height: 425px;
     width: 100%;
@@ -42,7 +42,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1299px) {
   .casinoItem {
     height: 256px;
     width: 100%;
