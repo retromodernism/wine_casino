@@ -22,8 +22,8 @@ const MainPage = (props) => {
       <Variants />
       <Additionals />
       <OtherCasinos />
-      {/* <HowItWas />
-      <Tematic />
+      <HowItWas />
+      {/* <Tematic />
       <About /> */}
     </main>
   );

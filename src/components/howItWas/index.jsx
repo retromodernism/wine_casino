@@ -10,6 +10,9 @@ import prevHover from "./src/prev_hover.svg";
 import next from "./src/next.svg";
 import nextHover from "./src/next_hover.svg";
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
+
+/* Slick settings */
 
 const NextArrow = ({ className, style, onClick }) => {
   const [isHovered, setHover] = useState(false);
@@ -24,7 +27,7 @@ const NextArrow = ({ className, style, onClick }) => {
         background: `url(${isHovered ? nextHover : next}) 100% 100% no-repeat`,
         outline: "unset",
         color: "unset",
-        top: "-109px",
+        top: "-70px",
         right: "27px",
       }}
       onMouseEnter={setHover.bind(null, true)}
@@ -45,7 +48,7 @@ const PrevArrow = ({ className, style, onClick }) => {
         background: `url(${isHovered ? prevHover : prev}) 100% 100% no-repeat`,
         outline: "unset",
         color: "unset",
-        top: "-109px",
+        top: "-70px",
         left: "calc(100% - 93px)",
       }}
       onMouseEnter={setHover.bind(null, true)}
@@ -60,20 +63,36 @@ const sliderParams = {
   pauseOnHover: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 4,
   slidesToScroll: 1,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
   className: s._slider,
 };
+
 const HowItWas = (props) => {
+  /* Media Queries */
+
+  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1024px)" });
+  const isTablet = useMediaQuery({
+    query: "screen and (min-width: 768px) and (max-width: 1023px)",
+  });
+  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+
+  let slidesToShow;
+  if (isDesktop) {
+    slidesToShow = 4;
+  }
+  if (isTablet) {
+    slidesToShow = 2;
+  }
+
   return (
     <section className={s.howItWas}>
       <div className={s._bg}></div>
       <div className={s._bg1}></div>
       <div className={s._content}>
         <div className={s._title}>Как это было</div>
-        <Slider {...sliderParams}>
+        <Slider {...sliderParams} {...{ slidesToShow }}>
           <div className={s._imageSlide}>
             <img src={image1} alt="" />
           </div>
