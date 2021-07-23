@@ -185,7 +185,12 @@ const DropdownIndicator = connect(null, { closeSearchBar })(
       </components.DropdownIndicator>
     ) : (
       <components.DropdownIndicator {...props}>
-        <XIcon_tablet onClick={() => {closeSearchBar(); console.log(123)}} style={{ marginRight: "5px" }} />
+        <XIcon_tablet
+          onClick={() => {
+            closeSearchBar();
+          }}
+          style={{ marginRight: "5px", height: isMobile ? "20px" : "auto" }}
+        />
       </components.DropdownIndicator>
     );
   }
@@ -201,7 +206,7 @@ const HeaderSearchBar = ({ className, closeSearchBar }) => {
   let customStyles;
   if (isDesktop) customStyles = customStylesDesktop;
   if (isTablet) customStyles = customStylesTablet;
-  // if (isMobile) customStyles = customStylesMobile;
+  if (isMobile) customStyles = customStylesTablet;
 
   return (
     <Select

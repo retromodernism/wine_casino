@@ -288,3 +288,35 @@
     background: none;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 24px 25px 14px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ._nav {
+    display: flex;
+  }
+
+  ._navItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:not(:last-child) {
+      margin-right: 22px;
+    }
+  }
+
+  ._phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ._search {
+    background: none;
+  }
+}

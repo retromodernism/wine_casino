@@ -1,7 +1,8 @@
 import s from "./index.module.scss";
 import cx from "classnames";
 import { ReactComponent as Logo } from "./src/logo.svg";
-import { ReactComponent as LogoMobile } from "./src/logo_mobile.svg";
+import { ReactComponent as LogoTablet } from "./src/logo_tab.svg";
+import { ReactComponent as LogoMobile } from "./src/logo_mob.svg";
 import { ReactComponent as WhatsApp } from "./src/whatsapp.svg";
 import { ReactComponent as Telegram } from "./src/tg.svg";
 import { ReactComponent as Viber } from "./src/viber.svg";
@@ -9,6 +10,10 @@ import { ReactComponent as Phone } from "./src/phone.svg";
 import { ReactComponent as Search } from "./src/search.svg";
 import { ReactComponent as Cart } from "./src/cart.svg";
 import { ReactComponent as Burger } from "./src/burger.svg";
+import { ReactComponent as PhoneMob } from "./src/phone_mob.svg";
+import { ReactComponent as SearchMob } from "./src/search_mob.svg";
+import { ReactComponent as CartMob } from "./src/cart_mob.svg";
+import { ReactComponent as BurgerMob } from "./src/burger_mob.svg";
 import GoToCartButton from "../goToCartButton";
 import HeaderSearchBar from "../headerSearchBar";
 import { connect } from "react-redux";
@@ -47,7 +52,8 @@ const Header = ({
       {!searchBarIsOpen && (
         <Link to="/" className={s._logoWrapper}>
           {isDesktop && <Logo className={s._logo} />}
-          {isTablet && <LogoMobile className={s._logo} />}
+          {isTablet && <LogoTablet className={s._logo} />}
+          {isMobile && <LogoMobile className={s._logo} />}
         </Link>
       )}
       {searchBarIsOpen && <HeaderSearchBar />}
@@ -132,26 +138,30 @@ const Header = ({
           <GoToCartButton />
         </Fragment>
       )}
-      {isTablet && (
+      {(isTablet || isMobile) && (
         <nav className={s._nav}>
           {!searchBarIsOpen && (
             <Fragment>
               <a href={`tel:+${phone.tel}`} className={s._navItem}>
-                <Phone />
+                {isTablet && <Phone />}
+                {isMobile && <PhoneMob />}
               </a>
               <button
                 className={cx(s._navItem, s._search)}
                 onClick={openSearchBar}
               >
-                <Search />
+                {isTablet && <Search />}
+                {isMobile && <SearchMob />}
               </button>
             </Fragment>
           )}
           <Link to="/cart" className={s._navItem}>
-            <Cart />
+            {isTablet && <Cart />}
+            {isMobile && <CartMob />}
           </Link>
           <button className={cx(s._navItem, s._search)} onClick={openBurger}>
-            <Burger />
+            {isTablet && <Burger />}
+            {isMobile && <BurgerMob />}
           </button>
         </nav>
       )}
