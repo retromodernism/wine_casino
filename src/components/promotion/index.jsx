@@ -13,14 +13,11 @@ import "./swiper.scss";
 
 const sliderParams = {
   slidesPerView: 2,
-  // loop: true,
 };
 
 const Promotion = ({ background = true }) => {
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1024px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1023px)",
-  });
+  const isTablet = useMediaQuery({ query: "screen and (min-width: 768px) and (max-width: 1023px)" });
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
   let camera, photograph, sertificate;

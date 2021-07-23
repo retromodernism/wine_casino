@@ -1,70 +1,148 @@
 @import "./../../variables.scss";
 
-.serviceItem {
-  height: 263px;
-  border-radius: 20px;
-  box-shadow: 0 0 0 2px $green;
-  display: grid;
-  grid-template-columns: 1fr 215px;
-}
-
-._image {
-}
-
-._info {
-  background: $green;
-  border-radius: 0 19px 19px 0;
-  padding: 19px 30px 0 21px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
 ._title {
   @extend %h4;
-  color: #ffffff;
-}
-
-._description {
-  padding-top: 7px;
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
-
-  color: #ffffff;
-}
-
-._priceWrapper {
-  display: flex;
-  justify-content: space-between;
 }
 
 ._priceTitle {
-  padding-top: 10px;
   @extend %h6;
-  color: #ffffff;
 }
 
-._price {
-  justify-self: flex-end;
-  padding-top: 10px;
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 29px;
+@media screen and (min-width: 1024px) {
+  .serviceItem {
+    height: 263px;
+    border-radius: 20px;
+    box-shadow: 0 0 0 2px $green;
+    display: grid;
+    grid-template-columns: 1fr 215px;
+  }
 
-  color: #ffffff;
+  ._image {
+  }
+
+  ._info {
+    background: $green;
+    border-radius: 0 19px 19px 0;
+    padding: 19px 30px 0 21px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  ._title {
+    color: #ffffff;
+  }
+
+  ._description {
+    padding-top: 7px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #ffffff;
+  }
+
+  ._priceWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ._priceTitle {
+    padding-top: 10px;
+    color: #ffffff;
+  }
+
+  ._price {
+    justify-self: flex-end;
+    padding-top: 10px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #ffffff;
+  }
+
+  ._plus {
+    width: 26px;
+    height: 26px;
+    background: url(./src/plus.svg) 100% 100% no-repeat;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    cursor: pointer;
+  }
 }
 
-._plus {
-  width: 26px;
-  height: 26px;
-  background: url(./src/plus.svg) 100% 100% no-repeat;
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
-  cursor: pointer;
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .serviceItem {
+    height: 263px;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 5px $green;
+    display: grid;
+    grid-template-columns: 1fr 215px;
+  }
+
+  ._image {
+  }
+
+  ._info {
+    background: $green;
+    border-radius: 0 19px 19px 0;
+    padding: 19px 30px 0 21px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  ._title {
+    color: #ffffff;
+  }
+
+  ._description {
+    padding-top: 7px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #ffffff;
+  }
+
+  ._priceWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ._priceTitle {
+    padding-top: 10px;
+    color: #ffffff;
+  }
+
+  ._price {
+    justify-self: flex-end;
+    padding-top: 10px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #ffffff;
+  }
+
+  ._plus {
+    width: 26px;
+    height: 26px;
+    background: url(./src/plus.svg) 100% 100% no-repeat;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    cursor: pointer;
+  }
 }

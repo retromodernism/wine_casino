@@ -1,84 +1,190 @@
 @import "./../../variables.scss";
 
-.additionals {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 1280px;
-  overflow: hidden;
-}
-
-._bg {
-  position: absolute;
-  right: -172px;
-  top: -2px;
-  background: url(./src/bg.png) 100% 100% no-repeat;
-  height: 698px;
-  width: 520px;
-}
-._bg1 {
-  position: absolute;
-  right: 20%;
-  top: 133px;
-  background: url(./src/bg1.svg) 100% 100% no-repeat;
-  height: 64px;
-  width: 66px;
-}
-
-._content {
-  margin-top: 165px;
-  min-height: 1115px;
-  width: 1284px;
-}
-
 ._title {
   @extend %h2;
-  color: $black;
 }
 
 ._subtitle {
-  margin-top: 42px;
   @extend %h4;
-  color: $black;
-}
-
-._equipment {
-  margin-top: 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 24px 24px;
-  padding-bottom: 68px;
-  position: relative;
 }
 
 ._showMore {
   @extend %h4_1;
-  position: absolute;
-  bottom: 2px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  cursor: pointer;
-  user-select: none;
 }
 
-._showMore_hover {
-  &::after {
-    content: "";
-    width: 100%;
-    height: 2px;
-    left: 0;
+@media screen and (min-width: 1024px) {
+  .additionals {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 1280px;
+    overflow: hidden;
+  }
+
+  ._bg {
     position: absolute;
-    bottom: -2px;
-    background: $black;
+    right: -172px;
+    top: -2px;
+    background: url(./src/bg.png) 100% 100% no-repeat;
+    height: 698px;
+    width: 520px;
+  }
+  ._bg1 {
+    position: absolute;
+    right: 20%;
+    top: 133px;
+    background: url(./src/bg1.svg) 100% 100% no-repeat;
+    height: 64px;
+    width: 66px;
+  }
+
+  ._content {
+    margin-top: 165px;
+    min-height: 1115px;
+    width: 1284px;
+  }
+
+  ._title {
+    color: $black;
+  }
+
+  ._subtitle {
+    margin-top: 42px;
+    color: $black;
+  }
+
+  ._equipment {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 24px 24px;
+    padding-bottom: 68px;
+    position: relative;
+  }
+
+  ._showMore {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  ._showMore_hover {
+    &::after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      left: 0;
+      position: absolute;
+      bottom: -2px;
+      background: $black;
+    }
+  }
+
+  ._service {
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px 24px;
+    padding-bottom: 68px;
+    position: relative;
   }
 }
 
-._service {
-  margin-top: 55px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 24px 24px;
-  padding-bottom: 68px;
-  position: relative;
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .additionals {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 1280px;
+    overflow: hidden;
+  }
+
+  // ._bg {
+  //   position: absolute;
+  //   right: -172px;
+  //   top: -2px;
+  //   background: url(./src/bg.png) 100% 100% no-repeat;
+  //   height: 698px;
+  //   width: 520px;
+  // }
+  // ._bg1 {
+  //   position: absolute;
+  //   right: 20%;
+  //   top: 133px;
+  //   background: url(./src/bg1.svg) 100% 100% no-repeat;
+  //   height: 64px;
+  //   width: 66px;
+  // }
+
+  ._content {
+    margin-top: 165px;
+    min-height: 1115px;
+    // width: 1284px;
+  }
+
+  ._title {
+    padding-left: 63px;
+    color: $black;
+    font-size: 40px;
+    line-height: 51px;
+
+    color: #323232;
+
+    max-width: 463px;
+  }
+
+  ._subtitle {
+    padding: 0 63px;
+    margin-top: 42px;
+    color: $black;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  ._equipment {
+    padding: 0 63px;
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 24px;
+    padding-bottom: 68px;
+    position: relative;
+  }
+
+  ._showMore {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  ._showMore_hover {
+    &::after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      left: 0;
+      position: absolute;
+      bottom: -2px;
+      background: $black;
+    }
+  }
+
+  ._service {
+    padding-left: 63px;
+    margin-top: 55px;
+    display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px 24px;
+    padding-bottom: 68px;
+    position: relative;
+  }
 }
