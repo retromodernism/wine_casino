@@ -10,6 +10,8 @@ import { connect } from "react-redux";
 import { Fragment } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
+import { useRef } from "react";
+import InputMask from "react-input-mask";
 
 const Variant = ({
   image,
@@ -36,6 +38,8 @@ const Variant = ({
   const incrementCount = changePositionCount.bind(null, count.value + 1, id);
   const decrementCount = changePositionCount.bind(null, count.value - 1, id);
 
+  const countInput = useRef();
+
   return (
     <div
       className={cx(s._variant, {
@@ -56,7 +60,9 @@ const Variant = ({
           backgroundPosition: "center center",
         }}
       ></div>
-      {isPopular && !isExpanded && <div className={s._popularLabel}>Популярный выбор</div>}
+      {isPopular && !isExpanded && (
+        <div className={s._popularLabel}>Популярный выбор</div>
+      )}
       {isTablet && (
         <button className={s._expandButton} onClick={toggleVariant} />
       )}
@@ -74,10 +80,25 @@ const Variant = ({
         <div className={s._price}>от {price.toLocaleString()} ₽</div>
         {isDesktop && (
           <Fragment>
-            <div className={s._minusIcon} onClick={decrementCount}>
+            <div
+              className={s._minusIcon}
+              onClick={() => {
+                decrementCount();
+                // countInput.value = count.value;
+              }}
+            >
               {isPopular ? <MinusPopular /> : <Minus />}
             </div>
-            <div className={s._count}>{count.value}</div>
+            <InputMask
+              mask="999"
+              maskChar=""
+              className={s._count}
+              value={count.value}
+              onChange={(e) => {
+                addToCart();
+                changePositionCount(+e.target.value, id);
+              }}
+            />
             <div
               className={s._plusIcon}
               onClick={() => {

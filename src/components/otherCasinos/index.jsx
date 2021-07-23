@@ -139,7 +139,9 @@ const OtherCasinos = (props) => {
         <div className={s._title}>Другие виды нашего казино</div>
         <div className={s._items}>
           {casinos.map((casino, index) =>
-            index < showedCasinosNumber ? <CasinoItem {...casino} /> : null
+            index < showedCasinosNumber ? (
+              <CasinoItem {...casino} key={index} />
+            ) : null
           )}
           {hasShowMore && (
             <ShowMore

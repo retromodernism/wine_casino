@@ -162,11 +162,13 @@ const Cart = ({
                             >
                               <Minus className={s._itemCountIcon} />
                             </button>
-                            <input
+                            <InputMask
+                              mask="999"
+                              maskChar=""
                               className={s._itemCount}
-                              defaultValue={count.value}
+                              value={count.value}
                               onChange={(e) => {
-                                changePositionCount(e.target.value, id)
+                                changePositionCount(+e.target.value, id);
                                 // console.log(e.target.value)
                               }}
                             />
