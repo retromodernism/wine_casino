@@ -1,7 +1,16 @@
+import { useMediaQuery } from "react-responsive";
 import s from "./index.module.scss";
 import image from "./src/image.png";
 
 const About = (props) => {
+  /* Media Queries */
+
+  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1024px)" });
+  const isTablet = useMediaQuery({
+    query: "screen and (min-width: 768px) and (max-width: 1023px)",
+  });
+  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+
   return (
     <section className={s.about}>
       <div className={s._bg1}></div>
@@ -26,7 +35,10 @@ const About = (props) => {
           </div>
           <div
             className={s._descriptionItem}
-            style={{ background: `url(${image}) 100% 100% no-repeat` }}
+            style={{
+              background: `url(${image}) 100% 100% / cover no-repeat`,
+              height: isTablet ? "471px" : "auto",
+            }}
           ></div>
           <div className={s._descriptionItem}>
             <p>- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
