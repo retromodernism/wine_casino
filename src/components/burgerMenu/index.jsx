@@ -19,7 +19,9 @@ const BurgerMenu = ({ closeBurger, ...props }) => {
         </button>
         <ul className={s._content}>
           <li
-            className={cx(s._item, s._item_expanded)}
+            className={cx(s._item, s._item_expanded, {
+              [s._item_collapsed]: foodCasinosIsExpanded,
+            })}
             onClick={() => {
               if (classicCasinosIsExpanded) {
                 setClassicCasinosIsExpanded(false);
@@ -84,7 +86,9 @@ const BurgerMenu = ({ closeBurger, ...props }) => {
             )}
           </li>
           <li
-            className={cx(s._item, s._item_expanded)}
+            className={cx(s._item, s._item_expanded, {
+              [s._item_collapsed]: classicCasinosIsExpanded,
+            })}
             onClick={() => {
               if (foodCasinosIsExpanded) {
                 setFoodCasinosIsExpanded(false);
