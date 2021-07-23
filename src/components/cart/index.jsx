@@ -162,7 +162,15 @@ const Cart = ({
                             >
                               <Minus className={s._itemCountIcon} />
                             </button>
-                            <div className={s._itemCount}>{count.value}</div>
+                            <input
+                              className={s._itemCount}
+                              defaultValue={count.value}
+                              onChange={(e) => {
+                                changePositionCount(e.target.value, id)
+                                // console.log(e.target.value)
+                              }}
+                            />
+                            {/* <div className={s._itemCount}>{count.value}</div> */}
                             <button
                               className={s._itemCountIconWrapper}
                               onClick={changePositionCount.bind(
