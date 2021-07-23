@@ -64,11 +64,11 @@ const Home = (props) => {
             <p className={s._featureTitle}>сорта вина</p>
           </div>
           <div className={s._feature}>
-            <Loupe style={{ marginTop: "7px" }} />
+            <Loupe style={{ marginTop: "3px", width: "32px", height: "32px" }} />
             <p className={s._featureTitle}>интересные факты</p>
           </div>
           <div className={s._feature}>
-            <Format />
+            <Format style={{width: "46px", height: "35px"}} />
             <p className={s._featureTitle}>новый формат</p>
           </div>
         </div>
