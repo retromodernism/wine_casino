@@ -47,9 +47,9 @@ const Variant = ({
         [s._variant_expanded]: isExpanded,
       })}
       onClick={() => {
-        // Если не раскрыт и разрешение "таблет"
+        // Если не раскрыт и разрешение "таблет" или "мобайл"
         // Раскрыть при нажатии на элемент
-        if (!isExpanded && isTablet) toggleVariant();
+        if (!isExpanded && (isTablet || isMobile)) toggleVariant();
       }}
     >
       <div
@@ -63,7 +63,7 @@ const Variant = ({
       {isPopular && !isExpanded && (
         <div className={s._popularLabel}>Популярный выбор</div>
       )}
-      {isTablet && (
+      {(isTablet || isMobile) && (
         <button className={s._expandButton} onClick={toggleVariant} />
       )}
       <div className={s._title}>{title}</div>
@@ -110,7 +110,7 @@ const Variant = ({
             </div>
           </Fragment>
         )}
-        {isTablet && (
+        {(isTablet || isMobile) && (
           <div className={s._plusIcon}>
             <button className={s._plusIcon} onClick={addToCart}></button>
           </div>

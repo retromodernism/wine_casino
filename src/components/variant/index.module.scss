@@ -486,3 +486,227 @@
     background: url(./src/plus_tab.svg) 100% 100% no-repeat;
   }
 }
+
+@media screen and (max-width: 767px) {
+  ._variant {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 32vh 33px 26px 1fr 85px;
+    box-shadow: inset 0 0 0 3px $green;
+    border-radius: 15px;
+    padding: 43px 32px 32px;
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 28px;
+    }
+  }
+
+  ._variant:not(._variant_expanded) {
+    min-height: unset;
+    grid-template-rows: unset;
+    padding: 27px 26px 30px 32px;
+
+    ._image {
+      display: none;
+    }
+
+    ._title {
+      padding-top: unset;
+    }
+
+    ._description {
+      padding-top: 11px;
+    }
+
+    ._options {
+      display: none;
+    }
+
+    ._footer {
+      display: none;
+    }
+  }
+
+  ._variant_expanded {
+    ._expandButton {
+      width: 18px;
+      height: 10px;
+      position: absolute;
+      background: url(./src/arrow_expanded.svg) 100% 100% / contain no-repeat;
+      top: 26px;
+      right: 20px;
+    }
+  }
+
+  ._variant_popular {
+    background: $green;
+    position: relative;
+    &._variant_expanded {
+      ._expandButton {
+        background: url(./src/arrow_expanded_popular.svg) 100% 100% / contain
+          no-repeat;
+      }
+    }
+    ._popularLabel {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      border-radius: 0 15px 0 15px;
+      height: 26px;
+      width: 125px;
+      background: $darkRed;
+
+      font-family: Lato;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 11.2626px;
+      line-height: 14px;
+
+      color: #ffffff;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    ._expandButton {
+      background: url(./src/arrow_popular.svg) 100% 100% / contain no-repeat;
+    }
+
+    ._title {
+      color: #ffffff;
+    }
+
+    ._description {
+      color: #ffffff;
+    }
+
+    ._option {
+      color: #ffffff;
+      &::before {
+        background: #ffffff;
+      }
+    }
+
+    ._footerTitle {
+      color: #ffffff;
+    }
+
+    ._price {
+      color: #ffffff;
+    }
+
+    ._count {
+      color: #ffffff;
+    }
+
+    ._plusIcon {
+      background: url(./src/plus_popular.svg) 100% 100% / cover no-repeat;
+    }
+  }
+
+  ._expandButton {
+    width: 18px;
+    height: 10px;
+    position: absolute;
+    background: url(./src/arrow.svg) 100% 100% / contain no-repeat;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 30px;
+  }
+
+  ._image {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 0 4px #ffffff;
+    border-radius: 15px;
+  }
+
+  ._title {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 95%;
+    padding-top: 16px;
+    color: $green;
+  }
+
+  ._description {
+    padding-top: 12px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: $green;
+  }
+
+  ._options {
+    padding-top: 22px;
+  }
+
+  ._option {
+    padding-left: 27px;
+    color: $green;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 2px;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      background: $green;
+    }
+  }
+
+  ._footer {
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    row-gap: 6.5px;
+  }
+
+  ._footerTitle {
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: $green;
+  }
+
+  ._price {
+    margin-top: 5px;
+
+    grid-row: 2;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+
+    color: $green;
+  }
+
+  ._plusIcon {
+    grid-row: 2;
+    align-self: center;
+    justify-self: end;
+    width: 36px;
+    height: 36px;
+    background: url(./src/plus_tab.svg) 100% 100% / contain no-repeat;
+  }
+}
