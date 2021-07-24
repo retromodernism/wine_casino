@@ -82,3 +82,44 @@
     line-height: 27px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .casinoItem {
+    height: 178px;
+    width: 100%;
+    position: relative;
+  }
+
+  ._image {
+    width: 100%;
+    height: 145px;
+    position: absolute;
+  }
+
+  ._frame {
+    margin-top: 42px;
+    margin-left: 13px;
+    border-radius: 14px;
+    background: $darkRed;
+    width: calc(100% - 26px);
+    height: 136px;
+    padding: 2px;
+  }
+
+  ._innerFrame {
+    width: 100%;
+    // height: 224px;
+    height: 97px;
+    border-radius: 12px;
+    background: #ffffff;
+  }
+
+  ._title {
+    margin-top: 5px;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    font-size: 13.8715px;
+    line-height: 18px;
+  }
+}

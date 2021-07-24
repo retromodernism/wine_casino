@@ -127,6 +127,9 @@ const OtherCasinos = (props) => {
   if (isTablet) {
     [showedCasinos, countAddedCasinos] = [9, 6];
   }
+  if (isMobile) {
+    [showedCasinos, countAddedCasinos] = [4, 4];
+  }
 
   const [showedCasinosNumber, setShowedCasinoNumber] = useState(showedCasinos);
   const hasShowMore = showedCasinosNumber < casinos.length;
