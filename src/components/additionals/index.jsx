@@ -82,8 +82,8 @@ const Additionals = ({ positions, props }) => {
               }}
             >
               {equipments.map((item, index) => (
-                <SwiperSlide>
-                  <EquipmentItem {...item} key={index} />
+                <SwiperSlide key={index}>
+                  <EquipmentItem {...item} />
                 </SwiperSlide>
               ))}
             </Swiper>
