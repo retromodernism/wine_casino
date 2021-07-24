@@ -1,13 +1,33 @@
-.promotion {
-  overflow: hidden;
-  .swiper-container {
-    margin-left: 63px;
-    width: 590px;
-    overflow: unset;
-    .swiper-wrapper {
-      width: 100%;
-      .swiper-slide {
-        width: 286px;
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .promotion {
+    overflow: hidden;
+    .swiper-container {
+      margin-left: 63px;
+      width: 590px;
+      overflow: unset;
+      .swiper-wrapper {
+        width: 100%;
+        .swiper-slide {
+          width: 286px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .promotion {
+    overflow: hidden;
+    .swiper-container {
+      margin-left: 145px;
+      width: 500px;
+      // width: 468px;
+      overflow: unset;
+      .swiper-wrapper {
+        width: 100%;
+        .swiper-slide {
+          width: 286px;
+        }
       }
     }
   }

@@ -6,6 +6,9 @@ import sertificate_desk from "./src/sertificate.svg";
 import camera_tab from "./src/camera_tab.svg";
 import photograph_tab from "./src/photograph_tab.svg";
 import sertificate_tab from "./src/sertificate_tab.svg";
+import camera_mob from "./src/camera_mob.svg";
+import photograph_mob from "./src/photograph_mob.svg";
+import sertificate_mob from "./src/sertificate_mob.svg";
 import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
@@ -17,7 +20,9 @@ const sliderParams = {
 
 const Promotion = ({ background = true }) => {
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({ query: "screen and (min-width: 768px) and (max-width: 1299px)" });
+  const isTablet = useMediaQuery({
+    query: "screen and (min-width: 768px) and (max-width: 1299px)",
+  });
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
   let camera, photograph, sertificate;
@@ -31,7 +36,11 @@ const Promotion = ({ background = true }) => {
     photograph = photograph_tab;
     sertificate = sertificate_tab;
   }
-
+  if (isMobile) {
+    camera = camera_mob;
+    photograph = photograph_mob;
+    sertificate = sertificate_mob;
+  }
 
   return (
     <section className={cx(s.promotion, "promotion")}>
@@ -90,9 +99,9 @@ const Promotion = ({ background = true }) => {
           </div>
         </div>
       )}
-      {isTablet && (
+      {(isTablet) && (
         <div className={s._content}>
-          <Swiper {...sliderParams}>
+          <Swiper {...sliderParams} {...{ loop: isMobile }}>
             <SwiperSlide>
               <div className={s._item}>
                 <div className={s._itemTitle}>Фотобудка в подарок</div>
@@ -145,6 +154,68 @@ const Promotion = ({ background = true }) => {
                     height: "54px",
                     bottom: "-16px",
                     right: "17px",
+                  }}
+                ></div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      )}
+      {isMobile && (
+        <div className={s._content}>
+          <Swiper {...sliderParams} {...{ loop: isMobile }}>
+            <SwiperSlide>
+              <div className={s._item}>
+                <div className={s._itemTitle}>Фотобудка в подарок</div>
+                <div className={s._itemDescription}>
+                  при заказе
+                  <br />
+                  maxi пакета
+                </div>
+                <div
+                  className={s._itemIcon}
+                  style={{
+                    background: `url(${camera}) 100% 100% no-repeat`,
+                    width: "95px",
+                    height: "72px",
+                    bottom: "-10px",
+                    right: "19px",
+                  }}
+                ></div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className={s._item}>
+                <div className={s._itemTitle}>Фотограф бесплатно</div>
+                <div className={s._itemDescription}>
+                  при заказе
+                  <br />
+                  от 5-ти столов
+                </div>
+                <div
+                  className={s._itemIcon}
+                  style={{
+                    background: `url(${photograph}) 100% 100% no-repeat`,
+                    width: "84px",
+                    height: "87px",
+                    bottom: "-5px",
+                    right: "18px",
+                  }}
+                ></div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className={s._item}>
+                <div className={s._itemTitle}>Сертификат 10 000 ₽</div>
+                <div className={s._itemDescription}>при заказе maxi пакета</div>
+                <div
+                  className={s._itemIcon}
+                  style={{
+                    background: `url(${sertificate}) 100% 100% no-repeat`,
+                    width: "84px",
+                    height: "54px",
+                    bottom: "-13px",
+                    right: "14px",
                   }}
                 ></div>
               </div>

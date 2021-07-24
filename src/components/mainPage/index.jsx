@@ -26,8 +26,9 @@ const MainPage = (props) => {
       <BackToAll />
       <Essence />
       <Masterclass />
-      <Promotion />
+      {!isMobile && <Promotion />}
       <Variants />
+      {isMobile && <Promotion />}
       <Additionals />
       <OtherCasinos />
       <HowItWas />
