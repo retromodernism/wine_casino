@@ -27,8 +27,6 @@ const NextArrow = ({ className, style, onClick }) => {
         background: `url(${isHovered ? nextHover : next}) 100% 100% no-repeat`,
         outline: "unset",
         color: "unset",
-        top: "-70px",
-        right: "27px",
       }}
       onMouseEnter={setHover.bind(null, true)}
       onMouseLeave={setHover.bind(null, false)}
@@ -48,8 +46,6 @@ const PrevArrow = ({ className, style, onClick }) => {
         background: `url(${isHovered ? prevHover : prev}) 100% 100% no-repeat`,
         outline: "unset",
         color: "unset",
-        top: "-70px",
-        left: "calc(100% - 93px)",
       }}
       onMouseEnter={setHover.bind(null, true)}
       onMouseLeave={setHover.bind(null, false)}
@@ -84,6 +80,9 @@ const HowItWas = (props) => {
   }
   if (isTablet) {
     slidesToShow = 2;
+  }
+  if (isMobile) {
+    slidesToShow = 1;
   }
 
   return (
