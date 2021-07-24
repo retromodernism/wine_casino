@@ -31,7 +31,7 @@
     padding: 0 63px;
     margin: 87px 0 101px 0;
   }
-  
+
   ._link {
     font-family: Lato;
     font-style: normal;
@@ -39,7 +39,7 @@
     font-size: 24px;
     line-height: 29px;
     color: #000000;
-  
+
     position: relative;
     &::before {
       position: absolute;
@@ -48,6 +48,35 @@
       height: 20px;
       left: -20px;
       background: url(./src/arrow.svg) 100% 100% no-repeat;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .backToAll {
+    padding: 0 44px;
+    margin: 47px 0 60px 0;
+  }
+
+  ._link {
+    margin-left: 10px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 4px;
+      height: 7px;
+      left: -10px;
+      top: 50%;
+      transform: translate(0, -50%);
+      background: url(./src/arrow.svg) 100% 100% / contain no-repeat;
     }
   }
 }
