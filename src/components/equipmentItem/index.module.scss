@@ -59,3 +59,67 @@
   bottom: 25px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 767px) {
+  .equipmentItem {
+    overflow: hidden;
+    justify-self: center;
+    height: 328px;
+    width: 245px;
+    border-radius: 20px;
+    box-shadow: 0 0 0 2px $green;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 180px 1fr;
+    // filter: drop-shadow(0px 1.61551px 4.03877px rgba(20, 76, 57, 0.37));
+  }
+
+  ._image {
+    margin-top: 4px;
+    background-size: contain;
+    filter: blur(0);
+  }
+
+  ._footer {
+    padding: 22px 25px 15px 25px;
+    border-radius: 0 0 19px 19px;
+    background: $green;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 22px 36px 17px;
+    position: relative;
+  }
+
+  ._title {
+    color: #ffffff;
+  }
+
+  ._titlePrice {
+    color: #ffffff;
+  }
+
+  ._price {
+    padding-top: 7px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #ffffff;
+  }
+
+  ._count {
+    color: #ffffff;
+  }
+
+  ._plus {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background: url(./src/plus.svg) 100% 100% no-repeat;
+    right: 25px;
+    bottom: 25px;
+    cursor: pointer;
+  }
+}

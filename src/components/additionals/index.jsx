@@ -55,22 +55,42 @@ const Additionals = ({ positions, props }) => {
       <div className={s._content}>
         <div className={s._title}>Так же вы можете добавить</div>
         <div className={s._subtitle}>Наше оборудование</div>
-        <div className={s._equipment}>
-          {equipments.map((item, index) =>
-            index < showedEquipmentNumber ? (
-              <EquipmentItem {...item} key={index} />
-            ) : null
-          )}
-          {equipmentsHasShowMore && (
-            <ShowMore
-              onClick={setShowedEquipmentNumber.bind(
-                null,
-                showedEquipmentNumber + 4
-              )}
-            />
-          )}
-        </div>
-        <div className={s._subtitle}>Наш услуги</div>
+        {!isMobile && (
+          <div className={s._equipment}>
+            {equipments.map((item, index) =>
+              index < showedEquipmentNumber ? (
+                <EquipmentItem {...item} key={index} />
+              ) : null
+            )}
+            {equipmentsHasShowMore && (
+              <ShowMore
+                onClick={setShowedEquipmentNumber.bind(
+                  null,
+                  showedEquipmentNumber + 4
+                )}
+              />
+            )}
+          </div>
+        )}
+
+        {isMobile && (
+          <div className={cx(s._equipment, "equipment")}>
+            <Swiper
+              {...{
+                slidesPerView: "auto",
+                spaceBetween: 10,
+              }}
+            >
+              {equipments.map((item, index) => (
+                <SwiperSlide>
+                  <EquipmentItem {...item} key={index} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        )}
+
+        <div className={s._subtitle}>Наши услуги</div>
         {isDesktop && (
           <div className={s._service}>
             {services.map((item, index) =>
@@ -90,7 +110,18 @@ const Additionals = ({ positions, props }) => {
         )}
         {isTablet && (
           <div className={cx(s._service, "service")}>
-            <Swiper {...sliderParams} >
+            <Swiper {...sliderParams}>
+              {services.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <ServiceItem {...item} key={index} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        )}
+        {isMobile && (
+          <div className={cx(s._service, "service")}>
+            <Swiper {...{ slidesPerView: "auto", spaceBetween: 10 }}>
               {services.map((item, index) => (
                 <SwiperSlide key={index}>
                   <ServiceItem {...item} key={index} />

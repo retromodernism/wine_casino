@@ -146,3 +146,79 @@
     cursor: pointer;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .serviceItem {
+    height: 200px;
+    width: 311px;
+    border-radius: 15px;
+    box-shadow: inset 0 0 0 5px $green;
+    display: grid;
+    grid-template-columns: 1fr 162px;
+  }
+
+  ._image {
+    // background-size: contain;
+  }
+
+  ._info {
+    background: $green;
+    border-radius: 0 19px 19px 0;
+    padding: 14px 17px 0 16px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  ._title {
+    font-size: 16.6464px;
+    line-height: 95%;
+    color: #ffffff;
+  }
+
+  ._description {
+    padding-top: 5px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13.6198px;
+    line-height: 16px;
+
+    color: #ffffff;
+  }
+
+  ._priceWrapper {
+    padding-top: 9px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ._priceTitle {
+    padding-top: 10px;
+    color: #ffffff;
+    font-size: 13.6198px;
+    line-height: 16px;
+  }
+
+  ._price {
+    justify-self: flex-end;
+    padding-top: 10px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18.1597px;
+    line-height: 22px;
+
+    color: #ffffff;
+  }
+
+  ._plus {
+    width: 20px;
+    height: 20px;
+    background: url(./src/plus.svg) 100% 100% / contain no-repeat;
+    position: absolute;
+    bottom: 17px;
+    right: 17px;
+    cursor: pointer;
+  }
+}
