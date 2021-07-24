@@ -30,6 +30,12 @@ const Essence = (props) => {
     image3 = image3_tab;
     image4 = image4_tab;
   }
+  if (isMobile) {
+    image1 = image1_tab;
+    image2 = image2_tab;
+    image3 = image3_tab;
+    image4 = image4_tab;
+  }
 
   return (
     <section className={s.essence}>
@@ -44,9 +50,10 @@ const Essence = (props) => {
               style={{
                 background: `url(${image1}) 100% 100% no-repeat`,
                 backgroundSize: "cover",
+                backgroundPosition: "center center",
               }}
             >
-              <div className={s._itemImageBefore} style={{ padding: "0 17px" }}>
+              <div className={s._itemImageBefore} style={{ padding: isMobile ? "" : "0 17px" }}>
                 1
               </div>
             </div>
@@ -64,6 +71,7 @@ const Essence = (props) => {
               style={{
                 background: `url(${image2}) 100% 100% no-repeat`,
                 backgroundSize: "cover",
+                backgroundPosition: "center center",
               }}
             >
               <div className={s._itemImageBefore}>2</div>
@@ -81,6 +89,7 @@ const Essence = (props) => {
               style={{
                 background: `url(${image3}) 100% 100% no-repeat`,
                 backgroundSize: "cover",
+                backgroundPosition: "center center",
               }}
             >
               <div className={s._itemImageBefore}>3</div>
@@ -98,6 +107,7 @@ const Essence = (props) => {
               style={{
                 background: `url(${image4}) 100% 100% no-repeat`,
                 backgroundSize: "cover",
+                backgroundPosition: "center center",
               }}
             >
               <div className={s._itemImageBefore}>4</div>
