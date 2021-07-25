@@ -37,7 +37,7 @@ const About = (props) => {
             className={s._descriptionItem}
             style={{
               background: `url(${image}) 100% 100% / cover no-repeat`,
-              height: isTablet ? "471px" : "auto",
+              height: isTablet ? "471px" : isMobile ? "42vh" : "auto",
             }}
           ></div>
           <div className={s._descriptionItem}>
