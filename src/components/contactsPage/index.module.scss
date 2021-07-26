@@ -1,8 +1,19 @@
 @import "./../../variables.scss";
 
-.main {
-  padding-top: 233px;
-  width: 100%;
-  // min-height: 100vh;
-  // background: wheat;
+@media screen and (min-width: 1024px) {
+  .main {
+    padding-top: 233px;
+    width: 100%;
+    // min-height: 100vh;
+    // background: wheat;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .main {
+    padding-top: 50px;
+    width: 100%;
+    // min-height: 100vh;
+    // background: wheat;
+  }
 }
