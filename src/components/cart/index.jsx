@@ -16,6 +16,8 @@ import { openCartSuccessPopup } from "../../redux/modules/popup";
 import { removePosition, resetCart } from "../../redux/modules/cart";
 import { changePositionCount } from "../../redux/modules/positions";
 import { Fragment } from "react";
+import { useMediaQuery } from "react-responsive";
+import CartOrder from "../cartOrder";
 
 const Cart = ({
   positions,
@@ -26,6 +28,13 @@ const Cart = ({
   changePositionCount,
   ...props
 }) => {
+  /* Media Queries */
+  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
+  const isTablet = useMediaQuery({
+    query: "screen and (min-width: 768px) and (max-width: 1299px)",
+  });
+  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+
   // "picking positions" / "confirmation form processing"
   const [cartStatus, setCartStatus] = useState("picking positions");
 
@@ -121,6 +130,9 @@ const Cart = ({
       <div className={s._content}>
         <div className={s._title}>Корзина</div>
         <div className={s._items}>
+          {isTablet && (
+            <button className={s._clearCart} onClick={resetCart}></button>
+          )}
           {cartPositionsCategoriesArray.map(
             ({ category, positions }, index) => (
               <Fragment key={index}>
@@ -194,112 +206,7 @@ const Cart = ({
           )}
         </div>
 
-        {cartStatus === "picking positions" && (
-          <div className={s._order}>
-            <div className={s._orderTop}>
-              <p className={s._orderTitle}>Ваш заказ</p>
-              <button className={s._clearCart} onClick={resetCart}>
-                <span className={s._clearCartText}>Очистить корзину</span>
-              </button>
-            </div>
-            <div className={s._orderContent}>
-              <div className={s._orderItems}>
-                {cartPositions.map(
-                  ({ title, count, cartItemDescription }, index) => (
-                    <div className={s._orderItem} key={index}>
-                      <div className={s._orderItemTitle}>{title}</div>
-                      <div className={s._orderItemDescription}>
-                        {cartItemDescription
-                          ? cartItemDescription
-                          : `${count.value} шт`}
-                      </div>
-                    </div>
-                  )
-                )}
-                <div className={s._orderPriceWrapper}>
-                  <div className={s._orderPriceTitle}>Цена:</div>
-                  <div className={s._orderPrice}>
-                    {finalPrice.toLocaleString()} ₽
-                  </div>
-                </div>
-                <div className={s._orderCheckoutButtonWrapper}>
-                  <button
-                    className={s._orderCheckoutButton}
-                    onClick={setCartStatus.bind(
-                      null,
-                      "confirmation form processing"
-                    )}
-                  >
-                    Оформить
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {cartStatus === "confirmation form processing" && (
-          <div className={s._confimationForm}>
-            <div className={s._confirmationFormTop}>
-              <button
-                className={s._clearCart}
-                onClick={(e) => {
-                  e.preventDefault();
-                  alert("Очистить корзину");
-                }}
-              >
-                <span className={s._clearCartText}>Очистить корзину</span>
-              </button>
-            </div>
-            <div className={s._confimationFormContent}>
-              <button
-                className={s._confimationFormReturnBack}
-                onClick={setCartStatus.bind(null, "picking positions")}
-              >
-                <span className={s._confimationFormReturnBackText}>
-                  Вернуться к заказу
-                </span>
-              </button>
-              <div className={s._confirmationFormDescription}>
-                Наш менеджер свяжется с вами для уточнения более подробной
-                информации по заказу.
-              </div>
-              <input
-                type="text"
-                placeholder="Ваше имя*"
-                className={cx(s._confirmationFormInput, {
-                  [s._confirmationFormInput_error]: wrongNameInput,
-                })}
-                onChange={handleNameInputChange}
-              />
-              <InputMask
-                mask="+7 999 999 99 99"
-                maskChar=" "
-                className={cx(s._confirmationFormInput, {
-                  [s._confirmationFormInput_error]: wrongPhoneInput,
-                })}
-                placeholder="Ваш телефон*"
-                onChange={handlePhoneInputChange}
-              />
-              <div className={s._confirmationFormSubmitWrapper}>
-                <button
-                  className={s._confirmationFormSubmit}
-                  onClick={handleFormSubmit}
-                >
-                  Оставить заявку
-                </button>
-                <div className={s._confirmationFormConfid}>
-                  Нажимая на кнопку, вы даете согласие на{" "}
-                  <Link to="/confid">
-                    <span className={s._confirmationFormConfidAccent}>
-                      обработку персональных данных
-                    </span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+        {isDesktop && <CartOrder />}
       </div>
     </section>
   );

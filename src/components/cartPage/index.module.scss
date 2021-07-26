@@ -1,6 +1,15 @@
 @import "./../../variables.scss";
 
-.main {
-  padding-top: 233px;
-  width: 100%;
+@media screen and (min-width: 1024px) {
+  .main {
+    padding-top: 233px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .main {
+    // padding-top: 233px;
+    width: 100%;
+  }
 }

@@ -1,0 +1,16 @@
+@import "../../variables.scss";
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .recomendations {
+    width: 100%;
+    overflow: hidden;
+    .swiper-container {
+      padding: 0 64px;
+      .swiper-wrapper {
+        // width: 900px;
+        .swiper-slide {
+        }
+      }
+    }
+  }
+}

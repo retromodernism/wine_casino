@@ -1,382 +1,326 @@
 @import "./../../variables.scss";
 
-.cart {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-._content {
-  max-width: 1285px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  display: grid;
-  grid-template-columns: 1fr 521px;
-  column-gap: 24px;
-}
-
 ._title {
-  grid-column: 1/-1;
-  margin-bottom: 35px;
-  width: 100%;
   @extend %h2;
 }
-
-._items {
-  width: 100%;
-}
-
 ._itemsTitle {
   @extend %h4;
-  margin: 54px 0 37px 0;
-  &:first-child {
-    margin-top: 0;
-  }
 }
-
-._item {
-  width: 100%;
-  height: 293px;
-  border: 0.5px solid #bdbdbd;
-  box-shadow: 0px 4px 8px rgba(84, 84, 84, 0.1);
-  display: grid;
-  grid-template-columns: 194px 1fr;
-  &:not(:last-child) {
-    margin-bottom: 24px;
-  }
-}
-
-._itemImgWrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-._itemImg {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-._itemInfo {
-  position: relative;
-  padding: 70px 25px 25px 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-._deleteItemFromCart {
-  position: absolute;
-  top: 13px;
-  right: 13px;
-  background: none;
-}
-
-._itemTitle {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 29px;
-
-  color: #000000;
-}
-
-._itemOption {
-  font-family: Proxima Nova;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 29px;
-
-  color: #4f4f4f;
-}
-
-._itemFooter {
-  justify-self: flex-end;
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
-}
-
-._itemPrice {
-  margin-right: 64px;
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 29px;
-
-  color: #000000;
-}
-
-._itemCountWrapper {
-  width: 133px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #000000;
-  padding: 8px 13px;
-}
-
-._itemCountIconWrapper {
-  background: none;
-}
-
-._itemCountIcon {
-  cursor: pointer;
-}
-
-._itemCount {
-  display: block;
-  width: 100%;
-  text-align: center;
-  user-select: none;
-
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 29px;
-
-  color: #000000;
-}
-
-._order {
-  width: 100%;
-  // height: 100%;
-}
-
-._clearCart {
-  background: none;
-}
-
 ._clearCartText {
   @extend %h6;
-  padding-right: 44px;
-  position: relative;
-  &::after {
-    content: "";
+}
+
+@media screen and (min-width: 1024px) {
+  .cart {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ._content {
+    max-width: 1285px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 521px;
+    column-gap: 24px;
+  }
+
+  ._title {
+    grid-column: 1/-1;
+    margin-bottom: 35px;
+    width: 100%;
+  }
+
+  ._items {
+    width: 100%;
+  }
+
+  ._itemsTitle {
+    margin: 54px 0 37px 0;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  ._item {
+    width: 100%;
+    height: 293px;
+    border: 0.5px solid #bdbdbd;
+    box-shadow: 0px 4px 8px rgba(84, 84, 84, 0.1);
+    display: grid;
+    grid-template-columns: 194px 1fr;
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  ._itemImgWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  ._itemImg {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  ._itemInfo {
+    position: relative;
+    padding: 70px 25px 25px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  ._deleteItemFromCart {
     position: absolute;
-    transform: translate(0, -50%);
-    top: 50%;
+    top: 13px;
+    right: 13px;
+    background: none;
+  }
+
+  ._itemTitle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #000000;
+  }
+
+  ._itemOption {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #4f4f4f;
+  }
+
+  ._itemFooter {
+    justify-self: flex-end;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  ._itemPrice {
+    margin-right: 64px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #000000;
+  }
+
+  ._itemCountWrapper {
+    width: 133px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #000000;
+    padding: 8px 13px;
+  }
+
+  ._itemCountIconWrapper {
+    background: none;
+  }
+
+  ._itemCountIcon {
+    cursor: pointer;
+  }
+
+  ._itemCount {
+    display: block;
+    width: 100%;
+    text-align: center;
+    user-select: none;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #000000;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .cart {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 64px;
+  }
+
+  ._content {
+    max-width: 1285px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    // display: grid;
+    // grid-template-columns: 1fr 521px;
+    // column-gap: 24px;
+  }
+
+  ._title {
+    grid-column: 1/-1;
+    margin-bottom: 35px;
+    width: 100%;
+    font-size: 40px;
+    line-height: 51px;
+  }
+
+  ._items {
+    position: relative;
+    width: 100%;
+  }
+  
+  ._clearCart {
+    position: absolute;
+    width: 43px;
+    height: 43px;
     right: 0;
-    width: 24px;
-    height: 24px;
-    background: url(./src/clearCart.svg);
+    top: 40px;
+    background: url(./src/clearCart_tab.svg) 100% 100% / contain no-repeat;
   }
-}
 
-._orderTitle {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 28px;
-  line-height: 95%;
-
-  color: #000000;
-}
-
-._orderTop {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 31px;
-}
-
-._orderContent {
-  border: 0.5px solid #bdbdbd;
-  box-shadow: 0px 4px 8px rgba(84, 84, 84, 0.1);
-  // min-height: 500px;
-  padding: 30px 75px 45px 50px;
-}
-
-._orderItems {
-}
-
-._orderItem {
-  &:not(:last-child) {
-    margin-bottom: 10px;
+  ._itemsTitle {
+    font-size: 28px;
+    line-height: 95%;
+    margin: 50px 0;
+    &:first-child {
+      margin-top: 0;
+    }
   }
-}
 
-._orderItemTitle {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 29px;
+  ._item {
+    width: 100%;
+    height: 254px;
+    border: 0.5px solid #bdbdbd;
+    box-shadow: 0px 4px 8px rgba(84, 84, 84, 0.1);
+    display: grid;
+    grid-template-columns: 194px 1fr;
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
 
-  color: #000000;
-}
+  ._itemImgWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 
-._orderItemDescription {
-  margin-top: 5px;
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 29px;
+  ._itemImg {
+    max-width: 100%;
+    max-height: 254px;
+    object-fit: contain;
+  }
 
-  color: #4f4f4f;
-}
+  ._itemInfo {
+    position: relative;
+    padding: 42px 25px 25px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-._orderPriceWrapper {
-  margin-top: 30px;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-._orderPriceTitle {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 43px;
-
-  color: #000000;
-}
-
-._orderPrice {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 29px;
-
-  color: #000000;
-}
-
-._orderCheckoutButtonWrapper {
-  margin-top: 40px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-._orderCheckoutButton {
-  padding: 14px 40px;
-  cursor: pointer;
-  background: $green;
-
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 36px;
-
-  color: #ffffff;
-
-  user-select: none;
-}
-
-// Confirmation form
-
-._confimationForm {
-  width: 100%;
-  min-height: 610px;
-}
-
-._confirmationFormTop {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 35px;
-}
-
-._confimationFormContent {
-  border: 0.5px solid #bdbdbd;
-  box-shadow: 0px 4px 8px rgba(84, 84, 84, 0.1);
-  min-height: 610px;
-  padding: 40px 50px;
-}
-
-._confimationFormReturnBack {
-  background: none;
-  height: 30px;
-}
-
-._confimationFormReturnBackText {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 29px;
-
-  color: #000000;
-
-  position: absolute;
-  &::before {
+  ._deleteItemFromCart {
     position: absolute;
-    content: "";
-    width: 7px;
-    height: 13px;
-    background: url(./src/arrow.svg) 100% 100% no-repeat;
-    left: -20px;
-    top: 50%;
-    transform: translate(0, -50%);
+    top: 16px;
+    right: 12px;
+    background: none;
+    svg {
+      height: 32px;
+      width: 32px;
+    }
   }
-}
 
-._confirmationFormDescription {
-  margin: 45px 0 55px 0;
-  max-width: 400px;
-  color: #000000;
-}
+  ._itemTitle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 34px;
 
-._confirmationFormInput {
-  @extend %body;
-  padding: 20px;
-  width: 100%;
-  box-shadow: 0 0 0 2px $black;
-  &:not(:last-child) {
-    margin-bottom: 30px;
+    color: #000000;
   }
-}
 
-._confirmationFormInput_error {
-  box-shadow: 0 0 0 2px #ed0e1c;
-}
+  ._itemOption {
+    margin-top: 12px;
 
-._confirmationFormSubmitWrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 34px;
 
-._confirmationFormSubmit {
-  background: $green;
-  padding: 14px 40px;
+    color: #4f4f4f;
+  }
 
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 36px;
+  ._itemFooter {
+    justify-self: flex-end;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
 
-  color: #ffffff;
-}
+  ._itemPrice {
+    margin-right: 25px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 43px;
 
-._confirmationFormConfid {
-  margin-top: 10px;
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
-  text-align: center;
+    color: #000000;
+  }
 
-  color: #000000;
-  max-width: 216px;
-}
+  ._itemCountWrapper {
+    width: 175px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #000000;
+    padding: 1px 20px;
+  }
 
-._confirmationFormConfidAccent {
-  color: $green;
+  ._itemCountIconWrapper {
+    background: none;
+  }
+
+  ._itemCountIcon {
+    cursor: pointer;
+  }
+
+  ._itemCount {
+    display: block;
+    width: 100%;
+    text-align: center;
+    user-select: none;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 43px;
+
+    color: #000000;
+  }
 }
