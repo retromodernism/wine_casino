@@ -38,7 +38,7 @@ const Footer = (props) => {
 
   return (
     <footer className={s.footer}>
-      {isTablet && (
+      {(isTablet || isMobile) && (
         <form
           className={s._form}
           onSubmit={(e) => {
@@ -74,7 +74,7 @@ const Footer = (props) => {
       )}
       <div className={s._content}>
         <div className={s._left}>
-          {isDesktop && (
+          {(isDesktop || isMobile) && (
             <div className={s._socials}>
               <div className={s._socialsLeft}>
                 <a
@@ -172,6 +172,8 @@ const Footer = (props) => {
               </div>
             </div>
           )}
+
+          {isMobile && <div className={s._rectangle}></div>}
 
           <a
             href="/"

@@ -415,3 +415,232 @@
     color: $black;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .footer {
+    width: 100%;
+    margin: 80px 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 44px;
+  }
+
+  ._content {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  ._left {
+    position: relative;
+    padding: 11px 10px 21px 18px;
+    background: $darkRed;
+  }
+
+  ._socials {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  ._socialsLeft {
+    display: flex;
+    ._socialLink {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+      svg {
+        max-width: 28px;
+        max-height: 28px;
+      }
+    }
+  }
+
+  ._socialsRight {
+    display: flex;
+    ._socialLink {
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+      svg {
+        max-width: 27px;
+        max-height: 27px;
+      }
+    }
+  }
+
+  ._socialLink {
+    display: flex;
+    align-items: center;
+  }
+
+  ._contactsPhone {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 95%;
+  }
+
+  ._contacts {
+  }
+
+  ._contacts_top {
+    margin-top: 17px;
+  }
+
+  ._contacts_bottom {
+    margin-top: 16px;
+  }
+
+  ._contactsDescription {
+    margin-top: 8px;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  ._requestCall {
+    margin-top: 10px;
+    color: #ffffff;
+    user-select: none;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  // ._confidLink {
+  //   margin-top: 57px;
+  // }
+
+  ._confidLink {
+    margin-top: 3px;
+    display: flex;
+  }
+
+  ._confid {
+    color: #ffffff;
+    user-select: none;
+    font-size: 12px;
+    line-height: 14px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ._rectangle {
+    margin-top: 13px;
+    width: 152px;
+    height: 52px;
+    background: #c4c4c4;
+    // position: absolute;
+    // left: 18px;
+    // bottom: 38px;
+  }
+
+  ._right {
+    position: relative;
+    padding-top: 15px;
+    // padding: 11px 0 0 41px;
+  }
+
+  ._logo {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    cursor: pointer;
+  }
+
+  ._logoImage {
+    width: 130px;
+    height: 43px;
+    background: url(./src/logo.svg) 100% 100% / contain no-repeat;
+  }
+
+  ._links {
+    display: grid;
+    grid-auto-flow: column dense;
+    grid-template-columns: min-content min-content;
+    grid-template-rows: repeat(4, min-content);
+    gap: 11px 47px;
+  }
+
+  ._link {
+  }
+
+  ._linkText {
+    white-space: nowrap;
+    color: $darkRed;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  ._form {
+    margin-bottom: 50px;
+    // display: grid;
+    // grid: repeat(3, min-content) / repeat(3, 1fr);
+    // gap: 0 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  ._formTitle {
+    grid-column: 1/-1;
+    color: $black;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+  }
+  ._formDescription {
+    grid-column: 1/-1;
+    color: $black;
+    max-width: 492px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  ._formInputs {
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    // justify-content: center;
+  }
+  ._inputLabel {
+    margin-top: 24px;
+    // width: calc(50% - 6px);
+    // &:nth-child(2n - 1) {
+    //   margin-right: 12px;
+    // }
+  }
+  ._formInput {
+    width: 100%;
+    box-shadow: inset 0 0 0 1px $darkRed;
+    padding: 15px 20px;
+    font-size: 16px;
+    line-height: 19px;
+    &::-webkit-input-placeholder {
+      color: $darkRed;
+      opacity: 0.7;
+    }
+  }
+  // ._formNameInput {
+  // }
+  ._formPhoneInputWrapper {
+    position: relative;
+  }
+  ._formPhoneInput {
+    padding-right: 72px;
+  }
+  ._formSubmit {
+    background: $darkRed;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  ._formSubmit_hover {
+    background: unset;
+    color: $black;
+  }
+}
