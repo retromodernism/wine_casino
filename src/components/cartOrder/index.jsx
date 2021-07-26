@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { openCartSuccessPopup } from "../../redux/modules/popup";
 import { resetCart } from "../../redux/modules/cart";
 import { useMediaQuery } from "react-responsive";
@@ -67,8 +67,10 @@ const CartOrder = ({
       // console.log(formName, formPhone);
       if (isDesktop) {
         openCartSuccessPopup();
-      } else {
+      } else if (isTablet) {
         setCartStatus("success");
+      } else if (isMobile) {
+        openCartSuccessPopup();
       }
     }
   };
@@ -96,23 +98,48 @@ const CartOrder = ({
               </button>
             </div>
           )}
-
-          <div className={s._orderContent}>
-            <div className={s._orderItems}>
-              {cartPositions.map(
-                ({ title, count, cartItemDescription }, index) => (
-                  <div className={s._orderItem} key={index}>
-                    <div className={s._orderItemTitle}>{title}</div>
-                    <div className={s._orderItemDescription}>
-                      {cartItemDescription
-                        ? cartItemDescription
-                        : `${count.value} шт`}
+          {!isMobile && (
+            <div className={s._orderContent}>
+              <div className={s._orderItems}>
+                {cartPositions.map(
+                  ({ title, count, cartItemDescription }, index) => (
+                    <div className={s._orderItem} key={index}>
+                      <div className={s._orderItemTitle}>{title}</div>
+                      <div className={s._orderItemDescription}>
+                        {cartItemDescription
+                          ? cartItemDescription
+                          : `${count.value} шт`}
+                      </div>
                     </div>
+                  )
+                )}
+                <div className={s._orderPriceWrapper}>
+                  <div className={s._orderPriceTitle}>Цена:</div>
+                  <div className={s._orderPrice}>
+                    {finalPrice.toLocaleString()} ₽
                   </div>
-                )
-              )}
+                </div>
+                <div className={s._orderCheckoutButtonWrapper}>
+                  <button
+                    className={s._orderCheckoutButton}
+                    onClick={setCartStatus.bind(
+                      null,
+                      "confirmation form processing"
+                    )}
+                  >
+                    Оформить
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+          {isMobile && (
+            <Fragment>
+              <div className={s._orderTop}>
+                <p className={s._orderTitle}>Ваш заказ</p>
+              </div>
               <div className={s._orderPriceWrapper}>
-                <div className={s._orderPriceTitle}>Цена:</div>
+                <div className={s._orderPriceTitle}>Итого:</div>
                 <div className={s._orderPrice}>
                   {finalPrice.toLocaleString()} ₽
                 </div>
@@ -128,8 +155,8 @@ const CartOrder = ({
                   Оформить
                 </button>
               </div>
-            </div>
-          </div>
+            </Fragment>
+          )}
         </div>
       );
     case "confirmation form processing":
@@ -146,6 +173,11 @@ const CartOrder = ({
               >
                 <span className={s._clearCartText}>Очистить корзину</span>
               </button>
+            </div>
+          )}
+          {isMobile && (
+            <div className={s._orderTop}>
+              <p className={s._orderTitle}>Ваш заказ</p>
             </div>
           )}
 

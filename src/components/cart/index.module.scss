@@ -188,7 +188,7 @@
     position: relative;
     width: 100%;
   }
-  
+
   ._clearCart {
     position: absolute;
     width: 43px;
@@ -320,6 +320,189 @@
     font-weight: normal;
     font-size: 36px;
     line-height: 43px;
+
+    color: #000000;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cart {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 24px;
+  }
+
+  ._content {
+    max-width: 1285px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    // display: grid;
+    // grid-template-columns: 1fr 521px;
+    // column-gap: 24px;
+  }
+
+  ._title {
+    // grid-column: 1/-1;
+    // margin-bottom: 4px;
+    padding-left: 20px;
+    width: 100%;
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  ._items {
+    position: relative;
+    width: 100%;
+  }
+
+  ._clearCart {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 0;
+    top: 16px;
+    background: url(./src/clearCart_tab.svg) 100% 100% / contain no-repeat;
+  }
+
+  ._itemsTitle {
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 95%;
+    margin: 24px 0 20px 0;
+    // &:first-child {
+    //   margin-top: 0;
+    // }
+  }
+
+  ._item {
+    width: 100%;
+    height: 123px;
+    border: 0.5px solid #bdbdbd;
+    box-shadow: 0px 4px 8px rgba(84, 84, 84, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  ._itemImgWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ._itemImg {
+    max-width: 100%;
+    max-height: 121px;
+    object-fit: contain;
+  }
+
+  ._itemInfo {
+    position: relative;
+    padding: 20px 10px 10px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  ._deleteItemFromCart {
+    position: absolute;
+    top: 8px;
+    right: 6px;
+    background: none;
+    svg {
+      height: 15px;
+      width: 15px;
+    }
+  }
+
+  ._itemTitle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #000000;
+  }
+
+  ._itemOption {
+    margin-top: 12px;
+
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #4f4f4f;
+  }
+
+  ._itemFooter {
+    justify-self: flex-end;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  ._itemPrice {
+    // margin-right: 25px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #000000;
+  }
+
+  ._itemCountWrapper {
+    width: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #000000;
+    padding: 1px 9px;
+  }
+
+  ._itemCountIconWrapper {
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ._itemCountIcon {
+    cursor: pointer;
+  }
+
+  ._itemCountIcon_minus {
+    height: 1px;
+    width: 8px;
+  }
+  ._itemCountIcon_plus {
+    width: 8px;
+    height: 7px;
+  }
+
+  ._itemCount {
+    display: block;
+    width: 100%;
+    text-align: center;
+    user-select: none;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
 
     color: #000000;
   }

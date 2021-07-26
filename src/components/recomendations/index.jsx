@@ -87,7 +87,7 @@ const Recomendations = (props) => {
             </div>
           </Fragment>
         )}
-        {isTablet && (
+        {(isTablet || isMobile) && (
           <Swiper
             {...{
               slidesPerView: "1",

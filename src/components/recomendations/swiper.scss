@@ -14,3 +14,19 @@
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+  .recomendations {
+    // width: 100%;
+    overflow: hidden;
+    .swiper-container {
+      // width: 100vw;
+      padding: 0 24px;
+      .swiper-wrapper {
+        // width: 900px;
+        .swiper-slide {
+        }
+      }
+    }
+  }
+}

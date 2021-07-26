@@ -1,50 +1,116 @@
 @import "./../../variables.scss";
 
-.cartSuccessPopup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  height: 530px;
-  width: 530px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #ffffff;
-}
-
-._content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-._closeIcon {
-  background: none;
-  position: absolute;
-  top: 12px;
-  right: 12px;
-}
-
 ._title {
   @extend %h3;
-  color: #000000;
-  text-align: center;
 }
 
-._desciption {
-  margin: 14px 0 53px 0;
-  max-width: 365px;
+@media screen and (min-width: 1024px) {
+  .cartSuccessPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 29px;
-  text-align: center;
+    height: 530px;
+    width: 530px;
 
-  color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+  }
+
+  ._content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ._closeIcon {
+    background: none;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+
+  ._title {
+    color: #000000;
+    text-align: center;
+  }
+
+  ._desciption {
+    margin: 14px 0 53px 0;
+    max-width: 365px;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+
+    color: #000000;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cartSuccessPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 336px;
+    width: 336px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+  }
+
+  ._content {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    svg {
+      width: 79px;
+      height: 79px;
+    }
+  }
+
+  ._closeIcon {
+    background: none;
+    position: absolute;
+    top: 13px;
+    right: 12px;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  ._title {
+    color: #000000;
+    text-align: center;
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  ._desciption {
+    margin: 14px 0 53px 0;
+    max-width: 365px;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+
+    color: #000000;
+  }
 }

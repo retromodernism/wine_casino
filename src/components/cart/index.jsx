@@ -130,7 +130,7 @@ const Cart = ({
       <div className={s._content}>
         <div className={s._title}>Корзина</div>
         <div className={s._items}>
-          {isTablet && (
+          {(isTablet || isMobile) && (
             <button className={s._clearCart} onClick={resetCart}></button>
           )}
           {cartPositionsCategoriesArray.map(
@@ -172,13 +172,19 @@ const Cart = ({
                                 id
                               )}
                             >
-                              <Minus className={s._itemCountIcon} />
+                              <Minus
+                                className={cx(
+                                  s._itemCountIcon,
+                                  s._itemCountIcon_minus
+                                )}
+                              />
                             </button>
                             <InputMask
                               mask="999"
                               maskChar=""
                               className={s._itemCount}
                               value={count.value}
+                              type="text"
                               onChange={(e) => {
                                 changePositionCount(+e.target.value, id);
                                 // console.log(e.target.value)
@@ -193,7 +199,12 @@ const Cart = ({
                                 id
                               )}
                             >
-                              <Plus className={s._itemCountIcon} />
+                              <Plus
+                                className={cx(
+                                  s._itemCountIcon,
+                                  s._itemCountIcon_plus
+                                )}
+                              />
                             </button>
                           </div>
                         </div>

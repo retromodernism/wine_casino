@@ -22,6 +22,7 @@ const CartPage = ({ cartPopupIsOpen, ...props }) => {
       <main className={s.main}>
         {isDesktop && <Breadcrumbs />}
         <Cart />
+        {isMobile && <CartOrder />}
         <Recomendations />
         {isTablet && <CartOrder />}
       </main>
