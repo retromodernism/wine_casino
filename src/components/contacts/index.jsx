@@ -100,7 +100,7 @@ const Contacts = (props) => {
           )}
         </div>
 
-        {isTablet && (
+        {(isTablet || isMobile) && (
           <div className={s._buttons}>
             <div className={s._item}>
               <a
@@ -112,9 +112,9 @@ const Contacts = (props) => {
                 <div
                   className={s._itemButtonIcon}
                   style={{
-                    background: `url(${yandexIcon}) 100% 100% no-repeat`,
-                    width: "15px",
-                    height: "25px",
+                    background: `url(${yandexIcon}) 100% 100% / contain no-repeat`,
+                    width: isMobile ? "9px" : "15px",
+                    height: isMobile ? "15px" : "25px",
                   }}
                 ></div>
                 <span className={s.itemButtonText}>Открыть в Я.Картах</span>
@@ -131,9 +131,9 @@ const Contacts = (props) => {
                 <div
                   className={s._itemButtonIcon}
                   style={{
-                    background: `url(${googleIcon}) 100% 100% no-repeat`,
-                    width: "21px",
-                    height: "25px",
+                    background: `url(${googleIcon}) 100% 100% / contain no-repeat`,
+                    width: isMobile ? "13px" : "21px",
+                    height: isMobile ? "15px" : "25px",
                   }}
                 ></div>
                 <span className={s.itemButtonText}>Открыть в Гугл-Картах</span>

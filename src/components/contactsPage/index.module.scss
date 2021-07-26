@@ -17,3 +17,13 @@
     // background: wheat;
   }
 }
+
+
+@media screen and (max-width: 767px) {
+  .main {
+    padding-top: 32px;
+    width: 100%;
+    // min-height: 100vh;
+    // background: wheat;
+  }
+}
