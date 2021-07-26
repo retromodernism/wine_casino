@@ -10,7 +10,7 @@
   @extend %h6;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .cart {
     margin-top: 40px;
     display: flex;
@@ -157,7 +157,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1299px) {
   .cart {
     margin-top: 22px;
     display: flex;

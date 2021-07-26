@@ -7,7 +7,7 @@
   @extend %h7;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .recomendations {
     margin-top: 62px;
     display: flex;
@@ -123,7 +123,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1299px) {
   .recomendations {
     margin-top: 94px;
     display: flex;
