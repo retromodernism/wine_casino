@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 import { Fragment } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
-import { useRef } from "react";
+
 import InputMask from "react-input-mask";
 
 const Variant = ({
@@ -37,8 +37,6 @@ const Variant = ({
   const addToCart = addPosition.bind(null, id);
   const incrementCount = changePositionCount.bind(null, count.value + 1, id);
   const decrementCount = changePositionCount.bind(null, count.value - 1, id);
-
-  const countInput = useRef();
 
   return (
     <div
@@ -84,7 +82,6 @@ const Variant = ({
               className={s._minusIcon}
               onClick={() => {
                 decrementCount();
-                // countInput.value = count.value;
               }}
             >
               {isPopular ? <MinusPopular /> : <Minus />}

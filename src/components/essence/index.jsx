@@ -10,7 +10,7 @@ import image3_tab from "./src/image3_tab.png";
 import image4_tab from "./src/image4_tab.png";
 import { useMediaQuery } from "react-responsive";
 
-const Essence = (props) => {
+const Essence = ({ style }) => {
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
     query: "screen and (min-width: 768px) and (max-width: 1299px)",
@@ -38,7 +38,7 @@ const Essence = (props) => {
   }
 
   return (
-    <section className={s.essence}>
+    <section className={s.essence} style={style}>
       <div className={s._bg1}></div>
       <div className={s._bg2}></div>
       <div className={s._content}>
@@ -53,7 +53,10 @@ const Essence = (props) => {
                 backgroundPosition: "center center",
               }}
             >
-              <div className={s._itemImageBefore} style={{ padding: isMobile ? "" : "0 17px" }}>
+              <div
+                className={s._itemImageBefore}
+                style={{ padding: isMobile ? "" : "0 17px" }}
+              >
                 1
               </div>
             </div>

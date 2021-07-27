@@ -11,8 +11,9 @@ import Promotion from "../promotion";
 import Tematic from "../tematic";
 import Variants from "../variants";
 import { useMediaQuery } from "react-responsive";
+import HomeCoulinaryCasino from "../homeCoulinaryCasino";
 
-const MainPage = (props) => {
+const MainPageFoodCasino = (props) => {
   /* Media Queries */
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
@@ -23,6 +24,7 @@ const MainPage = (props) => {
   return (
     <main className={s.main}>
       <Home />
+      <HomeCoulinaryCasino />
       <BackToAll />
       <Essence />
       <Masterclass />
@@ -38,4 +40,4 @@ const MainPage = (props) => {
   );
 };
 
-export default MainPage;
+export default MainPageFoodCasino;
