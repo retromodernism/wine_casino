@@ -10,6 +10,7 @@ import cx from "classnames";
 import { ReactComponent as Feature1 } from "./src/featureIcon_1.svg";
 import { ReactComponent as Feature2 } from "./src/featureIcon_2.svg";
 import { ReactComponent as Feature3 } from "./src/featureIcon_3.svg";
+import { useMediaQuery } from "react-responsive";
 
 const foodCasinos = [
   { href: "/", title: "Мясное" },
@@ -48,8 +49,17 @@ const LinkItem = ({ title, href }) => {
 };
 
 const HomeCoulinaryCasino = (props) => {
+  /* Media Queries */
+  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
+  const isTablet = useMediaQuery({
+    query: "screen and (min-width: 768px) and (max-width: 1299px)",
+  });
+  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+
+  /* State */
+
   const [videoIsOpen, setVideoOpen] = useState(false);
-  const [buttonIsHover, setButtonIsHover] = useState(false);
+  // const [buttonIsHover, setButtonIsHover] = useState(false);
   const [showedFoodCasinos, setShowedFoodCasinos] = useState(5);
   const [showedDrinkCasinos, setShowedDrinkCasinos] = useState(5);
 
@@ -74,6 +84,23 @@ const HomeCoulinaryCasino = (props) => {
             <div className={s._subtitle}>
               * все законно, мы не используем настоящие деньги
             </div>
+            {isTablet && (
+              <div className={s._typingText}>
+                <ReactTypingEffect
+                  typingDelay={0}
+                  speed={100}
+                  eraseSpeed={100}
+                  eraseDelay={3000}
+                  text={[
+                    "для вечеринок",
+                    "на день рождения",
+                    "на свадьбу",
+                    "на корпоратив",
+                    "для частного мероприятия",
+                  ]}
+                />
+              </div>
+            )}
             <div className={s._features}>
               <div className={s._feature}>
                 {/* <div className={s._featureNumber}>4</div> */}
@@ -94,11 +121,13 @@ const HomeCoulinaryCasino = (props) => {
               </div>
             </div>
           </div>
-          <div className={cx(s._column, s._links)}>
+          {isDesktop && <div className={cx(s._column, s._links)}>
             <div className={s._linksColumn}>
               <div className={s._linksTitle}>Съедобное</div>
               {foodCasinos.map((item, index) =>
-                index < showedFoodCasinos ? <LinkItem {...item} key={index} /> : null
+                index < showedFoodCasinos ? (
+                  <LinkItem {...item} key={index} />
+                ) : null
               )}
               {hasShowMoreFoodCasinos && (
                 <button className={s._showMore} onClick={showMoreFoodCasinos} />
@@ -107,7 +136,9 @@ const HomeCoulinaryCasino = (props) => {
             <div className={s._linksColumn}>
               <div className={s._linksTitle}>Drink</div>
               {drinkCasinos.map((item, index) =>
-                index < showedDrinkCasinos ? <LinkItem {...item} key={index} /> : null
+                index < showedDrinkCasinos ? (
+                  <LinkItem {...item} key={index} />
+                ) : null
               )}
               {hasShowMoreDrinkCasinos && (
                 <button
@@ -116,7 +147,7 @@ const HomeCoulinaryCasino = (props) => {
                 />
               )}
             </div>
-          </div>
+          </div>}
         </div>
       </div>
 
