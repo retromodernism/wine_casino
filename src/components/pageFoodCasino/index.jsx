@@ -2,6 +2,7 @@ import s from "./index.module.scss";
 import About from "../about";
 import Additionals from "../additionals";
 import BackToAll from "../backToAll";
+import Croupiers from "../croupiers";
 import Essence from "../essence";
 import Home from "../home";
 import HowItWas from "../howItWas";
@@ -32,7 +33,7 @@ const MainPageFoodCasino = (props) => {
           <Promotion background={false} />
           <Variants />
           <Additionals />
-          {/* Крупье */}
+          <Croupiers />
         </Fragment>
       )}
       {isTablet && (
@@ -45,20 +46,20 @@ const MainPageFoodCasino = (props) => {
           <Masterclass />
           <Variants />
           <Additionals />
-          {/* Крупье */}
+          <Croupiers />
         </Fragment>
       )}
       {isMobile && (
         <Fragment>
           <HomeCoulinaryCasino />
           <OtherCasinos />
-          <Essence  />
+          <Essence />
           <Masterclass />
           <Promotion />
           <Variants />
           <Additionals />
           <Tematic />
-          {/* Крупье */}
+          <Croupiers />
         </Fragment>
       )}
     </main>
