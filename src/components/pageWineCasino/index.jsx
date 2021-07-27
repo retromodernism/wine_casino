@@ -4,6 +4,7 @@ import Additionals from "../additionals";
 import BackToAll from "../backToAll";
 import Essence from "../essence";
 import Home from "../home";
+import HomeCoulinaryCasino from "../home2";
 import HowItWas from "../howItWas";
 import Masterclass from "../masterclass";
 import OtherCasinos from "../otherCasinos";
@@ -11,7 +12,6 @@ import Promotion from "../promotion";
 import Tematic from "../tematic";
 import Variants from "../variants";
 import { useMediaQuery } from "react-responsive";
-import HomeCoulinaryCasino from "../homeCoulinaryCasino";
 
 const MainPageFoodCasino = (props) => {
   /* Media Queries */

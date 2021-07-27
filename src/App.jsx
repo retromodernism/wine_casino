@@ -3,6 +3,7 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import WineCasino from "./components/pageWineCasino";
 import MainPageFoodCasino from "./components/pageFoodCasino";
+import ClassicCasino from "./components/pageClassicCasino";
 import CartPage from "./components/pageCart";
 import ContactsPage from "./components/pageContacts";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
@@ -21,7 +22,8 @@ const App = ({ burgerIsOpen, getPositions, ...props }) => {
         <Header />
         <Switch>
           <Route exact path="/" component={MainPageFoodCasino} />
-          <Route path="/wine-casino" component={WineCasino} />
+          <Route path="/vinnoe-kazino" component={WineCasino} />
+          <Route path="/klassicheskoe-kazino" component={ClassicCasino} />
           <Route path="/cart" component={CartPage} />
           <Route path="/contacts" component={ContactsPage} />
           <Redirect to="/" />
