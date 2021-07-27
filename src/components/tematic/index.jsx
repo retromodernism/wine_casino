@@ -33,27 +33,42 @@ const Tematic = (props) => {
           </div>
           <div
             className={s._image}
-            style={{ background: `url(${gatsby1}) 100% 100% no-repeat` }}
+            style={{ background: `url(${gatsby1}) 100% 100% /cover no-repeat` }}
           ></div>
           <div
             className={s._image}
-            style={{ background: `url(${gatsby2}) 100% 100% no-repeat` }}
+            style={{
+              background: `url(${gatsby2}) 100% 100% /cover no-repeat`,
+              backgroundPosition: "center center",
+            }}
           ></div>
           <div
             className={s._image}
-            style={{ background: `url(${gatsby3}) 100% 100% no-repeat` }}
+            style={{
+              background: `url(${gatsby3}) 100% 100% /cover no-repeat`,
+              backgroundPosition: "center center",
+            }}
           ></div>
           <div
             className={s._image}
-            style={{ background: `url(${lasVegas1}) 100% 100% no-repeat` }}
+            style={{
+              background: `url(${lasVegas1}) 100% 100% /cover no-repeat`,
+              backgroundPosition: "center center",
+            }}
           ></div>
           <div
             className={s._image}
-            style={{ background: `url(${lasVegas2}) 100% 100% no-repeat` }}
+            style={{
+              background: `url(${lasVegas2}) 100% 100% /cover no-repeat`,
+              backgroundPosition: "center center",
+            }}
           ></div>
           <div
             className={s._image}
-            style={{ background: `url(${lasVegas3}) 100% 100% no-repeat` }}
+            style={{
+              background: `url(${lasVegas3}) 100% 100% /cover no-repeat`,
+              backgroundPosition: "center center",
+            }}
           ></div>
           <div className={cx(s._itemInfo, s._odd)}>
             <div className={s._itemTitle}>Лас-Вегас</div>
@@ -81,15 +96,24 @@ const Tematic = (props) => {
           </div>
           <div
             className={s._image}
-            style={{ background: `url(${mafia1}) 100% 100% no-repeat` }}
+            style={{
+              background: `url(${mafia1}) 100% 100% /cover no-repeat`,
+              backgroundPosition: "center center",
+            }}
           ></div>
           <div
             className={s._image}
-            style={{ background: `url(${mafia2}) 100% 100% no-repeat` }}
+            style={{
+              background: `url(${mafia2}) 100% 100% /cover no-repeat`,
+              backgroundPosition: "center center",
+            }}
           ></div>
           <div
             className={s._image}
-            style={{ background: `url(${mafia3}) 100% 100% no-repeat` }}
+            style={{
+              background: `url(${mafia3}) 100% 100% /cover no-repeat`,
+              backgroundPosition: "center center",
+            }}
           ></div>
         </div>
       </div>

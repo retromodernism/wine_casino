@@ -12,6 +12,7 @@ import Tematic from "../tematic";
 import Variants from "../variants";
 import { useMediaQuery } from "react-responsive";
 import HomeCoulinaryCasino from "../homeCoulinaryCasino";
+import { Fragment } from "react";
 
 const MainPageFoodCasino = (props) => {
   /* Media Queries */
@@ -23,19 +24,43 @@ const MainPageFoodCasino = (props) => {
 
   return (
     <main className={s.main}>
-      {/* <Home /> */}
-      <HomeCoulinaryCasino />
-      {/* <BackToAll /> */}
-      <Essence style={{marginTop: "113px"}} />
-      <Masterclass />
-      {!isMobile && <Promotion />}
-      <Variants />
-      {isMobile && <Promotion />}
-      <Additionals />
-      {/* <OtherCasinos /> */}
-      {/* <HowItWas /> */}
-      {/* {isDesktop && <Tematic />} */}
-      <About />
+      {isDesktop && (
+        <Fragment>
+          <HomeCoulinaryCasino />
+          <Essence />
+          <Masterclass />
+          <Promotion background={false} />
+          <Variants />
+          <Additionals />
+          {/* Крупье */}
+        </Fragment>
+      )}
+      {isTablet && (
+        <Fragment>
+          <HomeCoulinaryCasino />
+          <OtherCasinos />
+          {/* Почему мы */}
+          <Tematic />
+          <Promotion />
+          <Masterclass />
+          <Variants />
+          <Additionals />
+          {/* Крупье */}
+        </Fragment>
+      )}
+      {isMobile && (
+        <Fragment>
+          <HomeCoulinaryCasino />
+          <OtherCasinos />
+          <Essence  />
+          <Masterclass />
+          <Variants />
+          <Promotion />
+          <Additionals />
+          <Tematic />
+          {/* Крупье */}
+        </Fragment>
+      )}
     </main>
   );
 };
