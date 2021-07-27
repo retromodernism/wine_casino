@@ -153,3 +153,82 @@
     align-self: center;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .tematicItem {
+    margin-top: 14px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    &:not(:last-child) {
+      margin-bottom: 63px;
+    }
+  }
+
+  ._itemInfo {
+    // display: grid;
+    // grid-template-columns: 1fr;
+    // grid-template-rows: 43px 1fr 24px;
+    // row-gap: 18px;
+    // grid-column: span 2;
+  }
+
+  ._even {
+  }
+
+  ._odd {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  ._itemTitle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #000000;
+  }
+
+  ._itemDescription {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #000000;
+  }
+
+  ._itemGetMore {
+  }
+
+  ._itemGetMoreText {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #000000;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 5px;
+      height: 9px;
+      background: url(./src/arrow.svg) 100% 100% / contain no-repeat;
+    }
+  }
+
+  ._image {
+    width: 100%;
+    height: 241px;
+    align-self: center;
+  }
+}

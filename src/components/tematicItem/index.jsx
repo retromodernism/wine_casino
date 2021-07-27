@@ -3,9 +3,9 @@ import cx from "classnames";
 import { useMediaQuery } from "react-responsive";
 
 const TematicItem = ({
-  images,
-  title,
-  description,
+  images = [],
+  title = "",
+  description = "",
   href = "/",
   odd = false,
 }) => {
@@ -16,13 +16,17 @@ const TematicItem = ({
   });
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
+  /* Local */
+
   const even = !odd;
 
   return (
     <div className={s.tematicItem}>
       {even && (
         <div className={cx(s._itemInfo, s._even)}>
-          <div className={s._itemTitle}>{title}</div>
+          {(isDesktop || isTablet) && (
+            <div className={s._itemTitle}>{title}</div>
+          )}
           <div className={s._itemDescription}>{description}</div>
           <a href={href} className={s._itemGetMore}>
             <span className={s._itemGetMoreText}>Узнать подробнее</span>
@@ -30,16 +34,27 @@ const TematicItem = ({
         </div>
       )}
 
-      {images.map((image, index) => (
+      {(isDesktop || isTablet) &&
+        images.map((image, index) => (
+          <div
+            className={s._image}
+            key={index}
+            style={{
+              background: `url(${image}) 100% 100% /cover no-repeat`,
+              backgroundPosition: "center center",
+            }}
+          ></div>
+        ))}
+
+      {isMobile && images.length > 0 && (
         <div
           className={s._image}
-          key={index}
           style={{
-            background: `url(${image}) 100% 100% /cover no-repeat`,
+            background: `url(${images[0]}) 100% 100% /cover no-repeat`,
             backgroundPosition: "center center",
           }}
         ></div>
-      ))}
+      )}
 
       {odd && (
         <div className={cx(s._itemInfo, s._odd)}>

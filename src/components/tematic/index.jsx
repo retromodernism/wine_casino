@@ -1,5 +1,6 @@
 import s from "./index.module.scss";
 import cx from "classnames";
+import hash from "object-hash";
 import gatsby1 from "./src/gatsby1.png";
 import gatsby2 from "./src/gatsby2.png";
 import gatsby3 from "./src/gatsby3.png";
@@ -10,8 +11,60 @@ import mafia1 from "./src/mafia1.png";
 import mafia2 from "./src/mafia2.png";
 import mafia3 from "./src/mafia3.png";
 import TematicItem from "../tematicItem";
+import { useMediaQuery } from "react-responsive";
+import { Fragment, useState } from "react";
+
+const tematicItems = [
+  {
+    title: "Гэтсби",
+    description:
+      "Организуем для вас вечеринку в стиле Гэтсби. Гламур и декаданс 20-х годов прошлого века сделали их популярной темой для тематических праздников. Помимо оформления здесь не малую роль играют благородные напитки, что отлично сочетается с нашими услугами.",
+    images: [gatsby1, gatsby2, gatsby3],
+  },
+  {
+    title: "Лас-Вегас",
+    description:
+      "Город расположенный в пустыне стал символом кутежа, богатства и веселья. Установим игровые столы фан-казино различной направленности на событии для создания атмосферы в стиле Лас-Вегаса.",
+    images: [lasVegas1, lasVegas2, lasVegas3],
+  },
+  {
+    title: "Мафия",
+    description:
+      "Эпоха шарма подпольных баров и романтизированной мафии из зарубежных фильмов, всегда притягивала внимание людей. Легко воплотим желание окунуться в те времена с помощью аниматоров и соответствующего реквизита.",
+    images: [mafia1, mafia2, mafia3],
+  },
+];
 
 const Tematic = (props) => {
+  /* Media Queries */
+
+  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
+  const isTablet = useMediaQuery({
+    query: "screen and (min-width: 768px) and (max-width: 1299px)",
+  });
+  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+
+  /* State */
+
+  const initialItemsState = tematicItems.map((item, i) => ({
+    ...item,
+    isActive: i === 0,
+    id: hash(item),
+  }));
+
+  const [items, setItems] = useState(initialItemsState);
+
+  const toggleItem = (itemId) => {
+    const newState = items.map((item) => ({
+      ...item,
+      isActive: item.id === itemId,
+    }));
+
+    setItems(newState);
+  };
+
+  const [activeItem] = items.filter(({ isActive }) => isActive);
+
   return (
     <section className={s.tematic}>
       <div className={s._bg1}></div>
@@ -19,123 +72,27 @@ const Tematic = (props) => {
       <div className={s._content}>
         <div className={s._title}>Тематическая вечеринка с фан-казино</div>
         <div className={s._items}>
-
-          <TematicItem
-            images={[gatsby1, gatsby2, gatsby3]}
-            title="Гэтсби"
-            description="Организуем для вас вечеринку в стиле Гэтсби. Гламур и декаданс 20-х годов прошлого века сделали их популярной темой для тематических праздников. Помимо оформления здесь не малую роль играют благородные напитки, что отлично сочетается с нашими услугами."
-          />
-
-          <TematicItem
-            images={[lasVegas1, lasVegas2, lasVegas3]}
-            title="Лас-Вегас"
-            description="Город расположенный в пустыне стал символом кутежа, богатства и веселья. Установим игровые столы фан-казино различной направленности на событии для создания атмосферы в стиле Лас-Вегаса."
-            odd
-          />
-
-          <TematicItem
-            images={[mafia1, mafia2, mafia3]}
-            title="Гэтсби"
-            description="Эпоха шарма подпольных баров и романтизированной мафии из зарубежных фильмов, всегда притягивала внимание людей. Легко воплотим желание окунуться в те времена с помощью аниматоров и соответствующего реквизита."
-          />
-          
-          {/* <div className={cx(s._itemInfo, s._even)}>
-            <div className={s._itemTitle}>Гэтсби</div>
-            <div className={s._itemDescription}>
-              Организуем для вас вечеринку в стиле Гэтсби. Гламур и декаданс
-              20-х годов прошлого века сделали их популярной темой для
-              тематических праздников. Помимо оформления здесь не малую роль
-              играют благородные напитки, что отлично сочетается с нашими
-              услугами.
+          {isMobile && (
+            <div className={s._paginationButtons}>
+              {items.map(({ title, id, isActive }) => (
+                <button
+                  className={cx(s._paginationButton, {
+                    [s._paginationButton_active]: isActive,
+                  })}
+                  onClick={toggleItem.bind(null, id)}
+                >
+                  {title}
+                </button>
+              ))}
             </div>
-            <a href="/" className={s._itemGetMore}>
-              Узнать подробнее
-            </a>
-          </div>
-          <div
-            className={s._image}
-            style={{ background: `url(${gatsby1}) 100% 100% /cover no-repeat` }}
-          ></div>
-          <div
-            className={s._image}
-            style={{
-              background: `url(${gatsby2}) 100% 100% /cover no-repeat`,
-              backgroundPosition: "center center",
-            }}
-          ></div>
-          <div
-            className={s._image}
-            style={{
-              background: `url(${gatsby3}) 100% 100% /cover no-repeat`,
-              backgroundPosition: "center center",
-            }}
-          ></div>
-          <div
-            className={s._image}
-            style={{
-              background: `url(${lasVegas1}) 100% 100% /cover no-repeat`,
-              backgroundPosition: "center center",
-            }}
-          ></div>
-          <div
-            className={s._image}
-            style={{
-              background: `url(${lasVegas2}) 100% 100% /cover no-repeat`,
-              backgroundPosition: "center center",
-            }}
-          ></div>
-          <div
-            className={s._image}
-            style={{
-              background: `url(${lasVegas3}) 100% 100% /cover no-repeat`,
-              backgroundPosition: "center center",
-            }}
-          ></div>
-          <div className={cx(s._itemInfo, s._odd)}>
-            <div className={s._itemTitle}>Лас-Вегас</div>
-            <div className={s._itemDescription}>
-              Город расположенный в пустыне стал символом кутежа, богатства и
-              веселья. Установим игровые столы фан-казино различной
-              направленности на событии для создания атмосферы в стиле
-              Лас-Вегаса.
-            </div>
-            <a href="/" className={s._itemGetMore}>
-              Узнать подробнее
-            </a>
-          </div>
-          <div className={cx(s._itemInfo, s._even)}>
-            <div className={s._itemTitle}>Мафия</div>
-            <div className={s._itemDescription}>
-              Эпоха шарма подпольных баров и романтизированной мафии из
-              зарубежных фильмов, всегда притягивала внимание людей. Легко
-              воплотим желание окунуться в те времена с помощью аниматоров и
-              соответствующего реквизита.
-            </div>
-            <a href="/" className={s._itemGetMore}>
-              Узнать подробнее
-            </a>
-          </div>
-          <div
-            className={s._image}
-            style={{
-              background: `url(${mafia1}) 100% 100% /cover no-repeat`,
-              backgroundPosition: "center center",
-            }}
-          ></div>
-          <div
-            className={s._image}
-            style={{
-              background: `url(${mafia2}) 100% 100% /cover no-repeat`,
-              backgroundPosition: "center center",
-            }}
-          ></div>
-          <div
-            className={s._image}
-            style={{
-              background: `url(${mafia3}) 100% 100% /cover no-repeat`,
-              backgroundPosition: "center center",
-            }}
-          ></div> */}
+          )}
+
+          {(isDesktop || isTablet) &&
+            items.map((item, i) => (
+              <TematicItem {...item} key={i} odd={i % 2 !== 0} />
+            ))}
+
+          {isMobile && <TematicItem {...activeItem} />}
         </div>
       </div>
     </section>
