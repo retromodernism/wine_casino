@@ -9,6 +9,7 @@ import lasVegas3 from "./src/lasVegas3.png";
 import mafia1 from "./src/mafia1.png";
 import mafia2 from "./src/mafia2.png";
 import mafia3 from "./src/mafia3.png";
+import TematicItem from "../tematicItem";
 
 const Tematic = (props) => {
   return (
@@ -18,7 +19,27 @@ const Tematic = (props) => {
       <div className={s._content}>
         <div className={s._title}>Тематическая вечеринка с фан-казино</div>
         <div className={s._items}>
-          <div className={cx(s._itemInfo, s._even)}>
+
+          <TematicItem
+            images={[gatsby1, gatsby2, gatsby3]}
+            title="Гэтсби"
+            description="Организуем для вас вечеринку в стиле Гэтсби. Гламур и декаданс 20-х годов прошлого века сделали их популярной темой для тематических праздников. Помимо оформления здесь не малую роль играют благородные напитки, что отлично сочетается с нашими услугами."
+          />
+
+          <TematicItem
+            images={[lasVegas1, lasVegas2, lasVegas3]}
+            title="Лас-Вегас"
+            description="Город расположенный в пустыне стал символом кутежа, богатства и веселья. Установим игровые столы фан-казино различной направленности на событии для создания атмосферы в стиле Лас-Вегаса."
+            odd
+          />
+
+          <TematicItem
+            images={[mafia1, mafia2, mafia3]}
+            title="Гэтсби"
+            description="Эпоха шарма подпольных баров и романтизированной мафии из зарубежных фильмов, всегда притягивала внимание людей. Легко воплотим желание окунуться в те времена с помощью аниматоров и соответствующего реквизита."
+          />
+          
+          {/* <div className={cx(s._itemInfo, s._even)}>
             <div className={s._itemTitle}>Гэтсби</div>
             <div className={s._itemDescription}>
               Организуем для вас вечеринку в стиле Гэтсби. Гламур и декаданс
@@ -114,7 +135,7 @@ const Tematic = (props) => {
               background: `url(${mafia3}) 100% 100% /cover no-repeat`,
               backgroundPosition: "center center",
             }}
-          ></div>
+          ></div> */}
         </div>
       </div>
     </section>

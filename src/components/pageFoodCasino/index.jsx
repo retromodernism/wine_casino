@@ -54,8 +54,8 @@ const MainPageFoodCasino = (props) => {
           <OtherCasinos />
           <Essence  />
           <Masterclass />
-          <Variants />
           <Promotion />
+          <Variants />
           <Additionals />
           <Tematic />
           {/* Крупье */}
