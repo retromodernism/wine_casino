@@ -84,7 +84,7 @@ const Home = ({
           <div className={s._videoButtonIcon}></div>
         </button>
 
-        {isTablet && (
+        {(isTablet || isMobile) && (
           <Link to="/klassicheskoe-kazino" className={s._backToAll}>
             <span>Вернуться ко всем видам</span>
           </Link>
