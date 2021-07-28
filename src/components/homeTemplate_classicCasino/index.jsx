@@ -13,6 +13,8 @@ import {
 } from "../../redux/modules/headerColor";
 import { connect } from "react-redux";
 import { useLayoutEffect } from "react";
+import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
 
 const Home = ({
   bg = "",
@@ -24,6 +26,16 @@ const Home = ({
   useLayoutEffect(() => {
     makeHeaderLight();
   });
+
+  /* Media Queries */
+
+  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
+  const isTablet = useMediaQuery({
+    query: "screen and (min-width: 768px) and (max-width: 1299px)",
+  });
+  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+
+  /* State */
 
   const [videoIsOpen, setVideoOpen] = useState(false);
   const [buttonIsHover, setButtonIsHover] = useState(false);
@@ -40,7 +52,26 @@ const Home = ({
         <div className={s._subtitle}>
           * все законно, мы не используем настоящие деньги
         </div>
+        {isTablet && (
+          <div className={s._typingText}>
+            <ReactTypingEffect
+              typingDelay={0}
+              speed={100}
+              eraseSpeed={100}
+              eraseDelay={3000}
+              text={[
+                "для вечеринок",
+                "на день рождения",
+                "на свадьбу",
+                "на корпоратив",
+                "для частного мероприятия",
+              ]}
+            />
+          </div>
+        )}
+
         <div className={s._description}>{description}</div>
+
         <button
           className={classname(s._videoButton, {
             [s._videoButton_hover]: buttonIsHover,
@@ -52,6 +83,13 @@ const Home = ({
           <p>Смотреть видео</p>
           <div className={s._videoButtonIcon}></div>
         </button>
+
+        {isTablet && (
+          <Link to="/klassicheskoe-kazino" className={s._backToAll}>
+            <span>Вернуться ко всем видам</span>
+          </Link>
+        )}
+
         {/* <div className={s._features}>
           <div className={s._feature}>
             <div className={s._featureNumber}>4</div>

@@ -142,69 +142,16 @@
     position: relative;
     display: flex;
     justify-content: center;
-  }
-
-  ._bg0 {
-    width: 267px;
-    height: 631px;
-    position: absolute;
-    right: 0;
-    top: 58px;
-    background: $green;
-  }
-
-  ._bg1 {
-    width: 34.08px;
-    height: 33.42px;
-    background: url(./src/bg1_tab.svg);
-    position: absolute;
-    top: 0;
-    left: 1.56%;
-  }
-
-  ._bg2 {
-    width: 55.71px;
-    height: 54.62px;
-    background: url(./src/bg2_tab.svg);
-    position: absolute;
-    top: 29.24px;
-    left: 50.65%;
-  }
-
-  ._bg3 {
-    width: 39.48px;
-    height: 51.93px;
-    background: url(./src/bg3_tab.svg);
-    position: absolute;
-    top: 144px;
-    right: 21.74%;
-  }
-
-  ._bg4 {
-    width: 39.5px;
-    height: 49.38px;
-    background: url(./src/bg4_tab.svg);
-    position: absolute;
-    top: 506px;
-    right: 12.63%;
-  }
-
-  ._bg5 {
-    width: 46.52px;
-    height: 44.12px;
-    background: url(./src/bg5_tab.svg);
-    position: absolute;
-    top: 359px;
-    left: 2.86%;
+    background-color: $black;
+    overflow: hidden;
   }
 
   ._bg {
-    width: 298px;
-    height: 672px;
+    width: 521px;
+    height: 450px;
     position: absolute;
-    right: 4.28%;
-    top: 0;
-    background: url(./src/bg_tab.png) 100% 100% no-repeat;
+    right: -106.5px;
+    top: 94px;
   }
 
   ._content {
@@ -213,40 +160,52 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    padding: 0 63px;
+    padding: 0 63px 100px 63px;
   }
 
   ._title {
-    margin-top: 65px;
+    margin-top: 135px;
     font-size: 66px;
-    color: $darkRed;
+    color: #ffffff;
   }
 
   ._subtitle {
-    margin-top: 100px;
+    margin-top: 170px;
     max-width: 334px;
     font-size: 22px;
     line-height: 28px;
+
+    color: #ffffff;
 
     opacity: 0.5;
   }
 
   ._typingText {
-    max-width: 350px;
+    // max-width: 350px;
     height: 114px;
-    margin-top: 46px;
+    margin-top: 80px;
     font-size: 44px;
     line-height: 56px;
 
-    color: #323232;
+    color: #ffffff;
+  }
+
+  ._description {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #ffffff;
   }
 
   ._videoButton {
-    margin-top: 60px;
+    margin-top: 55px;
     width: 302px;
     height: 75px;
-    background: $darkRed;
-    color: white;
+    background: #ffffff;
+    color: $black;
     padding: 0 20px 0 33.45px;
     display: flex;
     align-items: center;
@@ -271,43 +230,71 @@
   ._videoButtonIcon {
     width: 23px;
     height: 26px;
-    background: url(./src/video.svg);
+    // background: url(./src/video.svg);
+    background: $black;
+    mask-image: url(./src/video.svg);
   }
 
-  ._features {
-    display: flex;
-    margin-top: 90px;
-  }
+  ._backToAll {
+    margin-top: 55px;
+    display: block;
+    position: relative;
+    padding-left: 18px;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 6px;
+      height: 12px;
+      background: url(./src/arrow.svg) 100% 100% / contain no-repeat;
+    }
+    span {
+      font-family: Lato;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 22px;
 
-  ._feature {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    &:not(:last-child) {
-      margin-right: 50px;
+      color: #ffffff;
     }
   }
 
-  ._featureNumber {
-    font-family: Lato;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 70px;
-    line-height: 84px;
+  // ._features {
+  //   display: flex;
+  //   margin-top: 90px;
+  // }
 
-    color: $darkRed;
-  }
+  // ._feature {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   justify-content: space-between;
+  //   &:not(:last-child) {
+  //     margin-right: 50px;
+  //   }
+  // }
 
-  ._featureTitle {
-    font-family: Lato;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
+  // ._featureNumber {
+  //   font-family: Lato;
+  //   font-style: normal;
+  //   font-weight: 500;
+  //   font-size: 70px;
+  //   line-height: 84px;
 
-    color: $black;
-  }
+  //   color: $darkRed;
+  // }
+
+  // ._featureTitle {
+  //   font-family: Lato;
+  //   font-style: normal;
+  //   font-weight: 500;
+  //   font-size: 18px;
+  //   line-height: 22px;
+
+  //   color: $black;
+  // }
 }
 
 @media screen and (max-width: 767px) {

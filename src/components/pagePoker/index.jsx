@@ -46,7 +46,7 @@ const MainPageFoodCasino = (props) => {
       )}
       {isTablet && (
         <Fragment>
-          <HomeClassicCaisno />
+          <HomeClassicCaisno {...data.home} />
           <OtherCasinos />
           {/* Почему мы */}
           <Tematic />
@@ -59,7 +59,7 @@ const MainPageFoodCasino = (props) => {
       )}
       {isMobile && (
         <Fragment>
-          <HomeClassicCaisno />
+          <HomeClassicCaisno {...data.home} />
           <OtherCasinos />
           <Essence />
           <Masterclass />
