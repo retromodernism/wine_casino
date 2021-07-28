@@ -14,7 +14,13 @@ import {
 import { connect } from "react-redux";
 import { useLayoutEffect } from "react";
 
-const Home = ({ bg, makeHeaderLight, ...props }) => {
+const Home = ({
+  bg = "",
+  title = "",
+  description = "",
+  makeHeaderLight,
+  ...props
+}) => {
   useLayoutEffect(() => {
     makeHeaderLight();
   });
@@ -24,42 +30,17 @@ const Home = ({ bg, makeHeaderLight, ...props }) => {
 
   return (
     <section className={s.home}>
-      {/* <div className={s._bg0}></div> */}
       <div
         className={s._bg}
         style={{ background: `url(${bg}) 100% 100% / contain no-repeat` }}
       ></div>
-      {/* <div className={s._bg1}></div>
-      <div className={s._bg2}></div>
-      <div className={s._bg3}></div>
-      <div className={s._bg4}></div>
-      <div className={s._bg5}></div>
-      <div className={s._bg6}></div> */}
 
       <div className={s._content}>
-        <div className={s._title}>
-          Винное
-          <br />
-          фан-казино
-        </div>
+        <div className={s._title}>{title}</div>
         <div className={s._subtitle}>
           * все законно, мы не используем настоящие деньги
         </div>
-        <div className={s._typingText}>
-          <ReactTypingEffect
-            typingDelay={0}
-            speed={100}
-            eraseSpeed={100}
-            eraseDelay={3000}
-            text={[
-              "для вечеринок",
-              "на день рождения",
-              "на свадьбу",
-              "на корпоратив",
-              "для частного мероприятия",
-            ]}
-          />
-        </div>
+        <div className={s._description}>{description}</div>
         <button
           className={classname(s._videoButton, {
             [s._videoButton_hover]: buttonIsHover,
@@ -71,7 +52,7 @@ const Home = ({ bg, makeHeaderLight, ...props }) => {
           <p>Смотреть видео</p>
           <div className={s._videoButtonIcon}></div>
         </button>
-        <div className={s._features}>
+        {/* <div className={s._features}>
           <div className={s._feature}>
             <div className={s._featureNumber}>4</div>
             <p className={s._featureTitle}>сорта вина</p>
@@ -86,7 +67,7 @@ const Home = ({ bg, makeHeaderLight, ...props }) => {
             <Format style={{ width: "46px", height: "35px" }} />
             <p className={s._featureTitle}>новый формат</p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <ModalVideo

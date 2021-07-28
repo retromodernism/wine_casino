@@ -27,69 +27,7 @@
     display: flex;
     justify-content: center;
     background-color: $black;
-  }
-
-  ._bg0 {
-    width: 696px;
-    height: 553px;
-    position: absolute;
-    right: 0;
-    top: 185px;
-    background: $green;
-  }
-
-  ._bg1 {
-    width: 96.65px;
-    height: 94.78px;
-    background: url(./src/bg1.svg);
-    position: absolute;
-    top: 10.37%;
-    left: 5.47%;
-  }
-
-  ._bg2 {
-    width: 88.11px;
-    height: 83.56px;
-    background: url(./src/bg2.svg);
-    position: absolute;
-    top: 55.9%;
-    left: 12.97%;
-  }
-
-  ._bg3 {
-    width: 105px;
-    height: 99.12px;
-    background: url(./src/bg3.svg);
-    position: absolute;
-    top: 69.25%;
-    left: 44.84%;
-  }
-
-  ._bg4 {
-    width: 74.74px;
-    height: 98.31px;
-    background: url(./src/bg4.svg);
-    position: absolute;
-    top: 39.69%;
-    left: 62.24%;
-  }
-
-  ._bg5 {
-    width: 96.65px;
-    height: 94.78px;
-    background: url(./src/bg5.svg);
-    position: absolute;
-    top: 13.35%;
-    right: 8.28%;
-  }
-
-  ._bg6 {
-    width: 70.69px;
-    height: 93.08px;
-    background: url(./src/bg6.svg);
-    position: absolute;
-    top: 87.37%;
-    left: 72.6%;
+    min-height: 100vh;
   }
 
   ._bg {
@@ -98,7 +36,7 @@
     position: absolute;
     right: 10.42%;
     top: 225px;
-    background: url(./src/bg.png) 100% 100% no-repeat;
+    // background: url(./src/bg.png) 100% 100% no-repeat;
   }
 
   ._content {
@@ -113,24 +51,31 @@
   ._title {
     margin-top: 221px;
 
-    color: #a2000c;
+    color: #ffffff;
   }
 
   ._subtitle {
-    margin-top: 32px;
+    margin-top: 98px;
+    color: #ffffff;
     opacity: 0.5;
   }
 
-  ._typingText {
-    margin-top: 27px;
+  // ._typingText {
+  //   margin-top: 27px;
+  // }
+
+  ._description {
+    margin-top: 35px;
+    color: #ffffff;
+    max-width: 545px;
   }
 
   ._videoButton {
-    margin-top: 72px;
+    margin: 72px 0;
     width: 278px;
     height: 69px;
-    background: $darkRed;
-    color: white;
+    background: #ffffff;
+    color: $black;
     padding: 0 20px 0 33.45px;
     display: flex;
     align-items: center;
@@ -139,17 +84,19 @@
 
   ._videoButton_hover {
     background: unset;
-    box-shadow: 0 0 0 2px $darkRed;
-    color: $black;
+    box-shadow: 0 0 0 2px #ffffff;
+    color: #ffffff;
     ._videoButtonIcon {
-      background: url(./src/video_hover.svg);
+      background: url(./src/video.svg);
     }
   }
 
   ._videoButtonIcon {
     width: 23px;
     height: 26px;
-    background: url(./src/video.svg);
+    // background: url(./src/video.svg);
+    background: $black;
+    mask-image: url(./src/video_hover.svg);
   }
 
   ._features {

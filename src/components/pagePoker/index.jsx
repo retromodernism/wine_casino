@@ -14,7 +14,12 @@ import homeBg from "./src/homeBg.png";
 import Form from "../form";
 
 const data = {
-  homeBg: homeBg,
+  home: {
+    bg: homeBg,
+    title: "Покер",
+    description:
+      "Вряд ли кто-то не слышал о столь захватывающей карточной игре как покер. Правила ее очень просты, а победитель определяется преимущественно удачей. Выездной набор для покера – это удобно, стильно и полностью легально, так как в нем не задействованы настоящие деньги.",
+  },
 };
 
 const MainPageFoodCasino = (props) => {
@@ -29,7 +34,7 @@ const MainPageFoodCasino = (props) => {
     <main className={s.main}>
       {isDesktop && (
         <Fragment>
-          <HomeClassicCaisno bg={homeBg} />
+          <HomeClassicCaisno {...data.home} />
           <Essence />
           <Masterclass />
           <Promotion background={false} />
