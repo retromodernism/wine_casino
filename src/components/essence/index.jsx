@@ -10,41 +10,90 @@ import image3_tab from "./src/image3_tab.png";
 import image4_tab from "./src/image4_tab.png";
 import { useMediaQuery } from "react-responsive";
 
-const Essence = ({ style }) => {
+const defaultItems = [
+  {
+    title: "Дегустация",
+    image: image1_desk,
+    description:
+      "В начале игры сомелье рассказывает правила, раздаёт фишки и предлагает игрокам продегустировать определенный вид вина. Гости получают пробник, и пытаются и понять вкусовые и иные характеристики.",
+  },
+  {
+    title: "Ставки",
+    image: image2_desk,
+    description:
+      "В начале игры сомелье рассказывает правила, раздаёт фишки и предлагает игрокам продегустировать определенный вид вина. Гости получают пробник, и пытаются и понять вкусовые и иные характеристики.",
+  },
+  {
+    title: "Вскрытие",
+    image: image3_desk,
+    description:
+      "Когда ставки сделаны, ведущий подробно описывает продегустированный продукт и чьи догадки оказались верными, а чьи нет. Распределяется выигрыш между участниками.",
+  },
+  {
+    title: "Приз",
+    image: image4_desk,
+    description:
+      "После завершения всех раундов, определяется победитель с наибольшим числом заработанных очков. Ему выдается сувенир, который согласуется с заказчиком (например, один из продуктов игры).",
+  },
+];
+
+const Essence = ({
+  style,
+  title = "В чем суть?",
+  items = defaultItems,
+  itemsColor = "#2a9d76",
+}) => {
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
     query: "screen and (min-width: 768px) and (max-width: 1299px)",
   });
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
-  let image1, image2, image3, image4;
-  if (isDesktop) {
-    image1 = image1_desk;
-    image2 = image2_desk;
-    image3 = image3_desk;
-    image4 = image4_desk;
-  }
-  if (isTablet) {
-    image1 = image1_tab;
-    image2 = image2_tab;
-    image3 = image3_tab;
-    image4 = image4_tab;
-  }
-  if (isMobile) {
-    image1 = image1_tab;
-    image2 = image2_tab;
-    image3 = image3_tab;
-    image4 = image4_tab;
-  }
+  // let image1, image2, image3, image4;
+  // if (isDesktop) {
+  //   image1 = image1_desk;
+  //   image2 = image2_desk;
+  //   image3 = image3_desk;
+  //   image4 = image4_desk;
+  // }
+  // if (isTablet) {
+  //   image1 = image1_tab;
+  //   image2 = image2_tab;
+  //   image3 = image3_tab;
+  //   image4 = image4_tab;
+  // }
+  // if (isMobile) {
+  //   image1 = image1_tab;
+  //   image2 = image2_tab;
+  //   image3 = image3_tab;
+  //   image4 = image4_tab;
+  // }
 
   return (
     <section className={s.essence} style={style}>
       <div className={s._bg1}></div>
       <div className={s._bg2}></div>
       <div className={s._content}>
-        <div className={s._title}>В чем суть?</div>
+        <div className={s._title}>{title}</div>
         <div className={s._items}>
-          <div className={s._item}>
+          {items.map(({ title, image, description }, index) => (
+            <div className={cx(s._item, { [s._item_odd]: isTablet })}>
+              <div
+                className={cx(s._itemImage, {
+                  [s._itemImage_odd]: isTablet && index % 2 === 1,
+                })}
+                style={{
+                  background: `url(${image}) 100% 100% / cover no-repeat`,
+                  backgroundPosition: "center center",
+                }}
+              >
+                <div className={s._itemImageBefore} style={{background: `${itemsColor}`}}>{index + 1}</div>
+              </div>
+              <div className={s._itemTitle}>{title}</div>
+              <div className={s._itemText}>{description}</div>
+            </div>
+          ))}
+          {/* <div className={s._item}>
             <div
               className={s._itemImage}
               style={{
@@ -122,7 +171,7 @@ const Essence = ({ style }) => {
               который согласуется с заказчиком (например, один из продуктов
               игры).
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
