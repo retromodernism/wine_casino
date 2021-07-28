@@ -17,6 +17,7 @@ import essence1 from "./src/essence/1.png";
 import essence2 from "./src/essence/2.png";
 import essence3 from "./src/essence/3.png";
 import essence4 from "./src/essence/4.png";
+import KindsOfGames from "../kindsOfGames";
 
 const data = {
   home: {
@@ -70,7 +71,7 @@ const MainPageFoodCasino = (props) => {
           <HomeClassicCaisno {...data.home} />
           <BackToAll />
           <Essence {...data.essence} />
-          {/* Рулетки */}
+          <KindsOfGames />
           <Masterclass />
           <Promotion background={false} />
           <Additionals />
@@ -82,7 +83,7 @@ const MainPageFoodCasino = (props) => {
       {isTablet && (
         <Fragment>
           <HomeClassicCaisno {...data.home} />
-          {/* рулетки */}
+          <KindsOfGames />
           <Masterclass />
           <Promotion />
           <Variants />
@@ -93,7 +94,7 @@ const MainPageFoodCasino = (props) => {
         <Fragment>
           <HomeClassicCaisno {...data.home} />
           <Essence {...data.essence} />
-          {/* Рулетки */}
+          <KindsOfGames />
           <Promotion />
           <Variants />
           <Additionals />

@@ -1,0 +1,220 @@
+@import "./../../variables.scss";
+
+.kindsOfGames {
+  @extend %body;
+}
+
+._title {
+  @extend %h2;
+}
+
+._sidebarItem {
+  @extend %body;
+}
+
+._price {
+  @extend %price_2;
+}
+
+._itemDescriptionTitle {
+  @extend %h4;
+}
+
+._itemRequirmentsItem {
+  @extend %body_3;
+}
+
+@media screen and (min-width: 1300px) {
+  .kindsOfGames {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ._content {
+    margin-top: 170px;
+    width: 1280px;
+  }
+
+  ._title {
+  }
+
+  ._kindItem {
+    margin-top: 50px;
+    display: grid;
+    grid: auto / 290px 1fr;
+  }
+
+  ._sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  ._sidebarItem {
+    width: 220px;
+    background: none;
+    display: flex;
+    justify-content: flex-start;
+    padding: 25px 30px;
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-bottom: 45px;
+    }
+  }
+
+  ._sidebarItem_active {
+    background: $black;
+    color: #ffffff;
+  }
+
+  ._item {
+    display: grid;
+    grid-template-columns: 609px 1fr;
+    grid-auto-rows: max-content;
+  }
+
+  ._itemLeft {
+    display: grid;
+    grid: 1fr 110px / 1fr;
+  }
+
+  ._imageWrapper {
+    height: 100%;
+    width: 609px;
+  }
+
+  ._imageSlide {
+    height: 509px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  ._slider {
+    height: 100%;
+  }
+
+  ._arrow {
+    width: 92px;
+    height: 92px;
+    z-index: 1;
+    &::before {
+      display: none;
+    }
+  }
+
+  ._arrow_prev {
+    left: 0;
+  }
+
+  ._arrow_next {
+    right: 0;
+  }
+
+  ._paginationDot {
+    height: 10px;
+    opacity: 0.5;
+  }
+
+  ._bottomInfo {
+    width: 100%;
+    height: 100%;
+    background: $black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #ffffff;
+  }
+
+  ._priceTitle {
+  }
+
+  ._price {
+    color: #ffffff;
+  }
+
+  ._time,
+  ._peopleCount {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #ffffff;
+  }
+
+  ._itemRight {
+    padding: 4px 0 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  ._itemDescriptionWrapper {
+  }
+
+  ._itemCharacteristicsTitle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 95%;
+    /* identical to box height, or 21px */
+
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
+
+    color: #000000;
+  }
+
+  ._itemCharacteristics {
+  }
+
+  ._itemDescriptionTitle {
+    margin-top: 27px;
+  }
+
+  ._itemDescription {
+  }
+
+  ._itemRequirmentsTitle {
+    margin-top: 58px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 95%;
+    /* identical to box height, or 21px */
+
+    color: #000000;
+  }
+
+  ._itemRequirments {
+  }
+
+  ._itemRequirmentsItem {
+    &:first-child {
+      margin-top: 20px;
+    }
+  }
+
+  ._itemAddToCart {
+    background: none;
+    padding: 22px 44px;
+
+    box-shadow: inset 0 0 0 2px $black;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: $black;
+  }
+
+  ._itemAddToCart_hover {
+    background: $black;
+    color: #ffffff;
+  }
+}
