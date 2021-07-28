@@ -74,8 +74,9 @@ const Tematic = (props) => {
         <div className={s._items}>
           {isMobile && (
             <div className={s._paginationButtons}>
-              {items.map(({ title, id, isActive }) => (
+              {items.map(({ title, id, isActive }, index) => (
                 <button
+                  key={index}
                   className={cx(s._paginationButton, {
                     [s._paginationButton_active]: isActive,
                   })}

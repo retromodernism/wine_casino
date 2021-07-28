@@ -48,7 +48,7 @@ const LinkItem = ({ title, href }) => {
   );
 };
 
-const HomeCoulinaryCasino = (props) => {
+const HomeCoulinaryCasino = ({ background, ...props }) => {
   /* Media Queries */
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
@@ -76,7 +76,13 @@ const HomeCoulinaryCasino = (props) => {
   );
 
   return (
-    <section className={s.home}>
+    <section
+      className={s.home}
+      style={{
+        background: `url(${background}) 100% 100% / cover no-repeat`,
+        backgroundPosition: "center center",
+      }}
+    >
       <div className={s._content}>
         <div className={s._title}>Кулинарное фан-казино</div>
         <div className={s._grid}>
@@ -121,33 +127,38 @@ const HomeCoulinaryCasino = (props) => {
               </div>
             </div>
           </div>
-          {isDesktop && <div className={cx(s._column, s._links)}>
-            <div className={s._linksColumn}>
-              <div className={s._linksTitle}>Съедобное</div>
-              {foodCasinos.map((item, index) =>
-                index < showedFoodCasinos ? (
-                  <LinkItem {...item} key={index} />
-                ) : null
-              )}
-              {hasShowMoreFoodCasinos && (
-                <button className={s._showMore} onClick={showMoreFoodCasinos} />
-              )}
+          {isDesktop && (
+            <div className={cx(s._column, s._links)}>
+              <div className={s._linksColumn}>
+                <div className={s._linksTitle}>Съедобное</div>
+                {foodCasinos.map((item, index) =>
+                  index < showedFoodCasinos ? (
+                    <LinkItem {...item} key={index} />
+                  ) : null
+                )}
+                {hasShowMoreFoodCasinos && (
+                  <button
+                    className={s._showMore}
+                    onClick={showMoreFoodCasinos}
+                  />
+                )}
+              </div>
+              <div className={s._linksColumn}>
+                <div className={s._linksTitle}>Drink</div>
+                {drinkCasinos.map((item, index) =>
+                  index < showedDrinkCasinos ? (
+                    <LinkItem {...item} key={index} />
+                  ) : null
+                )}
+                {hasShowMoreDrinkCasinos && (
+                  <button
+                    className={s._showMore}
+                    onClick={showMoreDrinkCasinos}
+                  />
+                )}
+              </div>
             </div>
-            <div className={s._linksColumn}>
-              <div className={s._linksTitle}>Drink</div>
-              {drinkCasinos.map((item, index) =>
-                index < showedDrinkCasinos ? (
-                  <LinkItem {...item} key={index} />
-                ) : null
-              )}
-              {hasShowMoreDrinkCasinos && (
-                <button
-                  className={s._showMore}
-                  onClick={showMoreDrinkCasinos}
-                />
-              )}
-            </div>
-          </div>}
+          )}
         </div>
       </div>
 

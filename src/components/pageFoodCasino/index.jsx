@@ -14,6 +14,11 @@ import Variants from "../variants";
 import { useMediaQuery } from "react-responsive";
 import HomeCoulinaryCasino from "../home2";
 import { Fragment } from "react";
+import homeBg from "./src/homeBg.png";
+
+const data = {
+  homeBg: homeBg,
+};
 
 const MainPageFoodCasino = (props) => {
   /* Media Queries */
@@ -27,7 +32,7 @@ const MainPageFoodCasino = (props) => {
     <main className={s.main}>
       {isDesktop && (
         <Fragment>
-          <HomeCoulinaryCasino />
+          <HomeCoulinaryCasino background={data.homeBg} />
           <Essence />
           <Masterclass />
           <Promotion background={false} />
@@ -38,7 +43,7 @@ const MainPageFoodCasino = (props) => {
       )}
       {isTablet && (
         <Fragment>
-          <HomeCoulinaryCasino />
+          <HomeCoulinaryCasino background={data.homeBg} />
           <OtherCasinos />
           {/* Почему мы */}
           <Tematic />
@@ -51,7 +56,7 @@ const MainPageFoodCasino = (props) => {
       )}
       {isMobile && (
         <Fragment>
-          <HomeCoulinaryCasino />
+          <HomeCoulinaryCasino background={data.homeBg} />
           <OtherCasinos />
           <Essence />
           <Masterclass />
