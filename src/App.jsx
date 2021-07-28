@@ -11,6 +11,7 @@ import ScrollToTop from "./components/scrollToTop";
 import { getPositions } from "./redux/modules/positions";
 import { connect } from "react-redux";
 import BurgerMenu from "./components/burgerMenu";
+import Poker from "./components/pagePoker";
 
 const App = ({ burgerIsOpen, getPositions, ...props }) => {
   getPositions();
@@ -24,6 +25,7 @@ const App = ({ burgerIsOpen, getPositions, ...props }) => {
           <Route exact path="/" component={MainPageFoodCasino} />
           <Route path="/vinnoe-kazino" component={WineCasino} />
           <Route path="/klassicheskoe-kazino" component={ClassicCasino} />
+          <Route path="/poker" component={Poker} />
           <Route path="/cart" component={CartPage} />
           <Route path="/contacts" component={ContactsPage} />
           <Redirect to="/" />

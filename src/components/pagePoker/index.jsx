@@ -8,7 +8,8 @@ import Promotion from "../promotion";
 import Tematic from "../tematic";
 import Variants from "../variants";
 import { useMediaQuery } from "react-responsive";
-import HomeCoulinaryCasino from "../home2";
+// import HomeCoulinaryCasino from "../home2";
+import HomeClassicCaisno from "../homeTemplate_classicCasino";
 import { Fragment } from "react";
 import homeBg from "./src/homeBg.png";
 import Form from "../form";
@@ -29,7 +30,8 @@ const MainPageFoodCasino = (props) => {
     <main className={s.main}>
       {isDesktop && (
         <Fragment>
-          <HomeCoulinaryCasino background={data.homeBg} />
+          <HomeClassicCaisno />
+          <Essence />
           <Masterclass />
           <Promotion background={false} />
           <Additionals />
@@ -40,7 +42,7 @@ const MainPageFoodCasino = (props) => {
       )}
       {isTablet && (
         <Fragment>
-          <HomeCoulinaryCasino background={data.homeBg} />
+          <HomeClassicCaisno />
           <OtherCasinos />
           {/* Почему мы */}
           <Tematic />
@@ -53,7 +55,7 @@ const MainPageFoodCasino = (props) => {
       )}
       {isMobile && (
         <Fragment>
-          <HomeCoulinaryCasino background={data.homeBg} />
+          <HomeClassicCaisno />
           <OtherCasinos />
           <Essence />
           <Masterclass />
