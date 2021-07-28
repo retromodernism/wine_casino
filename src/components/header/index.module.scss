@@ -19,6 +19,49 @@
   @extend %h6_1;
 }
 
+.header_dark {
+  ._logo {
+    fill: $black;
+  }
+  ._navListItem {
+    color: $black;
+  }
+  ._phone {
+    color: $black;
+  }
+  ._phoneSocialsItem {
+    border: 1px solid $black;
+  }
+  ._phoneSubtitle {
+    color: $black;
+  }
+}
+.header_light {
+  ._logo {
+    fill: #ffffff;
+  }
+  ._navListItem {
+    color: #ffffff;
+  }
+  ._phone {
+    color: #ffffff;
+  }
+  ._phoneSocialsItem {
+    border: 1px solid #ffffff;
+  }
+  ._phoneSubtitle {
+    color: #ffffff;
+  }
+  ._catalogArrow {
+    background: unset;
+    background-color: #ffffff;
+    mask-image: url(./src/arrow.svg);
+  }
+  ._phoneArrow {
+    background: url(./src/arrow_white.svg) 100% 100% no-repeat;
+  }
+}
+
 @media screen and (min-width: 1300px) {
   .header {
     position: absolute;
@@ -36,7 +79,6 @@
   }
 
   ._logo {
-    fill: $black;
   }
 
   ._nav {
@@ -53,7 +95,6 @@
   }
 
   ._navListItem {
-    color: $black;
     color: inherit;
     &:not(:last-child) {
       margin-right: 33px;
@@ -95,7 +136,6 @@
   }
 
   ._phone {
-    color: $black;
   }
 
   ._phoneArrow {
@@ -126,7 +166,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid $black;
     &:not(:last-child) {
       border-bottom: unset;
     }
@@ -135,7 +174,6 @@
   ._phoneSubtitle {
     justify-self: flex-end;
     text-decoration-line: underline;
-    color: $black;
   }
 
   .header {
@@ -154,7 +192,6 @@
   }
 
   ._logo {
-    fill: $black;
   }
 
   ._nav {
@@ -171,7 +208,6 @@
   }
 
   ._navListItem {
-    color: $black;
     color: inherit;
     &:not(:last-child) {
       margin-right: 33px;
@@ -213,7 +249,6 @@
   }
 
   ._phone {
-    color: $black;
   }
 
   ._phoneArrow {
@@ -244,7 +279,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid $black;
     &:not(:last-child) {
       border-bottom: unset;
     }
@@ -253,7 +287,6 @@
   ._phoneSubtitle {
     justify-self: flex-end;
     text-decoration-line: underline;
-    color: $black;
   }
 }
 

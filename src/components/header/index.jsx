@@ -38,17 +38,32 @@ const Header = ({
   catalogIsHovered,
   setSocialsHover,
   setCatalogHover,
+  headerColor,
   openBurger,
   openSearchBar,
+  ...props
 }) => {
+  /* Media Queries */
+
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
     query: "screen and (min-width: 768px) and (max-width: 1299px)",
   });
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
+  /* Header Color Theme */
+
+  const isDark = headerColor === "dark";
+  const isLight = headerColor === "light";
+
   return (
-    <div className={s.header} name="header">
+    <div
+      className={cx(s.header, {
+        [s.header_dark]: isDark,
+        [s.header_light]: isLight,
+      })}
+      name="header"
+    >
       {!searchBarIsOpen && (
         <Link to="/" className={s._logoWrapper}>
           {isDesktop && <Logo className={s._logo} />}
@@ -176,6 +191,7 @@ export default connect(
     socialsIsHovered: state.headerSocialsHover.isHovered,
     catalogIsHovered: state.catalogHover.isHovered,
     searchBarIsOpen: state.tabletSearchBar.searchBarIsOpen,
+    headerColor: state.headerColor.color,
   }),
   { setSocialsHover, setCatalogHover, openBurger, openSearchBar }
 )(Header);

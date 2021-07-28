@@ -18,13 +18,15 @@
 
 @media screen and (min-width: 1300px) {
   .home {
-    margin-top: 39px;
-    height: 839px;
+    // margin-top: 39px;
+    padding-top: 39px;
+    // height: 839px;
     width: 100%;
     // background: olive;
     position: relative;
     display: flex;
     justify-content: center;
+    background-color: $black;
   }
 
   ._bg0 {

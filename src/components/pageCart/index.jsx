@@ -3,12 +3,20 @@ import Breadcrumbs from "../breadcrumbs";
 import Cart from "../cart";
 import Recomendations from "../recomendations";
 import { connect } from "react-redux";
+import {
+  makeHeaderDark,
+  makeHeaderLight,
+} from "../../redux/modules/headerColor";
 import { Fragment } from "react";
 import CartSuccessPopup from "../cartSuccessPopup";
 import { useMediaQuery } from "react-responsive";
 import CartOrder from "../cartOrder";
 
-const CartPage = ({ cartPopupIsOpen, ...props }) => {
+const CartPage = ({ cartPopupIsOpen, makeHeaderDark, ...props }) => {
+  /* Make Header Dark */
+
+  makeHeaderDark();
+
   /* Media Queries */
 
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
@@ -31,6 +39,9 @@ const CartPage = ({ cartPopupIsOpen, ...props }) => {
   );
 };
 
-export default connect((state) => ({
-  cartPopupIsOpen: state.popup.cartPopupIsOpen,
-}))(CartPage);
+export default connect(
+  (state) => ({
+    cartPopupIsOpen: state.popup.cartPopupIsOpen,
+  }),
+  { makeHeaderDark, makeHeaderLight }
+)(CartPage);

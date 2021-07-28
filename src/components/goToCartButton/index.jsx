@@ -4,7 +4,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-const GoToCartButton = ({ cartPositions }) => {
+const GoToCartButton = ({ cartPositions, headerColor }) => {
+  const isDark = headerColor === "dark";
+  const isLight = headerColor === "light";
+
   const positionsInCart = cartPositions.length;
 
   const declOfNum = (number, titles) => {
@@ -23,6 +26,8 @@ const GoToCartButton = ({ cartPositions }) => {
   return (
     <Link
       className={classnames(s.goToCartButton, {
+        [s.goToCartButton_dark]: isDark,
+        [s.goToCartButton_light]: isLight,
         [s.hover]: isHover,
       })}
       onMouseEnter={setHover.bind(null, true)}
@@ -45,4 +50,5 @@ const GoToCartButton = ({ cartPositions }) => {
 
 export default connect((state) => ({
   cartPositions: state.cart.positionsIds,
+  headerColor: state.headerColor.color,
 }))(GoToCartButton);

@@ -5,6 +5,7 @@ import popup from "./popup";
 import positions from "./positions";
 import burger from "./burger";
 import tabletSearchBar from "./tabletSearchBar";
+import headerColor from "./headerColor";
 
 const rootReducers = {
   headerSocialsHover,
@@ -14,6 +15,7 @@ const rootReducers = {
   positions,
   burger,
   tabletSearchBar,
+  headerColor,
 };
 
 export default rootReducers;

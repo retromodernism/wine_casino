@@ -7,22 +7,35 @@ import { useState } from "react";
 import classname from "classnames";
 import { ReactComponent as Loupe } from "./src/loupe.svg";
 import { ReactComponent as Format } from "./src/format.svg";
+import {
+  makeHeaderDark,
+  makeHeaderLight,
+} from "../../redux/modules/headerColor";
+import { connect } from "react-redux";
+import { useLayoutEffect } from "react";
 
-const Home = (props) => {
+const Home = ({ bg, makeHeaderLight, ...props }) => {
+  useLayoutEffect(() => {
+    makeHeaderLight();
+  });
+
   const [videoIsOpen, setVideoOpen] = useState(false);
   const [buttonIsHover, setButtonIsHover] = useState(false);
 
   return (
     <section className={s.home}>
-      <div className={s._bg0}></div>
-      <div className={s._bg}></div>
-      <div className={s._bg1}></div>
+      {/* <div className={s._bg0}></div> */}
+      <div
+        className={s._bg}
+        style={{ background: `url(${bg}) 100% 100% / contain no-repeat` }}
+      ></div>
+      {/* <div className={s._bg1}></div>
       <div className={s._bg2}></div>
       <div className={s._bg3}></div>
       <div className={s._bg4}></div>
       <div className={s._bg5}></div>
-      <div className={s._bg6}></div>
-      
+      <div className={s._bg6}></div> */}
+
       <div className={s._content}>
         <div className={s._title}>
           Винное
@@ -64,11 +77,13 @@ const Home = (props) => {
             <p className={s._featureTitle}>сорта вина</p>
           </div>
           <div className={s._feature}>
-            <Loupe style={{ marginTop: "3px", width: "32px", height: "32px" }} />
+            <Loupe
+              style={{ marginTop: "3px", width: "32px", height: "32px" }}
+            />
             <p className={s._featureTitle}>интересные факты</p>
           </div>
           <div className={s._feature}>
-            <Format style={{width: "46px", height: "35px"}} />
+            <Format style={{ width: "46px", height: "35px" }} />
             <p className={s._featureTitle}>новый формат</p>
           </div>
         </div>
@@ -85,4 +100,4 @@ const Home = (props) => {
   );
 };
 
-export default Home;
+export default connect(null, { makeHeaderLight })(Home);

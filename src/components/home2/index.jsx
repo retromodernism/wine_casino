@@ -11,6 +11,11 @@ import { ReactComponent as Feature1 } from "./src/featureIcon_1.svg";
 import { ReactComponent as Feature2 } from "./src/featureIcon_2.svg";
 import { ReactComponent as Feature3 } from "./src/featureIcon_3.svg";
 import { useMediaQuery } from "react-responsive";
+import {
+  makeHeaderDark,
+  makeHeaderLight,
+} from "../../redux/modules/headerColor";
+import { connect } from "react-redux";
 
 const foodCasinos = [
   { href: "/", title: "Мясное" },
@@ -48,7 +53,9 @@ const LinkItem = ({ title, href }) => {
   );
 };
 
-const HomeCoulinaryCasino = ({ background, ...props }) => {
+const HomeCoulinaryCasino = ({ background, makeHeaderLight, ...props }) => {
+  makeHeaderLight();
+
   /* Media Queries */
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
@@ -173,4 +180,4 @@ const HomeCoulinaryCasino = ({ background, ...props }) => {
   );
 };
 
-export default HomeCoulinaryCasino;
+export default connect(null, { makeHeaderLight })(HomeCoulinaryCasino);

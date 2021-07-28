@@ -9,10 +9,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid $black;
+
   background: none;
 
   transition: color ease-in-out 0.3s, background ease-in-out 0.3s;
+}
+
+.goToCartButton_dark {
+  border: 1px solid $black;
+}
+.goToCartButton_light {
+  border: 1px solid #ffffff;
+  span {
+    color: #ffffff;
+  }
+  ._icon {
+    background: url(./src/addToCart_active.svg) 100% 100% no-repeat;
+  }
+  &.hover {
+    background: #ffffff;
+    span {
+      color: $black;
+    }
+    ._icon {
+      background: url(./src/addToCart.svg) 100% 100% no-repeat;
+    }
+  }
 }
 
 ._accent {
