@@ -77,7 +77,10 @@ const Essence = ({
         <div className={s._title}>{title}</div>
         <div className={s._items}>
           {items.map(({ title, image, description }, index) => (
-            <div className={cx(s._item, { [s._item_odd]: isTablet })}>
+            <div
+              className={cx(s._item, { [s._item_odd]: isTablet })}
+              key={index}
+            >
               <div
                 className={cx(s._itemImage, {
                   [s._itemImage_odd]: isTablet && index % 2 === 1,
@@ -87,7 +90,12 @@ const Essence = ({
                   backgroundPosition: "center center",
                 }}
               >
-                <div className={s._itemImageBefore} style={{background: `${itemsColor}`}}>{index + 1}</div>
+                <div
+                  className={s._itemImageBefore}
+                  style={{ background: `${itemsColor}` }}
+                >
+                  {index + 1}
+                </div>
               </div>
               <div className={s._itemTitle}>{title}</div>
               <div className={s._itemText}>{description}</div>
