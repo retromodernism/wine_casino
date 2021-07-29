@@ -1,0 +1,37 @@
+@media screen and (min-width: 768px) and (max-width: 1299px) {
+  .slick-dots {
+    bottom: 28px;
+  }
+
+  .slick-dots li {
+    opacity: 0.5;
+  }
+
+  .slick-dots li.slick-active {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .slick-dots {
+    height: 6px;
+    bottom: 20px;
+  }
+
+  .slick-dots li {
+    width: 6px;
+    height: 6px;
+    img {
+      height: 6px;
+      object-fit: contain;
+    }
+  }
+
+  .slick-dots li {
+    opacity: 0.5;
+  }
+
+  .slick-dots li.slick-active {
+    opacity: 1;
+  }
+}

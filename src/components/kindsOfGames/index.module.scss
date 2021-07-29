@@ -16,11 +16,11 @@
   @extend %price_2;
 }
 
-._itemDescriptionTitle {
+._infoButton {
   @extend %h4;
 }
 
-._itemRequirmentsItem {
+._infoListItem {
   @extend %body_3;
 }
 
@@ -150,52 +150,49 @@
     justify-content: space-between;
   }
 
-  ._itemDescriptionWrapper {
+  ._info {
+    padding-top: 4px;
   }
 
-  ._itemCharacteristicsTitle {
-    font-family: Lato;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 22px;
-    line-height: 95%;
-    /* identical to box height, or 21px */
+  ._buttons {
+    display: flex;
+    flex-direction: column;
+  }
 
-    text-decoration-line: underline;
-    text-underline-offset: 3px;
+  ._infoButton {
+    width: max-content;
+    min-height: 30px;
+    background: none;
 
     color: #000000;
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
   }
 
-  ._itemCharacteristics {
+  ._infoButton_active {
+    text-decoration-line: underline;
+    text-underline-offset: 5px;
   }
 
-  ._itemDescriptionTitle {
-    margin-top: 27px;
-  }
+  ._infoTitle {
+    margin-top: 50px;
 
-  ._itemDescription {
-  }
-
-  ._itemRequirmentsTitle {
-    margin-top: 58px;
     font-family: Lato;
     font-style: normal;
     font-weight: normal;
     font-size: 22px;
     line-height: 95%;
-    /* identical to box height, or 21px */
 
     color: #000000;
   }
 
-  ._itemRequirments {
+  ._infoList {
+    margin-top: 13px;
   }
 
-  ._itemRequirmentsItem {
-    &:first-child {
-      margin-top: 20px;
-    }
+  ._infoListItem {
+    color: #000000;
   }
 
   ._itemAddToCart {

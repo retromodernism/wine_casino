@@ -2,7 +2,7 @@ import s from "./index.module.scss";
 import cx from "classnames";
 import image from "./src/image.png";
 import { useMediaQuery } from "react-responsive";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import Slider from "react-slick";
 import prevArrow from "./src/arrow_prev.svg";
 import nextArrow from "./src/arrow_next.svg";
@@ -82,6 +82,16 @@ const KindItem = () => {
   });
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
+  /* State */
+
+  const [activeInfo, setActiveInfo] = useState("characteristics");
+
+  const characteristicsIsActive = activeInfo === "characteristics";
+  const descriptionIsActive = activeInfo === "description";
+
+  const activateCharacteristics = setActiveInfo.bind(null, "characteristics");
+  const activateDescription = setActiveInfo.bind(null, "description");
+
   return (
     <div className={s._kindItem}>
       <div className={s._sidebar}>
@@ -126,21 +136,49 @@ const KindItem = () => {
           </div>
         </div>
         <div className={s._itemRight}>
-          <div className={s._itemDescriptionWrapper}>
-            <div className={s._itemCharacteristicsTitle}>
-              Тех. характеристики
+          <div className={s._info}>
+            <div className={s._buttons}>
+              <button
+                className={cx(s._infoButton, {
+                  [s._infoButton_active]: characteristicsIsActive,
+                })}
+                onClick={activateCharacteristics}
+              >
+                Тех. характеристики
+              </button>
+              <button
+                className={cx(s._infoButton, {
+                  [s._infoButton_active]: descriptionIsActive,
+                })}
+                onClick={activateDescription}
+              >
+                Описание
+              </button>
             </div>
-            <div className={s._itemCharacteristics}></div>
-            <div className={s._itemDescriptionTitle}>Описание</div>
-            <div className={s._itemDescription}></div>
-            <div className={s._itemRequirmentsTitle}>Общие требования</div>
-            <ul className={s._itemRequirments}>
-              <li className={s._itemRequirmentsItem}>В стоимость включено:</li>
-              <li className={s._itemRequirmentsItem}>Игровой стол - 1</li>
-              <li className={s._itemRequirmentsItem}>Колесо - 1 комплект</li>
-              <li className={s._itemRequirmentsItem}>Фишки - 1</li>
-              <li className={s._itemRequirmentsItem}>Крупье - 1 чел.</li>
-            </ul>
+            {characteristicsIsActive && (
+              <Fragment>
+                <div className={s._infoTitle}>Общие требования</div>
+                <ul className={s._infoList}>
+                  <li className={s._infoListItem}>В стоимость включено:</li>
+                  <li className={s._infoListItem}>Игровой стол - 1</li>
+                  <li className={s._infoListItem}>Колесо - 1 комплект</li>
+                  <li className={s._infoListItem}>Фишки - 1 комплект</li>
+                  <li className={s._infoListItem}>Крупье - 1 чел.</li>
+                </ul>
+              </Fragment>
+            )}
+            {descriptionIsActive && (
+              <Fragment>
+                <div className={s._infoTitle}>Описание</div>
+                <ul className={s._infoList}>
+                  <li className={s._infoListItem}>Lorem ipsum</li>
+                  <li className={s._infoListItem}>Lorem ipsum</li>
+                  <li className={s._infoListItem}>Lorem ipsum</li>
+                  <li className={s._infoListItem}>Lorem ipsum</li>
+                  <li className={s._infoListItem}>Lorem ipsum</li>
+                </ul>
+              </Fragment>
+            )}
           </div>
           <AddToCartButton />
         </div>
