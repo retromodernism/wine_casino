@@ -8,6 +8,8 @@ import prevArrow from "./src/arrow_prev.svg";
 import nextArrow from "./src/arrow_next.svg";
 import dot from "./src/dot_active.svg";
 import "./slider.scss";
+import { connect } from "react-redux";
+import { addPosition } from "../../redux/modules/cart";
 
 /* Slider Params */
 
@@ -59,7 +61,7 @@ const sliderParams = {
   dots: true,
 };
 
-const AddToCartButton = () => {
+const AddToCartButton = ({ onClick }) => {
   const [isHover, setHover] = useState(false);
 
   return (
@@ -67,16 +69,24 @@ const AddToCartButton = () => {
       className={cx(s._itemAddToCart, { [s._itemAddToCart_hover]: isHover })}
       onMouseEnter={setHover.bind(null, true)}
       onMouseLeave={setHover.bind(null, false)}
+      onClick={onClick}
     >
       Добавить в корзину
     </button>
   );
 };
 
-const KindItem = () => {
+const KindItem = connect(
+  (state) => ({
+    positions: state.positions.positions,
+  }),
+  { addPosition }
+)(({ positions, addPosition, gameType = "poker" }) => {
   /* Media Queries */
 
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
+  const isDesktop = useMediaQuery({
+    query: "screen and (min-width: 1300px)",
+  });
   const isTablet = useMediaQuery({
     query: "screen and (min-width: 768px) and (max-width: 1299px)",
   });
@@ -92,47 +102,52 @@ const KindItem = () => {
   const activateCharacteristics = setActiveInfo.bind(null, "characteristics");
   const activateDescription = setActiveInfo.bind(null, "description");
 
+  const gamesPositions = positions.filter(({ type }) => type === gameType);
+
+  const [activePositionId, setActivePositionId] = useState(
+    gamesPositions[0].id
+  );
+
+  const [activeGame] = gamesPositions.filter(
+    ({ id }) => id === activePositionId
+  );
+
   return (
     <div className={s._kindItem}>
       <div className={s._sidebar}>
-        <button className={cx(s._sidebarItem, s._sidebarItem_active)}>
-          Классическая
-        </button>
-        <button className={s._sidebarItem}>Французская</button>
-        <button className={s._sidebarItem}>Гэмбл</button>
-        <button className={s._sidebarItem}>Любительская</button>
-        <button className={s._sidebarItem}>Скандинавская</button>
-        <button className={s._sidebarItem}>VIP-рулетка</button>
+        {gamesPositions.map(({ title, id }, index) => (
+          <button
+            className={cx(s._sidebarItem, {
+              [s._sidebarItem_active]: id === activePositionId,
+            })}
+            onClick={setActivePositionId.bind(null, id)}
+          >
+            {title}
+          </button>
+        ))}
       </div>
       <div className={s._item}>
         <div className={s._itemLeft}>
           <div className={s._imageWrapper}>
             <Slider {...sliderParams}>
-              <img
-                src={image}
-                className={s._imageSlide}
-                key={0}
-                alt="Изображение"
-              />
-              <img
-                src={image}
-                className={s._imageSlide}
-                key={1}
-                alt="Изображение"
-              />
-              <img
-                src={image}
-                className={s._imageSlide}
-                key={2}
-                alt="Изображение"
-              />
+              {activeGame.images.map((image, index) => (
+                <img
+                  src={image}
+                  className={s._imageSlide}
+                  key={index}
+                  alt="Изображение"
+                />
+              ))}
             </Slider>
           </div>
           <div className={s._bottomInfo}>
-            {isTablet && <div className={s._priceTitle}>Цена:</div>}
-            <div className={s._price}>18 000 ₽</div>
-            <div className={s._time}>на 6 часов</div>
-            <div className={s._peopleCount}>на 6 человек</div>
+            <div className={s._price}>
+              {activeGame.price.toLocaleString()} ₽
+            </div>
+            <div className={s._time}>на {activeGame.time} часов</div>
+            <div className={s._peopleCount}>
+              на {activeGame.peopleCount} человек
+            </div>
           </div>
         </div>
         <div className={s._itemRight}>
@@ -157,35 +172,39 @@ const KindItem = () => {
             </div>
             {characteristicsIsActive && (
               <Fragment>
-                <div className={s._infoTitle}>Общие требования</div>
+                <div className={s._infoTitle}>
+                  {activeGame.characteristics.title}
+                </div>
                 <ul className={s._infoList}>
-                  <li className={s._infoListItem}>В стоимость включено:</li>
-                  <li className={s._infoListItem}>Игровой стол - 1</li>
-                  <li className={s._infoListItem}>Колесо - 1 комплект</li>
-                  <li className={s._infoListItem}>Фишки - 1 комплект</li>
-                  <li className={s._infoListItem}>Крупье - 1 чел.</li>
+                  {activeGame.characteristics.items.map((title, index) => (
+                    <li className={s._infoListItem} key={index}>
+                      {title}
+                    </li>
+                  ))}
                 </ul>
               </Fragment>
             )}
             {descriptionIsActive && (
               <Fragment>
-                <div className={s._infoTitle}>Описание</div>
+                <div className={s._infoTitle}>
+                  {activeGame.description.title}
+                </div>
                 <ul className={s._infoList}>
-                  <li className={s._infoListItem}>Lorem ipsum</li>
-                  <li className={s._infoListItem}>Lorem ipsum</li>
-                  <li className={s._infoListItem}>Lorem ipsum</li>
-                  <li className={s._infoListItem}>Lorem ipsum</li>
-                  <li className={s._infoListItem}>Lorem ipsum</li>
+                  {activeGame.description.items.map((title, index) => (
+                    <li className={s._infoListItem} key={index}>
+                      {title}
+                    </li>
+                  ))}
                 </ul>
               </Fragment>
             )}
           </div>
-          <AddToCartButton />
+          <AddToCartButton onClick={addPosition.bind(null, activePositionId)} />
         </div>
       </div>
     </div>
   );
-};
+});
 
 const KindsOfGames = (props) => {
   return (

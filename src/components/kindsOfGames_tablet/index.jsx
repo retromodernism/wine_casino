@@ -8,6 +8,9 @@ import dot from "./src/dot_active.svg";
 import "./slider.scss";
 import { useMediaQuery } from "react-responsive";
 import { Fragment, useState } from "react";
+import { connect } from "react-redux";
+import { addPosition } from "../../redux/modules/cart";
+import { isTerminatorless } from "@babel/types";
 
 /* Slider Params */
 
@@ -61,7 +64,12 @@ const sliderParams = {
 
 /* Components */
 
-const GameItem = () => {
+const GameItem = connect(
+  (state) => ({
+    positions: state.positions.positions,
+  }),
+  { addPosition }
+)(({ positions, addPosition, id }) => {
   /* Media Queries */
 
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
@@ -80,21 +88,35 @@ const GameItem = () => {
   const activateCharacteristics = setActiveInfo.bind(null, "characteristics");
   const activateDescription = setActiveInfo.bind(null, "description");
 
+  const [game] = positions.filter((item) => item.id === id);
+
   return (
     <div className={s._game}>
       <Slider {...sliderParams}>
-        <img src={image} className={s._imageSlide} key={0} alt="Изображение" />
-        <img src={image} className={s._imageSlide} key={1} alt="Изображение" />
-        <img src={image} className={s._imageSlide} key={2} alt="Изображение" />
+        {game.images.map((image, index) => (
+          <img
+            src={image}
+            className={s._imageSlide}
+            key={index}
+            alt="Изображение"
+          />
+        ))}
       </Slider>
       <div className={s._priceBlock}>
         <div className={s._priceWrapper}>
           {isTablet && <div className={s._priceTitle}>Цена:</div>}
-          <div className={s._price}>от 18 000 ₽</div>
+          <div className={s._price}>от {game.price.toLocaleString()} ₽</div>
         </div>
-        {isTablet && <button className={s._addToCart}></button>}
+        {isTablet && (
+          <button
+            className={s._addToCart}
+            onClick={addPosition.bind(null, id)}
+          ></button>
+        )}
         {isMobile && (
-          <button className={s._addToCart}>Добавить в корзину</button>
+          <button className={s._addToCart} onClick={addPosition.bind(null, id)}>
+            Добавить в корзину
+          </button>
         )}
       </div>
       <div className={s._info}>
@@ -120,11 +142,11 @@ const GameItem = () => {
           <Fragment>
             <div className={s._infoTitle}>Общие требования</div>
             <ul className={s._infoList}>
-              <li className={s._infoListItem}>В стоимость включено:</li>
-              <li className={s._infoListItem}>Игровой стол - 1</li>
-              <li className={s._infoListItem}>Колесо - 1 комплект</li>
-              <li className={s._infoListItem}>Фишки - 1 комплект</li>
-              <li className={s._infoListItem}>Крупье - 1 чел.</li>
+              {game.characteristics.items.map((title, index) => (
+                <li className={s._infoListItem} key={index}>
+                  {title}
+                </li>
+              ))}
             </ul>
           </Fragment>
         )}
@@ -132,46 +154,53 @@ const GameItem = () => {
           <Fragment>
             <div className={s._infoTitle}>Описание</div>
             <ul className={s._infoList}>
-              <li className={s._infoListItem}>Lorem ipsum</li>
-              <li className={s._infoListItem}>Lorem ipsum</li>
-              <li className={s._infoListItem}>Lorem ipsum</li>
-              <li className={s._infoListItem}>Lorem ipsum</li>
-              <li className={s._infoListItem}>Lorem ipsum</li>
+              {game.description.items.map((title, index) => (
+                <li className={s._infoListItem} key={index}>
+                  {title}
+                </li>
+              ))}
             </ul>
           </Fragment>
         )}
       </div>
     </div>
   );
-};
+});
 
-const KindsOfGames_tablet = (props) => {
+const KindsOfGames_tablet = ({ positions, gameType = "poker" }) => {
+  const gamesPositions = positions.filter(({ type }) => type === gameType);
+
+  const [activePositionId, setActivePositionId] = useState(
+    gamesPositions[0].id
+  );
+
+  const [activeGame] = gamesPositions.filter(
+    ({ id }) => id === activePositionId
+  );
+
   return (
     <section className={s.kindsOfGames}>
       <div className={s._title}>Разновидности рулеток</div>
       <ul className={s._list}>
-        <li className={cx(s._listItem, s._listItem_active)}>
-          <div className={s._listItemTitle}>Классическая</div>
-          <GameItem />
-        </li>
-        <li className={s._listItem}>
-          <div className={s._listItemTitle}>Французская</div>
-        </li>
-        <li className={s._listItem}>
-          <div className={s._listItemTitle}>Гэмбл</div>
-        </li>
-        <li className={s._listItem}>
-          <div className={s._listItemTitle}>Любительская</div>
-        </li>
-        <li className={s._listItem}>
-          <div className={s._listItemTitle}>Скандинавская</div>
-        </li>
-        <li className={s._listItem}>
-          <div className={s._listItemTitle}>VIP-рулетка</div>
-        </li>
+        {gamesPositions.map(({ title, id }) => {
+          const isActive = id === activePositionId;
+          return (
+            <li
+              className={cx(s._listItem, {
+                [s._listItem_active]: isActive,
+              })}
+              onClick={setActivePositionId.bind(null, id)}
+            >
+              <div className={s._listItemTitle}>{title}</div>
+              {isActive && <GameItem {...{ id }} />}
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
 };
 
-export default KindsOfGames_tablet;
+export default connect((state) => ({
+  positions: state.positions.positions,
+}))(KindsOfGames_tablet);

@@ -17,6 +17,9 @@ import pitBoss from "../../components/additionals/src/pitBoss.png";
 import magician from "../../components/additionals/src/magician.png";
 import thimblerigger from "../../components/additionals/src/thimblerigger.png";
 
+// Kind of Games image
+import roulette from "../../components/kindsOfGames/src/image.png";
+
 const positions = [
   {
     title: "Стул-классика",
@@ -260,6 +263,74 @@ const positions = [
       "официант и закуски",
       "подарочный набор — 20 бутылочек",
     ],
+  },
+  {
+    type: "poker",
+    title: "Французская",
+    cartTitle: "Французская рулетка",
+    image: {
+      cart: roulette,
+    },
+    images: [roulette, roulette, roulette, roulette, roulette],
+    price: 18000,
+    count: { fixed: true, value: 1 },
+    time: 6,
+    peopleCount: 6,
+    description: {
+      title: "Описание",
+      items: [
+        "lorem ipsum1",
+        "lorem ipsum2",
+        "lorem ipsum3",
+        "lorem ipsum4",
+        "lorem ipsum5",
+        "lorem ipsum6",
+      ],
+    },
+    characteristics: {
+      title: "Общие требования",
+      items: [
+        "В стоимость включено:",
+        "Игровой стол - 13333",
+        "Колесо - 1333 комплект3333",
+        "Комплект Фишки - 13333",
+        "Крупье - 13333 чел.",
+      ],
+    },
+  },
+  {
+    type: "poker",
+    title: "Классическая",
+    cartTitle: "Классическая рулетка",
+    image: {
+      cart: roulette,
+    },
+    images: [roulette, roulette, roulette, roulette, roulette],
+    price: 10000,
+    count: { fixed: true, value: 1 },
+    time: 6,
+    peopleCount: 6,
+    description: {
+      title: "Описание",
+      items: [
+        "lorem ipsum132",
+        "lorem ipsum232",
+        "lorem ipsum332",
+        "lorem ipsum432",
+        "lorem ipsum532",
+        "lorem ipsum632",
+      ],
+    },
+    characteristics: {
+      title: "Общие требования",
+      items: [
+        "В стоимость включено:",
+        "Игровой стол - 1",
+        "Колесо - 1 комплект",
+        "Комплект Фишки - 1",
+        "Крупье - 1 чел.",
+      ],
+    },
   },
 ];
 
