@@ -2,7 +2,6 @@ import s from "./index.module.scss";
 import cx from "classnames";
 import { connect } from "react-redux";
 import { useState } from "react";
-import Truncate from "react-truncate";
 import TextTruncate from "react-text-truncate";
 import { Link } from "react-router-dom";
 
