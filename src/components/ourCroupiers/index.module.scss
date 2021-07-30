@@ -1,0 +1,217 @@
+@import "./../../variables.scss";
+
+._itemTitle {
+  @extend %h3;
+}
+
+._itemCasino {
+  @extend %h6;
+}
+
+@media screen and (min-width: 1300px) {
+  .ourCroupiers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ._content {
+    width: 1280px;
+    padding-top: 256px;
+  }
+
+  ._title {
+    font-family: Lora;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 64px;
+
+    color: #000000;
+  }
+
+  ._description {
+    margin-top: 45px;
+    max-width: 887px;
+    color: #000000;
+  }
+
+  ._croupiers {
+    margin-top: 114px;
+    display: grid;
+    grid: repeat(3, 389px) / repeat(3, 1fr);
+  }
+
+  ._item {
+    width: 100%;
+    height: 100%;
+    padding: 37px 33px;
+  }
+
+  ._item_hover {
+    display: block;
+  }
+
+  ._itemTitle {
+    color: #ffffff;
+  }
+
+  ._itemCasino {
+    margin-top: 8px;
+    color: #ffffff;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1299px) {
+  .ourCroupiers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ._content {
+    padding: 22px 24px 0 24px;
+  }
+
+  ._title {
+    padding: 0 40px;
+
+    font-family: Lora;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 51px;
+
+    color: #000000;
+  }
+
+  ._description {
+    margin-top: 45px;
+    font-size: 24px;
+    line-height: 29px;
+    padding: 0 40px;
+    max-width: 887px;
+    color: #000000;
+  }
+
+  ._croupiers {
+    margin-top: 44px;
+    width: calc(100vw - 48px);
+  }
+
+  ._slider {
+  }
+
+  ._arrow {
+    width: 139px;
+    height: 139px;
+    z-index: 1;
+    &::before {
+      content: "";
+    }
+  }
+
+  ._arrow_prev {
+    left: 0;
+  }
+
+  ._arrow_next {
+    right: 0;
+  }
+
+  ._item {
+    width: 100%;
+    height: 657px;
+    padding: 37px 33px;
+  }
+
+  ._item_hover {
+    display: block;
+  }
+
+  ._itemTitle {
+    color: #ffffff;
+  }
+
+  ._itemCasino {
+    margin-top: 8px;
+    color: #ffffff;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ourCroupiers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ._content {
+    padding: 22px 24px 0 24px;
+  }
+
+  ._title {
+    padding: 0 20px;
+
+    font-family: Lora;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+
+    color: #000000;
+  }
+
+  ._description {
+    margin-top: 22px;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 0 20px;
+    max-width: 887px;
+    color: #000000;
+  }
+
+  ._croupiers {
+    margin-top: 28px;
+    width: calc(100vw - 48px);
+  }
+
+  ._slider {
+  }
+
+  ._arrow {
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+    &::before {
+      content: "";
+    }
+  }
+
+  ._arrow_prev {
+    left: 0;
+  }
+
+  ._arrow_next {
+    right: 0;
+  }
+
+  ._item {
+    width: 100%;
+    height: 284px;
+    padding: 37px 33px;
+  }
+
+  ._item_hover {
+    display: block;
+  }
+
+  ._itemTitle {
+    color: #ffffff;
+  }
+
+  ._itemCasino {
+    margin-top: 8px;
+    color: #ffffff;
+  }
+}

@@ -12,6 +12,7 @@ import { getPositions } from "./redux/modules/positions";
 import { connect } from "react-redux";
 import BurgerMenu from "./components/burgerMenu";
 import Poker from "./components/pagePoker";
+import PageCroupiers from "./components/pageCroupiers";
 
 const App = ({ burgerIsOpen, getPositions, ...props }) => {
   getPositions();
@@ -28,6 +29,7 @@ const App = ({ burgerIsOpen, getPositions, ...props }) => {
           <Route path="/poker" component={Poker} />
           <Route path="/cart" component={CartPage} />
           <Route path="/contacts" component={ContactsPage} />
+          <Route path="/croupiers" component={PageCroupiers} />
           <Redirect to="/" />
         </Switch>
         <Footer />
