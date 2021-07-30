@@ -13,6 +13,7 @@ import { connect } from "react-redux";
 import BurgerMenu from "./components/burgerMenu";
 import Poker from "./components/pagePoker";
 import PageCroupiers from "./components/pageCroupiers";
+import PageNews from "./components/pageNews";
 
 const App = ({ burgerIsOpen, getPositions, ...props }) => {
   getPositions();
@@ -30,6 +31,7 @@ const App = ({ burgerIsOpen, getPositions, ...props }) => {
           <Route path="/cart" component={CartPage} />
           <Route path="/contacts" component={ContactsPage} />
           <Route path="/croupiers" component={PageCroupiers} />
+          <Route path="/news" component={PageNews} />
           <Redirect to="/" />
         </Switch>
         <Footer />

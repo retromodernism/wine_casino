@@ -7,6 +7,7 @@ import burger from "./burger";
 import tabletSearchBar from "./tabletSearchBar";
 import headerColor from "./headerColor";
 import kindsOfGames from "./kindsOfGames";
+import news from "./news";
 
 const rootReducers = {
   headerSocialsHover,
@@ -18,6 +19,7 @@ const rootReducers = {
   tabletSearchBar,
   headerColor,
   kindsOfGames,
+  news,
 };
 
 export default rootReducers;

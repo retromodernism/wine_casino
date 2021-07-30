@@ -28,7 +28,9 @@ const CartPage = ({ cartPopupIsOpen, makeHeaderDark, ...props }) => {
   return (
     <Fragment>
       <main className={s.main}>
-        {isDesktop && <Breadcrumbs />}
+        {isDesktop && (
+          <Breadcrumbs tree={[{ title: "Главная", to: "/" }]} title="Корзина" />
+        )}
         <Cart />
         {isMobile && <CartOrder />}
         <Recomendations />
