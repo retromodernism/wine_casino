@@ -14,9 +14,12 @@ import BurgerMenu from "./components/burgerMenu";
 import Poker from "./components/pagePoker";
 import PageCroupiers from "./components/pageCroupiers";
 import PageNews from "./components/pageNews";
+import PageNewsItem from "./components/pageNewsItem";
+import { getNews } from "./redux/modules/news";
 
-const App = ({ burgerIsOpen, getPositions, ...props }) => {
+const App = ({ burgerIsOpen, getNews, news, getPositions, ...props }) => {
   getPositions();
+  getNews();
 
   return (
     <BrowserRouter>
@@ -31,7 +34,8 @@ const App = ({ burgerIsOpen, getPositions, ...props }) => {
           <Route path="/cart" component={CartPage} />
           <Route path="/contacts" component={ContactsPage} />
           <Route path="/croupiers" component={PageCroupiers} />
-          <Route path="/news" component={PageNews} />
+          <Route exact path="/news" component={PageNews} />
+          <Route path="/news/:id" component={PageNewsItem} />
           <Redirect to="/" />
         </Switch>
         <Footer />
@@ -42,6 +46,9 @@ const App = ({ burgerIsOpen, getPositions, ...props }) => {
 };
 
 export default connect(
-  (state) => ({ burgerIsOpen: state.burger.burgerIsOpen }),
-  { getPositions }
+  (state) => ({
+    burgerIsOpen: state.burger.burgerIsOpen,
+    news: state.news.news,
+  }),
+  { getPositions, getNews }
 )(App);
