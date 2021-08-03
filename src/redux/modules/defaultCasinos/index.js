@@ -61,11 +61,31 @@ import bgCheesePromotion from "./src/cheeseCasino/promotion/bg.png";
 /* Additionals */
 import bgCheeseAdditionals from "./src/cheeseCasino/additionals/bg.png";
 /* HowItWas */
-import bgHowItWasCheese from './src/cheeseCasino/howItWas/bg.png';
-import image1HowItWasCheese from './src/cheeseCasino/howItWas/image1.png'
-import image2HowItWasCheese from './src/cheeseCasino/howItWas/image2.png'
-import image3HowItWasCheese from './src/cheeseCasino/howItWas/image3.png'
-import image4HowItWasCheese from './src/cheeseCasino/howItWas/image4.png'
+import bgHowItWasCheese from "./src/cheeseCasino/howItWas/bg.png";
+import image1HowItWasCheese from "./src/cheeseCasino/howItWas/image1.png";
+import image2HowItWasCheese from "./src/cheeseCasino/howItWas/image2.png";
+import image3HowItWasCheese from "./src/cheeseCasino/howItWas/image3.png";
+import image4HowItWasCheese from "./src/cheeseCasino/howItWas/image4.png";
+
+/** Chocolate */
+/* Home */
+import chipLeftChocolate from "./src/chocolateCasino/home/chipsLeft.svg";
+import chipRightChocolate from "./src/chocolateCasino/home/chipsRight.svg";
+import bgHomeChocolate from "./src/chocolateCasino/home/bg.png";
+/* Essence */
+import bgEssenceChocolate from "./src/chocolateCasino/essence/bg.png";
+import image1EssenceChocolate from "./src/chocolateCasino/essence/image1.png";
+import image4EssenceChocolate from "./src/chocolateCasino/essence/image4.png";
+/* Promotion */
+import bgPromotionChocolate from "./src/chocolateCasino/promotion/bg.png";
+/* Additionals */
+import bgAdditionalsChocolate from "./src/chocolateCasino/additionals/bg.png";
+/* HowItWas */
+import bgHowItWasChocolate from "./src/chocolateCasino/howItWas/bg.png";
+import image1HowItWasChocolate from "./src/chocolateCasino/howItWas/image1.png";
+import image2HowItWasChocolate from "./src/chocolateCasino/howItWas/image2.png";
+import image3HowItWasChocolate from "./src/chocolateCasino/howItWas/image3.png";
+import image4HowItWasChocolate from "./src/chocolateCasino/howItWas/image4.png";
 
 const casinos = [
   {
@@ -800,6 +820,376 @@ const casinos = [
       mainColor: "#CF972A", // цвет левого блока, лого, инпутов у формы
       iconColor: "#323232", // цвет иконок в футере
       innerTextColor: "#323232", // цвет текста в левом блоке
+    },
+  },
+  {
+    url: "/shokoladnoe-kazino",
+    type: "foodCasino",
+    header: {
+      logo: {
+        desktop: {
+          color: "#553800",
+        },
+        tablet: {
+          color: "#553800",
+        },
+        mobile: {
+          color: "#553800",
+        },
+      },
+    },
+    home: {
+      logo: {
+        color: "#553800",
+      },
+      title: {
+        text: "Шоколадное<br/>фан-казино",
+        color: "#553800",
+      },
+      video: {
+        link: "fZd3IMBfMB0",
+        color: "#553800",
+      },
+      features: {
+        items: [
+          {
+            top: {
+              type: "text",
+              text: "8",
+            },
+            bottom: {
+              description: "видов шоколада",
+            },
+          },
+          {
+            top: {
+              type: "icon",
+              icon: loupe,
+            },
+            bottom: {
+              description: "интересные факты",
+            },
+          },
+          {
+            top: {
+              type: "icon",
+              icon: sertificate,
+            },
+            bottom: {
+              description: "игровой стол",
+            },
+          },
+        ],
+        color: "#553800",
+      },
+      chips: {
+        left: chipLeftChocolate,
+        right: chipRightChocolate,
+      },
+      background: {
+        desktop: {
+          image: bgHomeChocolate,
+          width: "635px",
+          height: "518px",
+          right: "108px",
+          top: "207px",
+        },
+        tablet: {
+          image: bgHomeChocolate,
+          width: "457px",
+          height: "372px",
+          right: "-106px",
+          top: "250px",
+        },
+        mobile: {
+          image: bgHomeChocolate,
+          width: "221px",
+          height: "180px",
+          right: "-93px",
+          top: "137px",
+        },
+      },
+    },
+    essence: {
+      title: "В чем суть?",
+      // itemsColor: "#2A9D76",
+      itemsColor: "#2A9D76",
+      items: [
+        {
+          title: "Дегустация",
+          description:
+            "В начале игры сомелье рассказывает правила, раздаёт фишки и предлагает игрокам продегустировать определенный вид вина. Гости получают пробник, и пытаются и понять вкусовые и иные характеристики.",
+          image: image1EssenceChocolate,
+        },
+        {
+          title: "Ставки",
+          description:
+            "После того, как участники распробовали вкус, они начинают делать ставки на разные поля игрового стола. Как и в классическом казино, можно расположить несколько фишек на разные сектора.",
+          image: chips,
+        },
+        {
+          title: "Вскрытие",
+          description:
+            "Когда ставки сделаны, ведущий подробно описывает продегустированный продукт и чьи догадки оказались верными, а чьи нет. Распределяется выигрыш между участниками.",
+          image: peoples,
+        },
+        {
+          title: "Приз",
+          description:
+            "После завершения всех раундов, определяется победитель с наибольшим числом заработанных очков. Ему выдается сувенир, который согласуется с заказчиком (например, один из продуктов игры).",
+          image: image4EssenceChocolate,
+        },
+      ],
+      bg: {
+        image: bgEssenceChocolate,
+        top: "654px",
+        right: "-146px",
+        width: "418px",
+        height: "611px",
+      },
+    },
+    masterclass: {
+      color: "#2A9D76",
+      title: "Проведем мастеркласс у вас или у нас",
+      holidays: {
+        title: "Организация праздников на выезде",
+        description:
+          "Компания фан-казино предоставляет широкий спектр услуг по организации выездного фан-казино в Москве. Мы берем на себя доставку игрового поля, продуктов и всей необходимой атрибутики для проведения эффектного мероприятия. Также мы предоставляем услуги профессиональных крупье, сомелье, бариста и фотографов.",
+      },
+      offer: {
+        offerItems: [
+          {
+            icon: pizzaIcon,
+            description: "съедобная «рулетка»",
+          },
+          {
+            icon: lidIcon,
+            description: "сырные, медовые, хлебные дегустации",
+          },
+          {
+            icon: juiceIcon,
+            description:
+              "алкогольные/ слабоалкогольные/ безалкогольные<br/>фан-казино",
+          },
+        ],
+      },
+      image: masterclassImage,
+      rent: {
+        title: "Аренда площадки<br />на ваше мероприятие",
+        text: "Компания фан-казино располагает собственными площадками для организации торжеств любой тематики и масштаба.",
+        items: [
+          {
+            icon: iconWineglass,
+            title: "на праздник",
+          },
+          {
+            icon: iconParty,
+            title: "на корпоратив",
+          },
+          {
+            icon: iconConference,
+            title: "на конференцию",
+          },
+        ],
+      },
+      video: {
+        id: "fZd3IMBfMB0",
+      },
+    },
+    promotion: {
+      color: "#553800",
+      // color: "#323232",
+      bg: {
+        image: bgPromotionChocolate,
+        width: "354px",
+        height: "517px",
+        top: "-150px",
+        left: "-100px",
+      },
+      items: [
+        {
+          title: "Фотобудка в подарок",
+          description: "при заказе<br />maxi пакета",
+          icon: {
+            svg: camera,
+            desktop: {
+              height: "105px",
+              width: "139px",
+              bottom: "-18px",
+              right: "33px",
+            },
+            tablet: {
+              width: "95px",
+              height: "72px",
+              bottom: "-12px",
+              right: "23px",
+            },
+            mobile: {
+              width: "78px",
+              height: "59px",
+              bottom: "-10px",
+              right: "19px",
+            },
+          },
+        },
+        {
+          title: "Фотограф бесплатно",
+          description: "при заказе<br />от 5-ти столов",
+          icon: {
+            svg: photograph,
+            desktop: {
+              height: "127px",
+              width: "123px",
+              bottom: "-8px",
+              right: "26px",
+            },
+            tablet: {
+              width: "84px",
+              height: "87px",
+              bottom: "-5px",
+              right: "18px",
+            },
+            mobile: {
+              width: "68px",
+              height: "71px",
+              bottom: "-5px",
+              right: "14px",
+            },
+          },
+        },
+        {
+          title: "Сертификат 10 000 ₽",
+          description: "при заказе maxi пакета",
+          icon: {
+            svg: sertificatePromotion,
+            desktop: {
+              height: "79px",
+              width: "123px",
+              bottom: "-23px",
+              right: "25px",
+            },
+            tablet: {
+              width: "84px",
+              height: "54px",
+              bottom: "-16px",
+              right: "17px",
+            },
+            mobile: {
+              width: "68px",
+              height: "44px",
+              bottom: "-13px",
+              right: "14px",
+            },
+          },
+        },
+      ],
+    },
+    variants: {
+      color: {
+        item: "#2A9D76",
+        popular: "#A2000C",
+      },
+      // color: {
+      //   item: "#323232",
+      //   popular: "#2A9D76",
+      // },
+    },
+    additionals: {
+      title: "Так же вы можете добавить",
+      // color: "#323232",
+      color: "#2A9D76",
+      bg: {
+        image: bgAdditionalsChocolate,
+        right: "-319px",
+        top: "512px",
+        height: "516px",
+        width: "609px",
+      },
+    },
+    otherCasinos: {
+      color: "#553800",
+      fontColor: "#ffffff",
+    },
+    howItWas: {
+      title: "Как это было",
+      color: "#553800",
+      images: [
+        image1HowItWasChocolate,
+        image2HowItWasChocolate,
+        image3HowItWasChocolate,
+        image4HowItWasChocolate,
+        image4HowItWasChocolate,
+      ],
+      bg: {
+        image: bgHowItWasChocolate,
+        height: "516px",
+        width: "609px",
+        top: "-118px",
+        left: "-338px",
+      },
+    },
+    tematic: {
+      items: [
+        {
+          title: "Гэтсби",
+          description:
+            "Организуем для вас вечеринку в стиле Гэтсби. Гламур и декаданс 20-х годов прошлого века сделали их популярной темой для тематических праздников. Помимо оформления здесь не малую роль играют благородные напитки, что отлично сочетается с нашими услугами.",
+          images: [gatsby1, gatsby2, gatsby3],
+        },
+        {
+          title: "Лас-Вегас",
+          description:
+            "Город расположенный в пустыне стал символом кутежа, богатства и веселья. Установим игровые столы фан-казино различной направленности на событии для создания атмосферы в стиле Лас-Вегаса.",
+          images: [lasVegas1, lasVegas2, lasVegas3],
+        },
+        {
+          title: "Мафия",
+          description:
+            "Эпоха шарма подпольных баров и романтизированной мафии из зарубежных фильмов, всегда притягивала внимание людей. Легко воплотим желание окунуться в те времена с помощью аниматоров и соответствующего реквизита.",
+          images: [mafia1, mafia2, mafia3],
+        },
+      ],
+    },
+    about: {
+      title: "О винном фан-казино",
+      items: [
+        {
+          type: "text",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu turpis amet, eu tincidunt purus, arcu. Tellus eget dui eget lorem. Nunc cras nulla viverra pulvinar. Mauris purus, lobortis nulla tortor dis platea. Erat nibh amet, dictum a, amet at interdum integer. Arcu pulvinar parturient porttitor scelerisque in sit ut ultricies. Accumsan, sed consectetur aliquam donec. Platea eu odio tincidunt auctor sed. Viverra at et velit lacus facilisis est amet, lacus. Erat eleifend at faucibus nisl purus enim pulvinar. Ultrices fringilla risus sodales dignissim tristique venenatis nulla aenean tortor. Amet, orci gravida fermentum, morbi iaculis dui laoreet. Dictum id nulla imperdiet purus pellentesque etiam et habitant viverra. Donec arcu sagittis ipsum nulla. Tempus dolor eu consequat elit ut diam hendrerit enim odio. Auctor sed volutpat morbi ut tristique netus. ",
+        },
+        {
+          type: "image",
+          image: imageAbout,
+          desktop: {
+            height: "auto",
+          },
+          tablet: {
+            height: "471px",
+          },
+          mobile: {
+            height: "42vh",
+          },
+        },
+        {
+          type: "text",
+          text: "<p>- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+        },
+        {
+          type: "text",
+          text: "<p>- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+        },
+        {
+          type: "text",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu turpis amet, eu tincidunt purus, arcu. Tellus eget dui eget lorem. Nunc cras nulla viverra pulvinar. Mauris purus, lobortis nulla tortor dis platea. Erat nibh amet, dictum a, amet at interdum integer. Arcu pulvinar parturient porttitor scelerisque in sit ut ultricies. Accumsan, sed consectetur aliquam donec. Platea eu odio tincidunt auctor sed. Viverra at et velit lacus facilisis est amet, lacus. Erat eleifend at faucibus nisl purus enim pulvinar. Ultrices fringilla risus sodales dignissim tristique venenatis nulla aenean tortor. Amet, orci gravida fermentum, morbi iaculis dui laoreet. Dictum id nulla imperdiet purus pellentesque etiam et habitant viverra. Donec arcu sagittis ipsum nulla. Tempus dolor eu consequat elit ut diam hendrerit enim odio. Auctor sed volutpat morbi ut tristique netus. ",
+          column: "1/-1",
+        },
+      ],
+    },
+    footer: {
+      textColor: "#553800", // цвет текста правого блока
+      mainColor: "#553800", // цвет левого блока, лого, инпутов у формы
+      iconColor: "#ffffff", // цвет иконок в футере
+      innerTextColor: "#ffffff", // цвет текста в левом блоке
     },
   },
 ];
