@@ -76,9 +76,6 @@
     }
   }
 
-  // ._socialLink {
-  // }
-
   ._contactsPhone {
     color: #ffffff;
   }
@@ -106,10 +103,6 @@
     user-select: none;
     cursor: pointer;
   }
-
-  // ._confidLink {
-  //   margin-top: 57px;
-  // }
 
   ._confid {
     color: #ffffff;
@@ -143,7 +136,8 @@
   ._logoImage {
     width: 219px;
     height: 73px;
-    background: url(./src/logo.svg) 100% 100% no-repeat;
+    mask-image: url(./src/logo.svg);
+    mask-size: contain;
   }
 
   ._links {
@@ -172,6 +166,7 @@
     grid-column: 1/-1;
     color: $darkRed;
   }
+
   ._formDescription {
     grid-column: 1/-1;
     color: $darkRed;
@@ -179,28 +174,31 @@
     margin-top: 20px;
     margin-bottom: 30px;
   }
+
   ._formInput {
     width: 100%;
     border: 1px solid $darkRed;
     padding: 15px 20px;
-    &::-webkit-input-placeholder {
-      color: $darkRed;
-      opacity: 0.7;
-    }
+    // &::-webkit-input-placeholder {
+    //   color: $darkRed;
+    //   opacity: 0.7;
+    // }
   }
-  // ._formNameInput {
-  // }
+  
   ._formPhoneInputWrapper {
     position: relative;
   }
+
   ._formPhoneInput {
     padding-right: 72px;
   }
+
   ._formSubmit {
     background: $darkRed;
     color: #ffffff;
     cursor: pointer;
   }
+
   ._formSubmit_hover {
     background: unset;
     color: $black;
@@ -220,7 +218,6 @@
   ._content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    // width: 1308px;
     width: 100%;
   }
 
@@ -228,7 +225,6 @@
     position: relative;
     padding: 13px 65px 22px 20px;
     background: $darkRed;
-    // min-height: 463px;
   }
 
   ._socials {
@@ -238,14 +234,6 @@
     align-items: center;
   }
 
-  // ._socialsLeft {
-  //   ._socialLink {
-  //     &:not(:last-child) {
-  //       margin-right: 18px;
-  //     }
-  //   }
-  // }
-
   ._socialsRight {
     margin-top: 18px;
     ._socialLink {
@@ -254,9 +242,6 @@
       }
     }
   }
-
-  // ._socialLink {
-  // }
 
   ._contactsPhone {
     color: #ffffff;
@@ -290,10 +275,6 @@
     font-size: 14px;
     line-height: 17px;
   }
-
-  // ._confidLink {
-  //   margin-top: 57px;
-  // }
 
   ._confid {
     color: #ffffff;
@@ -329,7 +310,8 @@
   ._logoImage {
     width: 219px;
     height: 73px;
-    background: url(./src/logo.svg) 100% 100% no-repeat;
+    mask-image: url(./src/logo.svg);
+    mask-size: contain;
   }
 
   ._links {
@@ -352,9 +334,6 @@
 
   ._form {
     margin-bottom: 50px;
-    // display: grid;
-    // grid: repeat(3, min-content) / repeat(3, 1fr);
-    // gap: 0 20px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -367,6 +346,7 @@
     font-size: 24px;
     line-height: 29px;
   }
+
   ._formDescription {
     grid-column: 1/-1;
     color: $black;
@@ -376,11 +356,13 @@
     font-size: 18px;
     line-height: 22px;
   }
+
   ._formInputs {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
+
   ._inputLabel {
     margin-top: 24px;
     width: calc(50% - 6px);
@@ -388,28 +370,31 @@
       margin-right: 12px;
     }
   }
+
   ._formInput {
     width: 100%;
     box-shadow: inset 0 0 0 1px $darkRed;
     padding: 15px 20px;
-    &::-webkit-input-placeholder {
-      color: $darkRed;
-      opacity: 0.7;
-    }
+    // &::-webkit-input-placeholder {
+    //   color: $darkRed;
+    //   opacity: 0.7;
+    // }
   }
-  // ._formNameInput {
-  // }
+  
   ._formPhoneInputWrapper {
     position: relative;
   }
+
   ._formPhoneInput {
     padding-right: 72px;
   }
+
   ._formSubmit {
     background: $darkRed;
     color: #ffffff;
     cursor: pointer;
   }
+
   ._formSubmit_hover {
     background: unset;
     color: $black;
@@ -509,10 +494,6 @@
     line-height: 14px;
   }
 
-  // ._confidLink {
-  //   margin-top: 57px;
-  // }
-
   ._confidLink {
     margin-top: 3px;
     display: flex;
@@ -533,15 +514,11 @@
     width: 152px;
     height: 52px;
     background: #c4c4c4;
-    // position: absolute;
-    // left: 18px;
-    // bottom: 38px;
   }
 
   ._right {
     position: relative;
     padding-top: 15px;
-    // padding: 11px 0 0 41px;
   }
 
   ._logo {
@@ -554,7 +531,8 @@
   ._logoImage {
     width: 130px;
     height: 43px;
-    background: url(./src/logo.svg) 100% 100% / contain no-repeat;
+    mask-image: url(./src/logo.svg);
+    mask-size: contain;
   }
 
   ._links {
@@ -578,9 +556,6 @@
 
   ._form {
     margin-bottom: 50px;
-    // display: grid;
-    // grid: repeat(3, min-content) / repeat(3, 1fr);
-    // gap: 0 20px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -593,6 +568,7 @@
     font-size: 24px;
     line-height: 29px;
   }
+
   ._formDescription {
     grid-column: 1/-1;
     color: $black;
@@ -602,43 +578,42 @@
     font-size: 18px;
     line-height: 22px;
   }
+
   ._formInputs {
     display: flex;
     flex-direction: column;
-    // flex-wrap: wrap;
-    // justify-content: center;
   }
+
   ._inputLabel {
     margin-top: 24px;
-    // width: calc(50% - 6px);
-    // &:nth-child(2n - 1) {
-    //   margin-right: 12px;
-    // }
   }
+
   ._formInput {
     width: 100%;
     box-shadow: inset 0 0 0 1px $darkRed;
     padding: 15px 20px;
     font-size: 16px;
     line-height: 19px;
-    &::-webkit-input-placeholder {
-      color: $darkRed;
-      opacity: 0.7;
-    }
+    // &::-webkit-input-placeholder {
+    //   color: $darkRed;
+    //   opacity: 0.7;
+    // }
   }
-  // ._formNameInput {
-  // }
+
   ._formPhoneInputWrapper {
     position: relative;
   }
+
   ._formPhoneInput {
     padding-right: 72px;
   }
+
   ._formSubmit {
     background: $darkRed;
     color: #ffffff;
     cursor: pointer;
   }
+  
   ._formSubmit_hover {
     background: unset;
     color: $black;

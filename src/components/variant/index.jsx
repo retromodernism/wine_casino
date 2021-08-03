@@ -22,9 +22,11 @@ const Variant = ({
   price,
   count,
   id,
+  color,
   addPosition,
   changePositionCount,
 }) => {
+  /* Media Queries */
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
     query: "screen and (min-width: 768px) and (max-width: 1299px)",
@@ -49,6 +51,11 @@ const Variant = ({
         // Раскрыть при нажатии на элемент
         if (!isExpanded && (isTablet || isMobile)) toggleVariant();
       }}
+      style={{
+        color: isPopular ? "#ffffff" : color.item,
+        boxShadow: `inset 0 0 0 4px ${color.item}`,
+        background: isPopular ? color.item : null,
+      }}
     >
       <div
         className={s._image}
@@ -59,32 +66,69 @@ const Variant = ({
         }}
       ></div>
       {isPopular && !isExpanded && (
-        <div className={s._popularLabel}>Популярный выбор</div>
+        <div className={s._popularLabel} style={{ background: color.popular }}>
+          Популярный выбор
+        </div>
       )}
       {(isTablet || isMobile) && (
-        <button className={s._expandButton} onClick={toggleVariant} />
+        <button
+          className={s._expandButton}
+          onClick={toggleVariant}
+          style={{ background: isPopular ? "#ffffff" : color.item }}
+        />
       )}
-      <div className={s._title}>{title}</div>
-      <div className={s._description}>{description}</div>
+      <div
+        className={s._title}
+        style={{ color: isPopular ? "#ffffff" : color.item }}
+      >
+        {title}
+      </div>
+      <div
+        className={s._description}
+        style={{ color: isPopular ? "#ffffff" : color.item }}
+      >
+        {description}
+      </div>
       <ul className={s._options}>
         {options.map((text, index) => (
-          <li className={s._option} key={index}>
-            {text}
+          <li
+            className={s._option}
+            key={index}
+            style={{ color: isPopular ? "#ffffff" : color.item }}
+          >
+            <div
+              className={s._optionAfter}
+              style={{ background: isPopular ? "#ffffff" : color.item }}
+            />
+            <span>{text}</span>
           </li>
         ))}
       </ul>
       <div className={s._footer}>
-        <div className={s._footerTitle}>Цена:</div>
-        <div className={s._price}>от {price.toLocaleString()} ₽</div>
+        <div
+          className={s._footerTitle}
+          style={{ color: isPopular ? "#ffffff" : color.item }}
+        >
+          Цена:
+        </div>
+        <div
+          className={s._price}
+          style={{ color: isPopular ? "#ffffff" : color.item }}
+        >
+          от {price.toLocaleString()} ₽
+        </div>
         {isDesktop && (
           <Fragment>
             <div
-              className={s._minusIcon}
+              className={s._minusIconWrapper}
               onClick={() => {
                 decrementCount();
               }}
             >
-              {isPopular ? <MinusPopular /> : <Minus />}
+              <div
+                className={s._minusIcon}
+                style={{ background: isPopular ? "#ffffff" : color.item }}
+              />
             </div>
             <InputMask
               mask="999"
@@ -95,21 +139,29 @@ const Variant = ({
                 addToCart();
                 changePositionCount(+e.target.value, id);
               }}
+              style={{ color: isPopular ? "#ffffff" : color.item }}
             />
             <div
-              className={s._plusIcon}
+              className={s._plusIconWrapper}
               onClick={() => {
                 addToCart();
                 incrementCount();
               }}
             >
-              {isPopular ? <PlusPopular /> : <Plus />}
+              <div
+                className={s._plusIcon}
+                style={{ background: isPopular ? "#ffffff" : color.item }}
+              />
             </div>
           </Fragment>
         )}
         {(isTablet || isMobile) && (
           <div className={s._plusIcon}>
-            <button className={s._plusIcon} onClick={addToCart}></button>
+            <button
+              className={s._plusIcon}
+              onClick={addToCart}
+              style={{ background: isPopular ? "#ffffff" : color.item }}
+            ></button>
           </div>
         )}
       </div>

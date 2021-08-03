@@ -8,6 +8,7 @@ import tabletSearchBar from "./tabletSearchBar";
 import headerColor from "./headerColor";
 import kindsOfGames from "./kindsOfGames";
 import news from "./news";
+import casinos from "./casinos";
 
 const rootReducers = {
   headerSocialsHover,
@@ -20,6 +21,7 @@ const rootReducers = {
   headerColor,
   kindsOfGames,
   news,
+  casinos,
 };
 
 export default rootReducers;

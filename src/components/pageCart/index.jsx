@@ -11,6 +11,8 @@ import { Fragment } from "react";
 import CartSuccessPopup from "../cartSuccessPopup";
 import { useMediaQuery } from "react-responsive";
 import CartOrder from "../cartOrder";
+import Header from "../header";
+import Footer from "../footer";
 
 const CartPage = ({ cartPopupIsOpen, makeHeaderDark, ...props }) => {
   /* Make Header Dark */
@@ -26,7 +28,8 @@ const CartPage = ({ cartPopupIsOpen, makeHeaderDark, ...props }) => {
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
   return (
-    <Fragment>
+    <>
+      <Header />
       <main className={s.main}>
         {isDesktop && (
           <Breadcrumbs tree={[{ title: "Главная", to: "/" }]} title="Корзина" />
@@ -36,8 +39,9 @@ const CartPage = ({ cartPopupIsOpen, makeHeaderDark, ...props }) => {
         <Recomendations />
         {isTablet && <CartOrder />}
       </main>
+      <Footer />
       {cartPopupIsOpen && <CartSuccessPopup />}
-    </Fragment>
+    </>
   );
 };
 

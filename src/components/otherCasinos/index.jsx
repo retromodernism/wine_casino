@@ -21,6 +21,11 @@ import wine from "./src/wine.png";
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
+const defaultData = {
+  color: "#323232",
+  fontColor: "#ffffff",
+};
+
 const casinos = [
   {
     title: "Мясное",
@@ -112,6 +117,8 @@ const ShowMore = ({ onClick }) => {
 };
 
 const OtherCasinos = (props) => {
+  const { color, fontColor } = props.data || defaultData;
+
   /* Media Queries */
 
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
@@ -143,7 +150,12 @@ const OtherCasinos = (props) => {
         <div className={s._items}>
           {casinos.map((casino, index) =>
             index < showedCasinosNumber ? (
-              <CasinoItem {...casino} key={index} />
+              <CasinoItem
+                {...casino}
+                color={color}
+                fontColor={fontColor}
+                key={index}
+              />
             ) : null
           )}
           {hasShowMore && (

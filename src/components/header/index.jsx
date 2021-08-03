@@ -3,6 +3,9 @@ import cx from "classnames";
 import { ReactComponent as Logo } from "./src/logo.svg";
 import { ReactComponent as LogoTablet } from "./src/logo_tab.svg";
 import { ReactComponent as LogoMobile } from "./src/logo_mob.svg";
+import logo from "./src/logo.svg";
+import logoTablet from "./src/logo_tab.svg";
+import logoMobile from "./src/logo_mob.svg";
 import { ReactComponent as WhatsApp } from "./src/whatsapp.svg";
 import { ReactComponent as Telegram } from "./src/tg.svg";
 import { ReactComponent as Viber } from "./src/viber.svg";
@@ -41,6 +44,7 @@ const Header = ({
   headerColor,
   openBurger,
   openSearchBar,
+  data,
   ...props
 }) => {
   /* Media Queries */
@@ -66,10 +70,43 @@ const Header = ({
     >
       {!searchBarIsOpen && (
         <Link to="/" className={s._logoWrapper}>
-          {isDesktop && <Logo className={s._logo} />}
-          {isTablet && <LogoTablet className={s._logo} />}
-          {isMobile && (
-            <LogoMobile className={s._logo} style={{ height: "33px" }} />
+          {data ? (
+            <>
+              {isDesktop && (
+                <Logo
+                  className={s._logo}
+                  style={{ fill: data.logo.desktop.color }}
+                />
+              )}
+              {isTablet && (
+                <LogoTablet
+                  className={s._logo}
+                  style={{ fill: data.logo.tablet.color }}
+                />
+              )}
+              {isMobile && (
+                <LogoMobile
+                  className={s._logo}
+                  style={{ fill: data.logo.mobile.color, height: "33px" }}
+                />
+              )}
+            </>
+          ) : (
+            <>
+              {isDesktop && <Logo className={s._logo} />}
+              {isTablet && (
+                <LogoTablet
+                  className={s._logo}
+                  style={{ fill: "#323232"}}
+                />
+              )}
+              {isMobile && (
+                <LogoMobile
+                  className={s._logo}
+                  style={{ fill: "#323232", height: "33px" }}
+                />
+              )}
+            </>
           )}
         </Link>
       )}

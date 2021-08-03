@@ -10,9 +10,9 @@ const EquipmentItem = ({
   count = "за шт",
   id,
   addPosition,
+  color,
 }) => {
   /* Media Queries */
-
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
     query: "screen and (min-width: 768px) and (max-width: 1299px)",
@@ -24,7 +24,10 @@ const EquipmentItem = ({
   const addToCart = addPosition.bind(null, id);
 
   return (
-    <div className={s.equipmentItem}>
+    <div
+      className={s.equipmentItem}
+      style={{ boxShadow: `0 0 0 2px ${color}` }}
+    >
       <div
         className={s._image}
         style={{
@@ -32,7 +35,7 @@ const EquipmentItem = ({
           backgroundSize: isMobile ? "contain" : "",
         }}
       ></div>
-      <div className={s._footer}>
+      <div className={s._footer} style={{ background: color }}>
         <div className={s._title}>{title}</div>
         <p className={s._titlePrice}>Цена:</p>
         <p className={s._price}>{price.toLocaleString()} ₽</p>

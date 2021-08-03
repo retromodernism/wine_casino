@@ -14,7 +14,6 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    // height: 626px;
   }
 
   ._bg {
@@ -74,17 +73,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    // height: 626px;
   }
-
-  // ._bg {
-  //   position: absolute;
-  //   width: 761px;
-  //   height: 459px;
-  //   background: url(./src/bg.png) 100% 100% no-repeat;
-  //   top: 0;
-  //   left: -8.125%;
-  // }
 
   ._content {
     position: relative;
@@ -98,7 +87,6 @@
   }
 
   ._item {
-    // height: 150px;
     width: 286px;
     border-radius: 20px;
     background: $darkRed;

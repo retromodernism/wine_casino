@@ -7,6 +7,8 @@ import Breadcrumbs from "../breadcrumbs";
 import NewsItem from "../newsItem";
 import { makeHeaderDark } from "../../redux/modules/headerColor";
 import { useParams, useHistory } from "react-router-dom";
+import Header from '../header';
+import Footer from "../footer";
 
 const PageNews = ({ news, makeHeaderDark, ...props }) => {
   /* Media Queries */
@@ -34,6 +36,8 @@ const PageNews = ({ news, makeHeaderDark, ...props }) => {
   }
 
   return (
+    <>
+    <Header />
     <main className={s.main}>
       {isDesktop && (
         <Fragment>
@@ -58,6 +62,8 @@ const PageNews = ({ news, makeHeaderDark, ...props }) => {
         </Fragment>
       )}
     </main>
+    <Footer />
+    </>
   );
 };
 

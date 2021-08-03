@@ -16,19 +16,35 @@ import PageCroupiers from "./components/pageCroupiers";
 import PageNews from "./components/pageNews";
 import PageNewsItem from "./components/pageNewsItem";
 import { getNews } from "./redux/modules/news";
+import { getCasinos } from "./redux/modules/casinos";
+import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 
-const App = ({ burgerIsOpen, getNews, news, getPositions, ...props }) => {
+const App = ({
+  burgerIsOpen,
+  getNews,
+  news,
+  casinos,
+  getPositions,
+  getCasinos,
+  ...props
+}) => {
+  useEffect(() => {
+    getNews();
+    getCasinos();
+  }, []);
   getPositions();
-  getNews();
+
+  const foodCasinos = casinos.filter(({ type }) => type === "foodCasino");
 
   return (
     <BrowserRouter>
       <ScrollToTop />
       <div className={s.app}>
-        <Header />
+        {/* <Header /> */}
         <Switch>
           <Route exact path="/" component={MainPageFoodCasino} />
-          <Route path="/vinnoe-kazino" component={WineCasino} />
+          {/* <Route path="/vinnoe-kazino" component={WineCasino} /> */}
           <Route path="/klassicheskoe-kazino" component={ClassicCasino} />
           <Route path="/poker" component={Poker} />
           <Route path="/cart" component={CartPage} />
@@ -36,9 +52,16 @@ const App = ({ burgerIsOpen, getNews, news, getPositions, ...props }) => {
           <Route path="/croupiers" component={PageCroupiers} />
           <Route exact path="/news" component={PageNews} />
           <Route path="/news/:id" component={PageNewsItem} />
-          <Redirect to="/" />
+          {foodCasinos.map((casino, index) => (
+            <Route
+              path={casino.url}
+              key={index}
+              component={() => <WineCasino casino={casino} />}
+            />
+          ))}
+          {/* <Redirect to="/" /> */}
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
         {burgerIsOpen && <BurgerMenu />}
       </div>
     </BrowserRouter>
@@ -49,6 +72,7 @@ export default connect(
   (state) => ({
     burgerIsOpen: state.burger.burgerIsOpen,
     news: state.news.news,
+    casinos: state.casinos.casinos,
   }),
-  { getPositions, getNews }
+  { getPositions, getNews, getCasinos }
 )(App);

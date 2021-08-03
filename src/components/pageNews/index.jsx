@@ -4,6 +4,8 @@ import { Fragment } from "react";
 import { connect } from "react-redux";
 import Breadcrumbs from "../breadcrumbs";
 import News from "../news";
+import Header from "../header";
+import Footer from "../footer";
 
 const PageNews = ({ news, ...props }) => {
   /* Media Queries */
@@ -15,24 +17,31 @@ const PageNews = ({ news, ...props }) => {
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
   return (
-    <main className={s.main}>
-      {isDesktop && (
-        <Fragment>
-          <Breadcrumbs tree={[{ title: "Главная", to: "/" }]} title="Новости" />
-          <News />
-        </Fragment>
-      )}
-      {isTablet && (
-        <Fragment>
-          <News />
-        </Fragment>
-      )}
-      {isMobile && (
-        <Fragment>
-          <News />
-        </Fragment>
-      )}
-    </main>
+    <>
+      <Header />
+      <main className={s.main}>
+        {isDesktop && (
+          <Fragment>
+            <Breadcrumbs
+              tree={[{ title: "Главная", to: "/" }]}
+              title="Новости"
+            />
+            <News />
+          </Fragment>
+        )}
+        {isTablet && (
+          <Fragment>
+            <News />
+          </Fragment>
+        )}
+        {isMobile && (
+          <Fragment>
+            <News />
+          </Fragment>
+        )}
+      </main>
+      <Footer />
+    </>
   );
 };
 

@@ -1,12 +1,17 @@
 import s from "./index.module.scss";
-import image1 from "./src/image1.png";
-import image2 from "./src/image2.png";
-import image3 from "./src/image3.png";
-import classname from "classnames";
 import Variant from "../variant";
 import { connect } from "react-redux";
 
+const defaultData = {
+  color: {
+    item: "#323232",
+    popular: "#2A9D76",
+  },
+};
+
 const Variants = ({ positions, ...props }) => {
+  const { color } = props.data || defaultData;
+
   const currentCasinoType = "wine";
   const casinos = positions.filter(
     ({ type, casinoType }) =>
@@ -22,7 +27,7 @@ const Variants = ({ positions, ...props }) => {
         <div className={s._title}>Подберите лучший для себя вариант</div>
         <div className={s._variants}>
           {casinos.map((casino, index) => (
-            <Variant {...casino} key={index} />
+            <Variant {...casino} color={color} key={index} />
           ))}
         </div>
       </div>

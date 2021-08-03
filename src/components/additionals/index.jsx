@@ -8,6 +8,19 @@ import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
 import "./swiper.scss";
+import wineAdditinalsBg from "./src/bg.png";
+
+const defaultData = {
+  title: "Так же вы можете добавить",
+  color: "#323232",
+  bg: {
+    image: wineAdditinalsBg,
+    right: "-172px",
+    top: "-2px",
+    height: "698px",
+    width: "520px",
+  },
+};
 
 const sliderParams = {
   slidesPerView: 2,
@@ -28,9 +41,10 @@ const ShowMore = ({ onClick }) => {
   );
 };
 
-const Additionals = ({ positions, props }) => {
-  /* Media Queries */
+const Additionals = ({ positions, ...props }) => {
+  const { title, color, bg } = props.data || defaultData;
 
+  /* Media Queries */
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
     query: "screen and (min-width: 768px) and (max-width: 1299px)",
@@ -50,16 +64,27 @@ const Additionals = ({ positions, props }) => {
 
   return (
     <section className={cx(s.additionals, "additionals")}>
-      <div className={s._bg}></div>
-      <div className={s._bg1}></div>
+      {isDesktop && (
+        <div
+          className={s._bg}
+          style={{
+            background: `url(${bg.image}) 100% 100% / contain no-repeat`,
+            width: bg.width,
+            height: bg.height,
+            top: bg.top,
+            right: bg.right,
+          }}
+        />
+      )}
+      <div className={s._bg1} />
       <div className={s._content}>
-        <div className={s._title}>Так же вы можете добавить</div>
+        <div className={s._title}>{title}</div>
         <div className={s._subtitle}>Наше оборудование</div>
         {!isMobile && (
           <div className={s._equipment}>
             {equipments.map((item, index) =>
               index < showedEquipmentNumber ? (
-                <EquipmentItem {...item} key={index} />
+                <EquipmentItem {...item} key={index} color={color} />
               ) : null
             )}
             {equipmentsHasShowMore && (
@@ -83,7 +108,7 @@ const Additionals = ({ positions, props }) => {
             >
               {equipments.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <EquipmentItem {...item} />
+                  <EquipmentItem {...item} color={color} />
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -95,7 +120,7 @@ const Additionals = ({ positions, props }) => {
           <div className={s._service}>
             {services.map((item, index) =>
               index < showedServiceNumber ? (
-                <ServiceItem {...item} key={index} />
+                <ServiceItem {...item} key={index} color={color} />
               ) : null
             )}
             {servicesHasShowMore && (
@@ -113,7 +138,7 @@ const Additionals = ({ positions, props }) => {
             <Swiper {...sliderParams}>
               {services.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <ServiceItem {...item} key={index} />
+                  <ServiceItem {...item} key={index} color={color} />
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -124,7 +149,7 @@ const Additionals = ({ positions, props }) => {
             <Swiper {...{ slidesPerView: "auto", spaceBetween: 10 }}>
               {services.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <ServiceItem {...item} key={index} />
+                  <ServiceItem {...item} key={index} color={color} />
                 </SwiperSlide>
               ))}
             </Swiper>

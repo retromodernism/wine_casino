@@ -13,11 +13,58 @@ import {
 } from "../../redux/modules/headerColor";
 import { connect } from "react-redux";
 import { useLayoutEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 
-const Home = ({ makeHeaderDark, ...props }) => {
+const Home = (props) => {
+  /* Props decomposition */
+  const { logo, title, video, features, chips, background } = props.data;
+
+  /* Media Queries */
+  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
+  const isTablet = useMediaQuery({
+    query: "screen and (min-width: 768px) and (max-width: 1299px)",
+  });
+  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+
+  /* Bg Style */
+
+  let bgStyle;
+  if (isDesktop) {
+    bgStyle = {
+      background: `url(${background.desktop.image}) 100% 100% / contain no-repeat`,
+      width: background.desktop.width,
+      height: background.desktop.height,
+      position: "absolute",
+      top: background.desktop.top,
+      right: background.desktop.right,
+    };
+  } else if (isTablet) {
+    bgStyle = {
+      background: `url(${background.tablet.image}) 100% 100% / contain no-repeat`,
+      width: background.tablet.width,
+      height: background.tablet.height,
+      position: "absolute",
+      top: background.tablet.top,
+      right: background.tablet.right,
+    };
+  } else if (isMobile) {
+    bgStyle = {
+      background: `url(${background.mobile.image}) 100% 100% / contain no-repeat`,
+      width: background.mobile.width,
+      height: background.mobile.height,
+      position: "absolute",
+      top: background.mobile.top,
+      right: background.mobile.right,
+    };
+  }
+
+  /* Change header color theme */
+
   useLayoutEffect(() => {
     makeHeaderDark();
   });
+
+  /* Local state */
 
   const [videoIsOpen, setVideoOpen] = useState(false);
   const [buttonIsHover, setButtonIsHover] = useState(false);
@@ -25,20 +72,30 @@ const Home = ({ makeHeaderDark, ...props }) => {
   return (
     <section className={s.home}>
       <div className={s._bg0}></div>
-      <div className={s._bg}></div>
+      <div className={s._bg} style={bgStyle} />
       <div className={s._bg1}></div>
-      <div className={s._bg2}></div>
+      <div
+        className={s._bg2}
+        style={{
+          background: `url(${chips.left}) 100% 100% / contain no-repeat`,
+        }}
+      ></div>
       <div className={s._bg3}></div>
       <div className={s._bg4}></div>
-      <div className={s._bg5}></div>
+      <div
+        className={s._bg5}
+        style={{
+          background: `url(${chips.right}) 100% 100% / contain no-repeat`,
+        }}
+      ></div>
       <div className={s._bg6}></div>
 
       <div className={s._content}>
-        <div className={s._title}>
-          Винное
-          <br />
-          фан-казино
-        </div>
+        <div
+          className={s._title}
+          dangerouslySetInnerHTML={{ __html: title.text }}
+          style={{ color: title.color }}
+        ></div>
         <div className={s._subtitle}>
           * все законно, мы не используем настоящие деньги
         </div>
@@ -61,6 +118,12 @@ const Home = ({ makeHeaderDark, ...props }) => {
           className={classname(s._videoButton, {
             [s._videoButton_hover]: buttonIsHover,
           })}
+          style={{
+            background: buttonIsHover ? "none" : video.color,
+            boxShadow: buttonIsHover
+              ? `inset 0 0 0 2px ${video.color}`
+              : "none",
+          }}
           onClick={setVideoOpen.bind(null, true)}
           onMouseEnter={setButtonIsHover.bind(null, true)}
           onMouseLeave={setButtonIsHover.bind(null, false)}
@@ -69,20 +132,36 @@ const Home = ({ makeHeaderDark, ...props }) => {
           <div className={s._videoButtonIcon}></div>
         </button>
         <div className={s._features}>
-          <div className={s._feature}>
-            <div className={s._featureNumber}>4</div>
-            <p className={s._featureTitle}>сорта вина</p>
-          </div>
-          <div className={s._feature}>
-            <Loupe
-              style={{ marginTop: "3px", width: "32px", height: "32px" }}
-            />
-            <p className={s._featureTitle}>интересные факты</p>
-          </div>
-          <div className={s._feature}>
-            <Format style={{ width: "46px", height: "35px" }} />
-            <p className={s._featureTitle}>новый формат</p>
-          </div>
+          {features.items.map(({ top, bottom }, index) => (
+            <div className={s._feature} key={index}>
+              {top.type === "text" ? (
+                <div
+                  className={s._featureNumber}
+                  style={{ color: features.color }}
+                  dangerouslySetInnerHTML={{ __html: top.text }}
+                />
+              ) : (
+                <div
+                  className={s._featureIcon}
+                  style={{
+                    backgroundColor: features.color,
+                    WebkitMaskImage: `url(${top.icon})`,
+                    maskImage: `url(${top.icon})`,
+                    WebkitMaskRepeat: "no-repeat",
+                    maskRepeat: "no-repeat",
+                    WebkitMaskPosition: "center center",
+                    maskPosition: "center center",
+                    WebkitMaskSize: "contain",
+                    maskSize: "contain",
+                  }}
+                />
+              )}
+              <p
+                className={s._featureTitle}
+                dangerouslySetInnerHTML={{ __html: bottom.description }}
+              />
+            </div>
+          ))}
         </div>
       </div>
 
@@ -90,11 +169,11 @@ const Home = ({ makeHeaderDark, ...props }) => {
         channel="youtube"
         autoplay={1}
         isOpen={videoIsOpen}
-        videoId={"fZd3IMBfMB0"}
+        videoId={video.id}
         onClose={setVideoOpen.bind(null, false)}
       />
     </section>
   );
 };
 
-export default connect(null, { makeHeaderDark })(Home);
+export default connect((state) => ({}), { makeHeaderDark })(Home);

@@ -15,6 +15,8 @@ import { useMediaQuery } from "react-responsive";
 import HomeCoulinaryCasino from "../home2";
 import { Fragment } from "react";
 import homeBg from "./src/homeBg.png";
+import Header from '../header';
+import Footer from "../footer";
 
 const data = {
   homeBg: homeBg,
@@ -29,6 +31,8 @@ const MainPageFoodCasino = (props) => {
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
   return (
+    <>
+    <Header />
     <main className={s.main}>
       {isDesktop && (
         <Fragment>
@@ -68,6 +72,8 @@ const MainPageFoodCasino = (props) => {
         </Fragment>
       )}
     </main>
+    <Footer />
+    </>
   );
 };
 

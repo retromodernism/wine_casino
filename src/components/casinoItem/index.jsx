@@ -1,6 +1,6 @@
 import s from "./index.module.scss";
 
-const CasinoItem = ({ href = "/", image, title }) => {
+const CasinoItem = ({ href = "/", image, title, color, fontColor }) => {
   return (
     <a href={href} className={s.casinoItem}>
       <div
@@ -10,9 +10,11 @@ const CasinoItem = ({ href = "/", image, title }) => {
           backgroundSize: "contain",
         }}
       ></div>
-      <div className={s._frame}>
-        <div className={s._innerFrame}></div>
-        <div className={s._title}>{title}</div>
+      <div className={s._frame} style={{ background: color }}>
+        <div className={s._innerFrame} />
+        <div className={s._title} style={{ color: fontColor }}>
+          {title}
+        </div>
       </div>
     </a>
   );

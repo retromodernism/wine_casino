@@ -1,17 +1,71 @@
 import s from "./index.module.scss";
-import { ReactComponent as Pizza } from "./src/pizza.svg";
-import { ReactComponent as Taste } from "./src/taste.svg";
-import { ReactComponent as Beverage } from "./src/beverage.svg";
-import { ReactComponent as Bocals } from "./src/bocals.svg";
-import { ReactComponent as Corporative } from "./src/corporative.svg";
-import { ReactComponent as Conference } from "./src/conference.svg";
+import pizzaIcon from "./src/pizza.svg";
+import lidIcon from "./src/taste.svg";
+import juiceIcon from "./src/beverage.svg";
+import iconWineglass from "./src/bocals.svg";
+import iconParty from "./src/corporative.svg";
+import iconConference from "./src/conference.svg";
+import masterclassImage from "./src/image.png";
 import classname from "classnames";
 import { Fragment, useState } from "react";
 import ModalVideo from "react-modal-video";
 import "react-modal-video/scss/modal-video.scss";
 import { useMediaQuery } from "react-responsive";
 
+const defaultData = {
+  color: "#323232",
+  title: "Проведем мастеркласс у вас или у нас",
+  holidays: {
+    title: "Организация праздников на выезде",
+    description:
+      "Компания фан-казино предоставляет широкий спектр услуг по организации выездного фан-казино в Москве. Мы берем на себя доставку игрового поля, продуктов и всей необходимой атрибутики для проведения эффектного мероприятия. Также мы предоставляем услуги профессиональных крупье, сомелье, бариста и фотографов.",
+  },
+  offer: {
+    offerItems: [
+      {
+        icon: pizzaIcon,
+        description: "съедобная «рулетка»",
+      },
+      {
+        icon: lidIcon,
+        description: "сырные, медовые, хлебные дегустации",
+      },
+      {
+        icon: juiceIcon,
+        description:
+          "алкогольные/ слабоалкогольные/ безалкогольные<br/>фан-казино",
+      },
+    ],
+  },
+  image: masterclassImage,
+  rent: {
+    title: "Аренда площадки<br />на ваше мероприятие",
+    text: "Компания фан-казино располагает собственными площадками для организации торжеств любой тематики и масштаба.",
+    items: [
+      {
+        icon: iconWineglass,
+        title: "на праздник",
+      },
+      {
+        icon: iconParty,
+        title: "на корпоратив",
+      },
+      {
+        icon: iconConference,
+        title: "на конференцию",
+      },
+    ],
+  },
+  video: {
+    id: "fZd3IMBfMB0",
+  },
+};
+
 const Masterclass = (props) => {
+  const { color, title, holidays, offer, image, rent, video } =
+    props.data || defaultData;
+
+  /* Media Queries */
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
     query: "screen and (min-width: 768px) and (max-width: 1299px)",
@@ -26,164 +80,92 @@ const Masterclass = (props) => {
       <div className={s._bg2}></div>
       <div className={s._bg3}></div>
       <div className={s._content}>
-        <div className={s._title}>Проведем мастер-класс у вас или у нас</div>
+        <div className={s._title}>{title}</div>
         <div className={s._items}>
           <div className={s._holidays}>
-            <div className={s._holidaysTitle}>
-              Организация праздников на выезде
-            </div>
+            <div className={s._holidaysTitle}>{holidays.title}</div>
 
             {isMobile && (
-              <div className={s._offer}>
+              <div className={s._offer} style={{ background: color }}>
                 <div className={s._offerTitle}>
                   Мы предлагаем полный набор необходимого оборудования для
                   проведения дегустаций с элементами казино:
                 </div>
                 <div className={s._offerItems}>
-                  <div className={s._offerItem}>
-                    <div className={s._offerItemIcon}>
-                      <Pizza />
+                  {offer.offerItems.map(({ description, icon }, index) => (
+                    <div className={s._offerItem} key={index}>
+                      <div
+                        className={s._offerItemIcon}
+                        style={{
+                          background: `url(${icon}) 100% 100% / contain no-repeat`,
+                          backgroundPosition: "center center",
+                        }}
+                      />
+                      <p
+                        className={s._offerItemDesciption}
+                        dangerouslySetInnerHTML={{ __html: description }}
+                      />
                     </div>
-
-                    <p className={s._offerItemDesciption}>
-                      съедобная «рулетка»
-                    </p>
-                  </div>
-                  <div
-                    className={s._offerItem}
-                    style={{ marginLeft: isDesktop ? "54px" : "" }}
-                  >
-                    <div className={s._offerItemIcon}>
-                      <Taste />
-                    </div>
-                    <p className={s._offerItemDesciption}>
-                      сырные, медовые,
-                      <br />
-                      хлебные дегустации
-                    </p>
-                  </div>
-                  <div
-                    className={s._offerItem}
-                    style={{
-                      marginLeft: isDesktop ? "25px" : "",
-                      // width: "235px",
-                    }}
-                  >
-                    <div className={s._offerItemIcon}>
-                      <Beverage />
-                    </div>
-                    <p className={s._offerItemDesciption}>
-                      {!isMobile && (
-                        <Fragment>
-                          алкогольные/ слабоалкогольные/ безалкогольные
-                          <br />
-                          фан-казино
-                        </Fragment>
-                      )}
-                      {isMobile && (
-                        <Fragment>
-                          алкогольные/
-                          <br /> слабоалкогольные/ безалкогольные
-                          <br />
-                          фан-казино
-                        </Fragment>
-                      )}
-                    </p>
-                  </div>
+                  ))}
                 </div>
               </div>
             )}
 
-            <p className={s._holidaysText}>
-              Компания фан-казино предоставляет широкий спектр услуг по
-              организации выездного фан-казино в Москве. Мы берем на себя
-              доставку игрового поля, продуктов и всей необходимой атрибутики
-              для проведения эффектного мероприятия. Также мы предоставляем
-              услуги профессиональных крупье, сомелье, бариста и фотографов.
-            </p>
+            <p className={s._holidaysText}>{holidays.description}</p>
           </div>
           {!isMobile && (
-            <div className={s._offer}>
+            <div className={s._offer} style={{ background: color }}>
               <div className={s._offerTitle}>
                 Мы предлагаем полный набор необходимого оборудования для
                 проведения дегустаций с элементами казино:
               </div>
               <div className={s._offerItems}>
-                <div className={s._offerItem}>
-                  <div className={s._offerItemIcon}>
-                    <Pizza />
+                {offer.offerItems.map(({ description, icon }, index) => (
+                  <div className={s._offerItem} key={index}>
+                    <div
+                      className={s._offerItemIcon}
+                      style={{
+                        background: `url(${icon}) 100% 100% / contain no-repeat`,
+                        backgroundPosition: "center center",
+                      }}
+                    />
+                    <p
+                      className={s._offerItemDesciption}
+                      dangerouslySetInnerHTML={{ __html: description }}
+                    />
                   </div>
-
-                  <p className={s._offerItemDesciption}>съедобная «рулетка»</p>
-                </div>
-                <div
-                  className={s._offerItem}
-                  style={{ marginLeft: isDesktop ? "54px" : "" }}
-                >
-                  <div className={s._offerItemIcon}>
-                    <Taste />
-                  </div>
-                  <p className={s._offerItemDesciption}>
-                    сырные, медовые, хлебные дегустации
-                  </p>
-                </div>
-                <div
-                  className={s._offerItem}
-                  style={{
-                    marginLeft: isDesktop ? "25px" : "",
-                    width: "235px",
-                  }}
-                >
-                  <div className={s._offerItemIcon}>
-                    <Beverage />
-                  </div>
-                  <p className={s._offerItemDesciption}>
-                    {!isMobile && (
-                      <Fragment>
-                        алкогольные/ слабоалкогольные/ безалкогольные
-                        <br />
-                        фан-казино
-                      </Fragment>
-                    )}
-                    {isMobile && (
-                      <Fragment>
-                        алкогольные/
-                        <br /> слабоалкогольные/ безалкогольные
-                        <br />
-                        фан-казино
-                      </Fragment>
-                    )}
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
           )}
-          {!isMobile && <div className={s._image}></div>}
+          {!isMobile && (
+            <div
+              className={s._image}
+              style={{
+                background: `url(${image}) 100% 100% / cover no-repeat`,
+              }}
+            ></div>
+          )}
           <div className={s._rent}>
             {!isMobile && (
               <Fragment>
-                <div className={s._rentTitle}>
-                  Аренда площадки
-                  <br />
-                  на ваше мероприятие
-                </div>
-                <div className={s._rentText}>
-                  Компания фан-казино располагает собственными площадками для
-                  организации торжеств любой тематики и масштаба.
-                </div>
+                <div
+                  className={s._rentTitle}
+                  dangerouslySetInnerHTML={{ __html: rent.title }}
+                />
+                <div className={s._rentText}>{rent.text}</div>
                 <div className={s._rentFeatures}>
-                  <div className={s._rentFeature}>
-                    <Bocals />
-                    <p className={s._rentFeatureTitle}>на праздник</p>
-                  </div>
-                  <div className={s._rentFeature}>
-                    <Corporative />
-                    <p className={s._rentFeatureTitle}>на корпоратив</p>
-                  </div>
-                  <div className={s._rentFeature}>
-                    <Conference />
-                    <p className={s._rentFeatureTitle}>на конференцию</p>
-                  </div>
+                  {rent.items.map(({ icon, title }, index) => (
+                    <div className={s._rentFeature}>
+                      <div
+                        className={s._rentFeatureIcon}
+                        style={{
+                          background: `url(${icon}) 100% 100% / contain no-repeat`,
+                        }}
+                      />
+                      <p className={s._rentFeatureTitle}>{title}</p>
+                    </div>
+                  ))}
                 </div>
                 <button
                   className={classname(s._videoButton, {
@@ -200,30 +182,30 @@ const Masterclass = (props) => {
             )}
             {isMobile && (
               <Fragment>
-                <div className={s._rentTitle}>
-                  Аренда площадки
-                  <br />
-                  на ваше мероприятие
-                </div>
+                <div
+                  className={s._rentTitle}
+                  dangerouslySetInnerHTML={{ __html: rent.title }}
+                />
                 <div className={s._rentFeatures}>
-                  <div className={s._rentFeature}>
-                    <Bocals className={s._rentFeatureIcon} />
-                    <p className={s._rentFeatureTitle}>на праздник</p>
-                  </div>
-                  <div className={s._rentFeature}>
-                    <Corporative className={s._rentFeatureIcon} />
-                    <p className={s._rentFeatureTitle}>на корпоратив</p>
-                  </div>
-                  <div className={s._rentFeature}>
-                    <Conference className={s._rentFeatureIcon} />
-                    <p className={s._rentFeatureTitle}>на конференцию</p>
-                  </div>
+                  {rent.items.map(({ icon, title }, index) => (
+                    <div className={s._rentFeature}>
+                      <div
+                        className={s._rentFeatureIcon}
+                        style={{
+                          background: `url(${icon}) 100% 100% / contain no-repeat`,
+                        }}
+                      />
+                      <p className={s._rentFeatureTitle}>{title}</p>
+                    </div>
+                  ))}
                 </div>
-                <div className={s._image}></div>
-                <div className={s._rentText}>
-                  Компания фан-казино располагает собственными площадками для
-                  организации торжеств любой тематики и масштаба.
-                </div>
+                <div
+                  className={s._image}
+                  style={{
+                    background: `url(${image}) 100% 100% / cover no-repeat`,
+                  }}
+                ></div>
+                <div className={s._rentText}>{rent.text}</div>
                 <button
                   className={classname(s._videoButton, {
                     [s._videoButton_hover]: buttonIsHover,
@@ -244,7 +226,7 @@ const Masterclass = (props) => {
         channel="youtube"
         autoplay={1}
         isOpen={videoIsOpen}
-        videoId={"fZd3IMBfMB0"}
+        videoId={video.id}
         onClose={setVideoOpen.bind(null, false)}
       />
     </section>

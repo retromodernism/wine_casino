@@ -12,6 +12,8 @@ import HomeCoulinaryCasino from "../home2";
 import { Fragment } from "react";
 import homeBg from "./src/homeBg.png";
 import Form from "../form";
+import Header from "../header";
+import Footer from "../footer";
 
 const data = {
   homeBg: homeBg,
@@ -26,45 +28,49 @@ const MainPageFoodCasino = (props) => {
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
   return (
-    <main className={s.main}>
-      {isDesktop && (
-        <Fragment>
-          <HomeCoulinaryCasino background={data.homeBg} />
-          <Masterclass />
-          <Promotion background={false} />
-          <Additionals />
-          <Form />
-          <Variants />
-          <Tematic />
-        </Fragment>
-      )}
-      {isTablet && (
-        <Fragment>
-          <HomeCoulinaryCasino background={data.homeBg} />
-          <OtherCasinos />
-          {/* Почему мы */}
-          <Tematic />
-          <Promotion />
-          <Masterclass />
-          <Variants />
-          <Additionals />
-          <Croupiers />
-        </Fragment>
-      )}
-      {isMobile && (
-        <Fragment>
-          <HomeCoulinaryCasino background={data.homeBg} />
-          <OtherCasinos />
-          <Essence />
-          <Masterclass />
-          <Promotion />
-          <Variants />
-          <Additionals />
-          <Tematic />
-          <Croupiers />
-        </Fragment>
-      )}
-    </main>
+    <>
+      <Header />
+      <main className={s.main}>
+        {isDesktop && (
+          <Fragment>
+            <HomeCoulinaryCasino background={data.homeBg} />
+            <Masterclass />
+            <Promotion background={false} />
+            <Additionals />
+            <Form />
+            <Variants />
+            <Tematic />
+          </Fragment>
+        )}
+        {isTablet && (
+          <Fragment>
+            <HomeCoulinaryCasino background={data.homeBg} />
+            <OtherCasinos />
+            {/* Почему мы */}
+            <Tematic />
+            <Promotion />
+            <Masterclass />
+            <Variants />
+            <Additionals />
+            <Croupiers />
+          </Fragment>
+        )}
+        {isMobile && (
+          <Fragment>
+            <HomeCoulinaryCasino background={data.homeBg} />
+            <OtherCasinos />
+            <Essence />
+            <Masterclass />
+            <Promotion />
+            <Variants />
+            <Additionals />
+            <Tematic />
+            <Croupiers />
+          </Fragment>
+        )}
+      </main>
+      <Footer />
+    </>
   );
 };
 

@@ -6,15 +6,21 @@ import {
   makeHeaderLight,
 } from "../../redux/modules/headerColor";
 import { connect } from "react-redux";
+import Header from "../header";
+import Footer from "../footer";
 
 const ContactsPage = ({ makeHeaderDark, ...props }) => {
   makeHeaderDark();
 
   return (
-    <main className={s.main}>
-      <Contacts />
-      <Promotion background={false} />
-    </main>
+    <>
+      <Header />
+      <main className={s.main}>
+        <Contacts />
+        <Promotion background={false} />
+      </main>
+      <Footer />
+    </>
   );
 };
 

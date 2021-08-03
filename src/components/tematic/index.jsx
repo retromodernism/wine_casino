@@ -14,7 +14,7 @@ import TematicItem from "../tematicItem";
 import { useMediaQuery } from "react-responsive";
 import { Fragment, useState } from "react";
 
-const tematicItems = [
+const defaultTematicItems = [
   {
     title: "Гэтсби",
     description:
@@ -36,6 +36,8 @@ const tematicItems = [
 ];
 
 const Tematic = (props) => {
+  const tematicItems = props?.data?.items || defaultTematicItems;
+
   /* Media Queries */
 
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });

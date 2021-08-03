@@ -158,16 +158,15 @@
     &:not(:last-child) {
       margin-bottom: 13px;
     }
-    &::before {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 2px;
-      left: 0;
-      top: 50%;
-      transform: translate(0, -50%);
-      background: $green;
-    }
+  }
+
+  ._optionAfter {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
   }
 
   ._footer {
@@ -198,15 +197,23 @@
     color: $green;
   }
 
-  ._minusIcon {
+  ._minusIconWrapper {
     padding-left: 19px;
-    // margin-top: 17px;
     grid-row: 2;
     cursor: pointer;
-
+    align-self: center;
+    justify-self: center;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  ._minusIcon {
+    width: 26px;
+    height: 3px;
+    mask-image: url(./src/minus.svg);
   }
 
   ._count {
@@ -225,14 +232,21 @@
     color: $green;
   }
 
-  ._plusIcon {
-    align-self: center;
+  ._plusIconWrapper {
     padding-left: 19px;
     grid-row: 2;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  ._plusIcon {
+    mask-image: url(./src/plus.svg);
+    width: 26px;
+    height: 26px;
   }
 }
 
@@ -364,7 +378,8 @@
     width: 28px;
     height: 16px;
     position: absolute;
-    background: url(./src/arrow.svg) 100% 100% no-repeat;
+    mask-image: url(./src/arrow.svg);
+    mask-size: contain;
     top: 50%;
     transform: translate(0, -50%);
     right: 41px;
@@ -413,16 +428,15 @@
     &:not(:last-child) {
       margin-bottom: 22px;
     }
-    &::before {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 2px;
-      left: 0;
-      top: 50%;
-      transform: translate(0, -50%);
-      background: $green;
-    }
+  }
+
+  ._optionAfter {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
   }
 
   ._footer {
@@ -453,17 +467,6 @@
     color: $green;
   }
 
-  ._minusIcon {
-    padding-left: 19px;
-    // margin-top: 17px;
-    grid-row: 2;
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   ._count {
     align-self: center;
     padding-left: 15px;
@@ -477,13 +480,13 @@
 
     color: $green;
   }
-
+  
   ._plusIcon {
-    grid-row: 2;
     align-self: center;
+    grid-row: 2;
+    mask-image: url(./src/plus_tab.svg);
     width: 50px;
     height: 50px;
-    background: url(./src/plus_tab.svg) 100% 100% no-repeat;
   }
 }
 
@@ -612,7 +615,8 @@
     width: 18px;
     height: 10px;
     position: absolute;
-    background: url(./src/arrow.svg) 100% 100% / contain no-repeat;
+    mask-image: url(./src/arrow.svg);
+    mask-size: contain;
     top: 50%;
     transform: translate(0, -50%);
     right: 30px;
@@ -661,16 +665,15 @@
     &:not(:last-child) {
       margin-bottom: 12px;
     }
-    &::before {
-      content: "";
-      position: absolute;
-      width: 16px;
-      height: 2px;
-      left: 0;
-      top: 50%;
-      transform: translate(0, -50%);
-      background: $green;
-    }
+  }
+
+  ._optionAfter {
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
   }
 
   ._footer {
@@ -702,11 +705,12 @@
   }
 
   ._plusIcon {
-    grid-row: 2;
     align-self: center;
-    justify-self: end;
+    grid-row: 2;
+    mask-image: url(./src/plus_tab.svg);
+    mask-position: center center;
+    mask-size: contain;
     width: 36px;
     height: 36px;
-    background: url(./src/plus_tab.svg) 100% 100% / contain no-repeat;
   }
 }

@@ -3,9 +3,16 @@ import { connect } from "react-redux";
 import { addPosition } from "../../redux/modules/cart";
 import { useMediaQuery } from "react-responsive";
 
-const ServiceItem = ({ image, title, description, price, id, addPosition }) => {
+const ServiceItem = ({
+  image,
+  title,
+  description,
+  price,
+  id,
+  color,
+  addPosition,
+}) => {
   /* Media Queries */
-
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
     query: "screen and (min-width: 768px) and (max-width: 1299px)",
@@ -17,7 +24,10 @@ const ServiceItem = ({ image, title, description, price, id, addPosition }) => {
   const addToCart = addPosition.bind(null, id);
 
   return (
-    <div className={s.serviceItem}>
+    <div
+      className={s.serviceItem}
+      style={{ boxShadow: `inset 0 0 0 ${isDesktop ? 2 : 4}px ${color}` }}
+    >
       <div
         className={s._image}
         style={{
@@ -26,7 +36,7 @@ const ServiceItem = ({ image, title, description, price, id, addPosition }) => {
             : `url(${image.normal}) 100% 100% no-repeat`,
         }}
       ></div>
-      <div className={s._info}>
+      <div className={s._info} style={{ background: color }}>
         <div className={s._title}>{title}</div>
         <div className={s._description}>{description}</div>
         <div className={s._priceWrapper}>

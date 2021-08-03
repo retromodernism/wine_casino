@@ -19,6 +19,9 @@ import essence3 from "./src/essence/3.png";
 import essence4 from "./src/essence/4.png";
 import KindsOfGames from "../kindsOfGames";
 import KindsOfGames_tablet from "../kindsOfGames_tablet";
+import Header from "../header";
+import Footer from "../footer";
+
 
 const data = {
   home: {
@@ -66,46 +69,50 @@ const MainPageFoodCasino = (props) => {
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
   return (
-    <main className={s.main}>
-      {isDesktop && (
-        <Fragment>
-          <HomeClassicCaisno {...data.home} />
-          <BackToAll />
-          <Essence {...data.essence} />
-          <KindsOfGames />
-          <Masterclass />
-          <Promotion background={false} />
-          <Additionals />
-          <Form />
-          <Variants />
-          <Tematic />
-        </Fragment>
-      )}
-      {isTablet && (
-        <Fragment>
-          <HomeClassicCaisno {...data.home} />
-          {/* <KindsOfGames /> */}
-          <KindsOfGames_tablet />
-          <Masterclass />
-          <Promotion />
-          <Variants />
-          <Additionals />
-        </Fragment>
-      )}
-      {isMobile && (
-        <Fragment>
-          <HomeClassicCaisno {...data.home} />
-          <Essence {...data.essence} />
-          {/* <KindsOfGames /> */}
-          <KindsOfGames_tablet />
-          <Promotion />
-          <Variants />
-          <Additionals />
-          <Masterclass />
-          <Tematic />
-        </Fragment>
-      )}
-    </main>
+    <>
+      <Header />
+      <main className={s.main}>
+        {isDesktop && (
+          <Fragment>
+            <HomeClassicCaisno {...data.home} />
+            <BackToAll />
+            <Essence {...data.essence} />
+            <KindsOfGames />
+            <Masterclass />
+            <Promotion background={false} />
+            <Additionals />
+            <Form />
+            <Variants />
+            <Tematic />
+          </Fragment>
+        )}
+        {isTablet && (
+          <Fragment>
+            <HomeClassicCaisno {...data.home} />
+            {/* <KindsOfGames /> */}
+            <KindsOfGames_tablet />
+            <Masterclass />
+            <Promotion />
+            <Variants />
+            <Additionals />
+          </Fragment>
+        )}
+        {isMobile && (
+          <Fragment>
+            <HomeClassicCaisno {...data.home} />
+            <Essence {...data.essence} />
+            {/* <KindsOfGames /> */}
+            <KindsOfGames_tablet />
+            <Promotion />
+            <Variants />
+            <Additionals />
+            <Masterclass />
+            <Tematic />
+          </Fragment>
+        )}
+      </main>
+      <Footer />
+    </>
   );
 };
 
