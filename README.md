@@ -2,9 +2,28 @@
 
 https://www.figma.com/file/R1Mjy9cPxplpMqcOyPqS0X/Wine-Casino?node-id=23%3A1396
 
-# Cтраница
+# Cтраницы
 
+### Главная Food Casino
 https://retromodernism-wine-casino.netlify.app/
+
+### Классическое казино
+https://retromodernism-wine-casino.netlify.app/klassicheskoe-kazino
+
+### Контакты
+https://retromodernism-wine-casino.netlify.app/contacts
+
+### Корзина
+https://retromodernism-wine-casino.netlify.app/cart
+
+### Винное казино
+https://retromodernism-wine-casino.netlify.app/vinnoe-kazino
+
+### Сырное казино
+https://retromodernism-wine-casino.netlify.app/syrnoe-kazino
+
+### Сырное казино
+https://retromodernism-wine-casino.netlify.app/poker
 
 # Getting Started with Create React App
 
