@@ -52,6 +52,9 @@ https://retromodernism-wine-casino.netlify.app/hlebnoe-kazino
 ### Сало казино
 https://retromodernism-wine-casino.netlify.app/salo-kazino
 
+### Мясное казино
+https://retromodernism-wine-casino.netlify.app/myasnoe-kazino
+
 ### Покер
 https://retromodernism-wine-casino.netlify.app/poker
 
