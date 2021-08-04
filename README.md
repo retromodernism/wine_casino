@@ -73,6 +73,9 @@ https://retromodernism-wine-casino.netlify.app/likernoe-kazino
 ### Молекулярное казино
 https://retromodernism-wine-casino.netlify.app/molekulyarnoe-kazino
 
+### Чили казино
+https://retromodernism-wine-casino.netlify.app/chili-kazino
+
 ### Покер
 https://retromodernism-wine-casino.netlify.app/poker
 
