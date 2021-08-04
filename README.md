@@ -16,6 +16,12 @@ https://retromodernism-wine-casino.netlify.app/contacts
 ### Корзина
 https://retromodernism-wine-casino.netlify.app/cart
 
+### Новости
+https://retromodernism-wine-casino.netlify.app/news
+
+### Новость
+https://retromodernism-wine-casino.netlify.app/news/1
+
 ### Винное казино
 https://retromodernism-wine-casino.netlify.app/vinnoe-kazino
 
@@ -30,6 +36,9 @@ https://retromodernism-wine-casino.netlify.app/chaynoe-kazino
 
 ### Безалкогольное казино
 https://retromodernism-wine-casino.netlify.app/bezalkogolnoe-kazino
+
+### Кофейное казино
+https://retromodernism-wine-casino.netlify.app/kofeynoe-kazino
 
 ### Покер
 https://retromodernism-wine-casino.netlify.app/poker
