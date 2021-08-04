@@ -181,7 +181,6 @@
   }
 
   ._typingText {
-    // max-width: 350px;
     height: 114px;
     margin-top: 80px;
     font-size: 44px;
@@ -230,7 +229,6 @@
   ._videoButtonIcon {
     width: 23px;
     height: 26px;
-    // background: url(./src/video.svg);
     background: $black;
     mask-image: url(./src/video.svg);
   }
@@ -332,9 +330,8 @@
   ._videoButton {
     margin-top: 40px;
     width: 163px;
-    // height: 75px;
-    background: $darkRed;
-    color: white;
+    background: #ffffff;
+    color: $black;
     padding: 14px 12px 12px 12px;
     display: flex;
     align-items: center;
@@ -359,7 +356,9 @@
   ._videoButtonIcon {
     width: 18px;
     height: 18px;
-    background: url(./src/video.svg) 100% 100% / contain no-repeat;
+    background: $black;
+    mask-image: url(./src/video.svg);
+    mask-size: 100% 100%;
   }
 
   ._backToAll {

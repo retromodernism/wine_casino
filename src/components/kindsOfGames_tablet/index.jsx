@@ -12,6 +12,11 @@ import { connect } from "react-redux";
 import { addPosition } from "../../redux/modules/cart";
 import { isTerminatorless } from "@babel/types";
 
+const defaultData = {
+  title: "Разновидности Покера",
+  gameType: "poker",
+};
+
 /* Slider Params */
 
 const PrevArrow = ({ className, style, onClick }) => {
@@ -167,7 +172,9 @@ const GameItem = connect(
   );
 });
 
-const KindsOfGames_tablet = ({ positions, gameType = "poker" }) => {
+const KindsOfGames_tablet = ({ positions, ...props }) => {
+  const {title, gameType} = props.data || defaultData;
+
   const gamesPositions = positions.filter(({ type }) => type === gameType);
 
   const [activePositionId, setActivePositionId] = useState(
@@ -180,7 +187,7 @@ const KindsOfGames_tablet = ({ positions, gameType = "poker" }) => {
 
   return (
     <section className={s.kindsOfGames}>
-      <div className={s._title}>Разновидности рулеток</div>
+      <div className={s._title}>{title}</div>
       <ul className={s._list}>
         {gamesPositions.map(({ title, id }) => {
           const isActive = id === activePositionId;

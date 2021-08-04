@@ -11,6 +11,11 @@ import "./slider.scss";
 import { connect } from "react-redux";
 import { addPosition } from "../../redux/modules/cart";
 
+const defaultData = {
+  title: "Разновидности Покера",
+  gameType: "poker",
+};
+
 /* Slider Params */
 
 const PrevArrow = ({ className, style, onClick }) => {
@@ -81,7 +86,7 @@ const KindItem = connect(
     positions: state.positions.positions,
   }),
   { addPosition }
-)(({ positions, addPosition, gameType = "poker" }) => {
+)(({ positions, addPosition, gameType }) => {
   /* Media Queries */
 
   const isDesktop = useMediaQuery({
@@ -121,6 +126,7 @@ const KindItem = connect(
               [s._sidebarItem_active]: id === activePositionId,
             })}
             onClick={setActivePositionId.bind(null, id)}
+            key={index}
           >
             {title}
           </button>
@@ -207,11 +213,13 @@ const KindItem = connect(
 });
 
 const KindsOfGames = (props) => {
+  const { title, gameType } = props.data || defaultData;
+
   return (
     <section className={s.kindsOfGames}>
       <div className={s._content}>
-        <div className={s._title}>Разновидности покера</div>
-        <KindItem />
+        <div className={s._title}>{title}</div>
+        <KindItem gameType={gameType} />
       </div>
     </section>
   );

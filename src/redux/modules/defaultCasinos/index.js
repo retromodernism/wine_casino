@@ -352,7 +352,30 @@ import bgPromotionChili from "./src/chili/promotion/bg.png";
 /* Additionals */
 import bgAdditionalsChili from "./src/chili/additionals/bg.png";
 /* HowItWas */
-import bgHowItWasChili from "./src/chili/howItWas/bg.png"
+import bgHowItWasChili from "./src/chili/howItWas/bg.png";
+
+/** Ruletka */
+/* Home */
+import bgHomeRuletka from "./src/ruletka/home/bg.png";
+import bgTabHomeRuletka from "./src/ruletka/home/bg_tab.png";
+import bgMobHomeRuletka from "./src/ruletka/home/bg_mob.png";
+/* Essence */
+import image1EssenceRuletka from "./src/ruletka/essence/image1.png";
+import image2EssenceRuletka from "./src/ruletka/essence/image2.png";
+import image3EssenceRuletka from "./src/ruletka/essence/image3.png";
+import image4EssenceRuletka from "./src/ruletka/essence/image4.png";
+/* Promotion */
+import icon1PromotionRuletka from "./src/ruletka/promotion/icon1.svg";
+import icon2PromotionRuletka from "./src/ruletka/promotion/icon2.svg";
+import icon3PromotionRuletka from "./src/ruletka/promotion/icon3.svg";
+
+/** Poker */
+/** Home */
+import bgHomePoker from "./src/poker/home/bg.png";
+
+/** Black Jack */
+/** Home */
+import bgHomeBlackJack from "./src/blackJack/home/bg.png";
 
 const casinos = [
   {
@@ -616,10 +639,6 @@ const casinos = [
         item: "#2A9D76",
         popular: "#A2000C",
       },
-      // color: {
-      //   item: "#323232",
-      //   popular: "#2A9D76",
-      // },
     },
     additionals: {
       title: "Так же вы можете добавить",
@@ -6643,6 +6662,447 @@ const casinos = [
       mainColor: "#ED0E1C", // цвет левого блока, лого, инпутов у формы
       iconColor: "#ffffff", // цвет иконок в футере
       innerTextColor: "#ffffff", // цвет текста в левом блоке
+    },
+  },
+  {
+    url: "/ruletka",
+    type: "classicCasino",
+    home: {
+      bg: {
+        desktop: {
+          image: bgHomeRuletka,
+          width: "845px",
+          height: "562px",
+          top: "252px",
+          right: "157px",
+        },
+        tablet: {
+          image: bgTabHomeRuletka,
+          width: "521px",
+          height: "450px",
+          top: "94px",
+          right: "-107px",
+        },
+        mobile: {
+          image: bgMobHomeRuletka,
+          width: "377px",
+          height: "335px",
+          top: "7px",
+          right: "-176px",
+        },
+      },
+      title: "Рулетка",
+      description:
+        "Аренда игрового аттракциона «Рулетка» – отличное решение для развлечения гостей на различных мероприятиях. Данная игра пользуется огромной популярностью по всему миру, представляя собой жемчужину мира казино и азарта.",
+      video: {
+        id: "fZd3IMBfMB0",
+      },
+    },
+    essence: {
+      title: "Правила игры",
+      itemsColor: "#323232",
+      items: [
+        {
+          title: "",
+          image: image1EssenceRuletka,
+          description: "Игроки перед раздачей карт, должны сделать ставку.",
+        },
+        {
+          title: "",
+          image: image2EssenceRuletka,
+          description:
+            "После размещения ставок всеми игроками, дилер сдаёт игрокам и себе по 3 карты.",
+        },
+        {
+          title: "",
+          image: image3EssenceRuletka,
+          description:
+            "Затем игроки могут сбросить карты, потеряв все свои ставки или продолжить игру. Как только все игроки приняли решения по ставкам, дилер вскрывает карты игроков.",
+        },
+        {
+          title: "",
+          image: image4EssenceRuletka,
+          description: "Затем дилер сравнивает свои карты с картами игроков.",
+        },
+      ],
+    },
+    kindsOfGames: {
+      title: "Разновидности Рулеток",
+      gameType: "poker",
+    },
+    promotion: {
+      color: "#323232",
+      items: [
+        {
+          title: "Free 300 фишек",
+          description: "при заказе<br />от 3 столов",
+          icon: {
+            svg: icon1PromotionRuletka,
+            desktop: {
+              height: "123px",
+              width: "123px",
+              bottom: "-28px",
+              right: "32px",
+            },
+            tablet: {
+              width: "87px",
+              height: "105px",
+              bottom: "-22px",
+              right: "18px",
+            },
+            mobile: {
+              width: "56px",
+              height: "65px",
+              bottom: "-16px",
+              right: "18px",
+            },
+          },
+        },
+        {
+          title: "Пятый стол в подарок",
+          description: "при заказе<br />от 4 столов",
+          icon: {
+            svg: icon2PromotionRuletka,
+            desktop: {
+              width: "142px",
+              height: "63px",
+              bottom: "-12px",
+              right: "20px",
+            },
+            tablet: {
+              width: "146px",
+              height: "78px",
+              bottom: "-14px",
+              right: "10px",
+            },
+            mobile: {
+              width: "68px",
+              height: "71px",
+              bottom: "-5px",
+              right: "14px",
+            },
+          },
+        },
+        {
+          title: "Бесплатная доставка",
+          description: "при заказе 4-х столок",
+          icon: {
+            svg: icon3PromotionRuletka,
+            desktop: {
+              width: "98px",
+              height: "89px",
+              bottom: "-17px",
+              right: "18px",
+            },
+            tablet: {
+              width: "84px",
+              height: "72px",
+              bottom: "-16px",
+              right: "17px",
+            },
+            mobile: {
+              width: "68px",
+              height: "44px",
+              bottom: "-13px",
+              right: "14px",
+            },
+          },
+        },
+      ],
+    },
+  },
+  {
+    url: "/poker",
+    type: "classicCasino",
+    home: {
+      bg: {
+        desktop: {
+          image: bgHomePoker,
+          width: "745px",
+          height: "643px",
+          top: "220px",
+          right: "189px",
+        },
+        tablet: {
+          image: bgHomePoker,
+          width: "521px",
+          height: "450px",
+          top: "94px",
+          right: "-107px",
+        },
+        mobile: {
+          image: bgHomePoker,
+          width: "226px",
+          height: "195px",
+          top: "48px",
+          right: "-64px",
+        },
+      },
+      title: "Покер",
+      description:
+        "Вряд ли кто-то не слышал о столь захватывающей карточной игре как покер. Правила ее очень просты, а победитель определяется преимущественно удачей. Выездной набор для покера – это удобно, стильно и полностью легально, так как в нем не задействованы настоящие деньги.",
+      video: {
+        id: "fZd3IMBfMB0",
+      },
+    },
+    essence: {
+      title: "Правила игры",
+      itemsColor: "#323232",
+      items: [
+        {
+          title: "",
+          image: image1EssenceRuletka,
+          description: "Игроки перед раздачей карт, должны сделать ставку.",
+        },
+        {
+          title: "",
+          image: image2EssenceRuletka,
+          description:
+            "После размещения ставок всеми игроками, дилер сдаёт игрокам и себе по 3 карты.",
+        },
+        {
+          title: "",
+          image: image3EssenceRuletka,
+          description:
+            "Затем игроки могут сбросить карты, потеряв все свои ставки или продолжить игру. Как только все игроки приняли решения по ставкам, дилер вскрывает карты игроков.",
+        },
+        {
+          title: "",
+          image: image4EssenceRuletka,
+          description: "Затем дилер сравнивает свои карты с картами игроков.",
+        },
+      ],
+    },
+    kindsOfGames: {
+      title: "Разновидности Рулеток",
+      gameType: "poker",
+    },
+    promotion: {
+      color: "#323232",
+      items: [
+        {
+          title: "Free 300 фишек",
+          description: "при заказе<br />от 3 столов",
+          icon: {
+            svg: icon1PromotionRuletka,
+            desktop: {
+              height: "123px",
+              width: "123px",
+              bottom: "-28px",
+              right: "32px",
+            },
+            tablet: {
+              width: "87px",
+              height: "105px",
+              bottom: "-22px",
+              right: "18px",
+            },
+            mobile: {
+              width: "56px",
+              height: "65px",
+              bottom: "-16px",
+              right: "18px",
+            },
+          },
+        },
+        {
+          title: "Пятый стол в подарок",
+          description: "при заказе<br />от 4 столов",
+          icon: {
+            svg: icon2PromotionRuletka,
+            desktop: {
+              width: "142px",
+              height: "63px",
+              bottom: "-12px",
+              right: "20px",
+            },
+            tablet: {
+              width: "146px",
+              height: "78px",
+              bottom: "-14px",
+              right: "10px",
+            },
+            mobile: {
+              width: "68px",
+              height: "71px",
+              bottom: "-5px",
+              right: "14px",
+            },
+          },
+        },
+        {
+          title: "Бесплатная доставка",
+          description: "при заказе 4-х столок",
+          icon: {
+            svg: icon3PromotionRuletka,
+            desktop: {
+              width: "98px",
+              height: "89px",
+              bottom: "-17px",
+              right: "18px",
+            },
+            tablet: {
+              width: "84px",
+              height: "72px",
+              bottom: "-16px",
+              right: "17px",
+            },
+            mobile: {
+              width: "68px",
+              height: "44px",
+              bottom: "-13px",
+              right: "14px",
+            },
+          },
+        },
+      ],
+    },
+  },
+  {
+    url: "/black-jack",
+    type: "classicCasino",
+    home: {
+      bg: {
+        desktop: {
+          image: bgHomeBlackJack,
+          width: "1020px",
+          height: "575px",
+          top: "242px",
+          right: "103px",
+        },
+        tablet: {
+          image: bgHomeBlackJack,
+          width: "728px",
+          height: "411px",
+          top: "135px",
+          right: "-276px",
+        },
+        mobile: {
+          image: bgHomeBlackJack,
+          width: "370px",
+          height: "209px",
+          top: "59px",
+          right: "-185px",
+        },
+      },
+      title: "Блэк Джэк",
+      description:
+        "Организовать игру в Блэк Джек на профессиональном столе и с высококвалифицированным крупье в удобное для Вас время и месте это наша главная задача. Таким образом вы можете с легкостью устроить гостям незабываемый праздник.",
+      video: {
+        id: "fZd3IMBfMB0",
+      },
+    },
+    essence: {
+      title: "Правила игры",
+      itemsColor: "#323232",
+      items: [
+        {
+          title: "",
+          image: image1EssenceRuletka,
+          description: "Игроки перед раздачей карт, должны сделать ставку.",
+        },
+        {
+          title: "",
+          image: image2EssenceRuletka,
+          description:
+            "После размещения ставок всеми игроками, дилер сдаёт игрокам и себе по 3 карты.",
+        },
+        {
+          title: "",
+          image: image3EssenceRuletka,
+          description:
+            "Затем игроки могут сбросить карты, потеряв все свои ставки или продолжить игру. Как только все игроки приняли решения по ставкам, дилер вскрывает карты игроков.",
+        },
+        {
+          title: "",
+          image: image4EssenceRuletka,
+          description: "Затем дилер сравнивает свои карты с картами игроков.",
+        },
+      ],
+    },
+    kindsOfGames: {
+      title: "Разновидности Рулеток",
+      gameType: "poker",
+    },
+    promotion: {
+      color: "#323232",
+      items: [
+        {
+          title: "Free 300 фишек",
+          description: "при заказе<br />от 3 столов",
+          icon: {
+            svg: icon1PromotionRuletka,
+            desktop: {
+              height: "123px",
+              width: "123px",
+              bottom: "-28px",
+              right: "32px",
+            },
+            tablet: {
+              width: "87px",
+              height: "105px",
+              bottom: "-22px",
+              right: "18px",
+            },
+            mobile: {
+              width: "56px",
+              height: "65px",
+              bottom: "-16px",
+              right: "18px",
+            },
+          },
+        },
+        {
+          title: "Пятый стол в подарок",
+          description: "при заказе<br />от 4 столов",
+          icon: {
+            svg: icon2PromotionRuletka,
+            desktop: {
+              width: "142px",
+              height: "63px",
+              bottom: "-12px",
+              right: "20px",
+            },
+            tablet: {
+              width: "146px",
+              height: "78px",
+              bottom: "-14px",
+              right: "10px",
+            },
+            mobile: {
+              width: "68px",
+              height: "71px",
+              bottom: "-5px",
+              right: "14px",
+            },
+          },
+        },
+        {
+          title: "Бесплатная доставка",
+          description: "при заказе 4-х столок",
+          icon: {
+            svg: icon3PromotionRuletka,
+            desktop: {
+              width: "98px",
+              height: "89px",
+              bottom: "-17px",
+              right: "18px",
+            },
+            tablet: {
+              width: "84px",
+              height: "72px",
+              bottom: "-16px",
+              right: "17px",
+            },
+            mobile: {
+              width: "68px",
+              height: "44px",
+              bottom: "-13px",
+              right: "14px",
+            },
+          },
+        },
+      ],
     },
   },
 ];

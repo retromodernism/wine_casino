@@ -15,25 +15,81 @@ import { connect } from "react-redux";
 import { useLayoutEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
+import bg from "./src/homeBg.png";
 
-const Home = ({
-  bg = "",
-  title = "",
-  description = "",
-  makeHeaderLight,
-  ...props
-}) => {
+const defaultData = {
+  bg: {
+    desktop: {
+      image: bg,
+      width: "745px",
+      height: "643px",
+      top: "220px",
+      right: "189px",
+    },
+    tablet: {
+      image: bg,
+      width: "521px",
+      height: "450px",
+      top: "94px",
+      right: "-107px",
+    },
+    mobile: {
+      image: bg,
+      width: "226px",
+      height: "195px",
+      top: "48px",
+      right: "-64px",
+    },
+  },
+  title: "Покер",
+  description:
+    "Вряд ли кто-то не слышал о столь захватывающей карточной игре как покер. Правила ее очень просты, а победитель определяется преимущественно удачей. Выездной набор для покера – это удобно, стильно и полностью легально, так как в нем не задействованы настоящие деньги.",
+  video: {
+    id: "fZd3IMBfMB0",
+  },
+};
+
+const Home = ({ makeHeaderLight, ...props }) => {
   useLayoutEffect(() => {
     makeHeaderLight();
   });
 
-  /* Media Queries */
+  const { bg, title, description, video } = props.data || defaultData;
 
+  /* Media Queries */
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
     query: "screen and (min-width: 768px) and (max-width: 1299px)",
   });
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+
+  /* Background Style */
+  let bgStyle;
+  if (isDesktop) {
+    bgStyle = {
+      background: `url(${bg.desktop.image}) 100% 100% / contain no-repeat`,
+      width: bg.desktop.width,
+      height: bg.desktop.height,
+      top: bg.desktop.top,
+      right: bg.desktop.right,
+    };
+  } else if (isTablet) {
+    bgStyle = {
+      background: `url(${bg.tablet.image}) 100% 100% / contain no-repeat`,
+      width: bg.tablet.width,
+      height: bg.tablet.height,
+      top: bg.tablet.top,
+      right: bg.tablet.right,
+    };
+  } else if (isMobile) {
+    bgStyle = {
+      background: `url(${bg.mobile.image}) 100% 100% / contain no-repeat`,
+      width: bg.mobile.width,
+      height: bg.mobile.height,
+      top: bg.mobile.top,
+      right: bg.mobile.right,
+    };
+  }
 
   /* State */
 
@@ -42,10 +98,7 @@ const Home = ({
 
   return (
     <section className={s.home}>
-      <div
-        className={s._bg}
-        style={{ background: `url(${bg}) 100% 100% / contain no-repeat` }}
-      ></div>
+      <div className={s._bg} style={bgStyle}></div>
 
       <div className={s._content}>
         <div className={s._title}>{title}</div>
@@ -89,30 +142,13 @@ const Home = ({
             <span>Вернуться ко всем видам</span>
           </Link>
         )}
-
-        {/* <div className={s._features}>
-          <div className={s._feature}>
-            <div className={s._featureNumber}>4</div>
-            <p className={s._featureTitle}>сорта вина</p>
-          </div>
-          <div className={s._feature}>
-            <Loupe
-              style={{ marginTop: "3px", width: "32px", height: "32px" }}
-            />
-            <p className={s._featureTitle}>интересные факты</p>
-          </div>
-          <div className={s._feature}>
-            <Format style={{ width: "46px", height: "35px" }} />
-            <p className={s._featureTitle}>новый формат</p>
-          </div>
-        </div> */}
       </div>
 
       <ModalVideo
         channel="youtube"
         autoplay={1}
         isOpen={videoIsOpen}
-        videoId={"fZd3IMBfMB0"}
+        videoId={video.id}
         onClose={setVideoOpen.bind(null, false)}
       />
     </section>

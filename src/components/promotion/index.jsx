@@ -140,7 +140,7 @@ const Promotion = ({ background = true, ...props }) => {
               <div
                 className={s._itemIcon}
                 style={{
-                  background: `url(${icon.svg}) 100% 100% no-repeat`,
+                  background: `url(${icon.svg}) 100% 100% / contain no-repeat`,
                   height: icon.desktop.height,
                   width: icon.desktop.width,
                   bottom: icon.desktop.bottom,

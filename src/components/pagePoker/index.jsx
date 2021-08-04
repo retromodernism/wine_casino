@@ -22,13 +22,37 @@ import KindsOfGames_tablet from "../kindsOfGames_tablet";
 import Header from "../header";
 import Footer from "../footer";
 
-
-const data = {
+const defaultCasino = {
   home: {
-    bg: homeBg,
+    bg: {
+      desktop: {
+        image: homeBg,
+        width: "745px",
+        height: "643px",
+        top: "220px",
+        right: "189px",
+      },
+      tablet: {
+        image: homeBg,
+        width: "521px",
+        height: "450px",
+        top: "94px",
+        right: "-107px",
+      },
+      mobile: {
+        image: homeBg,
+        width: "226px",
+        height: "195px",
+        top: "48px",
+        right: "-64px",
+      },
+    },
     title: "Покер",
     description:
       "Вряд ли кто-то не слышал о столь захватывающей карточной игре как покер. Правила ее очень просты, а победитель определяется преимущественно удачей. Выездной набор для покера – это удобно, стильно и полностью легально, так как в нем не задействованы настоящие деньги.",
+    video: {
+      id: "fZd3IMBfMB0",
+    },
   },
   essence: {
     title: "Правила игры",
@@ -58,9 +82,15 @@ const data = {
       },
     ],
   },
+  kindsOfGames: {
+    title: "Разновидности Покера",
+    gameType: "poker",
+  },
 };
 
 const MainPageFoodCasino = (props) => {
+  const casino = props.casino || defaultCasino;
+
   /* Media Queries */
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
@@ -74,12 +104,12 @@ const MainPageFoodCasino = (props) => {
       <main className={s.main}>
         {isDesktop && (
           <Fragment>
-            <HomeClassicCaisno {...data.home} />
+            <HomeClassicCaisno data={casino.home} />
             <BackToAll />
-            <Essence {...data.essence} />
-            <KindsOfGames />
-            <Masterclass />
-            <Promotion background={false} />
+            <Essence data={casino.essence} />
+            <KindsOfGames data={casino.kindsOfGames} />
+            <Masterclass data={casino.masterclass} />
+            <Promotion background={false} data={casino.promotion} />
             <Additionals />
             <Form />
             <Variants />
@@ -88,26 +118,24 @@ const MainPageFoodCasino = (props) => {
         )}
         {isTablet && (
           <Fragment>
-            <HomeClassicCaisno {...data.home} />
-            {/* <KindsOfGames /> */}
-            <KindsOfGames_tablet />
-            <Masterclass />
-            <Promotion />
+            <HomeClassicCaisno data={casino.home} />
+            <KindsOfGames_tablet data={casino.kindsOfGames} />
+            <Masterclass data={casino.masterclass} />
+            <Promotion data={casino.promotion} />
             <Variants />
             <Additionals />
           </Fragment>
         )}
         {isMobile && (
           <Fragment>
-            <HomeClassicCaisno {...data.home} />
-            <Essence {...data.essence} />
-            {/* <KindsOfGames /> */}
-            <KindsOfGames_tablet />
-            <Promotion />
+            <HomeClassicCaisno data={casino.home} />
+            <Essence data={casino.essence} />
+            <KindsOfGames_tablet data={casino.kindsOfGames} />
+            <Promotion data={casino.promotion} />
             <Variants />
             <Additionals />
             <Masterclass />
-            <Tematic />
+            <Tematic data={casino.tematic} />
           </Fragment>
         )}
       </main>

@@ -36,6 +36,9 @@ const App = ({
   getPositions();
 
   const foodCasinos = casinos.filter(({ type }) => type === "foodCasino");
+  const classicCasinos = casinos.filter(({ type }) => type === "classicCasino");
+
+  console.log(classicCasinos);
 
   return (
     <BrowserRouter>
@@ -46,7 +49,7 @@ const App = ({
           <Route exact path="/" component={MainPageFoodCasino} />
           {/* <Route path="/vinnoe-kazino" component={WineCasino} /> */}
           <Route path="/klassicheskoe-kazino" component={ClassicCasino} />
-          <Route path="/poker" component={Poker} />
+          {/* <Route path="/poker" component={Poker} /> */}
           <Route path="/cart" component={CartPage} />
           <Route path="/contacts" component={ContactsPage} />
           <Route path="/croupiers" component={PageCroupiers} />
@@ -57,6 +60,13 @@ const App = ({
               path={casino.url}
               key={index}
               component={() => <WineCasino casino={casino} />}
+            />
+          ))}
+          {classicCasinos.map((casino, index) => (
+            <Route
+              path={casino.url}
+              key={index}
+              component={() => <Poker casino={casino} />}
             />
           ))}
           {/* <Redirect to="/" /> */}
