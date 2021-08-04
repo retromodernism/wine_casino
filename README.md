@@ -43,6 +43,9 @@ https://retromodernism-wine-casino.netlify.app/kofeynoe-kazino
 ### Шампанское казино
 https://retromodernism-wine-casino.netlify.app/shampanskoe-kazino
 
+### Медовое казино
+https://retromodernism-wine-casino.netlify.app/medovoe-kazino
+
 ### Покер
 https://retromodernism-wine-casino.netlify.app/poker
 

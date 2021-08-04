@@ -164,6 +164,25 @@ import image2HowItWasChampagne from "./src/champagne/howItWas/image2.png";
 import image3HowItWasChampagne from "./src/champagne/howItWas/image3.png";
 import image4HowItWasChampagne from "./src/champagne/howItWas/image4.png";
 
+/** Honey */
+/* Home */
+import bgHomeHoney from "./src/honey/home/bg.png";
+import bgMobHomeHoney from "./src/honey/home/bg_mob.png";
+import chipsRightHoney from "./src/honey/home/chipsRight.svg";
+import chipsLeftHoney from "./src/honey/home/chipsLeft.svg";
+/* Essence */
+import bgEssenceHoney from "./src/honey/essence/bg.png";
+/* Promotion */
+import bgPromotionHoney from "./src/honey/promotion/bg.png";
+/* Additionals */
+import bgAdditionalsHoney from "./src/honey/additionals/bg.png";
+/* HowItWas */
+import bgHowItWasHoney from "./src/honey/howItWas/bg.png";
+import image1HowItWasHoney from "./src/honey/howItWas/image1.png";
+import image2HowItWasHoney from "./src/honey/howItWas/image2.png";
+import image3HowItWasHoney from "./src/honey/howItWas/image3.png";
+import image4HowItWasHoney from "./src/honey/howItWas/image4.png";
+
 const casinos = [
   {
     url: "/vinnoe-kazino",
@@ -2745,6 +2764,376 @@ const casinos = [
     footer: {
       textColor: "#323232", // цвет текста правого блока
       mainColor: "#AD9514", // цвет левого блока, лого, инпутов у формы
+      iconColor: "#ffffff", // цвет иконок в футере
+      innerTextColor: "#ffffff", // цвет текста в левом блоке
+    },
+  },
+  {
+    url: "/medovoe-kazino",
+    type: "foodCasino",
+    header: {
+      logo: {
+        desktop: {
+          color: "#E39600",
+        },
+        tablet: {
+          color: "#E39600",
+        },
+        mobile: {
+          color: "#E39600",
+        },
+      },
+    },
+    home: {
+      logo: {
+        color: "#E39600",
+      },
+      title: {
+        text: "Медовое<br/>фан-казино",
+        color: "#E39600",
+      },
+      video: {
+        link: "fZd3IMBfMB0",
+        color: "#E39600",
+      },
+      features: {
+        items: [
+          {
+            top: {
+              type: "text",
+              text: "8",
+            },
+            bottom: {
+              description: "видов меда",
+            },
+          },
+          {
+            top: {
+              type: "icon",
+              icon: loupe,
+            },
+            bottom: {
+              description: "интересные факты",
+            },
+          },
+          {
+            top: {
+              type: "icon",
+              icon: sertificate,
+            },
+            bottom: {
+              description: "игровой стол",
+            },
+          },
+        ],
+        color: "#E39600",
+      },
+      chips: {
+        left: chipsLeftHoney,
+        right: chipsRightHoney,
+      },
+      background: {
+        desktop: {
+          image: bgHomeHoney,
+          width: "547px",
+          height: "668px",
+          right: "198px",
+          top: "176px",
+        },
+        tablet: {
+          image: bgHomeHoney,
+          width: "394px",
+          height: "430px",
+          top: "188px",
+          right: "-53px",
+        },
+        mobile: {
+          image: bgMobHomeHoney,
+          width: "192px",
+          height: "210px",
+          top: "116px",
+          right: "-60px",
+        },
+      },
+    },
+    essence: {
+      title: "В чем суть?",
+      // itemsColor: "#2A9D76",
+      itemsColor: "#2A9D76",
+      items: [
+        {
+          title: "Дегустация",
+          description:
+            "В начале игры сомелье рассказывает правила, раздаёт фишки и предлагает игрокам продегустировать определенный вид вина. Гости получают пробник, и пытаются и понять вкусовые и иные характеристики.",
+          image: image1EssenceTea,
+        },
+        {
+          title: "Ставки",
+          description:
+            "После того, как участники распробовали вкус, они начинают делать ставки на разные поля игрового стола. Как и в классическом казино, можно расположить несколько фишек на разные сектора.",
+          image: chips,
+        },
+        {
+          title: "Вскрытие",
+          description:
+            "Когда ставки сделаны, ведущий подробно описывает продегустированный продукт и чьи догадки оказались верными, а чьи нет. Распределяется выигрыш между участниками.",
+          image: peoples,
+        },
+        {
+          title: "Приз",
+          description:
+            "После завершения всех раундов, определяется победитель с наибольшим числом заработанных очков. Ему выдается сувенир, который согласуется с заказчиком (например, один из продуктов игры).",
+          image: image4EssenceTea,
+        },
+      ],
+      bg: {
+        image: bgEssenceHoney,
+        width: "460px",
+        height: "331px",
+        top: "817px",
+        right: "-141px",
+      },
+    },
+    masterclass: {
+      color: "#2A9D76",
+      title: "Проведем мастеркласс у вас или у нас",
+      holidays: {
+        title: "Организация праздников на выезде",
+        description:
+          "Компания фан-казино предоставляет широкий спектр услуг по организации выездного фан-казино в Москве. Мы берем на себя доставку игрового поля, продуктов и всей необходимой атрибутики для проведения эффектного мероприятия. Также мы предоставляем услуги профессиональных крупье, сомелье, бариста и фотографов.",
+      },
+      offer: {
+        offerItems: [
+          {
+            icon: pizzaIcon,
+            description: "съедобная «рулетка»",
+          },
+          {
+            icon: lidIcon,
+            description: "сырные, медовые, хлебные дегустации",
+          },
+          {
+            icon: juiceIcon,
+            description:
+              "алкогольные/ слабоалкогольные/ безалкогольные<br/>фан-казино",
+          },
+        ],
+      },
+      image: masterclassImage,
+      rent: {
+        title: "Аренда площадки<br />на ваше мероприятие",
+        text: "Компания фан-казино располагает собственными площадками для организации торжеств любой тематики и масштаба.",
+        items: [
+          {
+            icon: iconWineglass,
+            title: "на праздник",
+          },
+          {
+            icon: iconParty,
+            title: "на корпоратив",
+          },
+          {
+            icon: iconConference,
+            title: "на конференцию",
+          },
+        ],
+      },
+      video: {
+        id: "fZd3IMBfMB0",
+      },
+    },
+    promotion: {
+      color: "#E39600",
+      // color: "#323232",
+      bg: {
+        image: bgPromotionHoney,
+        width: "530px",
+        height: "439px",
+        top: "-40px",
+        left: "-170px",
+      },
+      items: [
+        {
+          title: "Фотобудка в подарок",
+          description: "при заказе<br />maxi пакета",
+          icon: {
+            svg: camera,
+            desktop: {
+              height: "105px",
+              width: "139px",
+              bottom: "-18px",
+              right: "33px",
+            },
+            tablet: {
+              width: "95px",
+              height: "72px",
+              bottom: "-12px",
+              right: "23px",
+            },
+            mobile: {
+              width: "78px",
+              height: "59px",
+              bottom: "-10px",
+              right: "19px",
+            },
+          },
+        },
+        {
+          title: "Фотограф бесплатно",
+          description: "при заказе<br />от 5-ти столов",
+          icon: {
+            svg: photograph,
+            desktop: {
+              height: "127px",
+              width: "123px",
+              bottom: "-8px",
+              right: "26px",
+            },
+            tablet: {
+              width: "84px",
+              height: "87px",
+              bottom: "-5px",
+              right: "18px",
+            },
+            mobile: {
+              width: "68px",
+              height: "71px",
+              bottom: "-5px",
+              right: "14px",
+            },
+          },
+        },
+        {
+          title: "Сертификат 10 000 ₽",
+          description: "при заказе maxi пакета",
+          icon: {
+            svg: sertificatePromotion,
+            desktop: {
+              height: "79px",
+              width: "123px",
+              bottom: "-23px",
+              right: "25px",
+            },
+            tablet: {
+              width: "84px",
+              height: "54px",
+              bottom: "-16px",
+              right: "17px",
+            },
+            mobile: {
+              width: "68px",
+              height: "44px",
+              bottom: "-13px",
+              right: "14px",
+            },
+          },
+        },
+      ],
+    },
+    variants: {
+      color: {
+        item: "#2A9D76",
+        popular: "#A2000C",
+      },
+      // color: {
+      //   item: "#323232",
+      //   popular: "#2A9D76",
+      // },
+    },
+    additionals: {
+      title: "Так же вы можете добавить",
+      // color: "#323232",
+      color: "#2A9D76",
+      bg: {
+        image: bgAdditionalsHoney,
+        width: "530px",
+        height: "439px",
+        top: "589px",
+        right: "-234px",
+      },
+    },
+    otherCasinos: {
+      color: "#E39600",
+      fontColor: "#ffffff",
+    },
+    howItWas: {
+      title: "Как это было",
+      color: "#E39600",
+      images: [
+        image1HowItWasHoney,
+        image2HowItWasHoney,
+        image3HowItWasHoney,
+        image4HowItWasHoney,
+        image4HowItWasHoney,
+      ],
+      bg: {
+        image: bgHowItWasHoney,
+        width: "525px",
+        height: "429px",
+        top: "-135px",
+        left: "-245px",
+      },
+    },
+    tematic: {
+      items: [
+        {
+          title: "Гэтсби",
+          description:
+            "Организуем для вас вечеринку в стиле Гэтсби. Гламур и декаданс 20-х годов прошлого века сделали их популярной темой для тематических праздников. Помимо оформления здесь не малую роль играют благородные напитки, что отлично сочетается с нашими услугами.",
+          images: [gatsby1, gatsby2, gatsby3],
+        },
+        {
+          title: "Лас-Вегас",
+          description:
+            "Город расположенный в пустыне стал символом кутежа, богатства и веселья. Установим игровые столы фан-казино различной направленности на событии для создания атмосферы в стиле Лас-Вегаса.",
+          images: [lasVegas1, lasVegas2, lasVegas3],
+        },
+        {
+          title: "Мафия",
+          description:
+            "Эпоха шарма подпольных баров и романтизированной мафии из зарубежных фильмов, всегда притягивала внимание людей. Легко воплотим желание окунуться в те времена с помощью аниматоров и соответствующего реквизита.",
+          images: [mafia1, mafia2, mafia3],
+        },
+      ],
+    },
+    about: {
+      title: "О винном фан-казино",
+      items: [
+        {
+          type: "text",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu turpis amet, eu tincidunt purus, arcu. Tellus eget dui eget lorem. Nunc cras nulla viverra pulvinar. Mauris purus, lobortis nulla tortor dis platea. Erat nibh amet, dictum a, amet at interdum integer. Arcu pulvinar parturient porttitor scelerisque in sit ut ultricies. Accumsan, sed consectetur aliquam donec. Platea eu odio tincidunt auctor sed. Viverra at et velit lacus facilisis est amet, lacus. Erat eleifend at faucibus nisl purus enim pulvinar. Ultrices fringilla risus sodales dignissim tristique venenatis nulla aenean tortor. Amet, orci gravida fermentum, morbi iaculis dui laoreet. Dictum id nulla imperdiet purus pellentesque etiam et habitant viverra. Donec arcu sagittis ipsum nulla. Tempus dolor eu consequat elit ut diam hendrerit enim odio. Auctor sed volutpat morbi ut tristique netus. ",
+        },
+        {
+          type: "image",
+          image: imageAbout,
+          desktop: {
+            height: "auto",
+          },
+          tablet: {
+            height: "471px",
+          },
+          mobile: {
+            height: "42vh",
+          },
+        },
+        {
+          type: "text",
+          text: "<p>- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+        },
+        {
+          type: "text",
+          text: "<p>- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+        },
+        {
+          type: "text",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu turpis amet, eu tincidunt purus, arcu. Tellus eget dui eget lorem. Nunc cras nulla viverra pulvinar. Mauris purus, lobortis nulla tortor dis platea. Erat nibh amet, dictum a, amet at interdum integer. Arcu pulvinar parturient porttitor scelerisque in sit ut ultricies. Accumsan, sed consectetur aliquam donec. Platea eu odio tincidunt auctor sed. Viverra at et velit lacus facilisis est amet, lacus. Erat eleifend at faucibus nisl purus enim pulvinar. Ultrices fringilla risus sodales dignissim tristique venenatis nulla aenean tortor. Amet, orci gravida fermentum, morbi iaculis dui laoreet. Dictum id nulla imperdiet purus pellentesque etiam et habitant viverra. Donec arcu sagittis ipsum nulla. Tempus dolor eu consequat elit ut diam hendrerit enim odio. Auctor sed volutpat morbi ut tristique netus. ",
+          column: "1/-1",
+        },
+      ],
+    },
+    footer: {
+      textColor: "#323232", // цвет текста правого блока
+      mainColor: "#E39600", // цвет левого блока, лого, инпутов у формы
       iconColor: "#ffffff", // цвет иконок в футере
       innerTextColor: "#ffffff", // цвет текста в левом блоке
     },
