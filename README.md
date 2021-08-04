@@ -67,6 +67,9 @@ https://retromodernism-wine-casino.netlify.app/pivnoe-kazino
 ### Настойки казино
 https://retromodernism-wine-casino.netlify.app/nastoyki-kazino
 
+### Ликерное казино
+https://retromodernism-wine-casino.netlify.app/likernoe-kazino
+
 ### Покер
 https://retromodernism-wine-casino.netlify.app/poker
 
