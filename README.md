@@ -22,7 +22,16 @@ https://retromodernism-wine-casino.netlify.app/vinnoe-kazino
 ### Сырное казино
 https://retromodernism-wine-casino.netlify.app/syrnoe-kazino
 
-### Сырное казино
+### Шоколадное казино
+https://retromodernism-wine-casino.netlify.app/shokoladnoe-kazino
+
+### Чайное казино
+https://retromodernism-wine-casino.netlify.app/chaynoe-kazino
+
+### Безалкогольное казино
+https://retromodernism-wine-casino.netlify.app/bezalkogolnoe-kazino
+
+### Покер
 https://retromodernism-wine-casino.netlify.app/poker
 
 # Getting Started with Create React App
