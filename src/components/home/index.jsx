@@ -17,7 +17,8 @@ import { useMediaQuery } from "react-responsive";
 
 const Home = (props) => {
   /* Props decomposition */
-  const { logo, title, video, features, chips, background } = props.data;
+  const { logo, title, video, features, chips, background, greenBgMobile } =
+    props.data;
 
   /* Media Queries */
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
@@ -71,7 +72,19 @@ const Home = (props) => {
 
   return (
     <section className={s.home}>
-      <div className={s._bg0}></div>
+      {greenBgMobile && isMobile ? (
+        <div
+          className={s._bg0}
+          style={{
+            width: greenBgMobile.width,
+            height: greenBgMobile.height,
+            top: greenBgMobile.top,
+            right: greenBgMobile.right,
+          }}
+        ></div>
+      ) : (
+        <div className={s._bg0}></div>
+      )}
       <div className={s._bg} style={bgStyle} />
       <div className={s._bg1}></div>
       <div
