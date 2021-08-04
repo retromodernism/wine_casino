@@ -55,6 +55,9 @@ https://retromodernism-wine-casino.netlify.app/salo-kazino
 ### Мясное казино
 https://retromodernism-wine-casino.netlify.app/myasnoe-kazino
 
+### Виски казино
+https://retromodernism-wine-casino.netlify.app/viski-kazino
+
 ### Покер
 https://retromodernism-wine-casino.netlify.app/poker
 
