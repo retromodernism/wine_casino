@@ -107,6 +107,24 @@ import image2HowItWasTea from "./src/teaCasino/howItWas/image2.png";
 import image3HowItWasTea from "./src/teaCasino/howItWas/image3.png";
 import image4HowItWasTea from "./src/teaCasino/howItWas/image4.png";
 
+/** NonAlcoholic Casino */
+/** Home */
+import bgHomeNonAlcoholic from "./src/nonAlcoholicCasino/home/bg.png";
+import chipsRightNonAlcoholic from "./src/nonAlcoholicCasino/home/chipsRight.svg";
+import chipsLeftNonAlcoholic from "./src/nonAlcoholicCasino/home/chipsLeft.svg";
+/* Essence */
+import bgEssenceNonAlco from "./src/nonAlcoholicCasino/essence/bg.png";
+/* Promotion */
+import bgPromotionNonAlco from "./src/nonAlcoholicCasino/promotion/bg.png";
+/* Additionals */
+import bgAdditionalsNonAlco from "./src/nonAlcoholicCasino/additionals/bg.png";
+/* HowItWas */
+import bgHowItWasNonAlco from "./src/nonAlcoholicCasino/howitWas/bg.png";
+import image1HowItWasNonAlco from "./src/nonAlcoholicCasino/howitWas/image1.png";
+import image2HowItWasNonAlco from "./src/nonAlcoholicCasino/howitWas/image2.png";
+import image3HowItWasNonAlco from "./src/nonAlcoholicCasino/howitWas/image3.png";
+import image4HowItWasNonAlco from "./src/nonAlcoholicCasino/howitWas/image4.png";
+
 const casinos = [
   {
     url: "/vinnoe-kazino",
@@ -1583,42 +1601,42 @@ const casinos = [
     },
   },
   {
-    url: "/chaynoe-kazino",
+    url: "/bezalkogolnoe-kazino",
     type: "foodCasino",
     header: {
       logo: {
         desktop: {
-          color: "#B07608",
+          color: "#6A9C00",
         },
         tablet: {
-          color: "#B07608",
+          color: "#6A9C00",
         },
         mobile: {
-          color: "#B07608",
+          color: "#6A9C00",
         },
       },
     },
     home: {
       logo: {
-        color: "#B07608",
+        color: "#6A9C00",
       },
       title: {
-        text: "Чайное<br/>фан-казино",
-        color: "#B07608",
+        text: "Безалкогольное<br/>фан-казино",
+        color: "#6A9C00",
       },
       video: {
         link: "fZd3IMBfMB0",
-        color: "#B07608",
+        color: "#6A9C00",
       },
       features: {
         items: [
           {
             top: {
               type: "text",
-              text: "4",
+              text: "34",
             },
             bottom: {
-              description: "сорта чая",
+              description: "вида лимонада",
             },
           },
           {
@@ -1640,33 +1658,33 @@ const casinos = [
             },
           },
         ],
-        color: "#B07608",
+        color: "#6A9C00",
       },
       chips: {
-        left: chipsLeftTea,
-        right: chipsRightTea,
+        left: chipsLeftNonAlcoholic,
+        right: chipsRightNonAlcoholic,
       },
       background: {
         desktop: {
-          image: bgHomeTea,
-          width: "625px",
-          height: "466px",
-          right: "135px",
-          top: "213px",
+          image: bgHomeNonAlcoholic,
+          width: "1068px",
+          height: "952px",
+          right: "130px",
+          top: "-111px",
         },
         tablet: {
-          image: bgHomeTea,
-          width: "454px",
-          height: "338px",
-          right: "-88px",
-          top: "272px",
+          image: bgHomeNonAlcoholic,
+          width: "770px",
+          height: "693px",
+          right: "-159px",
+          top: "11px",
         },
         mobile: {
-          image: bgHomeTea,
-          width: "218px",
-          height: "162px",
-          right: "-82px",
-          top: "146px",
+          image: bgHomeNonAlcoholic,
+          width: "381px",
+          height: "337px",
+          right: "-114px",
+          top: "54px",
         },
       },
     },
@@ -1701,11 +1719,11 @@ const casinos = [
         },
       ],
       bg: {
-        image: bgEssenceTea,
-        top: "934px",
-        right: "-162px",
-        width: "470px",
-        height: "492px",
+        image: bgEssenceNonAlco,
+        top: "816px",
+        right: "-130px",
+        width: "413px",
+        height: "446px",
       },
     },
     masterclass: {
@@ -1757,14 +1775,14 @@ const casinos = [
       },
     },
     promotion: {
-      color: "#B07608",
+      color: "#6A9C00",
       // color: "#323232",
       bg: {
-        image: bgPromotionTea,
-        width: "492px",
-        height: "470px",
-        top: "-60px",
-        left: "-145px",
+        image: bgPromotionNonAlco,
+        width: "354px",
+        height: "418px",
+        top: "-80px",
+        left: "-81px",
       },
       items: [
         {
@@ -1859,33 +1877,33 @@ const casinos = [
       // color: "#323232",
       color: "#2A9D76",
       bg: {
-        image: bgAdditionalsTea,
-        right: "-107px",
-        top: "564px",
-        height: "387px",
-        width: "417px",
+        image: bgAdditionalsNonAlco,
+        right: "-123px",
+        top: "511px",
+        height: "440px",
+        width: "449px",
       },
     },
     otherCasinos: {
-      color: "#B07608",
+      color: "#6A9C00",
       fontColor: "#ffffff",
     },
     howItWas: {
       title: "Как это было",
-      color: "#B07608",
+      color: "#6A9C00",
       images: [
-        image1HowItWasTea,
-        image2HowItWasTea,
-        image3HowItWasTea,
-        image4HowItWasTea,
-        image4HowItWasTea,
+        image1HowItWasNonAlco,
+        image2HowItWasNonAlco,
+        image3HowItWasNonAlco,
+        image4HowItWasNonAlco,
+        image4HowItWasNonAlco,
       ],
       bg: {
-        image: bgHowItWasTea,
-        height: "387px",
-        width: "417px",
-        top: "-25px",
-        left: "-139px",
+        image: bgHowItWasNonAlco,
+        width: "449px",
+        height: "440px",
+        top: "-162px",
+        left: "-162px",
       },
     },
     tematic: {
@@ -1946,8 +1964,8 @@ const casinos = [
       ],
     },
     footer: {
-      textColor: "#B07608", // цвет текста правого блока
-      mainColor: "#B07608", // цвет левого блока, лого, инпутов у формы
+      textColor: "#323232", // цвет текста правого блока
+      mainColor: "#6A9C00", // цвет левого блока, лого, инпутов у формы
       iconColor: "#ffffff", // цвет иконок в футере
       innerTextColor: "#ffffff", // цвет текста в левом блоке
     },
