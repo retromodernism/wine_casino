@@ -22,6 +22,9 @@ https://retromodernism-wine-casino.netlify.app/news
 ### Новость
 https://retromodernism-wine-casino.netlify.app/news/1
 
+### Крупье
+https://retromodernism-wine-casino.netlify.app/croupiers
+
 ### Винное казино
 https://retromodernism-wine-casino.netlify.app/vinnoe-kazino
 
