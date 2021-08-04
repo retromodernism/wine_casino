@@ -85,6 +85,21 @@ https://retromodernism-wine-casino.netlify.app/ruletka
 ### Блэк Джэк
 https://retromodernism-wine-casino.netlify.app/black-jack
 
+### Крэпс
+https://retromodernism-wine-casino.netlify.app/craps
+
+### Аттракционы
+https://retromodernism-wine-casino.netlify.app/attractions
+
+### Игровые автоматы
+https://retromodernism-wine-casino.netlify.app/igrovye-avtomaty
+
+### Бильярд
+https://retromodernism-wine-casino.netlify.app/bilyard
+
+### Онлайн казино
+https://retromodernism-wine-casino.netlify.app/online-casino
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

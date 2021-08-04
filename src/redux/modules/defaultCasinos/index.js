@@ -377,6 +377,31 @@ import bgHomePoker from "./src/poker/home/bg.png";
 /** Home */
 import bgHomeBlackJack from "./src/blackJack/home/bg.png";
 
+/** Craps */
+/** Home */
+import bgHomeCraps from "./src/craps/home/bg.png";
+
+/** FortunaRing */
+/** Home */
+import bgHomeFortuna from "./src/fortunaRing/home/bg.png";
+
+/** Attraction */
+/** Home */
+import bgHomeAttraction from "./src/attraction/home/bg.png";
+
+/** Automats */
+/** Home */
+import bgHomeAutomats from "./src/automats/home/bg.png";
+import bgTabHomeAutomats from "./src/automats/home/bg_tab.png";
+
+/** Bilyard */
+/** Home */
+import bgHomeBilyard from "./src/bilyard/home/bg.png";
+
+/** Online Casino */
+/** Home */
+import bgHomeOnline from "./src/onlineCasino/home/bg.png";
+
 const casinos = [
   {
     url: "/vinnoe-kazino",
@@ -6988,6 +7013,888 @@ const casinos = [
       title: "Блэк Джэк",
       description:
         "Организовать игру в Блэк Джек на профессиональном столе и с высококвалифицированным крупье в удобное для Вас время и месте это наша главная задача. Таким образом вы можете с легкостью устроить гостям незабываемый праздник.",
+      video: {
+        id: "fZd3IMBfMB0",
+      },
+    },
+    essence: {
+      title: "Правила игры",
+      itemsColor: "#323232",
+      items: [
+        {
+          title: "",
+          image: image1EssenceRuletka,
+          description: "Игроки перед раздачей карт, должны сделать ставку.",
+        },
+        {
+          title: "",
+          image: image2EssenceRuletka,
+          description:
+            "После размещения ставок всеми игроками, дилер сдаёт игрокам и себе по 3 карты.",
+        },
+        {
+          title: "",
+          image: image3EssenceRuletka,
+          description:
+            "Затем игроки могут сбросить карты, потеряв все свои ставки или продолжить игру. Как только все игроки приняли решения по ставкам, дилер вскрывает карты игроков.",
+        },
+        {
+          title: "",
+          image: image4EssenceRuletka,
+          description: "Затем дилер сравнивает свои карты с картами игроков.",
+        },
+      ],
+    },
+    kindsOfGames: {
+      title: "Разновидности Рулеток",
+      gameType: "poker",
+    },
+    promotion: {
+      color: "#323232",
+      items: [
+        {
+          title: "Free 300 фишек",
+          description: "при заказе<br />от 3 столов",
+          icon: {
+            svg: icon1PromotionRuletka,
+            desktop: {
+              height: "123px",
+              width: "123px",
+              bottom: "-28px",
+              right: "32px",
+            },
+            tablet: {
+              width: "87px",
+              height: "105px",
+              bottom: "-22px",
+              right: "18px",
+            },
+            mobile: {
+              width: "56px",
+              height: "65px",
+              bottom: "-16px",
+              right: "18px",
+            },
+          },
+        },
+        {
+          title: "Пятый стол в подарок",
+          description: "при заказе<br />от 4 столов",
+          icon: {
+            svg: icon2PromotionRuletka,
+            desktop: {
+              width: "142px",
+              height: "63px",
+              bottom: "-12px",
+              right: "20px",
+            },
+            tablet: {
+              width: "146px",
+              height: "78px",
+              bottom: "-14px",
+              right: "10px",
+            },
+            mobile: {
+              width: "68px",
+              height: "71px",
+              bottom: "-5px",
+              right: "14px",
+            },
+          },
+        },
+        {
+          title: "Бесплатная доставка",
+          description: "при заказе 4-х столок",
+          icon: {
+            svg: icon3PromotionRuletka,
+            desktop: {
+              width: "98px",
+              height: "89px",
+              bottom: "-17px",
+              right: "18px",
+            },
+            tablet: {
+              width: "84px",
+              height: "72px",
+              bottom: "-16px",
+              right: "17px",
+            },
+            mobile: {
+              width: "68px",
+              height: "44px",
+              bottom: "-13px",
+              right: "14px",
+            },
+          },
+        },
+      ],
+    },
+  },
+  {
+    url: "/craps",
+    type: "classicCasino",
+    home: {
+      bg: {
+        desktop: {
+          image: bgHomeCraps,
+          width: "745px",
+          height: "559px",
+          top: "275px",
+          right: "249px",
+        },
+        tablet: {
+          image: bgHomeCraps,
+          width: "604px",
+          height: "450px",
+          top: "121px",
+          right: "-122px",
+        },
+        mobile: {
+          image: bgHomeCraps,
+          width: "252px",
+          height: "188px",
+          top: "75px",
+          right: "-59px",
+        },
+      },
+      title: "Крэпс",
+      description:
+        "Крэпс — это профессиональный стол для игры в кости, который привлечет к себе внимание даже не особо азартных людей.",
+      video: {
+        id: "fZd3IMBfMB0",
+      },
+    },
+    essence: {
+      title: "Правила игры",
+      itemsColor: "#323232",
+      items: [
+        {
+          title: "",
+          image: image1EssenceRuletka,
+          description: "Игроки перед раздачей карт, должны сделать ставку.",
+        },
+        {
+          title: "",
+          image: image2EssenceRuletka,
+          description:
+            "После размещения ставок всеми игроками, дилер сдаёт игрокам и себе по 3 карты.",
+        },
+        {
+          title: "",
+          image: image3EssenceRuletka,
+          description:
+            "Затем игроки могут сбросить карты, потеряв все свои ставки или продолжить игру. Как только все игроки приняли решения по ставкам, дилер вскрывает карты игроков.",
+        },
+        {
+          title: "",
+          image: image4EssenceRuletka,
+          description: "Затем дилер сравнивает свои карты с картами игроков.",
+        },
+      ],
+    },
+    kindsOfGames: {
+      title: "Разновидности Рулеток",
+      gameType: "poker",
+    },
+    promotion: {
+      color: "#323232",
+      items: [
+        {
+          title: "Free 300 фишек",
+          description: "при заказе<br />от 3 столов",
+          icon: {
+            svg: icon1PromotionRuletka,
+            desktop: {
+              height: "123px",
+              width: "123px",
+              bottom: "-28px",
+              right: "32px",
+            },
+            tablet: {
+              width: "87px",
+              height: "105px",
+              bottom: "-22px",
+              right: "18px",
+            },
+            mobile: {
+              width: "56px",
+              height: "65px",
+              bottom: "-16px",
+              right: "18px",
+            },
+          },
+        },
+        {
+          title: "Пятый стол в подарок",
+          description: "при заказе<br />от 4 столов",
+          icon: {
+            svg: icon2PromotionRuletka,
+            desktop: {
+              width: "142px",
+              height: "63px",
+              bottom: "-12px",
+              right: "20px",
+            },
+            tablet: {
+              width: "146px",
+              height: "78px",
+              bottom: "-14px",
+              right: "10px",
+            },
+            mobile: {
+              width: "68px",
+              height: "71px",
+              bottom: "-5px",
+              right: "14px",
+            },
+          },
+        },
+        {
+          title: "Бесплатная доставка",
+          description: "при заказе 4-х столок",
+          icon: {
+            svg: icon3PromotionRuletka,
+            desktop: {
+              width: "98px",
+              height: "89px",
+              bottom: "-17px",
+              right: "18px",
+            },
+            tablet: {
+              width: "84px",
+              height: "72px",
+              bottom: "-16px",
+              right: "17px",
+            },
+            mobile: {
+              width: "68px",
+              height: "44px",
+              bottom: "-13px",
+              right: "14px",
+            },
+          },
+        },
+      ],
+    },
+  },
+  {
+    url: "/koleso-fortuny",
+    type: "classicCasino",
+    home: {
+      bg: {
+        desktop: {
+          image: bgHomeFortuna,
+          width: "652px",
+          height: "652px",
+          top: "216px",
+          right: "261px",
+        },
+        tablet: {
+          image: bgHomeFortuna,
+          width: "466px",
+          height: "463px",
+          top: "88px",
+          right: "-110px",
+        },
+        mobile: {
+          image: bgHomeFortuna,
+          width: "174px",
+          height: "174px",
+          top: "61px",
+          right: "-46px",
+        },
+      },
+      title: "Колесо<br>фортуны",
+      description:
+        "Фортуна - это древнеримская богиня удачи, воспетая во многих элегиях и увековеченная в капеллах по всей Римской империи.",
+      video: {
+        id: "fZd3IMBfMB0",
+      },
+    },
+    essence: {
+      title: "Правила игры",
+      itemsColor: "#323232",
+      items: [
+        {
+          title: "",
+          image: image1EssenceRuletka,
+          description: "Игроки перед раздачей карт, должны сделать ставку.",
+        },
+        {
+          title: "",
+          image: image2EssenceRuletka,
+          description:
+            "После размещения ставок всеми игроками, дилер сдаёт игрокам и себе по 3 карты.",
+        },
+        {
+          title: "",
+          image: image3EssenceRuletka,
+          description:
+            "Затем игроки могут сбросить карты, потеряв все свои ставки или продолжить игру. Как только все игроки приняли решения по ставкам, дилер вскрывает карты игроков.",
+        },
+        {
+          title: "",
+          image: image4EssenceRuletka,
+          description: "Затем дилер сравнивает свои карты с картами игроков.",
+        },
+      ],
+    },
+    kindsOfGames: {
+      title: "Разновидности Рулеток",
+      gameType: "poker",
+    },
+    promotion: {
+      color: "#323232",
+      items: [
+        {
+          title: "Free 300 фишек",
+          description: "при заказе<br />от 3 столов",
+          icon: {
+            svg: icon1PromotionRuletka,
+            desktop: {
+              height: "123px",
+              width: "123px",
+              bottom: "-28px",
+              right: "32px",
+            },
+            tablet: {
+              width: "87px",
+              height: "105px",
+              bottom: "-22px",
+              right: "18px",
+            },
+            mobile: {
+              width: "56px",
+              height: "65px",
+              bottom: "-16px",
+              right: "18px",
+            },
+          },
+        },
+        {
+          title: "Пятый стол в подарок",
+          description: "при заказе<br />от 4 столов",
+          icon: {
+            svg: icon2PromotionRuletka,
+            desktop: {
+              width: "142px",
+              height: "63px",
+              bottom: "-12px",
+              right: "20px",
+            },
+            tablet: {
+              width: "146px",
+              height: "78px",
+              bottom: "-14px",
+              right: "10px",
+            },
+            mobile: {
+              width: "68px",
+              height: "71px",
+              bottom: "-5px",
+              right: "14px",
+            },
+          },
+        },
+        {
+          title: "Бесплатная доставка",
+          description: "при заказе 4-х столок",
+          icon: {
+            svg: icon3PromotionRuletka,
+            desktop: {
+              width: "98px",
+              height: "89px",
+              bottom: "-17px",
+              right: "18px",
+            },
+            tablet: {
+              width: "84px",
+              height: "72px",
+              bottom: "-16px",
+              right: "17px",
+            },
+            mobile: {
+              width: "68px",
+              height: "44px",
+              bottom: "-13px",
+              right: "14px",
+            },
+          },
+        },
+      ],
+    },
+  },
+  {
+    url: "/attraction",
+    type: "classicCasino",
+    home: {
+      bg: {
+        desktop: {
+          image: bgHomeAttraction,
+          width: "856px",
+          height: "856px",
+          top: "123px",
+          right: "196px",
+        },
+        tablet: {
+          image: bgHomeAttraction,
+          width: "549px",
+          height: "549px",
+          top: "64px",
+          right: "-186px",
+        },
+        mobile: {
+          image: bgHomeAttraction,
+          width: "227px",
+          height: "227px",
+          top: "46px",
+          right: "-107px",
+        },
+      },
+      title: "Аттракционы",
+      description:
+        "Чтобы ваше мероприятие стало наиболее разнообразным по видам казино, рекумендуем вам ряд аттракционов, которые точно не оставят самых азартных игроков равнодушными.",
+      video: {
+        id: "fZd3IMBfMB0",
+      },
+    },
+    essence: {
+      title: "Правила игры",
+      itemsColor: "#323232",
+      items: [
+        {
+          title: "",
+          image: image1EssenceRuletka,
+          description: "Игроки перед раздачей карт, должны сделать ставку.",
+        },
+        {
+          title: "",
+          image: image2EssenceRuletka,
+          description:
+            "После размещения ставок всеми игроками, дилер сдаёт игрокам и себе по 3 карты.",
+        },
+        {
+          title: "",
+          image: image3EssenceRuletka,
+          description:
+            "Затем игроки могут сбросить карты, потеряв все свои ставки или продолжить игру. Как только все игроки приняли решения по ставкам, дилер вскрывает карты игроков.",
+        },
+        {
+          title: "",
+          image: image4EssenceRuletka,
+          description: "Затем дилер сравнивает свои карты с картами игроков.",
+        },
+      ],
+    },
+    kindsOfGames: {
+      title: "Разновидности Рулеток",
+      gameType: "poker",
+    },
+    promotion: {
+      color: "#323232",
+      items: [
+        {
+          title: "Free 300 фишек",
+          description: "при заказе<br />от 3 столов",
+          icon: {
+            svg: icon1PromotionRuletka,
+            desktop: {
+              height: "123px",
+              width: "123px",
+              bottom: "-28px",
+              right: "32px",
+            },
+            tablet: {
+              width: "87px",
+              height: "105px",
+              bottom: "-22px",
+              right: "18px",
+            },
+            mobile: {
+              width: "56px",
+              height: "65px",
+              bottom: "-16px",
+              right: "18px",
+            },
+          },
+        },
+        {
+          title: "Пятый стол в подарок",
+          description: "при заказе<br />от 4 столов",
+          icon: {
+            svg: icon2PromotionRuletka,
+            desktop: {
+              width: "142px",
+              height: "63px",
+              bottom: "-12px",
+              right: "20px",
+            },
+            tablet: {
+              width: "146px",
+              height: "78px",
+              bottom: "-14px",
+              right: "10px",
+            },
+            mobile: {
+              width: "68px",
+              height: "71px",
+              bottom: "-5px",
+              right: "14px",
+            },
+          },
+        },
+        {
+          title: "Бесплатная доставка",
+          description: "при заказе 4-х столок",
+          icon: {
+            svg: icon3PromotionRuletka,
+            desktop: {
+              width: "98px",
+              height: "89px",
+              bottom: "-17px",
+              right: "18px",
+            },
+            tablet: {
+              width: "84px",
+              height: "72px",
+              bottom: "-16px",
+              right: "17px",
+            },
+            mobile: {
+              width: "68px",
+              height: "44px",
+              bottom: "-13px",
+              right: "14px",
+            },
+          },
+        },
+      ],
+    },
+  },
+  {
+    url: "/igrovye-avtomaty",
+    type: "classicCasino",
+    home: {
+      bg: {
+        desktop: {
+          image: bgHomeAutomats,
+          width: "1019px",
+          height: "484px",
+          top: "309px",
+          right: "86px",
+        },
+        tablet: {
+          image: bgTabHomeAutomats,
+          width: "814px",
+          height: "387px",
+          top: "215px",
+          right: "-362px",
+        },
+        mobile: {
+          image: bgTabHomeAutomats,
+          width: "414px",
+          height: "197px",
+          top: "95px",
+          right: "-212px",
+        },
+      },
+      title: "Игровые автоматы",
+      description:
+        "Игровые автоматы – это настоятельно рекомендуемое нами расширение для зоны выездного фан-казино. Для большинства гостей праздника, надеемся, это развлечение неизведанное, поэтому своеобразный сюрприз включит их центры интереса.",
+      video: {
+        id: "fZd3IMBfMB0",
+      },
+    },
+    essence: {
+      title: "Правила игры",
+      itemsColor: "#323232",
+      items: [
+        {
+          title: "",
+          image: image1EssenceRuletka,
+          description: "Игроки перед раздачей карт, должны сделать ставку.",
+        },
+        {
+          title: "",
+          image: image2EssenceRuletka,
+          description:
+            "После размещения ставок всеми игроками, дилер сдаёт игрокам и себе по 3 карты.",
+        },
+        {
+          title: "",
+          image: image3EssenceRuletka,
+          description:
+            "Затем игроки могут сбросить карты, потеряв все свои ставки или продолжить игру. Как только все игроки приняли решения по ставкам, дилер вскрывает карты игроков.",
+        },
+        {
+          title: "",
+          image: image4EssenceRuletka,
+          description: "Затем дилер сравнивает свои карты с картами игроков.",
+        },
+      ],
+    },
+    kindsOfGames: {
+      title: "Разновидности Рулеток",
+      gameType: "poker",
+    },
+    promotion: {
+      color: "#323232",
+      items: [
+        {
+          title: "Free 300 фишек",
+          description: "при заказе<br />от 3 столов",
+          icon: {
+            svg: icon1PromotionRuletka,
+            desktop: {
+              height: "123px",
+              width: "123px",
+              bottom: "-28px",
+              right: "32px",
+            },
+            tablet: {
+              width: "87px",
+              height: "105px",
+              bottom: "-22px",
+              right: "18px",
+            },
+            mobile: {
+              width: "56px",
+              height: "65px",
+              bottom: "-16px",
+              right: "18px",
+            },
+          },
+        },
+        {
+          title: "Пятый стол в подарок",
+          description: "при заказе<br />от 4 столов",
+          icon: {
+            svg: icon2PromotionRuletka,
+            desktop: {
+              width: "142px",
+              height: "63px",
+              bottom: "-12px",
+              right: "20px",
+            },
+            tablet: {
+              width: "146px",
+              height: "78px",
+              bottom: "-14px",
+              right: "10px",
+            },
+            mobile: {
+              width: "68px",
+              height: "71px",
+              bottom: "-5px",
+              right: "14px",
+            },
+          },
+        },
+        {
+          title: "Бесплатная доставка",
+          description: "при заказе 4-х столок",
+          icon: {
+            svg: icon3PromotionRuletka,
+            desktop: {
+              width: "98px",
+              height: "89px",
+              bottom: "-17px",
+              right: "18px",
+            },
+            tablet: {
+              width: "84px",
+              height: "72px",
+              bottom: "-16px",
+              right: "17px",
+            },
+            mobile: {
+              width: "68px",
+              height: "44px",
+              bottom: "-13px",
+              right: "14px",
+            },
+          },
+        },
+      ],
+    },
+  },
+  {
+    url: "/bilyard",
+    type: "classicCasino",
+    home: {
+      bg: {
+        desktop: {
+          image: bgHomeBilyard,
+          width: "1047px",
+          height: "529px",
+          top: "285px",
+          right: "-74px",
+        },
+        tablet: {
+          image: bgHomeBilyard,
+          width: "671px",
+          height: "339px",
+          top: "157px",
+          right: "-385px",
+        },
+        mobile: {
+          image: bgHomeBilyard,
+          width: "279px",
+          height: "141px",
+          top: "101px",
+          right: "-171px",
+        },
+      },
+      title: "Бильярд",
+      description:
+        "Игра захватывающая, в высшей мере динамичная и красивая. Бильярдный стол приковывает взгляд, если за ним разыгрывают партию за партией профессиональные бильярдисты.",
+      video: {
+        id: "fZd3IMBfMB0",
+      },
+    },
+    essence: {
+      title: "Правила игры",
+      itemsColor: "#323232",
+      items: [
+        {
+          title: "",
+          image: image1EssenceRuletka,
+          description: "Игроки перед раздачей карт, должны сделать ставку.",
+        },
+        {
+          title: "",
+          image: image2EssenceRuletka,
+          description:
+            "После размещения ставок всеми игроками, дилер сдаёт игрокам и себе по 3 карты.",
+        },
+        {
+          title: "",
+          image: image3EssenceRuletka,
+          description:
+            "Затем игроки могут сбросить карты, потеряв все свои ставки или продолжить игру. Как только все игроки приняли решения по ставкам, дилер вскрывает карты игроков.",
+        },
+        {
+          title: "",
+          image: image4EssenceRuletka,
+          description: "Затем дилер сравнивает свои карты с картами игроков.",
+        },
+      ],
+    },
+    kindsOfGames: {
+      title: "Разновидности Рулеток",
+      gameType: "poker",
+    },
+    promotion: {
+      color: "#323232",
+      items: [
+        {
+          title: "Free 300 фишек",
+          description: "при заказе<br />от 3 столов",
+          icon: {
+            svg: icon1PromotionRuletka,
+            desktop: {
+              height: "123px",
+              width: "123px",
+              bottom: "-28px",
+              right: "32px",
+            },
+            tablet: {
+              width: "87px",
+              height: "105px",
+              bottom: "-22px",
+              right: "18px",
+            },
+            mobile: {
+              width: "56px",
+              height: "65px",
+              bottom: "-16px",
+              right: "18px",
+            },
+          },
+        },
+        {
+          title: "Пятый стол в подарок",
+          description: "при заказе<br />от 4 столов",
+          icon: {
+            svg: icon2PromotionRuletka,
+            desktop: {
+              width: "142px",
+              height: "63px",
+              bottom: "-12px",
+              right: "20px",
+            },
+            tablet: {
+              width: "146px",
+              height: "78px",
+              bottom: "-14px",
+              right: "10px",
+            },
+            mobile: {
+              width: "68px",
+              height: "71px",
+              bottom: "-5px",
+              right: "14px",
+            },
+          },
+        },
+        {
+          title: "Бесплатная доставка",
+          description: "при заказе 4-х столок",
+          icon: {
+            svg: icon3PromotionRuletka,
+            desktop: {
+              width: "98px",
+              height: "89px",
+              bottom: "-17px",
+              right: "18px",
+            },
+            tablet: {
+              width: "84px",
+              height: "72px",
+              bottom: "-16px",
+              right: "17px",
+            },
+            mobile: {
+              width: "68px",
+              height: "44px",
+              bottom: "-13px",
+              right: "14px",
+            },
+          },
+        },
+      ],
+    },
+  },
+  {
+    url: "/online-casino",
+    type: "classicCasino",
+    home: {
+      bg: {
+        desktop: {
+          image: bgHomeOnline,
+          width: "1004px",
+          height: "694px",
+          top: "215px",
+          right: "118px",
+        },
+        tablet: {
+          image: bgHomeOnline,
+          width: "584px",
+          height: "400px",
+          top: "135px",
+          right: "-169px",
+        },
+        mobile: {
+          image: bgHomeOnline,
+          width: "288px",
+          height: "198px",
+          top: "52px",
+          right: "-114px",
+        },
+      },
+      title: "Онлайн-Казино",
+      description:
+        "Несмотря на то, что в мире сейчас будушет пандемия, вы можете продолжать играть в наше фан-казино с помощью онлайн-транляций на ваших мероприятиях.",
       video: {
         id: "fZd3IMBfMB0",
       },

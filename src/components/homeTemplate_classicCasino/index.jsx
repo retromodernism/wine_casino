@@ -101,7 +101,7 @@ const Home = ({ makeHeaderLight, ...props }) => {
       <div className={s._bg} style={bgStyle}></div>
 
       <div className={s._content}>
-        <div className={s._title}>{title}</div>
+        <div className={s._title} dangerouslySetInnerHTML={{ __html: title }} />
         <div className={s._subtitle}>
           * все законно, мы не используем настоящие деньги
         </div>
