@@ -32,8 +32,9 @@ const App = ({
   useEffect(() => {
     getNews();
     getCasinos();
+    getPositions();
+    console.log("Получаем информацию")
   }, []);
-  getPositions();
 
   const foodCasinos = casinos.filter(({ type }) => type === "foodCasino");
   const classicCasinos = casinos.filter(({ type }) => type === "classicCasino");
