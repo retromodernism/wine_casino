@@ -126,6 +126,7 @@ const CatalogHoverPanel = ({ setCatalogHover, casinos }) => {
   const casinosLinks = [
     {
       title: "Кулинарное казино",
+      link: "/",
       isActive: true,
       links: foodCasinos.map(({ url, title }) => ({
         title,
@@ -135,6 +136,7 @@ const CatalogHoverPanel = ({ setCatalogHover, casinos }) => {
     },
     {
       title: "Классическое казино",
+      link: "/klassicheskoe-kazino",
       isActive: false,
       links: classicCasinos.map(({ url, title }) => ({
         title,
@@ -161,12 +163,14 @@ const CatalogHoverPanel = ({ setCatalogHover, casinos }) => {
       onMouseLeave={setCatalogHover.bind(null, false)}
     >
       <div className={s._cateories}>
-        {links.map(({ title, isActive }, index) => (
-          <div
+        {links.map(({ title, isActive, link }, index) => (
+          <Link
             className={classnames(s._categoriesItem, {
               [s._categoriesItem_active]: isActive,
             })}
+            to={link}
             onMouseEnter={activateCategory.bind(null, title)}
+            onClick={setCatalogHover.bind(null, false)}
           >
             {index === 0 ? (
               <Apple className={s._categoriesItemIcon_apple} />
@@ -176,20 +180,8 @@ const CatalogHoverPanel = ({ setCatalogHover, casinos }) => {
 
             <p className={s._categoriesItemTitle}>{title}</p>
             <div className={s._categoriesItemIconArrow}></div>
-          </div>
+          </Link>
         ))}
-        {/* <div className={s._categoriesItem}>
-          <Apple className={s._categoriesItemIcon_apple} />
-          <p className={s._categoriesItemTitle}>Кулинарное казино</p>
-          <div className={s._categoriesItemIconArrow}></div>
-        </div>
-        <div
-          className={classnames(s._categoriesItem, s._categoriesItem_active)}
-        >
-          <Cards className={s._categoriesItemIcon_cards} />
-          <p className={s._categoriesItemTitle}>Классическое казино</p>
-          <div className={s._categoriesItemIconArrow}></div>
-        </div> */}
       </div>
       <div className={s._links}>
         {links
@@ -198,6 +190,7 @@ const CatalogHoverPanel = ({ setCatalogHover, casinos }) => {
             <Link
               to={href}
               className={classnames(s._link, { [s._link_active]: isActive })}
+              onClick={setCatalogHover.bind(null, false)}
             >
               {title}
             </Link>
