@@ -28,81 +28,6 @@ const defaultData = {
   type: "classicCasino",
 };
 
-const casinos = [
-  {
-    title: "Мясное",
-    image: stake,
-  },
-  {
-    title: "Шоколадное",
-    image: chocolate,
-  },
-  {
-    title: "Сырное",
-    image: cheese,
-  },
-  {
-    title: "Чайное",
-    image: tea,
-  },
-  {
-    title: "Безалкогольное",
-    image: limonad,
-  },
-  {
-    title: "Кофейное",
-    image: coffee,
-  },
-  {
-    title: "Шампанское",
-    image: champagne,
-  },
-  {
-    title: "Виски",
-    image: whiskey,
-  },
-  {
-    title: "Пивное",
-    image: beer,
-  },
-  {
-    title: "Настойки",
-    image: tincture,
-  },
-  {
-    title: "Ликерное",
-    image: liquor,
-  },
-  {
-    title: "Чили",
-    image: chilli,
-  },
-  {
-    title: "Сало",
-    image: fat,
-  },
-  {
-    title: "Пивное",
-    image: beer,
-  },
-  {
-    title: "Хлебное",
-    image: bread,
-  },
-  {
-    title: "Медовое",
-    image: honey,
-  },
-  {
-    title: "Молекулярное",
-    image: molecular,
-  },
-  {
-    title: "Винное",
-    image: wine,
-  },
-];
-
 const ShowMore = ({ onClick }) => {
   const [isHovered, setHover] = useState(false);
 
@@ -129,8 +54,6 @@ const OtherCasinos = ({ allCasinos, ...props }) => {
       image: miniIcon,
       to: url,
     }));
-
-  console.log(casinos);
 
   /* Media Queries */
 

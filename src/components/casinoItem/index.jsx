@@ -1,8 +1,9 @@
 import s from "./index.module.scss";
+import { Link } from "react-router-dom";
 
-const CasinoItem = ({ href = "/", image, title, color, fontColor }) => {
+const CasinoItem = ({ to = "/", image, title, color, fontColor }) => {
   return (
-    <a href={href} className={s.casinoItem}>
+    <Link to={to} className={s.casinoItem}>
       <div
         className={s._image}
         style={{
@@ -16,7 +17,7 @@ const CasinoItem = ({ href = "/", image, title, color, fontColor }) => {
           {title}
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
