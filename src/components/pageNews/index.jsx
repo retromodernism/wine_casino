@@ -6,10 +6,12 @@ import Breadcrumbs from "../breadcrumbs";
 import News from "../news";
 import Header from "../header";
 import Footer from "../footer";
+import { makeHeaderDark } from "../../redux/modules/headerColor";
 
-const PageNews = ({ news, ...props }) => {
+const PageNews = ({ news, makeHeaderDark, ...props }) => {
+  makeHeaderDark();
+
   /* Media Queries */
-
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
     query: "screen and (min-width: 768px) and (max-width: 1299px)",
@@ -45,6 +47,9 @@ const PageNews = ({ news, ...props }) => {
   );
 };
 
-export default connect((state) => ({
-  news: state.news.news,
-}))(PageNews);
+export default connect(
+  (state) => ({
+    news: state.news.news,
+  }),
+  { makeHeaderDark }
+)(PageNews);
