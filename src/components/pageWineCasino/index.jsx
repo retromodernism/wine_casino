@@ -14,9 +14,15 @@ import Tematic from "../tematic";
 import Variants from "../variants";
 import { useMediaQuery } from "react-responsive";
 import Footer from "../footer";
+import { useEffect } from "react";
 
 const MainPageFoodCasino = (props) => {
   const { casino } = props;
+
+  /* Поменяем тайттл страницы */
+  useEffect(() => {
+    document.title = casino.title ?? "Food Casino";
+  });
 
   /* Media Queries */
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });

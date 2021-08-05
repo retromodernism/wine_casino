@@ -4,13 +4,14 @@
   position: absolute;
   z-index: 1;
   top: 100%;
-  height: 321px;
+  // height: 321px;
   display: grid;
   grid-template-columns: 327px 1fr;
   background: #ffffff;
 }
 
 ._cateories {
+  height: 100%;
 }
 
 ._categoriesItem {
@@ -79,7 +80,7 @@
   display: grid;
   grid-auto-flow: column;
   // grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   row-gap: 50px;
   column-gap: 70px;
 }

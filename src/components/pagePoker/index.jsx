@@ -21,8 +21,10 @@ import KindsOfGames from "../kindsOfGames";
 import KindsOfGames_tablet from "../kindsOfGames_tablet";
 import Header from "../header";
 import Footer from "../footer";
+import { useEffect } from "react";
 
 const defaultCasino = {
+  title: "Покер",
   home: {
     bg: {
       desktop: {
@@ -90,7 +92,12 @@ const defaultCasino = {
 
 const MainPageFoodCasino = (props) => {
   const casino = props.casino || defaultCasino;
-
+  
+  /* Поменяем тайттл страницы */
+  useEffect(() => {
+    document.title = casino.title ?? "Food Casino";
+  });
+  
   /* Media Queries */
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({

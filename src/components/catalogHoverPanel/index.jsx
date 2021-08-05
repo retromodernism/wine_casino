@@ -5,6 +5,7 @@ import classnames from "classnames";
 import { ReactComponent as Apple } from "./src/apple.svg";
 import { ReactComponent as Cards } from "./src/cards.svg";
 import { useState } from "react";
+import { useLocation, Link } from "react-router-dom";
 
 const linksInit = [
   {
@@ -116,8 +117,34 @@ const linksInit = [
   },
 ];
 
-const CatalogHoverPanel = ({ setCatalogHover }) => {
-  const [links, setLinks] = useState(linksInit);
+const CatalogHoverPanel = ({ setCatalogHover, casinos }) => {
+  const foodCasinos = casinos.filter(({ type }) => type === "foodCasino");
+  const classicCasinos = casinos.filter(({ type }) => type === "classicCasino");
+
+  const currentPath = useLocation().pathname;
+
+  const casinosLinks = [
+    {
+      title: "Кулинарное казино",
+      isActive: true,
+      links: foodCasinos.map(({ url, title }) => ({
+        title,
+        href: url,
+        isActive: currentPath === url,
+      })),
+    },
+    {
+      title: "Классическое казино",
+      isActive: false,
+      links: classicCasinos.map(({ url, title }) => ({
+        title,
+        href: url,
+        isActive: currentPath === url,
+      })),
+    },
+  ];
+
+  const [links, setLinks] = useState(casinosLinks);
   const activateCategory = (title) => {
     const newLinks = links.map((item) =>
       item.title === title
@@ -168,16 +195,18 @@ const CatalogHoverPanel = ({ setCatalogHover }) => {
         {links
           .filter(({ isActive }) => isActive)[0]
           .links.map(({ title, href, isActive }) => (
-            <a
-              href={href}
+            <Link
+              to={href}
               className={classnames(s._link, { [s._link_active]: isActive })}
             >
               {title}
-            </a>
+            </Link>
           ))}
       </div>
     </div>
   );
 };
 
-export default connect(null, { setCatalogHover })(CatalogHoverPanel);
+export default connect((state) => ({ casinos: state.casinos.casinos }), {
+  setCatalogHover,
+})(CatalogHoverPanel);

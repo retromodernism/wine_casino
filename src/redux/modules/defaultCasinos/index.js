@@ -406,6 +406,7 @@ const casinos = [
   {
     url: "/vinnoe-kazino",
     type: "foodCasino",
+    title: "Винное казино",
     header: {
       logo: {
         desktop: {
@@ -766,6 +767,7 @@ const casinos = [
   {
     url: "/syrnoe-kazino",
     type: "foodCasino",
+    title: "Сырное казино",
     header: {
       logo: {
         desktop: {
@@ -1136,6 +1138,7 @@ const casinos = [
   {
     url: "/shokoladnoe-kazino",
     type: "foodCasino",
+    title: "Шоколадное казино",
     header: {
       logo: {
         desktop: {
@@ -1506,6 +1509,7 @@ const casinos = [
   {
     url: "/chaynoe-kazino",
     type: "foodCasino",
+    title: "Чайное казино",
     header: {
       logo: {
         desktop: {
@@ -1876,6 +1880,7 @@ const casinos = [
   {
     url: "/bezalkogolnoe-kazino",
     type: "foodCasino",
+    title: "Безалкогольное казино",
     header: {
       logo: {
         desktop: {
@@ -2246,6 +2251,7 @@ const casinos = [
   {
     url: "/kofeynoe-kazino",
     type: "foodCasino",
+    title: "Кофейное казино",
     header: {
       logo: {
         desktop: {
@@ -2616,6 +2622,7 @@ const casinos = [
   {
     url: "/shampanskoe-kazino",
     type: "foodCasino",
+    title: "Шампанское казино",
     header: {
       logo: {
         desktop: {
@@ -2986,6 +2993,7 @@ const casinos = [
   {
     url: "/medovoe-kazino",
     type: "foodCasino",
+    title: "Медовое казино",
     header: {
       logo: {
         desktop: {
@@ -3356,6 +3364,7 @@ const casinos = [
   {
     url: "/hlebnoe-kazino",
     type: "foodCasino",
+    title: "Хлебное казино",
     header: {
       logo: {
         desktop: {
@@ -3726,6 +3735,7 @@ const casinos = [
   {
     url: "/salo-kazino",
     type: "foodCasino",
+    title: "Сало казино",
     header: {
       logo: {
         desktop: {
@@ -4096,6 +4106,7 @@ const casinos = [
   {
     url: "/myasnoe-kazino",
     type: "foodCasino",
+    title: "Мясное казино",
     header: {
       logo: {
         desktop: {
@@ -4466,6 +4477,7 @@ const casinos = [
   {
     url: "/viski-kazino",
     type: "foodCasino",
+    title: "Виски казино",
     header: {
       logo: {
         desktop: {
@@ -4836,6 +4848,7 @@ const casinos = [
   {
     url: "/pivnoe-kazino",
     type: "foodCasino",
+    title: "Пивное казино",
     header: {
       logo: {
         desktop: {
@@ -5206,6 +5219,7 @@ const casinos = [
   {
     url: "/nastoyki-kazino",
     type: "foodCasino",
+    title: "Настойки казино",
     header: {
       logo: {
         desktop: {
@@ -5576,6 +5590,7 @@ const casinos = [
   {
     url: "/likernoe-kazino",
     type: "foodCasino",
+    title: "Ликерное казино",
     header: {
       logo: {
         desktop: {
@@ -5946,6 +5961,7 @@ const casinos = [
   {
     url: "/molekulyarnoe-kazino",
     type: "foodCasino",
+    title: "Молекулярное казино",
     header: {
       logo: {
         desktop: {
@@ -6322,6 +6338,7 @@ const casinos = [
   {
     url: "/chili-kazino",
     type: "foodCasino",
+    title: "Чили казино",
     header: {
       logo: {
         desktop: {
@@ -6692,6 +6709,7 @@ const casinos = [
   {
     url: "/ruletka",
     type: "classicCasino",
+    title: "Рулетка",
     home: {
       bg: {
         desktop: {
@@ -6839,6 +6857,7 @@ const casinos = [
   {
     url: "/poker",
     type: "classicCasino",
+    title: "Покер",
     home: {
       bg: {
         desktop: {
@@ -6986,6 +7005,7 @@ const casinos = [
   {
     url: "/black-jack",
     type: "classicCasino",
+    title: "Блэк Джэк",
     home: {
       bg: {
         desktop: {
@@ -7133,6 +7153,7 @@ const casinos = [
   {
     url: "/craps",
     type: "classicCasino",
+    title: "Крэпс",
     home: {
       bg: {
         desktop: {
@@ -7280,6 +7301,7 @@ const casinos = [
   {
     url: "/koleso-fortuny",
     type: "classicCasino",
+    title: "Колесо фортуны",
     home: {
       bg: {
         desktop: {
@@ -7427,6 +7449,7 @@ const casinos = [
   {
     url: "/attraction",
     type: "classicCasino",
+    title: "Аттракционы",
     home: {
       bg: {
         desktop: {
@@ -7574,6 +7597,7 @@ const casinos = [
   {
     url: "/igrovye-avtomaty",
     type: "classicCasino",
+    title: "Игровые автоматы",
     home: {
       bg: {
         desktop: {
@@ -7721,6 +7745,7 @@ const casinos = [
   {
     url: "/bilyard",
     type: "classicCasino",
+    title: "Бильярд",
     home: {
       bg: {
         desktop: {
@@ -7868,6 +7893,7 @@ const casinos = [
   {
     url: "/online-casino",
     type: "classicCasino",
+    title: "Онлайн Казино",
     home: {
       bg: {
         desktop: {

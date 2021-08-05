@@ -12,10 +12,15 @@ import {
   makeHeaderLight,
 } from "../../redux/modules/headerColor";
 import { connect } from "react-redux";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 
-const Home = (props) => {
+const Home = ({ makeHeaderDark, ...props }) => {
+  /* Change header color theme */
+  useEffect(() => {
+    makeHeaderDark();
+  });
+
   /* Props decomposition */
   const { logo, title, video, features, chips, background, greenBgMobile } =
     props.data;
@@ -28,7 +33,6 @@ const Home = (props) => {
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
   /* Bg Style */
-
   let bgStyle;
   if (isDesktop) {
     bgStyle = {
@@ -59,14 +63,7 @@ const Home = (props) => {
     };
   }
 
-  /* Change header color theme */
-
-  useLayoutEffect(() => {
-    makeHeaderDark();
-  });
-
   /* Local state */
-
   const [videoIsOpen, setVideoOpen] = useState(false);
   const [buttonIsHover, setButtonIsHover] = useState(false);
 

@@ -38,18 +38,13 @@ const App = ({
   const foodCasinos = casinos.filter(({ type }) => type === "foodCasino");
   const classicCasinos = casinos.filter(({ type }) => type === "classicCasino");
 
-  console.log(classicCasinos);
-
   return (
     <BrowserRouter>
       <ScrollToTop />
       <div className={s.app}>
-        {/* <Header /> */}
         <Switch>
           <Route exact path="/" component={MainPageFoodCasino} />
-          {/* <Route path="/vinnoe-kazino" component={WineCasino} /> */}
           <Route path="/klassicheskoe-kazino" component={ClassicCasino} />
-          {/* <Route path="/poker" component={Poker} /> */}
           <Route path="/cart" component={CartPage} />
           <Route path="/contacts" component={ContactsPage} />
           <Route path="/croupiers" component={PageCroupiers} />
@@ -71,7 +66,6 @@ const App = ({
           ))}
           {/* <Redirect to="/" /> */}
         </Switch>
-        {/* <Footer /> */}
         {burgerIsOpen && <BurgerMenu />}
       </div>
     </BrowserRouter>
