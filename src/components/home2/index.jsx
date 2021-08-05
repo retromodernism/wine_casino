@@ -16,44 +16,28 @@ import {
   makeHeaderLight,
 } from "../../redux/modules/headerColor";
 import { connect } from "react-redux";
-
-const foodCasinos = [
-  { href: "/", title: "Мясное" },
-  { href: "/", title: "Сырное" },
-  { href: "/", title: "Шоколадное" },
-  { href: "/", title: "Молекулярное" },
-  { href: "/", title: "Хлебное" },
-  { href: "/", title: "Медовое" },
-  { href: "/", title: "Сало" },
-];
-
-const drinkCasinos = [
-  { href: "/", title: "Безалкогольное" },
-  { href: "/", title: "Шампанское" },
-  { href: "/", title: "Кофейное" },
-  { href: "/", title: "Чайное" },
-  { href: "/", title: "Виски" },
-  { href: "/", title: "Винное" },
-  { href: "/", title: "Пивное" },
-  { href: "/", title: "Ликерное" },
-  { href: "/", title: "Настойки" },
-];
+import { Link } from "react-router-dom";
 
 const LinkItem = ({ title, href }) => {
   const [isHovered, setHover] = useState(false);
   return (
-    <a
-      href={href}
+    <Link
+      to={href}
       className={cx(s._linkItem, { [s._linkItem_hover]: isHovered })}
       onMouseEnter={setHover.bind(null, true)}
       onMouseLeave={setHover.bind(null, false)}
     >
       <span className={s._linkItemtext}>{title}</span>
-    </a>
+    </Link>
   );
 };
 
-const HomeCoulinaryCasino = ({ background, makeHeaderLight, ...props }) => {
+const HomeCoulinaryCasino = ({
+  casinos,
+  background,
+  makeHeaderLight,
+  ...props
+}) => {
   makeHeaderLight();
 
   /* Media Queries */
@@ -63,8 +47,21 @@ const HomeCoulinaryCasino = ({ background, makeHeaderLight, ...props }) => {
   });
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
-  /* State */
+  /* Data */
+  // casinos
+  const foodCasinos = casinos
+    .filter(
+      ({ type, foodType }) => type === "foodCasino" && foodType === "Съедобное"
+    )
+    .map(({ url, title }) => ({ title, href: url }));
 
+  const drinkCasinos = casinos
+    .filter(
+      ({ type, foodType }) => type === "foodCasino" && foodType === "Drink"
+    )
+    .map(({ url, title }) => ({ title, href: url }));
+
+  /* State */
   const [videoIsOpen, setVideoOpen] = useState(false);
   // const [buttonIsHover, setButtonIsHover] = useState(false);
   const [showedFoodCasinos, setShowedFoodCasinos] = useState(5);
@@ -116,20 +113,15 @@ const HomeCoulinaryCasino = ({ background, makeHeaderLight, ...props }) => {
             )}
             <div className={s._features}>
               <div className={s._feature}>
-                {/* <div className={s._featureNumber}>4</div> */}
                 <Feature1 />
                 <p className={s._featureTitle}>Нанесение логотипа</p>
               </div>
               <div className={s._feature}>
-                <Feature2
-                // style={{ marginTop: "3px", width: "32px", height: "32px" }}
-                />
+                <Feature2 />
                 <p className={s._featureTitle}>Аренда стола от 2 часов</p>
               </div>
               <div className={s._feature}>
-                <Feature3
-                // style={{ width: "46px", height: "35px" }}
-                />
+                <Feature3 />
                 <p className={s._featureTitle}>Необычный формат игры</p>
               </div>
             </div>
@@ -180,4 +172,6 @@ const HomeCoulinaryCasino = ({ background, makeHeaderLight, ...props }) => {
   );
 };
 
-export default connect(null, { makeHeaderLight })(HomeCoulinaryCasino);
+export default connect((state) => ({ casinos: state.casinos.casinos }), {
+  makeHeaderLight,
+})(HomeCoulinaryCasino);

@@ -407,6 +407,7 @@ const casinos = [
     url: "/vinnoe-kazino",
     type: "foodCasino",
     title: "Винное казино",
+    foodType: "Drink",
     header: {
       logo: {
         desktop: {
@@ -768,6 +769,7 @@ const casinos = [
     url: "/syrnoe-kazino",
     type: "foodCasino",
     title: "Сырное казино",
+    foodType: "Съедобное",
     header: {
       logo: {
         desktop: {
@@ -1139,6 +1141,7 @@ const casinos = [
     url: "/shokoladnoe-kazino",
     type: "foodCasino",
     title: "Шоколадное казино",
+    foodType: "Съедобное",
     header: {
       logo: {
         desktop: {
@@ -1510,6 +1513,7 @@ const casinos = [
     url: "/chaynoe-kazino",
     type: "foodCasino",
     title: "Чайное казино",
+    foodType: "Drink",
     header: {
       logo: {
         desktop: {
@@ -1881,6 +1885,7 @@ const casinos = [
     url: "/bezalkogolnoe-kazino",
     type: "foodCasino",
     title: "Безалкогольное казино",
+    foodType: "Drink",
     header: {
       logo: {
         desktop: {
@@ -2252,6 +2257,7 @@ const casinos = [
     url: "/kofeynoe-kazino",
     type: "foodCasino",
     title: "Кофейное казино",
+    foodType: "Drink",
     header: {
       logo: {
         desktop: {
@@ -2623,6 +2629,7 @@ const casinos = [
     url: "/shampanskoe-kazino",
     type: "foodCasino",
     title: "Шампанское казино",
+    foodType: "Drink",
     header: {
       logo: {
         desktop: {
@@ -2994,6 +3001,7 @@ const casinos = [
     url: "/medovoe-kazino",
     type: "foodCasino",
     title: "Медовое казино",
+    foodType: "Съедобное",
     header: {
       logo: {
         desktop: {
@@ -3365,6 +3373,7 @@ const casinos = [
     url: "/hlebnoe-kazino",
     type: "foodCasino",
     title: "Хлебное казино",
+    foodType: "Съедобное",
     header: {
       logo: {
         desktop: {
@@ -3736,6 +3745,7 @@ const casinos = [
     url: "/salo-kazino",
     type: "foodCasino",
     title: "Сало казино",
+    foodType: "Съедобное",
     header: {
       logo: {
         desktop: {
@@ -4107,6 +4117,7 @@ const casinos = [
     url: "/myasnoe-kazino",
     type: "foodCasino",
     title: "Мясное казино",
+    foodType: "Съедобное",
     header: {
       logo: {
         desktop: {
@@ -4478,6 +4489,7 @@ const casinos = [
     url: "/viski-kazino",
     type: "foodCasino",
     title: "Виски казино",
+    foodType: "Drink",
     header: {
       logo: {
         desktop: {
@@ -4849,6 +4861,7 @@ const casinos = [
     url: "/pivnoe-kazino",
     type: "foodCasino",
     title: "Пивное казино",
+    foodType: "Drink",
     header: {
       logo: {
         desktop: {
@@ -5220,6 +5233,7 @@ const casinos = [
     url: "/nastoyki-kazino",
     type: "foodCasino",
     title: "Настойки казино",
+    foodType: "Drink",
     header: {
       logo: {
         desktop: {
@@ -5591,6 +5605,7 @@ const casinos = [
     url: "/likernoe-kazino",
     type: "foodCasino",
     title: "Ликерное казино",
+    foodType: "Drink",
     header: {
       logo: {
         desktop: {
@@ -5962,6 +5977,7 @@ const casinos = [
     url: "/molekulyarnoe-kazino",
     type: "foodCasino",
     title: "Молекулярное казино",
+    foodType: "Съедобное",
     header: {
       logo: {
         desktop: {
@@ -6339,6 +6355,7 @@ const casinos = [
     url: "/chili-kazino",
     type: "foodCasino",
     title: "Чили казино",
+    foodType: "Съедобное",
     header: {
       logo: {
         desktop: {
