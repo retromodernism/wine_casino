@@ -45,7 +45,7 @@ const BurgerMenu = ({ casinos, closeBurger, ...props }) => {
               <div className={s._itemCasinos}>
                 {foodCasinos.map(({ title, url }) => (
                   <Link to={url} className={s._casino} onClick={closeBurger}>
-                    {title}
+                    {title.split(" ")[0]}
                   </Link>
                 ))}
               </div>
@@ -79,7 +79,7 @@ const BurgerMenu = ({ casinos, closeBurger, ...props }) => {
             <p>Наши программы</p>
           </li>
           <li className={s._item}>
-            <p>Контакты</p>
+            <Link to="/contacts" onClick={closeBurger}>Контакты</Link>
           </li>
         </ul>
       </div>
