@@ -34,6 +34,21 @@
     width: 100%;
   }
 
+  ._empty {
+    width: 100%;
+    grid-column: 1/-1;
+    padding: 125px 0;
+
+    display: flex;
+    justify-content: center;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 95%;
+    color: #4f4f4f;
+  }
+
   ._items {
     width: 100%;
   }
@@ -171,9 +186,6 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    // display: grid;
-    // grid-template-columns: 1fr 521px;
-    // column-gap: 24px;
   }
 
   ._title {
@@ -182,6 +194,19 @@
     width: 100%;
     font-size: 40px;
     line-height: 51px;
+  }
+
+  ._empty {
+    padding: 100px 0;
+    margin: 0 auto;
+    font-family: Lato;
+    max-width: 320px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 128.5%;
+    text-align: center;
+    color: #4f4f4f;
   }
 
   ._items {
@@ -339,18 +364,28 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    // display: grid;
-    // grid-template-columns: 1fr 521px;
-    // column-gap: 24px;
   }
 
   ._title {
-    // grid-column: 1/-1;
-    // margin-bottom: 4px;
     padding-left: 20px;
     width: 100%;
     font-size: 24px;
     line-height: 31px;
+  }
+
+  ._empty {
+    padding: 55px 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 128.5%;
+
+    color: #4f4f4f;
   }
 
   ._items {
@@ -372,9 +407,6 @@
     font-size: 14px;
     line-height: 95%;
     margin: 24px 0 20px 0;
-    // &:first-child {
-    //   margin-top: 0;
-    // }
   }
 
   ._item {
@@ -453,7 +485,6 @@
   }
 
   ._itemPrice {
-    // margin-right: 25px;
     font-family: Lato;
     font-style: normal;
     font-weight: bold;
@@ -487,6 +518,7 @@
     height: 1px;
     width: 8px;
   }
+
   ._itemCountIcon_plus {
     width: 8px;
     height: 7px;

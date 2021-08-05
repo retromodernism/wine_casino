@@ -5,21 +5,21 @@ const REMOVE_POSITION = `${moduleName}/REMOVE_POSITION`;
 const CHANGE_POSITION_COUNT = `${moduleName}/CHANGE_POSITION_COUNT`;
 const RESET_CART = `${moduleName}/RESET_CART`;
 
-const initialState = {
-  positionsIds: [
-    "99160ccf9721ced060baa45784dbac7dd9b7a217",
-    "d40942f27ffb836b995ac0e4c9d593de0d0eee87",
-    "a51bed70a17750788df66173fefda37c8cd0f65b",
-    "ea13ef8b2d993755855f951240435d46eb8c9259",
-    "08da6f36615b5d86a279f342c4ffba74758c1083",
-    "f2b6a5cb8794c1dd8674c9c15a54ac14d31f69e0",
-    "5dbdaadb579cd63ef3b1bb32f006ca339cac1756",
-    "a23c820344806f85aed62c20dd7a1ef511acd545",
-  ],
-};
 // const initialState = {
-//   positionsIds: [],
+//   positionsIds: [
+//     "99160ccf9721ced060baa45784dbac7dd9b7a217",
+//     "d40942f27ffb836b995ac0e4c9d593de0d0eee87",
+//     "a51bed70a17750788df66173fefda37c8cd0f65b",
+//     "ea13ef8b2d993755855f951240435d46eb8c9259",
+//     "08da6f36615b5d86a279f342c4ffba74758c1083",
+//     "f2b6a5cb8794c1dd8674c9c15a54ac14d31f69e0",
+//     "5dbdaadb579cd63ef3b1bb32f006ca339cac1756",
+//     "a23c820344806f85aed62c20dd7a1ef511acd545",
+//   ],
 // };
+const initialState = {
+  positionsIds: [],
+};
 
 const reducer = (state = initialState, { type, payload }) => {
   switch (type) {

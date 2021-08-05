@@ -16,6 +16,7 @@ import Footer from "../footer";
 import { getPositions } from "../../redux/modules/positions";
 
 const CartPage = ({
+  cartIsEmpty,
   getPositions,
   cartPopupIsOpen,
   makeHeaderDark,
@@ -39,9 +40,13 @@ const CartPage = ({
           <Breadcrumbs tree={[{ title: "Главная", to: "/" }]} title="Корзина" />
         )}
         <Cart />
-        {isMobile && <CartOrder />}
-        <Recomendations />
-        {isTablet && <CartOrder />}
+        {!cartIsEmpty && (
+          <>
+            {isMobile && <CartOrder />}
+            <Recomendations />
+            {isTablet && <CartOrder />}
+          </>
+        )}
       </main>
       <Footer />
       {cartPopupIsOpen && <CartSuccessPopup />}
@@ -52,6 +57,7 @@ const CartPage = ({
 export default connect(
   (state) => ({
     cartPopupIsOpen: state.popup.cartPopupIsOpen,
+    cartIsEmpty: state.cart.positionsIds.length === 0,
   }),
   { makeHeaderDark, makeHeaderLight, getPositions }
 )(CartPage);
