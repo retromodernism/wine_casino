@@ -5,12 +5,14 @@ import croupier1 from "./src/croupier1.png";
 import croupier2 from "./src/croupier2.png";
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { connect } from "react-redux";
+import { makeHeaderDark } from "../../redux/modules/headerColor";
 
 const ShowMoreButton = () => {
   const [isHovered, setHover] = useState(false);
   return (
     <Link
-      to="/"
+      to="/croupiers"
       className={cx(s._showMoreButton, {
         [s._showMoreButton_hover]: isHovered,
       })}
@@ -23,7 +25,9 @@ const ShowMoreButton = () => {
   );
 };
 
-const Сroupiers = (props) => {
+const Сroupiers = ({ makeHeaderDark, ...props }) => {
+  makeHeaderDark();
+
   /* Media Queries */
 
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
@@ -91,4 +95,4 @@ const Сroupiers = (props) => {
   );
 };
 
-export default Сroupiers;
+export default connect(null, { makeHeaderDark })(Сroupiers);

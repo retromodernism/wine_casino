@@ -8,7 +8,7 @@ import Promotion from "../promotion";
 import Tematic from "../tematic";
 import Variants from "../variants";
 import { useMediaQuery } from "react-responsive";
-import HomeCoulinaryCasino from "../home2";
+import HomeCoulinaryCasino from "../home3";
 import { Fragment } from "react";
 import homeBg from "./src/homeBg.png";
 import Form from "../form";

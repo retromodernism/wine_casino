@@ -9,6 +9,7 @@ import { useState } from "react";
 import * as Router from "react-router-dom";
 import * as Scroll from "react-scroll";
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
 
 const defaultData = {
   textColor: "#323232", // цвет текста правого блока
@@ -232,31 +233,31 @@ const Footer = (props) => {
           )}
 
           <div className={s._links}>
-            <a href="/" className={s._link}>
+            <Link to="/" className={s._link}>
               <span className={s._linkText} style={{ color: textColor }}>
                 Кулинарное казино
               </span>
-            </a>
-            <a href="/" className={s._link}>
+            </Link>
+            <Link to="/klassicheskoe-kazino" className={s._link}>
               <span className={s._linkText} style={{ color: textColor }}>
                 Классическое казино
               </span>
-            </a>
-            <a href="/" className={s._link}>
+            </Link>
+            <Link href="/attractions" className={s._link}>
               <span className={s._linkText} style={{ color: textColor }}>
                 Аттракционы
               </span>
-            </a>
+            </Link>
             <a href="/" className={s._link}>
               <span className={s._linkText} style={{ color: textColor }}>
                 Наши программы
               </span>
             </a>
-            <a href="/" className={s._link}>
+            <Link to="/news" className={s._link}>
               <span className={s._linkText} style={{ color: textColor }}>
                 Новости
               </span>
-            </a>
+            </Link>
           </div>
           {isDesktop && (
             <form

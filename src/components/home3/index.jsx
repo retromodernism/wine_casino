@@ -48,23 +48,26 @@ const HomeCoulinaryCasino = ({
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
   /* Data */
-  const foodCasinos = casinos
-    .filter(
-      ({ type, foodType }) => type === "foodCasino" && foodType === "Съедобное"
-    )
+  const half =
+    casinos.filter(({ type }) => type === "classicCasino").length / 2;
+  console.log(half);
+  const classicCasinos = casinos.filter(
+    ({ type }, index) => type === "classicCasino"
+  );
+
+  const foodCasinos = classicCasinos
+    .filter((casino, index) => index < half)
     .map(({ url, title }) => ({ title, href: url }));
 
-  const drinkCasinos = casinos
-    .filter(
-      ({ type, foodType }) => type === "foodCasino" && foodType === "Drink"
-    )
+  const drinkCasinos = classicCasinos
+  .filter((casino, index) => index >= half)
     .map(({ url, title }) => ({ title, href: url }));
 
   /* State */
   const [videoIsOpen, setVideoOpen] = useState(false);
   // const [buttonIsHover, setButtonIsHover] = useState(false);
-  const [showedFoodCasinos, setShowedFoodCasinos] = useState(5);
-  const [showedDrinkCasinos, setShowedDrinkCasinos] = useState(5);
+  const [showedFoodCasinos, setShowedFoodCasinos] = useState(100);
+  const [showedDrinkCasinos, setShowedDrinkCasinos] = useState(100);
 
   const hasShowMoreFoodCasinos = showedFoodCasinos < foodCasinos.length;
   const hasShowMoreDrinkCasinos = showedDrinkCasinos < drinkCasinos.length;
@@ -87,7 +90,11 @@ const HomeCoulinaryCasino = ({
       }}
     >
       <div className={s._content}>
-        <div className={s._title}>Кулинарное фан-казино</div>
+        <div className={s._title}>
+          Классическое
+          <br />
+          фан-казино
+        </div>
         <div className={s._grid}>
           <div className={s._column}>
             <div className={s._subtitle}>
@@ -111,24 +118,16 @@ const HomeCoulinaryCasino = ({
               </div>
             )}
             <div className={s._features}>
-              <div className={s._feature}>
-                <Feature1 />
-                <p className={s._featureTitle}>Нанесение логотипа</p>
-              </div>
-              <div className={s._feature}>
-                <Feature2 />
-                <p className={s._featureTitle}>Аренда стола от 2 часов</p>
-              </div>
-              <div className={s._feature}>
-                <Feature3 />
-                <p className={s._featureTitle}>Необычный формат игры</p>
-              </div>
+              <p className={s._featuresDescription}>
+                У нас так же есть классические виды казино. Такие как покер,
+                рулетка, блэкджэк, крэпс. Особенно популярен в последнее время
+                гэмбл. Это один из видов рулетки.
+              </p>
             </div>
           </div>
           {isDesktop && (
             <div className={cx(s._column, s._links)}>
               <div className={s._linksColumn}>
-                <div className={s._linksTitle}>Съедобное</div>
                 {foodCasinos.map((item, index) =>
                   index < showedFoodCasinos ? (
                     <LinkItem {...item} key={index} />
@@ -142,7 +141,6 @@ const HomeCoulinaryCasino = ({
                 )}
               </div>
               <div className={s._linksColumn}>
-                <div className={s._linksTitle}>Drink</div>
                 {drinkCasinos.map((item, index) =>
                   index < showedDrinkCasinos ? (
                     <LinkItem {...item} key={index} />
