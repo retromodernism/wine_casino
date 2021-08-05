@@ -38,7 +38,6 @@ const HomeCoulinaryCasino = ({
   ...props
 }) => {
   makeHeaderLight();
-  console.log("make header light")
 
   /* Media Queries */
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });

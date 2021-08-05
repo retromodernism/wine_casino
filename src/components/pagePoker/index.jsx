@@ -112,7 +112,7 @@ const MainPageFoodCasino = (props) => {
         {isDesktop && (
           <Fragment>
             <HomeClassicCaisno data={casino.home} />
-            <BackToAll />
+            <BackToAll to="/klassicheskoe-kazino" />
             <Essence data={casino.essence} />
             <KindsOfGames data={casino.kindsOfGames} />
             <Masterclass data={casino.masterclass} />

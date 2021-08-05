@@ -1,11 +1,12 @@
 import s from "./index.module.scss";
+import { Link } from "react-router-dom";
 
-const BackToAll = (props) => {
+const BackToAll = ({ to = "/" }) => {
   return (
     <div className={s.backToAll}>
-      <a href="/" className={s._link}>
+      <Link to={to} className={s._link}>
         Вернуться ко всем видам
-      </a>
+      </Link>
     </div>
   );
 };

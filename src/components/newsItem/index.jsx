@@ -66,8 +66,6 @@ const NewsItem = ({
     }
   }
 
-  console.log(gridItems);
-
   return (
     <section className={s.newsItem}>
       <div className={s._content}>

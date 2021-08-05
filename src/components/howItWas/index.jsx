@@ -30,7 +30,6 @@ const defaultData = {
 
 const NextArrow = ({ className, style, onClick, color }) => {
   const [isHovered, setHover] = useState(false);
-  console.log(color);
   return (
     <div
       className={cx(className, s._arrow_wrapper, s._arrow_wrapper_next, {
