@@ -8,18 +8,7 @@ import { ReactComponent as XIcon_tablet } from "./src/xIcon_tablet.svg";
 import { useMediaQuery } from "react-responsive";
 import { connect } from "react-redux";
 import { closeSearchBar } from "../../redux/modules/tabletSearchBar";
-
-const options = [
-  { value: "craps", label: "крэпс" },
-  { value: "online casino", label: "онлайн казино" },
-  { value: "wine casino", label: "Винное казино" },
-  { value: "Cheese casino", label: "Сырное казино" },
-  { value: "Chocolate casino", label: "Шоколадное казино" },
-  { value: "Chocolate casino1", label: "Шоколадное казино1" },
-  { value: "Chocolate casino2", label: "Шоколадное казино2" },
-  { value: "Chocolate casino3", label: "Шоколадное казино3" },
-  { value: "Chocolate casino4", label: "Шоколадное казино4" },
-];
+import { useHistory } from "react-router";
 
 const customStylesDesktop = {
   container: (provied, state) => ({
@@ -36,10 +25,11 @@ const customStylesDesktop = {
       borderColor: "#323232",
     },
   }),
-  option: (provided) => ({
+  option: (provided, state) => ({
     ...provided,
+    backgroundColor: "none",
     "&:hover": {
-      backgroundColor: "rgba(255, 255, 255, 0.02)",
+      backgroundColor: "rgba(255, 255, 255, 0.15)",
     },
   }),
   indicatorSeparator: (provided, state) => ({
@@ -109,10 +99,11 @@ const customStylesTablet = {
       borderColor: "#323232",
     },
   }),
-  option: (provided) => ({
+  option: (provided, state) => ({
     ...provided,
+    backgroundColor: "none",
     "&:hover": {
-      backgroundColor: "rgba(255, 255, 255, 0.02)",
+      backgroundColor: "rgba(255, 255, 255, 0.15)",
     },
   }),
   indicatorSeparator: (provided, state) => ({
@@ -196,7 +187,34 @@ const DropdownIndicator = connect(null, { closeSearchBar })(
   }
 );
 
-const HeaderSearchBar = ({ className, closeSearchBar }) => {
+const NoOptionsMessage = (props) => {
+  return (
+    <components.NoOptionsMessage {...props}>
+      <span>Ничего не найдено</span>
+    </components.NoOptionsMessage>
+  );
+};
+
+const HeaderSearchBar = ({ casinos, className, closeSearchBar }) => {
+  /* Options */
+  const casinosPages = casinos.map(({ title, url }) => ({
+    label: title,
+    value: url,
+  }));
+
+  const options = [
+    ...casinosPages,
+    { value: "/news", label: "Новости" },
+    { value: "/croupiers", label: "Крупье" },
+    { value: "/klassicheskoe-kazino", label: "Классическое казино" },
+    { value: "/", label: "Food Casino" },
+    { value: "/contacts", label: "Контакты" },
+  ];
+
+  /* Routing */
+  const history = useHistory();
+
+  /* Media Queries */
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
     query: "screen and (min-width: 768px) and (max-width: 1299px)",
@@ -210,12 +228,22 @@ const HeaderSearchBar = ({ className, closeSearchBar }) => {
 
   return (
     <Select
-      components={{ DropdownIndicator }}
+      components={{ DropdownIndicator, NoOptionsMessage }}
       placeholder="Что ищете?"
       options={options}
       styles={customStyles}
+      onChange={({ value }) => {
+        console.log(value);
+        closeSearchBar();
+        history.push(value);
+      }}
     />
   );
 };
 
-export default HeaderSearchBar;
+export default connect(
+  (state) => ({
+    casinos: state.casinos.casinos,
+  }),
+  { closeSearchBar }
+)(HeaderSearchBar);
