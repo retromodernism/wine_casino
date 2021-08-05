@@ -9,8 +9,31 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
 import "./swiper.scss";
 import { Fragment } from "react";
+import { connect } from "react-redux";
+import { addPosition } from "../../redux/modules/cart";
 
-const Recomendations = (props) => {
+const shuffle = (o) => {
+  for (
+    let j, x, i = o.length;
+    i;
+    j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x
+  );
+  return o;
+};
+
+const Recomendations = ({
+  positionsIdsInCart,
+  positions,
+  addPosition,
+  ...props
+}) => {
+  console.log(positionsIdsInCart, positions);
+  const positionsNotInCart = positions.filter(
+    ({ id }) => !positionsIdsInCart.includes(id)
+  );
+
+  const recomendations = shuffle(positionsNotInCart).slice(0, 3);
+
   /* Media Queries */
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
@@ -22,71 +45,37 @@ const Recomendations = (props) => {
     <section className={cx(s.recomendations, "recomendations")}>
       <div className={s._content}>
         <div className={s._title}>Рекомендуем вам</div>
-        {isDesktop && (
-          <Fragment>
-            <div className={s._item}>
-              <div className={s._itemImageWrapper}>
-                <img src={cheese} alt="" className={s._itemImage} />
-              </div>
-              <div className={s._itemInfo}>
-                <div className={s._itemInfoTop}>
-                  <div className={s._itemInfoTitle}>Сырное казино</div>
-                  <div className={s._itemInfoDescription}>Medium пакет</div>
+        {isDesktop &&
+          recomendations.map(
+            ({ cartTitle, cartItemDescription, price, image, id }, index) => (
+              <div className={s._item} key={index}>
+                <div className={s._itemImageWrapper}>
+                  <img src={image.cart} alt="" className={s._itemImage} />
                 </div>
-                <div className={s._itemInfoBottom}>
-                  <div className={s._itemInfoPriceTitle}>Цена:</div>
-                  <div className={s._itemInfoPriceCount}></div>
-                  <div className={s._itemInfoPrice}>65 500 ₽</div>
-                  <button className={s._itemInfoPlus}>
-                    <Plus />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className={s._item}>
-              <div className={s._itemImageWrapper}>
-                <img src={fence} alt="" className={s._itemImage} />
-              </div>
-              <div className={s._itemInfo}>
-                <div className={s._itemInfoTop}>
-                  <div className={s._itemInfoTitle}>Столбики ограждения</div>
-                  <div className={s._itemInfoDescription}></div>
-                </div>
-                <div className={s._itemInfoBottom}>
-                  <div className={s._itemInfoPriceTitle}>Цена:</div>
-                  <div className={s._itemInfoPriceCount}></div>
-                  <div className={s._itemInfoPrice}>1 000 ₽</div>
-                  <button className={s._itemInfoPlus}>
-                    <Plus />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className={s._item}>
-              <div className={s._itemImageWrapper}>
-                <img src={cash} alt="" className={s._itemImage} />
-              </div>
-              <div className={s._itemInfo}>
-                <div className={s._itemInfoTop}>
-                  <div className={s._itemInfoTitle}>Брендирование фан-мани</div>
-                  <div className={s._itemInfoDescription}>
-                    Курирует работу крупье
+                <div className={s._itemInfo}>
+                  <div className={s._itemInfoTop}>
+                    <div className={s._itemInfoTitle}>{cartTitle}</div>
+                    <div className={s._itemInfoDescription}>
+                      {cartItemDescription}
+                    </div>
+                  </div>
+                  <div className={s._itemInfoBottom}>
+                    <div className={s._itemInfoPriceTitle}>Цена:</div>
+                    <div className={s._itemInfoPriceCount}></div>
+                    <div className={s._itemInfoPrice}>
+                      {price.toLocaleString()} ₽
+                    </div>
+                    <button
+                      className={s._itemInfoPlus}
+                      onClick={addPosition.bind(null, id)}
+                    >
+                      <Plus />
+                    </button>
                   </div>
                 </div>
-                <div className={s._itemInfoBottom}>
-                  <div className={s._itemInfoPriceTitle}>Цена:</div>
-                  <div className={s._itemInfoCount}>100 купюр</div>
-                  <div className={s._itemInfoPrice}>500 ₽</div>
-                  <button className={s._itemInfoPlus}>
-                    <Plus />
-                  </button>
-                </div>
               </div>
-            </div>
-          </Fragment>
-        )}
+            )
+          )}
         {(isTablet || isMobile) && (
           <Swiper
             {...{
@@ -94,73 +83,38 @@ const Recomendations = (props) => {
               spaceBetween: 10,
             }}
           >
-            <SwiperSlide key={0}>
-              <div className={s._item}>
-                <div className={s._itemImageWrapper}>
-                  <img src={cheese} alt="" className={s._itemImage} />
-                </div>
-                <div className={s._itemInfo}>
-                  <div className={s._itemInfoTop}>
-                    <div className={s._itemInfoTitle}>Сырное казино</div>
-                    <div className={s._itemInfoDescription}>Medium пакет</div>
-                  </div>
-                  <div className={s._itemInfoBottom}>
-                    <div className={s._itemInfoPriceTitle}>Цена:</div>
-                    <div className={s._itemInfoPriceCount}></div>
-                    <div className={s._itemInfoPrice}>65 500 ₽</div>
-                    <button className={s._itemInfoPlus}>
-                      <Plus />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide key={1}>
-              <div className={s._item}>
-                <div className={s._itemImageWrapper}>
-                  <img src={fence} alt="" className={s._itemImage} />
-                </div>
-                <div className={s._itemInfo}>
-                  <div className={s._itemInfoTop}>
-                    <div className={s._itemInfoTitle}>Столбики ограждения</div>
-                    <div className={s._itemInfoDescription}></div>
-                  </div>
-                  <div className={s._itemInfoBottom}>
-                    <div className={s._itemInfoPriceTitle}>Цена:</div>
-                    <div className={s._itemInfoPriceCount}></div>
-                    <div className={s._itemInfoPrice}>1 000 ₽</div>
-                    <button className={s._itemInfoPlus}>
-                      <Plus />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide key={2}>
-              <div className={s._item}>
-                <div className={s._itemImageWrapper}>
-                  <img src={cash} alt="" className={s._itemImage} />
-                </div>
-                <div className={s._itemInfo}>
-                  <div className={s._itemInfoTop}>
-                    <div className={s._itemInfoTitle}>
-                      Брендирование фан-мани
+            {recomendations.map(
+              ({ cartTitle, cartItemDescription, price, image, id }, index) => (
+                <SwiperSlide key={0} key={index}>
+                  <div className={s._item}>
+                    <div className={s._itemImageWrapper}>
+                      <img src={image.cart} alt="" className={s._itemImage} />
                     </div>
-                    <div className={s._itemInfoDescription}>
-                      Курирует работу крупье
+                    <div className={s._itemInfo}>
+                      <div className={s._itemInfoTop}>
+                        <div className={s._itemInfoTitle}>{cartTitle}</div>
+                        <div className={s._itemInfoDescription}>
+                          {cartItemDescription}
+                        </div>
+                      </div>
+                      <div className={s._itemInfoBottom}>
+                        <div className={s._itemInfoPriceTitle}>Цена:</div>
+                        <div className={s._itemInfoPriceCount}></div>
+                        <div className={s._itemInfoPrice}>
+                          {price.toLocaleString()} ₽
+                        </div>
+                        <button
+                          className={s._itemInfoPlus}
+                          onClick={addPosition.bind(null, id)}
+                        >
+                          <Plus />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                  <div className={s._itemInfoBottom}>
-                    <div className={s._itemInfoPriceTitle}>Цена:</div>
-                    <div className={s._itemInfoCount}>100 купюр</div>
-                    <div className={s._itemInfoPrice}>500 ₽</div>
-                    <button className={s._itemInfoPlus}>
-                      <Plus />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
+                </SwiperSlide>
+              )
+            )}
           </Swiper>
         )}
       </div>
@@ -168,4 +122,10 @@ const Recomendations = (props) => {
   );
 };
 
-export default Recomendations;
+export default connect(
+  (state) => ({
+    positionsIdsInCart: state.cart.positionsIds,
+    positions: state.positions.positions,
+  }),
+  { addPosition }
+)(Recomendations);
