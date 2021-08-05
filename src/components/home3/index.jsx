@@ -50,7 +50,7 @@ const HomeCoulinaryCasino = ({
   /* Data */
   const half =
     casinos.filter(({ type }) => type === "classicCasino").length / 2;
-  console.log(half);
+
   const classicCasinos = casinos.filter(
     ({ type }, index) => type === "classicCasino"
   );
@@ -60,7 +60,7 @@ const HomeCoulinaryCasino = ({
     .map(({ url, title }) => ({ title, href: url }));
 
   const drinkCasinos = classicCasinos
-  .filter((casino, index) => index >= half)
+    .filter((casino, index) => index >= half)
     .map(({ url, title }) => ({ title, href: url }));
 
   /* State */

@@ -12,7 +12,6 @@ import { ReactComponent as Feature2 } from "./src/featureIcon_2.svg";
 import { ReactComponent as Feature3 } from "./src/featureIcon_3.svg";
 import { useMediaQuery } from "react-responsive";
 import {
-  makeHeaderDark,
   makeHeaderLight,
 } from "../../redux/modules/headerColor";
 import { connect } from "react-redux";
@@ -39,6 +38,7 @@ const HomeCoulinaryCasino = ({
   ...props
 }) => {
   makeHeaderLight();
+  console.log("make header light")
 
   /* Media Queries */
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });

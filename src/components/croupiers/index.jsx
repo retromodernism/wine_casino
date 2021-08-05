@@ -5,9 +5,6 @@ import croupier1 from "./src/croupier1.png";
 import croupier2 from "./src/croupier2.png";
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { connect } from "react-redux";
-import { makeHeaderDark } from "../../redux/modules/headerColor";
-
 const ShowMoreButton = () => {
   const [isHovered, setHover] = useState(false);
   return (
@@ -25,9 +22,7 @@ const ShowMoreButton = () => {
   );
 };
 
-const Сroupiers = ({ makeHeaderDark, ...props }) => {
-  makeHeaderDark();
-
+const Сroupiers = ({ ...props }) => {
   /* Media Queries */
 
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
@@ -95,4 +90,4 @@ const Сroupiers = ({ makeHeaderDark, ...props }) => {
   );
 };
 
-export default connect(null, { makeHeaderDark })(Сroupiers);
+export default Сroupiers;

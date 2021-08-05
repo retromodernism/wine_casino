@@ -1,11 +1,6 @@
 import s from "./index.module.scss";
 import "./swiper.scss";
 import cx from "classnames";
-import {
-  makeHeaderDark,
-  makeHeaderLight,
-} from "../../redux/modules/headerColor";
-import { connect } from "react-redux";
 import { useLayoutEffect, useState, Fragment } from "react";
 import image1 from "./src/1.png";
 import image2 from "./src/2.png";
@@ -143,10 +138,6 @@ const Item = ({ image, title, casino }) => {
 };
 
 const OurCroupiers = (props) => {
-  useLayoutEffect(() => {
-    makeHeaderDark();
-  });
-
   /* Media Queries */
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
   const isTablet = useMediaQuery({
@@ -183,4 +174,4 @@ const OurCroupiers = (props) => {
   );
 };
 
-export default connect(null, { makeHeaderDark })(OurCroupiers);
+export default OurCroupiers;

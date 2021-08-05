@@ -4,8 +4,12 @@ import Header from "../header";
 import Footer from "../footer";
 import OurCroupiers from "../ourCroupiers";
 import s from "./index.module.scss";
+import { makeHeaderDark } from "../../redux/modules/headerColor";
+import { connect } from "react-redux";
 
-const PageCroupiers = (props) => {
+const PageCroupiers = ({ makeHeaderDark, ...props }) => {
+  makeHeaderDark();
+
   /* Media Queries */
 
   const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
@@ -39,4 +43,4 @@ const PageCroupiers = (props) => {
   );
 };
 
-export default PageCroupiers;
+export default connect(null, { makeHeaderDark })(PageCroupiers);
