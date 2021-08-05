@@ -402,12 +402,42 @@ import bgHomeBilyard from "./src/bilyard/home/bg.png";
 /** Home */
 import bgHomeOnline from "./src/onlineCasino/home/bg.png";
 
+/** Casino cart icons */
+import attractionMiniIcon from "./src/casinoCartIcons/attraction.png";
+import automatsMiniIcon from "./src/casinoCartIcons/automats.png";
+import beerMiniIcon from "./src/casinoCartIcons/beer.png";
+import bilyardMiniIcon from "./src/casinoCartIcons/bilyard.png";
+import blackJackMiniIcon from "./src/casinoCartIcons/blackJack.png";
+import breadMiniIcon from "./src/casinoCartIcons/bread.png";
+import champagneMiniIcon from "./src/casinoCartIcons/champagne.png";
+import cheeseMiniIcon from "./src/casinoCartIcons/cheese.png";
+import chilliMiniIcon from "./src/casinoCartIcons/chilli.png";
+import chocolateMiniIcon from "./src/casinoCartIcons/chocolate.png";
+import coffeeMiniIcon from "./src/casinoCartIcons/coffee.png";
+import crapsMiniIcon from "./src/casinoCartIcons/craps.png";
+import fatMiniIcon from "./src/casinoCartIcons/fat.png";
+import honeyMiniIcon from "./src/casinoCartIcons/honey.png";
+import kolesoMiniIcon from "./src/casinoCartIcons/koleso.png";
+import limonadMiniIcon from "./src/casinoCartIcons/limonad.png";
+import liquorMiniIcon from "./src/casinoCartIcons/liquor.png";
+import molecularMiniIcon from "./src/casinoCartIcons/molecular.png";
+import onlineMiniIcon from "./src/casinoCartIcons/online.png";
+import pokerMiniIcon from "./src/casinoCartIcons/poker.png";
+import ruletkaMiniIcon from "./src/casinoCartIcons/ruletka.png";
+import stakeMiniIcon from "./src/casinoCartIcons/stake.png";
+import teaMiniIcon from "./src/casinoCartIcons/tea.png";
+import tinctureMiniIcon from "./src/casinoCartIcons/tincture.png";
+import whiskeyMiniIcon from "./src/casinoCartIcons/whiskey.png";
+import wineMiniIcon from "./src/casinoCartIcons/wine.png";
+
 const casinos = [
   {
     url: "/vinnoe-kazino",
     type: "foodCasino",
     title: "Винное казино",
     foodType: "Drink",
+    miniIcon: wineMiniIcon,
+    miniTitle: "Винное",
     header: {
       logo: {
         desktop: {
@@ -680,6 +710,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#A2000C",
       fontColor: "#FFFFFF",
     },
@@ -770,6 +801,8 @@ const casinos = [
     type: "foodCasino",
     title: "Сырное казино",
     foodType: "Съедобное",
+    miniIcon: cheeseMiniIcon,
+    miniTitle: "Сырное",
     header: {
       logo: {
         desktop: {
@@ -1052,6 +1085,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#CF972A",
       fontColor: "#323232",
     },
@@ -1142,6 +1176,8 @@ const casinos = [
     type: "foodCasino",
     title: "Шоколадное казино",
     foodType: "Съедобное",
+    miniIcon: chocolateMiniIcon,
+    miniTitle: "Шоколадное",
     header: {
       logo: {
         desktop: {
@@ -1424,6 +1460,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#553800",
       fontColor: "#ffffff",
     },
@@ -1514,6 +1551,8 @@ const casinos = [
     type: "foodCasino",
     title: "Чайное казино",
     foodType: "Drink",
+    miniIcon: teaMiniIcon,
+    miniTitle: "Чайное",
     header: {
       logo: {
         desktop: {
@@ -1796,6 +1835,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#B07608",
       fontColor: "#ffffff",
     },
@@ -1886,6 +1926,8 @@ const casinos = [
     type: "foodCasino",
     title: "Безалкогольное казино",
     foodType: "Drink",
+    miniIcon: limonadMiniIcon,
+    miniTitle: "Безалкогольное",
     header: {
       logo: {
         desktop: {
@@ -2168,6 +2210,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#6A9C00",
       fontColor: "#ffffff",
     },
@@ -2258,6 +2301,8 @@ const casinos = [
     type: "foodCasino",
     title: "Кофейное казино",
     foodType: "Drink",
+    miniIcon: coffeeMiniIcon,
+    miniTitle: "Кофейное",
     header: {
       logo: {
         desktop: {
@@ -2540,6 +2585,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#31200B",
       fontColor: "#ffffff",
     },
@@ -2629,7 +2675,9 @@ const casinos = [
     url: "/shampanskoe-kazino",
     type: "foodCasino",
     title: "Шампанское казино",
+    miniIcon: champagneMiniIcon,
     foodType: "Drink",
+    miniTitle: "Шампанское",
     header: {
       logo: {
         desktop: {
@@ -2912,6 +2960,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#AD9514",
       fontColor: "#ffffff",
     },
@@ -3002,6 +3051,8 @@ const casinos = [
     type: "foodCasino",
     title: "Медовое казино",
     foodType: "Съедобное",
+    miniIcon: honeyMiniIcon,
+    miniTitle: "Медовое",
     header: {
       logo: {
         desktop: {
@@ -3284,6 +3335,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#E39600",
       fontColor: "#ffffff",
     },
@@ -3374,6 +3426,8 @@ const casinos = [
     type: "foodCasino",
     title: "Хлебное казино",
     foodType: "Съедобное",
+    miniIcon: breadMiniIcon,
+    miniTitle: "Хлебное",
     header: {
       logo: {
         desktop: {
@@ -3656,6 +3710,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#96773C",
       fontColor: "#ffffff",
     },
@@ -3746,6 +3801,8 @@ const casinos = [
     type: "foodCasino",
     title: "Сало казино",
     foodType: "Съедобное",
+    miniIcon: fatMiniIcon,
+    miniTitle: "Сало",
     header: {
       logo: {
         desktop: {
@@ -4028,6 +4085,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#D17777",
       fontColor: "#ffffff",
     },
@@ -4118,6 +4176,8 @@ const casinos = [
     type: "foodCasino",
     title: "Мясное казино",
     foodType: "Съедобное",
+    miniIcon: stakeMiniIcon,
+    miniTitle: "Мясное",
     header: {
       logo: {
         desktop: {
@@ -4400,6 +4460,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#8C5055",
       fontColor: "#ffffff",
     },
@@ -4490,6 +4551,8 @@ const casinos = [
     type: "foodCasino",
     title: "Виски казино",
     foodType: "Drink",
+    miniIcon: whiskeyMiniIcon,
+    miniTitle: "Виски",
     header: {
       logo: {
         desktop: {
@@ -4772,6 +4835,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#CC6607",
       fontColor: "#ffffff",
     },
@@ -4862,6 +4926,8 @@ const casinos = [
     type: "foodCasino",
     title: "Пивное казино",
     foodType: "Drink",
+    miniIcon: beerMiniIcon,
+    miniTitle: "Пивное",
     header: {
       logo: {
         desktop: {
@@ -5144,6 +5210,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#ED8000",
       fontColor: "#ffffff",
     },
@@ -5234,6 +5301,8 @@ const casinos = [
     type: "foodCasino",
     title: "Настойки казино",
     foodType: "Drink",
+    miniIcon: tinctureMiniIcon,
+    miniTitle: "Настойки",
     header: {
       logo: {
         desktop: {
@@ -5516,6 +5585,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#ED8000",
       fontColor: "#ffffff",
     },
@@ -5606,6 +5676,8 @@ const casinos = [
     type: "foodCasino",
     title: "Ликерное казино",
     foodType: "Drink",
+    miniIcon: liquorMiniIcon,
+    miniTitle: "Ликерное",
     header: {
       logo: {
         desktop: {
@@ -5888,6 +5960,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#4B2D2D",
       fontColor: "#ffffff",
     },
@@ -5978,6 +6051,8 @@ const casinos = [
     type: "foodCasino",
     title: "Молекулярное казино",
     foodType: "Съедобное",
+    miniIcon: molecularMiniIcon,
+    miniTitle: "Молекулярное",
     header: {
       logo: {
         desktop: {
@@ -6266,6 +6341,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#0CA387",
       fontColor: "#ffffff",
     },
@@ -6356,6 +6432,8 @@ const casinos = [
     type: "foodCasino",
     title: "Чили казино",
     foodType: "Съедобное",
+    miniIcon: chilliMiniIcon,
+    miniTitle: "Чили",
     header: {
       logo: {
         desktop: {
@@ -6638,6 +6716,7 @@ const casinos = [
       },
     },
     otherCasinos: {
+      type: "foodCasino",
       color: "#ED0E1C",
       fontColor: "#ffffff",
     },
@@ -6727,6 +6806,8 @@ const casinos = [
     url: "/ruletka",
     type: "classicCasino",
     title: "Рулетка",
+    miniIcon: ruletkaMiniIcon,
+    miniTitle: "Рулетка",
     home: {
       bg: {
         desktop: {
@@ -6875,6 +6956,8 @@ const casinos = [
     url: "/poker",
     type: "classicCasino",
     title: "Покер",
+    miniIcon: pokerMiniIcon,
+    miniTitle: "Покер",
     home: {
       bg: {
         desktop: {
@@ -7023,6 +7106,8 @@ const casinos = [
     url: "/black-jack",
     type: "classicCasino",
     title: "Блэк Джэк",
+    miniIcon: blackJackMiniIcon,
+    miniTitle: "Блэк Джэк",
     home: {
       bg: {
         desktop: {
@@ -7171,6 +7256,8 @@ const casinos = [
     url: "/craps",
     type: "classicCasino",
     title: "Крэпс",
+    miniIcon: crapsMiniIcon,
+    miniTitle: "Крэпс",
     home: {
       bg: {
         desktop: {
@@ -7319,6 +7406,8 @@ const casinos = [
     url: "/koleso-fortuny",
     type: "classicCasino",
     title: "Колесо фортуны",
+    miniIcon: kolesoMiniIcon,
+    miniTitle: "Колесо Фортуны",
     home: {
       bg: {
         desktop: {
@@ -7467,6 +7556,8 @@ const casinos = [
     url: "/attraction",
     type: "classicCasino",
     title: "Аттракционы",
+    miniIcon: attractionMiniIcon,
+    miniTitle: "Аттракционы",
     home: {
       bg: {
         desktop: {
@@ -7615,6 +7706,8 @@ const casinos = [
     url: "/igrovye-avtomaty",
     type: "classicCasino",
     title: "Игровые автоматы",
+    miniIcon: automatsMiniIcon,
+    miniTitle: "Игровые автоматы",
     home: {
       bg: {
         desktop: {
@@ -7763,6 +7856,8 @@ const casinos = [
     url: "/bilyard",
     type: "classicCasino",
     title: "Бильярд",
+    miniIcon: bilyardMiniIcon,
+    miniTitle: "Бильярд",
     home: {
       bg: {
         desktop: {
@@ -7911,6 +8006,8 @@ const casinos = [
     url: "/online-casino",
     type: "classicCasino",
     title: "Онлайн Казино",
+    miniIcon: onlineMiniIcon,
+    miniTitle: "Онлайн-Казино",
     home: {
       bg: {
         desktop: {

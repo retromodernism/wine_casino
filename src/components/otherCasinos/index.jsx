@@ -20,10 +20,12 @@ import molecular from "./src/molecular.png";
 import wine from "./src/wine.png";
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { connect } from "react-redux";
 
 const defaultData = {
   color: "#323232",
   fontColor: "#ffffff",
+  type: "classicCasino",
 };
 
 const casinos = [
@@ -116,8 +118,19 @@ const ShowMore = ({ onClick }) => {
   );
 };
 
-const OtherCasinos = (props) => {
-  const { color, fontColor } = props.data || defaultData;
+const OtherCasinos = ({ allCasinos, ...props }) => {
+  const { color, fontColor, type } = props.data || defaultData;
+
+  /* Data */
+  const casinos = allCasinos
+    .filter((casino) => casino.type === type)
+    .map(({ miniTitle, url, miniIcon }) => ({
+      title: miniTitle,
+      image: miniIcon,
+      to: url,
+    }));
+
+  console.log(casinos);
 
   /* Media Queries */
 
@@ -172,4 +185,6 @@ const OtherCasinos = (props) => {
   );
 };
 
-export default OtherCasinos;
+export default connect((state) => ({ allCasinos: state.casinos.casinos }))(
+  OtherCasinos
+);
