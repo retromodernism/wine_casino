@@ -423,9 +423,10 @@ const positions = [
   },
 
   {
-    type: "poker",
     title: "Французская",
     cartTitle: "Французская рулетка",
+    type: "casino",
+    casinoType: "poker",
     image: {
       cart: roulette,
     },
@@ -457,7 +458,8 @@ const positions = [
     },
   },
   {
-    type: "poker",
+    type: "casino",
+    casinoType: "poker",
     title: "Классическая",
     cartTitle: "Классическая рулетка",
     image: {

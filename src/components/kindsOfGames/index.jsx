@@ -107,7 +107,7 @@ const KindItem = connect(
   const activateCharacteristics = setActiveInfo.bind(null, "characteristics");
   const activateDescription = setActiveInfo.bind(null, "description");
 
-  const gamesPositions = positions.filter(({ type }) => type === gameType);
+  const gamesPositions = positions.filter(({ casinoType }) => casinoType === gameType);
 
   const [activePositionId, setActivePositionId] = useState(
     gamesPositions[0].id

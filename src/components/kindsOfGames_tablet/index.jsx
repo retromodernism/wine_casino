@@ -175,7 +175,7 @@ const GameItem = connect(
 const KindsOfGames_tablet = ({ positions, ...props }) => {
   const {title, gameType} = props.data || defaultData;
 
-  const gamesPositions = positions.filter(({ type }) => type === gameType);
+  const gamesPositions = positions.filter(({ casinoType }) => casinoType === gameType);
 
   const [activePositionId, setActivePositionId] = useState(
     gamesPositions[0].id
