@@ -115,10 +115,10 @@ const MainPageFoodCasino = (props) => {
             <KindsOfGames data={casino.kindsOfGames} />
             <Masterclass data={casino.masterclass} />
             <Promotion background={false} data={casino.promotion} />
-            <Additionals />
+            <Additionals data={casino.additionals} />
             <Form />
-            <Variants />
-            <Tematic />
+            {/* <Variants /> */}
+            {/* <Tematic /> */}
           </Fragment>
         )}
         {isTablet && (
@@ -127,8 +127,8 @@ const MainPageFoodCasino = (props) => {
             <KindsOfGames_tablet data={casino.kindsOfGames} />
             <Masterclass data={casino.masterclass} />
             <Promotion data={casino.promotion} />
-            <Variants />
-            <Additionals />
+            {/* <Variants /> */}
+            <Additionals data={casino.additionals} />
           </Fragment>
         )}
         {isMobile && (
@@ -137,10 +137,10 @@ const MainPageFoodCasino = (props) => {
             <Essence data={casino.essence} />
             <KindsOfGames_tablet data={casino.kindsOfGames} />
             <Promotion data={casino.promotion} />
-            <Variants />
-            <Additionals />
+            {/* <Variants /> */}
             <Masterclass />
-            <Tematic data={casino.tematic} />
+            <Additionals data={casino.additionals} />
+            {/* <Tematic data={casino.tematic} /> */}
           </Fragment>
         )}
       </main>

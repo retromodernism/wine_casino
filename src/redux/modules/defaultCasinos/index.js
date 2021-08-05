@@ -692,6 +692,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "wine",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -1063,6 +1064,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "cheese",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -1438,6 +1440,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "chocolate",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -1813,6 +1816,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "tea",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -2188,6 +2192,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "nonalcoholic",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -2563,6 +2568,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "coffee",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -2938,6 +2944,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "champagne",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -3313,6 +3320,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "honey",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -3688,6 +3696,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "bread",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -4063,6 +4072,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "fat",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -4438,6 +4448,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "meat",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -4813,6 +4824,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "whiskey",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -5188,6 +5200,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "beer",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -5563,6 +5576,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "tincture",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -5938,6 +5952,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "liquor",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -6319,6 +6334,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "molecular",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -6694,6 +6710,7 @@ const casinos = [
       ],
     },
     variants: {
+      currentCasinoType: "chilli",
       color: {
         item: "#2A9D76",
         popular: "#A2000C",
@@ -6951,6 +6968,17 @@ const casinos = [
         },
       ],
     },
+    additionals: {
+      title: "Так же вы можете добавить",
+      color: "#2A9D76",
+      bg: {
+        image: "",
+        right: "",
+        top: "",
+        height: "",
+        width: "",
+      },
+    },
   },
   {
     url: "/poker",
@@ -7100,6 +7128,17 @@ const casinos = [
           },
         },
       ],
+    },
+    additionals: {
+      title: "Так же вы можете добавить",
+      color: "#2A9D76",
+      bg: {
+        image: "",
+        right: "",
+        top: "",
+        height: "",
+        width: "",
+      },
     },
   },
   {
@@ -7251,6 +7290,17 @@ const casinos = [
         },
       ],
     },
+    additionals: {
+      title: "Так же вы можете добавить",
+      color: "#2A9D76",
+      bg: {
+        image: "",
+        right: "",
+        top: "",
+        height: "",
+        width: "",
+      },
+    },
   },
   {
     url: "/craps",
@@ -7400,6 +7450,17 @@ const casinos = [
           },
         },
       ],
+    },
+    additionals: {
+      title: "Так же вы можете добавить",
+      color: "#2A9D76",
+      bg: {
+        image: "",
+        right: "",
+        top: "",
+        height: "",
+        width: "",
+      },
     },
   },
   {
@@ -7551,6 +7612,17 @@ const casinos = [
         },
       ],
     },
+    additionals: {
+      title: "Так же вы можете добавить",
+      color: "#2A9D76",
+      bg: {
+        image: "",
+        right: "",
+        top: "",
+        height: "",
+        width: "",
+      },
+    },
   },
   {
     url: "/attraction",
@@ -7700,6 +7772,17 @@ const casinos = [
           },
         },
       ],
+    },
+    additionals: {
+      title: "Так же вы можете добавить",
+      color: "#2A9D76",
+      bg: {
+        image: "",
+        right: "",
+        top: "",
+        height: "",
+        width: "",
+      },
     },
   },
   {
@@ -7851,6 +7934,17 @@ const casinos = [
         },
       ],
     },
+    additionals: {
+      title: "Так же вы можете добавить",
+      color: "#2A9D76",
+      bg: {
+        image: "",
+        right: "",
+        top: "",
+        height: "",
+        width: "",
+      },
+    },
   },
   {
     url: "/bilyard",
@@ -8001,6 +8095,17 @@ const casinos = [
         },
       ],
     },
+    additionals: {
+      title: "Так же вы можете добавить",
+      color: "#2A9D76",
+      bg: {
+        image: "",
+        right: "",
+        top: "",
+        height: "",
+        width: "",
+      },
+    },
   },
   {
     url: "/online-casino",
@@ -8150,6 +8255,17 @@ const casinos = [
           },
         },
       ],
+    },
+    additionals: {
+      title: "Так же вы можете добавить",
+      color: "#2A9D76",
+      bg: {
+        image: "",
+        right: "",
+        top: "",
+        height: "",
+        width: "",
+      },
     },
   },
 ];

@@ -7,12 +7,13 @@ const defaultData = {
     item: "#323232",
     popular: "#2A9D76",
   },
+  currentCasinoType: "wine",
 };
 
 const Variants = ({ positions, ...props }) => {
-  const { color } = props.data || defaultData;
+  const { color, currentCasinoType } = props.data || defaultData;
 
-  const currentCasinoType = "wine";
+  // const currentCasinoType = "wine";
   const casinos = positions.filter(
     ({ type, casinoType }) =>
       type === "casino" && casinoType === currentCasinoType
