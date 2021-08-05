@@ -13,10 +13,14 @@ import { useMediaQuery } from "react-responsive";
 import CartOrder from "../cartOrder";
 import Header from "../header";
 import Footer from "../footer";
+import { getPositions } from "../../redux/modules/positions";
 
-const CartPage = ({ cartPopupIsOpen, makeHeaderDark, ...props }) => {
-  /* Make Header Dark */
-
+const CartPage = ({
+  getPositions,
+  cartPopupIsOpen,
+  makeHeaderDark,
+  ...props
+}) => {
   makeHeaderDark();
 
   /* Media Queries */
@@ -49,5 +53,5 @@ export default connect(
   (state) => ({
     cartPopupIsOpen: state.popup.cartPopupIsOpen,
   }),
-  { makeHeaderDark, makeHeaderLight }
+  { makeHeaderDark, makeHeaderLight, getPositions }
 )(CartPage);

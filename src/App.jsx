@@ -17,8 +17,6 @@ import PageNews from "./components/pageNews";
 import PageNewsItem from "./components/pageNewsItem";
 import { getNews } from "./redux/modules/news";
 import { getCasinos } from "./redux/modules/casinos";
-import { useEffect } from "react";
-import { useLayoutEffect } from "react";
 
 const App = ({
   burgerIsOpen,
@@ -29,12 +27,10 @@ const App = ({
   getCasinos,
   ...props
 }) => {
-  useEffect(() => {
-    getNews();
-    getCasinos();
-    getPositions();
-    console.log("Получаем информацию")
-  }, []);
+  /* Getting Indo from Redux State */
+  getNews();
+  getCasinos();
+  getPositions();
 
   const foodCasinos = casinos.filter(({ type }) => type === "foodCasino");
   const classicCasinos = casinos.filter(({ type }) => type === "classicCasino");
