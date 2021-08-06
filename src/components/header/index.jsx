@@ -39,6 +39,7 @@ const Header = ({
   searchBarIsOpen,
   socialsIsHovered,
   catalogIsHovered,
+  cartPositionsCount,
   setSocialsHover,
   setCatalogHover,
   headerColor,
@@ -95,10 +96,7 @@ const Header = ({
             <>
               {isDesktop && <Logo className={s._logo} />}
               {isTablet && (
-                <LogoTablet
-                  className={s._logo}
-                  style={{ fill: "#323232"}}
-                />
+                <LogoTablet className={s._logo} style={{ fill: "#323232" }} />
               )}
               {isMobile && (
                 <LogoMobile
@@ -209,9 +207,12 @@ const Header = ({
               </button>
             </Fragment>
           )}
-          <Link to="/cart" className={s._navItem}>
+          <Link to="/cart" className={cx(s._navItem, s._navItem_cart)}>
             {isTablet && <Cart />}
             {isMobile && <CartMob />}
+            {cartPositionsCount > 0 && (
+              <div className={s._cartCount}>{cartPositionsCount}</div>
+            )}
           </Link>
           <button className={cx(s._navItem, s._search)} onClick={openBurger}>
             {isTablet && <Burger />}
@@ -229,6 +230,7 @@ export default connect(
     catalogIsHovered: state.catalogHover.isHovered,
     searchBarIsOpen: state.tabletSearchBar.searchBarIsOpen,
     headerColor: state.headerColor.color,
+    cartPositionsCount: state.cart.positionsIds.length,
   }),
   { setSocialsHover, setCatalogHover, openBurger, openSearchBar }
 )(Header);

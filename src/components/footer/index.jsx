@@ -358,7 +358,7 @@ const Footer = (props) => {
                 Классическое казино
               </span>
             </Link>
-            <Link to="/attractions" className={s._link}>
+            <Link to="/attraction" className={s._link}>
               <span className={s._linkText} style={{ color: textColor }}>
                 Аттракционы
               </span>

@@ -3,18 +3,23 @@
 ._navListItem {
   @extend %h6;
 }
+
 ._phone {
   @extend %h4;
 }
+
 ._phoneSubtitle {
   @extend %h6_1;
 }
+
 ._navListItem {
   @extend %h6;
 }
+
 ._phone {
   @extend %h4;
 }
+
 ._phoneSubtitle {
   @extend %h6_1;
 }
@@ -23,40 +28,51 @@
   ._logo {
     fill: $black;
   }
+
   ._navListItem {
     color: $black;
   }
+
   ._phone {
     color: $black;
   }
+
   ._phoneSocialsItem {
     border: 1px solid $black;
   }
+
   ._phoneSubtitle {
     color: $black;
   }
 }
+
 .header_light {
   ._logo {
     fill: #ffffff;
   }
+
   ._navListItem {
     color: #ffffff;
   }
+
   ._phone {
     color: #ffffff;
   }
+
   ._phoneSocialsItem {
     border: 1px solid #ffffff;
   }
+
   ._phoneSubtitle {
     color: #ffffff;
   }
+
   ._catalogArrow {
     background: unset;
     background-color: #ffffff;
     mask-image: url(./src/arrow.svg);
   }
+
   ._phoneArrow {
     background: url(./src/arrow_white.svg) 100% 100% no-repeat;
   }
@@ -217,7 +233,6 @@
   ._navListItem_arrow {
     display: flex;
     align-items: center;
-    // cursor: pointer;
   }
 
   ._catalog {
@@ -311,6 +326,34 @@
     }
   }
 
+  ._navItem_cart {
+    position: relative;
+  }
+
+  ._cartCount {
+    position: absolute;
+    top: 40px;
+    right: -10px;
+
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff2c2c;
+    border-radius: 50%;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+
+    text-transform: capitalize;
+
+    color: #ffffff;
+  }
+
   ._phone {
     display: flex;
     align-items: center;
@@ -341,6 +384,30 @@
     &:not(:last-child) {
       margin-right: 22px;
     }
+  }
+
+  ._navItem_cart {
+    position: relative;
+  }
+
+  ._cartCount {
+    position: absolute;
+    top: 26px;
+    right: -7px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff2c2c;
+    border-radius: 50%;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 10px;
+    line-height: 14px;
+    text-transform: capitalize;
+    color: #ffffff;
   }
 
   ._phone {
