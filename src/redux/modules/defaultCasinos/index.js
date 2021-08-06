@@ -34,15 +34,15 @@ import imageHowItWas_3 from "./src/howItWas/image3.png";
 import imageHowItWas_4 from "./src/howItWas/image4.png";
 import bgHowItWas from "./src/howItWas/bg.png";
 /* Tematic */
-import gatsby1 from "./src/tematic/gatsby1.png";
-import gatsby2 from "./src/tematic/gatsby2.png";
-import gatsby3 from "./src/tematic/gatsby3.png";
-import lasVegas1 from "./src/tematic/lasVegas1.png";
-import lasVegas2 from "./src/tematic/lasVegas2.png";
-import lasVegas3 from "./src/tematic/lasVegas3.png";
-import mafia1 from "./src/tematic/mafia1.png";
-import mafia2 from "./src/tematic/mafia2.png";
-import mafia3 from "./src/tematic/mafia3.png";
+import gatsby1 from "./src/tematic/gatsby1.webp";
+import gatsby2 from "./src/tematic/gatsby2.webp";
+import gatsby3 from "./src/tematic/gatsby3.webp";
+import lasVegas1 from "./src/tematic/lasVegas1.webp";
+import lasVegas2 from "./src/tematic/lasVegas2.webp";
+import lasVegas3 from "./src/tematic/lasVegas3.webp";
+import mafia1 from "./src/tematic/mafia1.webp";
+import mafia2 from "./src/tematic/mafia2.webp";
+import mafia3 from "./src/tematic/mafia3.webp";
 /* About */
 import imageAbout from "./src/about/image.png";
 

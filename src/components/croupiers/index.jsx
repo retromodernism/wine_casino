@@ -1,8 +1,8 @@
 import s from "./index.module.scss";
 import cx from "classnames";
 import { Link } from "react-router-dom";
-import croupier1 from "./src/croupier1.png";
-import croupier2 from "./src/croupier2.png";
+import croupier1 from "./src/croupier1.webp";
+import croupier2 from "./src/croupier2.webp";
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 const ShowMoreButton = () => {
@@ -78,7 +78,7 @@ const Сroupiers = ({ ...props }) => {
             <div
               className={s._itemImage}
               style={{
-                background: `url(${croupier1}) 100% 100% /cover no-repeat`,
+                background: `url(${croupier2}) 100% 100% /cover no-repeat`,
                 backgroundPosition: "center center",
               }}
             ></div>
