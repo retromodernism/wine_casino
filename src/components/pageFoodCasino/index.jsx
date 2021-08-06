@@ -10,7 +10,7 @@ import Variants from "../variants";
 import { useMediaQuery } from "react-responsive";
 import HomeCoulinaryCasino from "../home2";
 import { Fragment } from "react";
-import homeBg from "./src/homeBg.png";
+import homeBg from "./src/homeBg.webp";
 import Header from '../header';
 import Footer from "../footer";
 

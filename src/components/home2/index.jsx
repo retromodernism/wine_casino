@@ -1,5 +1,4 @@
 import s from "./index.module.scss";
-import Typical from "react-typical";
 import ReactTypingEffect from "react-typing-effect";
 import "react-modal-video/scss/modal-video.scss";
 import ModalVideo from "react-modal-video";

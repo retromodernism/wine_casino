@@ -139,15 +139,15 @@ import bgEssenceCoffe from "./src/coffee/essence/bg.png";
 import image1EssenceCoffee from "./src/coffee/essence/image1.png";
 import image4EssenceCoffee from "./src/coffee/essence/image4.png";
 /* Promotion */
-import bgPromotionCoffee from "./src/coffee/promotion/bg.png";
+import bgPromotionCoffee from "./src/coffee/promotion/bg.webp";
 /* Additionals */
 import bgAdditionalsCoffee from "./src/coffee/additionals/bg.png";
 /* HowItWas */
-import bgHowItWasCoffe from "./src/coffee/howItWas/bg.png";
-import image1HowItWasCoffee from "./src/coffee/howItWas/image1.png";
-import image2HowItWasCoffee from "./src/coffee/howItWas/image2.png";
-import image3HowItWasCoffee from "./src/coffee/howItWas/image3.png";
-import image4HowItWasCoffee from "./src/coffee/howItWas/image4.png";
+import bgHowItWasCoffe from "./src/coffee/howItWas/bg.webp";
+import image1HowItWasCoffee from "./src/coffee/howItWas/image1.webp";
+import image2HowItWasCoffee from "./src/coffee/howItWas/image2.webp";
+import image3HowItWasCoffee from "./src/coffee/howItWas/image3.webp";
+import image4HowItWasCoffee from "./src/coffee/howItWas/image4.webp";
 
 /** Champagne */
 /* Home */
@@ -173,24 +173,24 @@ import image4HowItWasChampagne from "./src/champagne/howItWas/image4.png";
 
 /** Honey */
 /* Home */
-import bgHomeHoney from "./src/honey/home/bg.png";
-import bgMobHomeHoney from "./src/honey/home/bg_mob.png";
+import bgHomeHoney from "./src/honey/home/bg.webp";
+import bgMobHomeHoney from "./src/honey/home/bg_mob.webp";
 import chipsRightHoney from "./src/honey/home/chipsRight.svg";
 import chipsLeftHoney from "./src/honey/home/chipsLeft.svg";
 /* Essence */
-import bgEssenceHoney from "./src/honey/essence/bg.png";
-import image1EssenceHoney from "./src/honey/essence/image1.png";
-import image4EssenceHoney from "./src/honey/essence/image4.png";
+import bgEssenceHoney from "./src/honey/essence/bg.webp";
+import image1EssenceHoney from "./src/honey/essence/image1.webp";
+import image4EssenceHoney from "./src/honey/essence/image4.webp";
 /* Promotion */
-import bgPromotionHoney from "./src/honey/promotion/bg.png";
+import bgPromotionHoney from "./src/honey/promotion/bg.webp";
 /* Additionals */
-import bgAdditionalsHoney from "./src/honey/additionals/bg.png";
+import bgAdditionalsHoney from "./src/honey/additionals/bg.webp";
 /* HowItWas */
-import bgHowItWasHoney from "./src/honey/howItWas/bg.png";
-import image1HowItWasHoney from "./src/honey/howItWas/image1.png";
-import image2HowItWasHoney from "./src/honey/howItWas/image2.png";
-import image3HowItWasHoney from "./src/honey/howItWas/image3.png";
-import image4HowItWasHoney from "./src/honey/howItWas/image4.png";
+import bgHowItWasHoney from "./src/honey/howItWas/bg.webp";
+import image1HowItWasHoney from "./src/honey/howItWas/image1.webp";
+import image2HowItWasHoney from "./src/honey/howItWas/image2.webp";
+import image3HowItWasHoney from "./src/honey/howItWas/image3.webp";
+import image4HowItWasHoney from "./src/honey/howItWas/image4.webp";
 
 /** Bread */
 /* Home */
@@ -214,23 +214,23 @@ import image4HowItWasBread from "./src/bread/howItWas/image4.png";
 
 /** Fat */
 /* Home */
-import bgHomeFat from "./src/fat/home/bg.png";
+import bgHomeFat from "./src/fat/home/bg.webp";
 import chipsRightFat from "./src/fat/home/chipsRight.svg";
 import chipsLeftFat from "./src/fat/home/chipsLeft.svg";
 /* Essence */
-import bgEssenceFat from "./src/fat/essence/bg.png";
-import image1EssenceFat from "./src/fat/essence/image1.png";
-import image4EssenceFat from "./src/fat/essence/image4.png";
+import bgEssenceFat from "./src/fat/essence/bg.webp";
+import image1EssenceFat from "./src/fat/essence/image1.webp";
+import image4EssenceFat from "./src/fat/essence/image4.webp";
 /* Promotion */
-import bgPromotionFat from "./src/fat/promotion/bg.png";
+import bgPromotionFat from "./src/fat/promotion/bg.webp";
 /* Additionals */
-import bgAdditionalsFat from "./src/fat/additionals/bg.png";
+import bgAdditionalsFat from "./src/fat/additionals/bg.webp";
 /* HowItWas */
-import bgHowItWasFat from "./src/fat/howItWas/bg.png";
-import image1HowItWasFat from "./src/fat/howItWas/image1.png";
-import image2HowItWasFat from "./src/fat/howItWas/image2.png";
-import image3HowItWasFat from "./src/fat/howItWas/image3.png";
-import image4HowItWasFat from "./src/fat/howItWas/image4.png";
+import bgHowItWasFat from "./src/fat/howItWas/bg.webp";
+import image1HowItWasFat from "./src/fat/howItWas/image1.webp";
+import image2HowItWasFat from "./src/fat/howItWas/image2.webp";
+import image3HowItWasFat from "./src/fat/howItWas/image3.webp";
+import image4HowItWasFat from "./src/fat/howItWas/image4.webp";
 
 /** Meat */
 /* Home */
@@ -392,11 +392,11 @@ import bgHomeBlackJack from "./src/blackJack/home/bg.png";
 
 /** Craps */
 /** Home */
-import bgHomeCraps from "./src/craps/home/bg.png";
+import bgHomeCraps from "./src/craps/home/bg.webp";
 
 /** FortunaRing */
 /** Home */
-import bgHomeFortuna from "./src/fortunaRing/home/bg.png";
+import bgHomeFortuna from "./src/fortunaRing/home/bg.webp";
 
 /** Attraction */
 /** Home */
