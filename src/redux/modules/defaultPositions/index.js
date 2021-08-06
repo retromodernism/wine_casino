@@ -11,14 +11,15 @@ import chairClassic from "../../../components/additionals/src/chairClassic.png";
 import chairKyara from "../../../components/additionals/src/chair.png";
 import chairLeather from "../../../components/additionals/src/leatherChair.png";
 import cash from "../../../components/additionals/src/cash.png";
+import pillars from "./src/equipments/pillars.png";
+import hangers from "./src/equipments/hangers.png";
 
 // Services images
 import pitBoss from "../../../components/additionals/src/pitBoss.png";
 import magician from "../../../components/additionals/src/magician.png";
 import thimblerigger from "../../../components/additionals/src/thimblerigger.png";
-
-// Kind of Games image
-import roulette from "../../../components/kindsOfGames/src/image.png";
+import chips from "./src/services/chips.png";
+import table from "./src/services/table.png";
 
 /** Casino cart icons */
 import attractionMiniIcon from "../defaultCasinos/src/casinoCartIcons/attraction.png";
@@ -47,8 +48,9 @@ import teaMiniIcon from "../defaultCasinos/src/casinoCartIcons/tea.png";
 import tinctureMiniIcon from "../defaultCasinos/src/casinoCartIcons/tincture.png";
 import whiskeyMiniIcon from "../defaultCasinos/src/casinoCartIcons/whiskey.png";
 
+/** Kind of Games image */
 /* Ruletka */
-import classicRuletka from "./src/ruletka/classic.png";
+import roulette from "./src/ruletka/classic.png";
 import frenchRuletka from "./src/ruletka/french.png";
 import gambleRuletka from "./src/ruletka/gamble.png";
 import amateurRuletka from "./src/ruletka/amateur.png";
@@ -107,68 +109,20 @@ const positions = [
     cartTitle: "Брендированые фан-мани",
   },
   {
-    title: "Стул-классика1",
-    image: { normal: chairClassic, cart: chairClassic },
-    price: 1500,
-    count: { title: "за шт", value: 1, fixed: false },
+    title: "Столбики-ограждения",
+    image: { normal: pillars, cart: pillars },
+    price: 1000,
+    count: { title: "", value: 1, fixed: false },
     type: "equipment",
-    cartTitle: "Стул-классика",
+    cartTitle: "Столбики-ограждения",
   },
   {
-    title: "Стул-кьяра1",
-    image: { normal: chairKyara, cart: chairKyara },
-    price: 2000,
-    count: { title: "за шт", value: 1, fixed: false },
+    title: "Выездной гардероб",
+    image: { normal: hangers, cart: hangers },
+    price: 6000,
+    count: { title: "", value: 1, fixed: false },
     type: "equipment",
-    cartTitle: "Стул-кьяра",
-  },
-  {
-    title: "Кожаный стул1",
-    image: { normal: chairLeather, cart: chairLeather },
-    price: 2500,
-    count: { title: "за шт", value: 1, fixed: false },
-    type: "equipment",
-    cartTitle: "Кожаный стул",
-  },
-  {
-    title: "Брендированые фан-мани1",
-    image: { normal: cash, cart: cash },
-    price: 500,
-    count: { title: "100 купюр", value: 100, fixed: false },
-    type: "equipment",
-    cartTitle: "Брендированые фан-мани",
-  },
-  {
-    title: "Стул-классика2",
-    image: { normal: chairClassic, cart: chairClassic },
-    price: 1500,
-    count: { title: "за шт", value: 1, fixed: false },
-    type: "equipment",
-    cartTitle: "Стул-классика",
-  },
-  {
-    title: "Стул-кьяра2",
-    image: { normal: chairKyara, cart: chairKyara },
-    price: 2000,
-    count: { title: "за шт", value: 1, fixed: false },
-    type: "equipment",
-    cartTitle: "Стул-кьяра",
-  },
-  {
-    title: "Кожаный стул2",
-    image: { normal: chairLeather, cart: chairLeather },
-    price: 2500,
-    count: { title: "за шт", value: 1, fixed: false },
-    type: "equipment",
-    cartTitle: "Кожаный стул",
-  },
-  {
-    title: "Брендированые фан-мани2",
-    image: { normal: cash, cart: cash },
-    price: 500,
-    count: { title: "100 купюр", value: 100, fixed: false },
-    type: "equipment",
-    cartTitle: "Брендированые фан-мани",
+    cartTitle: "Выездной гардероб",
   },
 
   {
@@ -199,59 +153,24 @@ const positions = [
     cartTitle: "Напёрсточник",
   },
   {
-    title: "Пит-босс1",
-    image: { normal: pitBoss, cart: pitBoss },
+    title: "Брендирование фишек",
+    image: { normal: chips, cart: chips },
     price: 8000,
-    count: { fixed: true, value: 1 },
+    count: { fixed: true, value: 100 },
     type: "service",
-    description: "курирует работу крупье",
-    cartTitle: "Пит-босс",
+    description: "можно оставить фишки с вашим логотипом",
+    cartTitle: "Брендирование фишек",
   },
   {
-    title: "Фокусник1",
-    image: { normal: magician, cart: magician },
-    price: 8000,
+    title: "Брендирование стола",
+    image: { normal: table, cart: table },
+    price: 1000,
     count: { fixed: true, value: 1 },
     type: "service",
-    description: "проведет незабываемое шоу",
-    cartTitle: "Фокусник",
+    description: "нанесем ваш логотип на сукно",
+    cartTitle: "Брендирование стола",
   },
-  {
-    title: "Напёрсточник1",
-    image: { normal: thimblerigger, cart: thimblerigger },
-    price: 8000,
-    count: { fixed: true, value: 1 },
-    type: "service",
-    description: "сделает ваш вечер более запутанным, но интригующим",
-    cartTitle: "Напёрсточник",
-  },
-  {
-    title: "Пит-босс2",
-    image: { normal: pitBoss, cart: pitBoss },
-    price: 8000,
-    count: { fixed: true, value: 1 },
-    type: "service",
-    description: "курирует работу крупье",
-    cartTitle: "Пит-босс",
-  },
-  {
-    title: "Фокусник2",
-    image: { normal: magician, cart: magician },
-    price: 8000,
-    count: { fixed: true, value: 1 },
-    type: "service",
-    description: "проведет незабываемое шоу",
-    cartTitle: "Фокусник",
-  },
-  {
-    title: "Напёрсточник2",
-    image: { normal: thimblerigger, cart: thimblerigger },
-    price: 8000,
-    count: { fixed: true, value: 1 },
-    type: "service",
-    description: "сделает ваш вечер более запутанным, но интригующим",
-    cartTitle: "Напёрсточник",
-  },
+  
 
   {
     title: "Пакет — «Mini»",

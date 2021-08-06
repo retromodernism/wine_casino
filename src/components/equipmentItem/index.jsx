@@ -33,6 +33,7 @@ const EquipmentItem = ({
         style={{
           background: `url(${image.normal}) 100% 100% no-repeat`,
           backgroundSize: isMobile ? "contain" : "",
+          backgroundPosition: "center center",
         }}
       ></div>
       <div className={s._footer} style={{ background: color }}>
