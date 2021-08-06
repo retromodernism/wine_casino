@@ -38,7 +38,18 @@ const EquipmentItem = ({
       <div className={s._footer} style={{ background: color }}>
         <div className={s._title}>{title}</div>
         <p className={s._titlePrice}>Цена:</p>
-        <p className={s._price}>{price.toLocaleString()} ₽</p>
+        <p className={s._price}>
+          {price.toLocaleString()}
+          <span
+            style={{
+              fontFamily: "Roboto",
+              fontWeight: 700,
+            }}
+          >
+            {" "}
+            ₽
+          </span>
+        </p>
         <p className={s._count}>{count.title}</p>
         <div className={s._plus} onClick={addToCart}></div>
       </div>

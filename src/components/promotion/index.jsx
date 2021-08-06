@@ -70,7 +70,7 @@ const defaultData = {
       },
     },
     {
-      title: "Сертификат 10 000 ₽",
+      title: `Сертификат 10 000 <span style={{ fontFamily: "Roboto", fontWeight: 700, }}> ₽</span>`,
       description: "при заказе maxi пакета",
       icon: {
         svg: sertificatePromotion,

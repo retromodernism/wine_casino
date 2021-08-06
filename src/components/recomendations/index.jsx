@@ -58,7 +58,16 @@ const Recomendations = ({
                     <div className={s._itemInfoPriceTitle}>Цена:</div>
                     <div className={s._itemInfoPriceCount}></div>
                     <div className={s._itemInfoPrice}>
-                      {price.toLocaleString()} ₽
+                      {price.toLocaleString()}
+                      <span
+                        style={{
+                          fontFamily: "Roboto",
+                          fontWeight: 700,
+                        }}
+                      >
+                        {" "}
+                        ₽
+                      </span>
                     </div>
                     <button
                       className={s._itemInfoPlus}
@@ -96,7 +105,16 @@ const Recomendations = ({
                         <div className={s._itemInfoPriceTitle}>Цена:</div>
                         <div className={s._itemInfoPriceCount}></div>
                         <div className={s._itemInfoPrice}>
-                          {price.toLocaleString()} ₽
+                          {price.toLocaleString()}
+                          <span
+                            style={{
+                              fontFamily: "Roboto",
+                              fontWeight: 700,
+                            }}
+                          >
+                            {" "}
+                            ₽
+                          </span>
                         </div>
                         <button
                           className={s._itemInfoPlus}

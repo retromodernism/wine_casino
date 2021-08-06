@@ -48,3 +48,17 @@
   font-weight: normal;
   src: url("./ProximaNova-Regular.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  src: url("./Roboto-Black.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./Roboto-Bold.woff2") format("woff2");
+}

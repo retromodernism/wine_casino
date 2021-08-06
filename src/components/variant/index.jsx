@@ -115,7 +115,14 @@ const Variant = ({
           className={s._price}
           style={{ color: isPopular ? "#ffffff" : color.item }}
         >
-          от {price.toLocaleString()} ₽
+          от {price.toLocaleString()}
+          <span
+            style={{
+              fontFamily: "Roboto",
+              fontWeight: 700,
+            }}
+          >{" "}₽
+          </span>
         </div>
         {isDesktop && (
           <Fragment>

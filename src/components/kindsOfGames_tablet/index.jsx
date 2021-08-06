@@ -110,7 +110,18 @@ const GameItem = connect(
       <div className={s._priceBlock}>
         <div className={s._priceWrapper}>
           {isTablet && <div className={s._priceTitle}>Цена:</div>}
-          <div className={s._price}>от {game.price.toLocaleString()} ₽</div>
+          <div className={s._price}>
+            от {game.price.toLocaleString()}
+            <span
+              style={{
+                fontFamily: "Roboto",
+                fontWeight: 700,
+              }}
+            >
+              {" "}
+              ₽
+            </span>
+          </div>
         </div>
         {isTablet && (
           <button
@@ -173,9 +184,11 @@ const GameItem = connect(
 });
 
 const KindsOfGames_tablet = ({ positions, ...props }) => {
-  const {title, gameType} = props.data || defaultData;
+  const { title, gameType } = props.data || defaultData;
 
-  const gamesPositions = positions.filter(({ casinoType }) => casinoType === gameType);
+  const gamesPositions = positions.filter(
+    ({ casinoType }) => casinoType === gameType
+  );
 
   const [activePositionId, setActivePositionId] = useState(
     gamesPositions[0].id

@@ -665,7 +665,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,
@@ -1037,7 +1037,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,
@@ -1413,7 +1413,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,
@@ -1789,7 +1789,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,
@@ -2165,7 +2165,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,
@@ -2541,7 +2541,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,
@@ -2917,7 +2917,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,
@@ -3293,7 +3293,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,
@@ -3669,7 +3669,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,
@@ -4045,7 +4045,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,
@@ -4421,7 +4421,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,
@@ -4797,7 +4797,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,
@@ -5173,7 +5173,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,
@@ -5549,7 +5549,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,
@@ -5925,7 +5925,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,
@@ -6307,7 +6307,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,
@@ -6683,7 +6683,7 @@ const casinos = [
           },
         },
         {
-          title: "Сертификат 10 000 ₽",
+          title: `Сертификат 10 000 <span style="font-family: 'Roboto'; font-weight: 700">₽</span>`,
           description: "при заказе maxi пакета",
           icon: {
             svg: sertificatePromotion,

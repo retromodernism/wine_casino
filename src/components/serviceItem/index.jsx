@@ -41,7 +41,18 @@ const ServiceItem = ({
         <div className={s._description}>{description}</div>
         <div className={s._priceWrapper}>
           <div className={s._priceTitle}>Цена:</div>
-          <div className={s._price}>{price.toLocaleString()} ₽</div>
+          <div className={s._price}>
+            {price.toLocaleString()}
+            <span
+              style={{
+                fontFamily: "Roboto",
+                fontWeight: 700,
+              }}
+            >
+              {" "}
+              ₽
+            </span>
+          </div>
         </div>
         <div className={s._plus} onClick={addToCart}></div>
       </div>

@@ -116,7 +116,16 @@ const CartOrder = ({
                 <div className={s._orderPriceWrapper}>
                   <div className={s._orderPriceTitle}>Цена:</div>
                   <div className={s._orderPrice}>
-                    {finalPrice.toLocaleString()} ₽
+                    {finalPrice.toLocaleString()}
+                    <span
+                      style={{
+                        fontFamily: "Roboto",
+                        fontWeight: 700,
+                      }}
+                    >
+                      {" "}
+                      ₽
+                    </span>
                   </div>
                 </div>
                 <div className={s._orderCheckoutButtonWrapper}>
@@ -141,7 +150,16 @@ const CartOrder = ({
               <div className={s._orderPriceWrapper}>
                 <div className={s._orderPriceTitle}>Итого:</div>
                 <div className={s._orderPrice}>
-                  {finalPrice.toLocaleString()} ₽
+                  {finalPrice.toLocaleString()}
+                  <span
+                    style={{
+                      fontFamily: "Roboto",
+                      fontWeight: 700,
+                    }}
+                  >
+                    {" "}
+                    ₽
+                  </span>
                 </div>
               </div>
               <div className={s._orderCheckoutButtonWrapper}>

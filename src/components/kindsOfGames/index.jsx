@@ -107,7 +107,9 @@ const KindItem = connect(
   const activateCharacteristics = setActiveInfo.bind(null, "characteristics");
   const activateDescription = setActiveInfo.bind(null, "description");
 
-  const gamesPositions = positions.filter(({ casinoType }) => casinoType === gameType);
+  const gamesPositions = positions.filter(
+    ({ casinoType }) => casinoType === gameType
+  );
 
   const [activePositionId, setActivePositionId] = useState(
     gamesPositions[0].id
@@ -122,7 +124,7 @@ const KindItem = connect(
 
   return (
     <div className={s._kindItem}>
-      <div className={cx(s._sidebar, {[s._sidebar_scroll]: isScrolling})}>
+      <div className={cx(s._sidebar, { [s._sidebar_scroll]: isScrolling })}>
         {gamesPositions.map(({ title, id }, index) => (
           <button
             className={cx(s._sidebarItem, {
@@ -151,7 +153,16 @@ const KindItem = connect(
           </div>
           <div className={s._bottomInfo}>
             <div className={s._price}>
-              {activeGame.price.toLocaleString()} ₽
+              {activeGame.price.toLocaleString()}
+              <span
+                style={{
+                  fontFamily: "Roboto",
+                  fontWeight: 700,
+                }}
+              >
+                {" "}
+                ₽
+              </span>
             </div>
             <div className={s._time}>на {activeGame.time} часов</div>
             <div className={s._peopleCount}>
