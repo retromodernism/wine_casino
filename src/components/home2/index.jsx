@@ -11,11 +11,10 @@ import { ReactComponent as Feature1 } from "./src/featureIcon_1.svg";
 import { ReactComponent as Feature2 } from "./src/featureIcon_2.svg";
 import { ReactComponent as Feature3 } from "./src/featureIcon_3.svg";
 import { useMediaQuery } from "react-responsive";
-import {
-  makeHeaderLight,
-} from "../../redux/modules/headerColor";
+import { makeHeaderLight } from "../../redux/modules/headerColor";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 const LinkItem = ({ title, href }) => {
   const [isHovered, setHover] = useState(false);
@@ -60,22 +59,21 @@ const HomeCoulinaryCasino = ({
     .map(({ url, title }) => ({ title, href: url }));
 
   /* State */
+
   const [videoIsOpen, setVideoOpen] = useState(false);
-  // const [buttonIsHover, setButtonIsHover] = useState(false);
-  const [showedFoodCasinos, setShowedFoodCasinos] = useState(5);
-  const [showedDrinkCasinos, setShowedDrinkCasinos] = useState(5);
 
-  const hasShowMoreFoodCasinos = showedFoodCasinos < foodCasinos.length;
-  const hasShowMoreDrinkCasinos = showedDrinkCasinos < drinkCasinos.length;
+  const foodCasinosIsScrolling = foodCasinos.length > 5;
+  const drinkCasinosIsScrolling = drinkCasinos.length > 5;
 
-  const showMoreFoodCasinos = setShowedFoodCasinos.bind(
-    null,
-    showedFoodCasinos + 2
-  );
-  const showMoreDrinkCasinos = setShowedDrinkCasinos.bind(
-    null,
-    showedDrinkCasinos + 2
-  );
+  const foodLinksList = useRef(null);
+  const drinkLinksList = useRef(null);
+
+  const scrollDown = (ref) => {
+    const element = ref.current;
+    const currentScrollPosition = element.scrollTop;
+    const newScrollPosition = currentScrollPosition + 97;
+    element.scroll({ left: 0, top: newScrollPosition, behavior: "smooth" });
+  };
 
   return (
     <section
@@ -128,29 +126,44 @@ const HomeCoulinaryCasino = ({
             <div className={cx(s._column, s._links)}>
               <div className={s._linksColumn}>
                 <div className={s._linksTitle}>Съедобное</div>
-                {foodCasinos.map((item, index) =>
-                  index < showedFoodCasinos ? (
+
+                <div
+                  className={cx(s._linksList, {
+                    [s._linksList_scroll]: foodCasinosIsScrolling,
+                  })}
+                  ref={foodLinksList}
+                >
+                  {foodCasinos.map((item, index) => (
                     <LinkItem {...item} key={index} />
-                  ) : null
-                )}
-                {hasShowMoreFoodCasinos && (
+                  ))}
+                </div>
+
+                {foodCasinosIsScrolling && (
                   <button
                     className={s._showMore}
-                    onClick={showMoreFoodCasinos}
+                    onClick={scrollDown.bind(null, foodLinksList)}
                   />
                 )}
               </div>
+
               <div className={s._linksColumn}>
                 <div className={s._linksTitle}>Drink</div>
-                {drinkCasinos.map((item, index) =>
-                  index < showedDrinkCasinos ? (
+
+                <div
+                  className={cx(s._linksList, {
+                    [s._linksList_scroll]: drinkCasinosIsScrolling,
+                  })}
+                  ref={drinkLinksList}
+                >
+                  {drinkCasinos.map((item, index) => (
                     <LinkItem {...item} key={index} />
-                  ) : null
-                )}
-                {hasShowMoreDrinkCasinos && (
+                  ))}
+                </div>
+
+                {drinkCasinosIsScrolling && (
                   <button
                     className={s._showMore}
-                    onClick={showMoreDrinkCasinos}
+                    onClick={scrollDown.bind(null, drinkLinksList)}
                   />
                 )}
               </div>
