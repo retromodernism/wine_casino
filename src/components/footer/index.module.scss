@@ -32,6 +32,10 @@
   @extend %h5;
 }
 
+._formCommunicationWayOption {
+  @extend %body;
+}
+
 @media screen and (min-width: 1300px) {
   .footer {
     margin: 120px 0 115px 0;
@@ -184,13 +188,41 @@
     //   opacity: 0.7;
     // }
   }
-  
+
   ._formPhoneInputWrapper {
     position: relative;
   }
 
   ._formPhoneInput {
     padding-right: 72px;
+  }
+
+  ._formOpenCommunicationWayButton {
+    width: 52px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(./src/arrow.svg) center no-repeat;
+  }
+
+  ._formSelectCommunicationWay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(0, -100%);
+    display: flex;
+    flex-direction: column;
+  }
+
+  ._formCommunicationWayOption {
+    color: #ffffff;
+    padding: 15px;
+    background: none;
+  }
+
+  ._formCommunicationWayOption_hover {
+    background-color: rgba(#ffffff, 0.5);
   }
 
   ._formSubmit {
@@ -363,7 +395,8 @@
     justify-content: center;
   }
 
-  ._inputLabel {
+  ._inputLabel,
+  ._formPhoneInputWrapper {
     margin-top: 24px;
     width: calc(50% - 6px);
     &:nth-child(2n - 1) {
@@ -380,13 +413,41 @@
     //   opacity: 0.7;
     // }
   }
-  
+
   ._formPhoneInputWrapper {
     position: relative;
   }
 
   ._formPhoneInput {
     padding-right: 72px;
+  }
+
+  ._formOpenCommunicationWayButton {
+    width: 52px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(./src/arrow.svg) center no-repeat;
+  }
+
+  ._formSelectCommunicationWay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(0, -100%);
+    display: flex;
+    flex-direction: column;
+  }
+
+  ._formCommunicationWayOption {
+    color: #ffffff;
+    padding: 15px;
+    background: none;
+  }
+
+  ._formCommunicationWayOption_hover {
+    background-color: rgba(#ffffff, 0.5);
   }
 
   ._formSubmit {
@@ -584,7 +645,8 @@
     flex-direction: column;
   }
 
-  ._inputLabel {
+  ._inputLabel,
+  ._formPhoneInputWrapper {
     margin-top: 24px;
   }
 
@@ -608,12 +670,42 @@
     padding-right: 72px;
   }
 
+  ._formOpenCommunicationWayButton {
+    width: 52px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(./src/arrow.svg) center no-repeat;
+  }
+
+  ._formSelectCommunicationWay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(0, -100%);
+    display: flex;
+    flex-direction: column;
+  }
+
+  ._formCommunicationWayOption {
+    color: #ffffff;
+    padding: 15px;
+    background: none;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  ._formCommunicationWayOption_hover {
+    background-color: rgba(#ffffff, 0.5);
+  }
+
   ._formSubmit {
     background: $darkRed;
     color: #ffffff;
     cursor: pointer;
   }
-  
+
   ._formSubmit_hover {
     background: unset;
     color: $black;

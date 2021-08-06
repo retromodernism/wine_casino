@@ -10,6 +10,7 @@ import * as Router from "react-router-dom";
 import * as Scroll from "react-scroll";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
+import { useReducer } from "react";
 
 const defaultData = {
   textColor: "#323232", // цвет текста правого блока
@@ -38,6 +39,22 @@ const Submit = ({ mainColor }) => {
   );
 };
 
+const ComminucationWayOption = ({ onClick, mainColor, ...props }) => {
+  const [isHovered, setHover] = useState(false);
+  return (
+    <button
+      className={cx(s._formCommunicationWayOption, {
+        [s._formCommunicationWayOption_hover]: isHovered,
+      })}
+      onClick={onClick}
+      onMouseEnter={setHover.bind(null, true)}
+      onMouseLeave={setHover.bind(null, false)}
+    >
+      {props.children}
+    </button>
+  );
+};
+
 const Footer = (props) => {
   const { mainColor, innerTextColor, iconColor, textColor } =
     props.data || defaultData;
@@ -51,6 +68,71 @@ const Footer = (props) => {
     query: "screen and (min-width: 768px) and (max-width: 1299px)",
   });
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+
+  /* State */
+
+  const HOVER_COMMUNICATION_WAY = "HOVER_WAY_COMMUNICATION";
+  const UNHOVER_COMMUNICATION_WAY = "UNHOVER_WAY_COMMUNICATION";
+  const CHANGE_COMMUNICATION_WAY = "CHANGE_COMMUNICATION_WAY";
+
+  const communicationWays = [
+    { communicationWay: "Телефон", placeholder: "Ваш телефон" },
+    { communicationWay: "WhatsApp", placeholder: "Ваш WhatsApp" },
+    { communicationWay: "Телеграм", placeholder: "Ваш телеграм" },
+  ];
+
+  const initialState = {
+    communicationWayIsOpen: false,
+    communicationWay: "Телефон",
+    placeholder: "Ваш телефон",
+  };
+
+  const reducer = (state, { type, payload }) => {
+    switch (type) {
+      case HOVER_COMMUNICATION_WAY:
+        return {
+          ...state,
+          communicationWayIsOpen: true,
+        };
+      case UNHOVER_COMMUNICATION_WAY:
+        return {
+          ...state,
+          communicationWayIsOpen: false,
+        };
+      case CHANGE_COMMUNICATION_WAY:
+        return {
+          ...state,
+          communicationWay: payload.communicationWay,
+          placeholder: payload.placeholder,
+        };
+      default:
+        return state;
+    }
+  };
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  /* State Hooks */
+
+  const openCommunicationSelectionPanel = () => {
+    dispatch({ type: HOVER_COMMUNICATION_WAY, payload: {} });
+  };
+
+  const closeCommunicationSelectionPanel = () => {
+    dispatch({ type: UNHOVER_COMMUNICATION_WAY, payload: {} });
+  };
+
+  const toggleCommunicationSelectionPanel = () => {
+    if (state.communicationWayIsOpen) {
+      closeCommunicationSelectionPanel();
+    } else {
+      openCommunicationSelectionPanel();
+    }
+  };
+
+  const toggleCommunicationWay = (communicationItem) => {
+    dispatch({ type: CHANGE_COMMUNICATION_WAY, payload: communicationItem });
+  };
 
   return (
     <footer className={s.footer}>
@@ -76,14 +158,47 @@ const Footer = (props) => {
                 style={{ boxShadow: `inset 0 0 0 1px ${mainColor}` }}
               />
             </label>
-            <label className={s._inputLabel}>
-              <input
-                type="text"
-                className={cx(s._formInput, s._formPhoneInput)}
-                placeholder="Ваш телефон"
-                style={{ boxShadow: `inset 0 0 0 1px ${mainColor}` }}
+            <div className={s._formPhoneInputWrapper}>
+              <label className={s._inputLabel}>
+                <input
+                  type="text"
+                  className={cx(s._formInput, s._formPhoneInput)}
+                  placeholder={state.placeholder}
+                  style={{ boxShadow: `inset 0 0 0 1px ${mainColor}` }}
+                />
+              </label>
+              <button
+                className={s._formOpenCommunicationWayButton}
+                style={{
+                  backgroundColor: mainColor,
+                }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleCommunicationSelectionPanel();
+                }}
+                onMouseLeave={closeCommunicationSelectionPanel}
               />
-            </label>
+              {state.communicationWayIsOpen && (
+                <div
+                  className={s._formSelectCommunicationWay}
+                  onMouseEnter={openCommunicationSelectionPanel}
+                  onMouseLeave={closeCommunicationSelectionPanel}
+                  style={{ backgroundColor: mainColor }}
+                >
+                  {communicationWays.map((item) => (
+                    <ComminucationWayOption
+                      onClick={(e) => {
+                        e.preventDefault();
+                        toggleCommunicationWay(item);
+                        closeCommunicationSelectionPanel();
+                      }}
+                    >
+                      {item.communicationWay}
+                    </ComminucationWayOption>
+                  ))}
+                </div>
+              )}
+            </div>
             <label className={s._inputLabel}>
               <Submit mainColor={mainColor} />
             </label>
@@ -243,7 +358,7 @@ const Footer = (props) => {
                 Классическое казино
               </span>
             </Link>
-            <Link href="/attractions" className={s._link}>
+            <Link to="/attractions" className={s._link}>
               <span className={s._linkText} style={{ color: textColor }}>
                 Аттракционы
               </span>
@@ -287,10 +402,41 @@ const Footer = (props) => {
                   <input
                     type="text"
                     className={cx(s._formInput, s._formPhoneInput)}
-                    placeholder="Ваш телефон"
+                    placeholder={state.placeholder}
                     style={{ borderColor: mainColor }}
                   />
                 </label>
+                <button
+                  className={s._formOpenCommunicationWayButton}
+                  style={{
+                    backgroundColor: mainColor,
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleCommunicationSelectionPanel();
+                  }}
+                  onMouseLeave={closeCommunicationSelectionPanel}
+                />
+                {state.communicationWayIsOpen && (
+                  <div
+                    className={s._formSelectCommunicationWay}
+                    onMouseEnter={openCommunicationSelectionPanel}
+                    onMouseLeave={closeCommunicationSelectionPanel}
+                    style={{ backgroundColor: mainColor }}
+                  >
+                    {communicationWays.map((item) => (
+                      <ComminucationWayOption
+                        onClick={(e) => {
+                          e.preventDefault();
+                          toggleCommunicationWay(item);
+                          closeCommunicationSelectionPanel();
+                        }}
+                      >
+                        {item.communicationWay}
+                      </ComminucationWayOption>
+                    ))}
+                  </div>
+                )}
               </div>
               <label>
                 <Submit mainColor={mainColor} />
