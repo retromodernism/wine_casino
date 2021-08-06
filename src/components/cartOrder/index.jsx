@@ -102,9 +102,9 @@ const CartOrder = ({
             <div className={s._orderContent}>
               <div className={s._orderItems}>
                 {cartPositions.map(
-                  ({ title, count, cartItemDescription }, index) => (
+                  ({ cartTitle, count, cartItemDescription }, index) => (
                     <div className={s._orderItem} key={index}>
-                      <div className={s._orderItemTitle}>{title}</div>
+                      <div className={s._orderItemTitle}>{cartTitle}</div>
                       <div className={s._orderItemDescription}>
                         {cartItemDescription
                           ? cartItemDescription

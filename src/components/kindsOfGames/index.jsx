@@ -13,7 +13,7 @@ import { addPosition } from "../../redux/modules/cart";
 
 const defaultData = {
   title: "Разновидности Покера",
-  gameType: "poker",
+  gameType: "ruletka",
 };
 
 /* Slider Params */
@@ -117,9 +117,12 @@ const KindItem = connect(
     ({ id }) => id === activePositionId
   );
 
+  /* IsScrolling */
+  const isScrolling = gamesPositions.length > 5;
+
   return (
     <div className={s._kindItem}>
-      <div className={s._sidebar}>
+      <div className={cx(s._sidebar, {[s._sidebar_scroll]: isScrolling})}>
         {gamesPositions.map(({ title, id }, index) => (
           <button
             className={cx(s._sidebarItem, {

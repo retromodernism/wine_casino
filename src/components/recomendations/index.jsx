@@ -1,14 +1,10 @@
 import s from "./index.module.scss";
 import cx from "classnames";
-import cheese from "./src/cheese.png";
-import fence from "./src/fence.png";
-import cash from "./src/cash.png";
 import { ReactComponent as Plus } from "./src/plus.svg";
 import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
 import "./swiper.scss";
-import { Fragment } from "react";
 import { connect } from "react-redux";
 import { addPosition } from "../../redux/modules/cart";
 
@@ -27,7 +23,6 @@ const Recomendations = ({
   addPosition,
   ...props
 }) => {
-  console.log(positionsIdsInCart, positions);
   const positionsNotInCart = positions.filter(
     ({ id }) => !positionsIdsInCart.includes(id)
   );
@@ -85,7 +80,7 @@ const Recomendations = ({
           >
             {recomendations.map(
               ({ cartTitle, cartItemDescription, price, image, id }, index) => (
-                <SwiperSlide key={0} key={index}>
+                <SwiperSlide key={index}>
                   <div className={s._item}>
                     <div className={s._itemImageWrapper}>
                       <img src={image.cart} alt="" className={s._itemImage} />

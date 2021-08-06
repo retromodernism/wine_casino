@@ -6886,7 +6886,7 @@ const casinos = [
     },
     kindsOfGames: {
       title: "Разновидности Рулеток",
-      gameType: "poker",
+      gameType: "ruletka",
     },
     promotion: {
       color: "#323232",
@@ -7046,7 +7046,7 @@ const casinos = [
       ],
     },
     kindsOfGames: {
-      title: "Разновидности Рулеток",
+      title: "Разновидности Покера",
       gameType: "poker",
     },
     promotion: {
@@ -7207,8 +7207,8 @@ const casinos = [
       ],
     },
     kindsOfGames: {
-      title: "Разновидности Рулеток",
-      gameType: "poker",
+      title: "Разновидности Блэк Джэка",
+      gameType: "blackJack",
     },
     promotion: {
       color: "#323232",
@@ -7368,8 +7368,8 @@ const casinos = [
       ],
     },
     kindsOfGames: {
-      title: "Разновидности Рулеток",
-      gameType: "poker",
+      title: "Разновидности Крэпса",
+      gameType: "craps",
     },
     promotion: {
       color: "#323232",
@@ -7529,8 +7529,8 @@ const casinos = [
       ],
     },
     kindsOfGames: {
-      title: "Разновидности Рулеток",
-      gameType: "poker",
+      title: "Разновидности Аттракционов",
+      gameType: "ruletka",
     },
     promotion: {
       color: "#323232",
@@ -7690,8 +7690,8 @@ const casinos = [
       ],
     },
     kindsOfGames: {
-      title: "Разновидности Рулеток",
-      gameType: "poker",
+      title: "Разновидности Аттракционов",
+      gameType: "attraction",
     },
     promotion: {
       color: "#323232",
@@ -7851,8 +7851,8 @@ const casinos = [
       ],
     },
     kindsOfGames: {
-      title: "Разновидности Рулеток",
-      gameType: "poker",
+      title: "Разновидности Игровых Автоматов",
+      gameType: "automats",
     },
     promotion: {
       color: "#323232",
@@ -8012,8 +8012,8 @@ const casinos = [
       ],
     },
     kindsOfGames: {
-      title: "Разновидности Рулеток",
-      gameType: "poker",
+      title: "Разновидности Бильярда",
+      gameType: "ruletka",
     },
     promotion: {
       color: "#323232",
@@ -8173,8 +8173,8 @@ const casinos = [
       ],
     },
     kindsOfGames: {
-      title: "Разновидности Рулеток",
-      gameType: "poker",
+      title: "Разновидности Онлайн Казино",
+      gameType: "online",
     },
     promotion: {
       color: "#323232",
