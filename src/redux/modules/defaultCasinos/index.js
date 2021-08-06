@@ -8,15 +8,15 @@ import bgWine_desktop from "./src/bgWine.png";
 import bgWine_tablet from "./src/bgWine_tab.png";
 import bgWine_mobile from "./src/bgWine_mob.png";
 /* Essence */
-import wineglass from "./src/wineglass.png";
-import chips from "./src/chips.png";
-import peoples from "./src/peoples.png";
-import wine from "./src/wine.png";
+import wineglass from "./src/wineglass.webp";
+import chips from "./src/chips.webp";
+import peoples from "./src/peoples.webp";
+import wine from "./src/wine.webp";
 /* Masterclass */
 import pizzaIcon from "./src/masterclass/iconPizza.svg";
 import lidIcon from "./src/masterclass/iconLid.svg";
 import juiceIcon from "./src/masterclass/iconJuice.svg";
-import masterclassImage from "./src/masterclass/image.png";
+import masterclassImage from "./src/masterclass/image.webp";
 import iconWineglass from "./src/masterclass/iconWineglass.svg";
 import iconParty from "./src/masterclass/iconParty.svg";
 import iconConference from "./src/masterclass/iconConference.svg";

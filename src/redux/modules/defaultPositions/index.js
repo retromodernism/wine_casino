@@ -7,19 +7,19 @@ import wineCasino_maxi from "../../../components/variants/src/image3.png";
 import wineCasinoCart from "../../../components/cart/src/wineCasinoImage.png";
 
 // Equipment images
-import chairClassic from "../../../components/additionals/src/chairClassic.png";
-import chairKyara from "../../../components/additionals/src/chair.png";
-import chairLeather from "../../../components/additionals/src/leatherChair.png";
-import cash from "../../../components/additionals/src/cash.png";
-import pillars from "./src/equipments/pillars.png";
-import hangers from "./src/equipments/hangers.png";
+import chairClassic from "./src/equipments/chairClassic.webp";
+import chairKyara from "./src/equipments/chair.webp";
+import chairLeather from "./src/equipments/leatherChair.webp";
+import cash from "./src/equipments/cash.webp";
+import pillars from "./src/equipments/pillars.webp";
+import hangers from "./src/equipments/hangers.webp";
 
 // Services images
 import pitBoss from "../../../components/additionals/src/pitBoss.png";
 import magician from "../../../components/additionals/src/magician.png";
 import thimblerigger from "../../../components/additionals/src/thimblerigger.png";
-import chips from "./src/services/chips.png";
-import table from "./src/services/table.png";
+import chips from "./src/services/chips.webp";
+import table from "./src/services/table.webp";
 
 /** Casino cart icons */
 import attractionMiniIcon from "../defaultCasinos/src/casinoCartIcons/attraction.png";
