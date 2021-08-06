@@ -54,7 +54,8 @@ import bgCheese_desktop from "./src/bgCheese.png";
 import bgCheese_tablet from "./src/bgCheese_tab.png";
 import bgCheese_mobile from "./src/bgCheese_mob.png";
 /* Essence */
-import imageEssenceCheese from "./src/cheeseCasino/essence/image1.png";
+import image1EssenceCheese from "./src/cheeseCasino/essence/image1.png";
+import image4EssenceCheese from "./src/cheeseCasino/essence/image4.png";
 import bgEssenceCheese from "./src/cheeseCasino/essence/bg.png";
 /* Promotion */
 import bgCheesePromotion from "./src/cheeseCasino/promotion/bg.png";
@@ -114,6 +115,8 @@ import chipsRightNonAlcoholic from "./src/nonAlcoholicCasino/home/chipsRight.svg
 import chipsLeftNonAlcoholic from "./src/nonAlcoholicCasino/home/chipsLeft.svg";
 /* Essence */
 import bgEssenceNonAlco from "./src/nonAlcoholicCasino/essence/bg.png";
+import image1EssenceNonAlco from "./src/nonAlcoholicCasino/essence/image1.png";
+import image4EssenceNonAlco from "./src/nonAlcoholicCasino/essence/image4.png";
 /* Promotion */
 import bgPromotionNonAlco from "./src/nonAlcoholicCasino/promotion/bg.png";
 /* Additionals */
@@ -133,6 +136,8 @@ import chipsRightCoffee from "./src/coffee/home/chipsRight.svg";
 import chipsLeftCoffee from "./src/coffee/home/chipsLeft.svg";
 /* Essence */
 import bgEssenceCoffe from "./src/coffee/essence/bg.png";
+import image1EssenceCoffee from "./src/coffee/essence/image1.png";
+import image4EssenceCoffee from "./src/coffee/essence/image4.png";
 /* Promotion */
 import bgPromotionCoffee from "./src/coffee/promotion/bg.png";
 /* Additionals */
@@ -153,6 +158,8 @@ import chipsRightChampagne from "./src/champagne/home/chipsRight.svg";
 import chipsLeftChampagne from "./src/champagne/home/chipsLeft.svg";
 /* Essence */
 import bgEssenceChampagne from "./src/champagne/essence/bg.png";
+import image1EssenceChampagne from "./src/champagne/essence/image1.png";
+import image4EssenceChampagne from "./src/champagne/essence/image4.png";
 /* Promotion */
 import bgPromotionChampagne from "./src/champagne/promotion/bg.png";
 /* Additionals */
@@ -172,6 +179,8 @@ import chipsRightHoney from "./src/honey/home/chipsRight.svg";
 import chipsLeftHoney from "./src/honey/home/chipsLeft.svg";
 /* Essence */
 import bgEssenceHoney from "./src/honey/essence/bg.png";
+import image1EssenceHoney from "./src/honey/essence/image1.png";
+import image4EssenceHoney from "./src/honey/essence/image4.png";
 /* Promotion */
 import bgPromotionHoney from "./src/honey/promotion/bg.png";
 /* Additionals */
@@ -190,6 +199,8 @@ import chipsRightBread from "./src/bread/home/chipsRight.svg";
 import chipsLeftBread from "./src/bread/home/chipsLeft.svg";
 /* Essence */
 import bgEssenceBread from "./src/bread/essence/bg.png";
+import image1EssenceBread from "./src/bread/essence/image1.png";
+import image4EssenceBread from "./src/bread/essence/image4.png";
 /* Promotion */
 import bgPromotionBread from "./src/bread/promotion/bg.png";
 /* Additionals */
@@ -208,6 +219,8 @@ import chipsRightFat from "./src/fat/home/chipsRight.svg";
 import chipsLeftFat from "./src/fat/home/chipsLeft.svg";
 /* Essence */
 import bgEssenceFat from "./src/fat/essence/bg.png";
+import image1EssenceFat from "./src/fat/essence/image1.png";
+import image4EssenceFat from "./src/fat/essence/image4.png";
 /* Promotion */
 import bgPromotionFat from "./src/fat/promotion/bg.png";
 /* Additionals */
@@ -898,7 +911,7 @@ const casinos = [
           title: "Дегустация",
           description:
             "В начале игры сомелье рассказывает правила, раздаёт фишки и предлагает игрокам продегустировать определенный вид вина. Гости получают пробник, и пытаются и понять вкусовые и иные характеристики.",
-          image: imageEssenceCheese,
+          image: image1EssenceCheese,
         },
         {
           title: "Ставки",
@@ -916,7 +929,7 @@ const casinos = [
           title: "Приз",
           description:
             "После завершения всех раундов, определяется победитель с наибольшим числом заработанных очков. Ему выдается сувенир, который согласуется с заказчиком (например, один из продуктов игры).",
-          image: wine,
+          image: image4EssenceCheese,
         },
       ],
       bg: {
@@ -2026,7 +2039,7 @@ const casinos = [
           title: "Дегустация",
           description:
             "В начале игры сомелье рассказывает правила, раздаёт фишки и предлагает игрокам продегустировать определенный вид вина. Гости получают пробник, и пытаются и понять вкусовые и иные характеристики.",
-          image: image1EssenceTea,
+          image: image1EssenceNonAlco,
         },
         {
           title: "Ставки",
@@ -2044,7 +2057,7 @@ const casinos = [
           title: "Приз",
           description:
             "После завершения всех раундов, определяется победитель с наибольшим числом заработанных очков. Ему выдается сувенир, который согласуется с заказчиком (например, один из продуктов игры).",
-          image: image4EssenceTea,
+          image: image4EssenceNonAlco,
         },
       ],
       bg: {
@@ -2402,7 +2415,7 @@ const casinos = [
           title: "Дегустация",
           description:
             "В начале игры сомелье рассказывает правила, раздаёт фишки и предлагает игрокам продегустировать определенный вид вина. Гости получают пробник, и пытаются и понять вкусовые и иные характеристики.",
-          image: image1EssenceTea,
+          image: image1EssenceCoffee,
         },
         {
           title: "Ставки",
@@ -2420,7 +2433,7 @@ const casinos = [
           title: "Приз",
           description:
             "После завершения всех раундов, определяется победитель с наибольшим числом заработанных очков. Ему выдается сувенир, который согласуется с заказчиком (например, один из продуктов игры).",
-          image: image4EssenceTea,
+          image: image4EssenceCoffee,
         },
       ],
       bg: {
@@ -2778,7 +2791,7 @@ const casinos = [
           title: "Дегустация",
           description:
             "В начале игры сомелье рассказывает правила, раздаёт фишки и предлагает игрокам продегустировать определенный вид вина. Гости получают пробник, и пытаются и понять вкусовые и иные характеристики.",
-          image: image1EssenceTea,
+          image: image1EssenceChampagne,
         },
         {
           title: "Ставки",
@@ -2796,7 +2809,7 @@ const casinos = [
           title: "Приз",
           description:
             "После завершения всех раундов, определяется победитель с наибольшим числом заработанных очков. Ему выдается сувенир, который согласуется с заказчиком (например, один из продуктов игры).",
-          image: image4EssenceTea,
+          image: image4EssenceChampagne,
         },
       ],
       bg: {
@@ -3154,7 +3167,7 @@ const casinos = [
           title: "Дегустация",
           description:
             "В начале игры сомелье рассказывает правила, раздаёт фишки и предлагает игрокам продегустировать определенный вид вина. Гости получают пробник, и пытаются и понять вкусовые и иные характеристики.",
-          image: image1EssenceTea,
+          image: image1EssenceHoney,
         },
         {
           title: "Ставки",
@@ -3172,7 +3185,7 @@ const casinos = [
           title: "Приз",
           description:
             "После завершения всех раундов, определяется победитель с наибольшим числом заработанных очков. Ему выдается сувенир, который согласуется с заказчиком (например, один из продуктов игры).",
-          image: image4EssenceTea,
+          image: image4EssenceHoney,
         },
       ],
       bg: {
@@ -3530,7 +3543,7 @@ const casinos = [
           title: "Дегустация",
           description:
             "В начале игры сомелье рассказывает правила, раздаёт фишки и предлагает игрокам продегустировать определенный вид вина. Гости получают пробник, и пытаются и понять вкусовые и иные характеристики.",
-          image: image1EssenceTea,
+          image: image1EssenceBread,
         },
         {
           title: "Ставки",
@@ -3548,7 +3561,7 @@ const casinos = [
           title: "Приз",
           description:
             "После завершения всех раундов, определяется победитель с наибольшим числом заработанных очков. Ему выдается сувенир, который согласуется с заказчиком (например, один из продуктов игры).",
-          image: image4EssenceTea,
+          image: image4EssenceBread,
         },
       ],
       bg: {
@@ -3906,7 +3919,7 @@ const casinos = [
           title: "Дегустация",
           description:
             "В начале игры сомелье рассказывает правила, раздаёт фишки и предлагает игрокам продегустировать определенный вид вина. Гости получают пробник, и пытаются и понять вкусовые и иные характеристики.",
-          image: image1EssenceTea,
+          image: image1EssenceFat,
         },
         {
           title: "Ставки",
@@ -3924,7 +3937,7 @@ const casinos = [
           title: "Приз",
           description:
             "После завершения всех раундов, определяется победитель с наибольшим числом заработанных очков. Ему выдается сувенир, который согласуется с заказчиком (например, один из продуктов игры).",
-          image: image4EssenceTea,
+          image: image4EssenceFat,
         },
       ],
       bg: {
