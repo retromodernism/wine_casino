@@ -53,6 +53,7 @@
 
   ._sidebar_scroll {
     max-height: 609px;
+    padding-right: 10px;
     scrollbar-width: thin;
     scrollbar-color: gray;
     overflow-y: scroll;
@@ -61,7 +62,7 @@
       width: 4px;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: gray rgba(0, 0, 0, 0);
+      background-color: gray;
       border-radius: 10px;
     }
   }
