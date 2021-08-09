@@ -1,15 +1,19 @@
 import s from "./index.module.scss";
 import { connect } from "react-redux";
 import { addPosition } from "../../redux/modules/cart";
+import { changePositionCount } from "../../redux/modules/positions";
 import { useMediaQuery } from "react-responsive";
+import InputMask from "react-input-mask";
 
 const EquipmentItem = ({
+  cartPositionsIds,
   image,
   title,
   price,
-  count = "за шт",
+  count,
   id,
   addPosition,
+  changePositionCount,
   color,
 }) => {
   /* Media Queries */
@@ -22,6 +26,11 @@ const EquipmentItem = ({
   /* State */
 
   const addToCart = addPosition.bind(null, id);
+
+  const positionIsInCart = cartPositionsIds.includes(id);
+
+  const incrementCount = changePositionCount.bind(null, count.value + 1, id);
+  const decrementCount = changePositionCount.bind(null, count.value - 1, id);
 
   return (
     <div
@@ -52,10 +61,48 @@ const EquipmentItem = ({
           </span>
         </p>
         <p className={s._count}>{count.title}</p>
-        <div className={s._plus} onClick={addToCart}></div>
+        {!positionIsInCart && (
+          <div className={s._plus} onClick={addToCart}></div>
+        )}
+        {positionIsInCart && (
+          <div className={s._countSettings}>
+            <div
+              className={s._minusIconWrapper}
+              onClick={() => {
+                decrementCount();
+              }}
+            >
+              <div className={s._minusIcon} style={{ background: "#ffffff" }} />
+            </div>
+            <InputMask
+              mask="999"
+              maskChar=""
+              className={s._countSetting}
+              value={count.value}
+              onChange={(e) => {
+                addToCart();
+                changePositionCount(+e.target.value, id);
+              }}
+              style={{ color: "#ffffff" }}
+            />
+            <div
+              className={s._plusIconWrapper}
+              onClick={() => {
+                incrementCount();
+              }}
+            >
+              <div className={s._plusIcon} style={{ background: "#ffffff" }} />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default connect(null, { addPosition })(EquipmentItem);
+export default connect(
+  (state) => ({
+    cartPositionsIds: state.cart.positionsIds,
+  }),
+  { addPosition, changePositionCount }
+)(EquipmentItem);

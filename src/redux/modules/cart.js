@@ -69,17 +69,6 @@ export const removePosition = (positionId) => async (dispatch, getState) => {
   });
 };
 
-export const getCartItems = () => async (dispatch, getState) => {
-  const state = getState();
-  const cartPositionsIds = state.cart.positionsIds;
-  const positions = state.positions.positions;
-  const positionsInCart = positions.filter(({ id }) =>
-    cartPositionsIds.includes(id)
-  );
-
-  return positionsInCart;
-};
-
 export const resetCart = () => async (dispatch) => {
   dispatch({ type: RESET_CART, payload: null });
 };
