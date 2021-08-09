@@ -185,13 +185,14 @@ const Footer = (props) => {
                   onMouseLeave={closeCommunicationSelectionPanel}
                   style={{ backgroundColor: mainColor }}
                 >
-                  {communicationWays.map((item) => (
+                  {communicationWays.map((item, index) => (
                     <ComminucationWayOption
                       onClick={(e) => {
                         e.preventDefault();
                         toggleCommunicationWay(item);
                         closeCommunicationSelectionPanel();
                       }}
+                      key={index}
                     >
                       {item.communicationWay}
                     </ComminucationWayOption>
@@ -363,11 +364,11 @@ const Footer = (props) => {
                 Аттракционы
               </span>
             </Link>
-            <a href="/" className={s._link}>
+            {/* <a href="/" className={s._link}>
               <span className={s._linkText} style={{ color: textColor }}>
                 Наши программы
               </span>
-            </a>
+            </a> */}
             <Link to="/news" className={s._link}>
               <span className={s._linkText} style={{ color: textColor }}>
                 Новости
@@ -424,13 +425,14 @@ const Footer = (props) => {
                     onMouseLeave={closeCommunicationSelectionPanel}
                     style={{ backgroundColor: mainColor }}
                   >
-                    {communicationWays.map((item) => (
+                    {communicationWays.map((item, index) => (
                       <ComminucationWayOption
                         onClick={(e) => {
                           e.preventDefault();
                           toggleCommunicationWay(item);
                           closeCommunicationSelectionPanel();
                         }}
+                        key={index}
                       >
                         {item.communicationWay}
                       </ComminucationWayOption>

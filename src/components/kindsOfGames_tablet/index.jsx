@@ -202,7 +202,7 @@ const KindsOfGames_tablet = ({ positions, ...props }) => {
     <section className={s.kindsOfGames}>
       <div className={s._title}>{title}</div>
       <ul className={s._list}>
-        {gamesPositions.map(({ title, id }) => {
+        {gamesPositions.map(({ title, id }, index) => {
           const isActive = id === activePositionId;
           return (
             <li
@@ -210,6 +210,7 @@ const KindsOfGames_tablet = ({ positions, ...props }) => {
                 [s._listItem_active]: isActive,
               })}
               onClick={setActivePositionId.bind(null, id)}
+              key={index}
             >
               <div className={s._listItemTitle}>{title}</div>
               {isActive && <GameItem {...{ id }} />}

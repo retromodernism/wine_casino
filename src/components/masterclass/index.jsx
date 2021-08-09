@@ -188,7 +188,7 @@ const Masterclass = (props) => {
                 />
                 <div className={s._rentFeatures}>
                   {rent.items.map(({ icon, title }, index) => (
-                    <div className={s._rentFeature}>
+                    <div className={s._rentFeature} key={index}>
                       <div
                         className={s._rentFeatureIcon}
                         style={{

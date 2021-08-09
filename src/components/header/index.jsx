@@ -21,7 +21,12 @@ import GoToCartButton from "../goToCartButton";
 import HeaderSearchBar from "../headerSearchBar";
 import { connect } from "react-redux";
 import { setSocialsHover } from "../../redux/modules/headerSocialsHover";
-import { setCatalogHover } from "../../redux/modules/catalogHover";
+import {
+  openFoodCasinos,
+  closeFoodCasinos,
+  openClassicCasinos,
+  closeClassicCasinos,
+} from "../../redux/modules/catalogHover";
 import { openSearchBar } from "../../redux/modules/tabletSearchBar";
 import { openBurger } from "../../redux/modules/burger";
 import CatalogHoverPanel from "../catalogHoverPanel";
@@ -38,10 +43,14 @@ const phone = {
 const Header = ({
   searchBarIsOpen,
   socialsIsHovered,
-  catalogIsHovered,
+  foodCasinosIsOpen,
+  classicCasinosIsOpen,
   cartPositionsCount,
   setSocialsHover,
-  setCatalogHover,
+  openFoodCasinos,
+  closeFoodCasinos,
+  openClassicCasinos,
+  closeClassicCasinos,
   headerColor,
   openBurger,
   openSearchBar,
@@ -115,20 +124,31 @@ const Header = ({
             <ul className={s._navList}>
               <li
                 className={cx(s._navListItem, s._navListItem_arrow, {
-                  [s._navListArrow_hover]: catalogIsHovered,
+                  [s._navListArrow_hover]: foodCasinosIsOpen,
                 })}
-                onMouseEnter={setCatalogHover.bind(null, true)}
-                onMouseLeave={setCatalogHover.bind(null, false)}
+                onMouseEnter={openFoodCasinos}
+                onMouseLeave={closeFoodCasinos}
               >
-                <div className={s._catalog}>Каталог казино</div>
+                <div className={s._catalog}>Кулинарное казино</div>
                 <div className={s._catalogArrow}></div>
-                {catalogIsHovered && <CatalogHoverPanel />}
+                {foodCasinosIsOpen && <CatalogHoverPanel casinosType="foodCasino" />}
               </li>
-              <li className={s._navListItem}>
+              <li
+                className={cx(s._navListItem, s._navListItem_arrow, {
+                  [s._navListArrow_hover]: classicCasinosIsOpen,
+                })}
+                onMouseEnter={openClassicCasinos}
+                onMouseLeave={closeClassicCasinos}
+              >
+                <div className={s._catalog}>Классическое казино</div>
+                <div className={s._catalogArrow}></div>
+                {classicCasinosIsOpen && <CatalogHoverPanel casinosType="classicCasino" />}
+              </li>
+              {/* <li className={s._navListItem}>
                 <a href="/" className={s._catalog}>
                   Наши программы
                 </a>
-              </li>
+              </li> */}
               <li className={s._navListItem}>
                 <Link to="/contacts" className={s._catalog}>
                   Контакты
@@ -227,10 +247,20 @@ const Header = ({
 export default connect(
   (state) => ({
     socialsIsHovered: state.headerSocialsHover.isHovered,
-    catalogIsHovered: state.catalogHover.isHovered,
+    foodCasinosIsOpen: state.catalogHover.foodCasinosIsOpen,
+    classicCasinosIsOpen: state.catalogHover.classicCasinosIsOpen,
+    // catalogIsHovered: state.catalogHover.isHovered,
     searchBarIsOpen: state.tabletSearchBar.searchBarIsOpen,
     headerColor: state.headerColor.color,
     cartPositionsCount: state.cart.positionsIds.length,
   }),
-  { setSocialsHover, setCatalogHover, openBurger, openSearchBar }
+  {
+    setSocialsHover,
+    openFoodCasinos,
+    closeFoodCasinos,
+    openClassicCasinos,
+    closeClassicCasinos,
+    openBurger,
+    openSearchBar,
+  }
 )(Header);

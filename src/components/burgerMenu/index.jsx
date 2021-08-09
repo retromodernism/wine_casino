@@ -75,9 +75,9 @@ const BurgerMenu = ({ casinos, closeBurger, ...props }) => {
               </div>
             )}
           </li>
-          <li className={s._item}>
+          {/* <li className={s._item}>
             <p>Наши программы</p>
-          </li>
+          </li> */}
           <li className={s._item}>
             <Link to="/contacts" onClick={closeBurger}>Контакты</Link>
           </li>

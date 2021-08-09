@@ -1,6 +1,11 @@
 import s from "./index.module.scss";
 import { connect } from "react-redux";
-import { setCatalogHover } from "../../redux/modules/catalogHover";
+import {
+  openFoodCasinos,
+  closeFoodCasinos,
+  openClassicCasinos,
+  closeClassicCasinos,
+} from "../../redux/modules/catalogHover";
 import classnames from "classnames";
 import { ReactComponent as Apple } from "./src/apple.svg";
 import { ReactComponent as Cards } from "./src/cards.svg";
@@ -117,33 +122,51 @@ const linksInit = [
   },
 ];
 
-const CatalogHoverPanel = ({ setCatalogHover, casinos }) => {
-  const foodCasinos = casinos.filter(({ type }) => type === "foodCasino");
-  const classicCasinos = casinos.filter(({ type }) => type === "classicCasino");
+const CatalogHoverPanel = ({
+  casinosType = "foodCasino",
+  openFoodCasinos,
+  closeFoodCasinos,
+  openClassicCasinos,
+  closeClassicCasinos,
+  casinos,
+}) => {
+  const casinosToPrint = casinos.filter(({ type }) => type === casinosType);
+
+  // const foodCasinos = casinos.filter(({ type }) => type === "foodCasino");
+  // const classicCasinos = casinos.filter(({ type }) => type === "classicCasino");
+
+  const openPanel =
+    casinosType === "foodCasino" ? openFoodCasinos : openClassicCasinos;
+
+  const closePanel =
+    casinosType === "foodCasino" ? closeFoodCasinos : closeClassicCasinos;
 
   const currentPath = useLocation().pathname;
 
   const casinosLinks = [
     {
-      title: "Кулинарное казино",
-      link: "/",
+      title:
+        casinosType === "foodCasino"
+          ? "Кулинарное казино"
+          : "Классическое казино",
+      link: casinosType === "foodCasino" ? "/" : "/klassicheskoe-kazino",
       isActive: true,
-      links: foodCasinos.map(({ url, title }) => ({
+      links: casinosToPrint.map(({ url, title }) => ({
         title,
         href: url,
         isActive: currentPath === url,
       })),
     },
-    {
-      title: "Классическое казино",
-      link: "/klassicheskoe-kazino",
-      isActive: false,
-      links: classicCasinos.map(({ url, title }) => ({
-        title,
-        href: url,
-        isActive: currentPath === url,
-      })),
-    },
+    // {
+    //   title: "Классическое казино",
+    //   link: "/klassicheskoe-kazino",
+    //   isActive: false,
+    //   links: classicCasinos.map(({ url, title }) => ({
+    //     title,
+    //     href: url,
+    //     isActive: currentPath === url,
+    //   })),
+    // },
   ];
 
   const [links, setLinks] = useState(casinosLinks);
@@ -159,8 +182,8 @@ const CatalogHoverPanel = ({ setCatalogHover, casinos }) => {
   return (
     <div
       className={s._catalogHoverPanel}
-      onMouseEnter={setCatalogHover.bind(null, true)}
-      onMouseLeave={setCatalogHover.bind(null, false)}
+      onMouseEnter={openPanel}
+      onMouseLeave={closePanel}
     >
       <div className={s._cateories}>
         {links.map(({ title, isActive, link }, index) => (
@@ -170,7 +193,7 @@ const CatalogHoverPanel = ({ setCatalogHover, casinos }) => {
             })}
             to={link}
             onMouseEnter={activateCategory.bind(null, title)}
-            onClick={setCatalogHover.bind(null, false)}
+            onClick={closePanel}
           >
             {index === 0 ? (
               <Apple className={s._categoriesItemIcon_apple} />
@@ -190,7 +213,7 @@ const CatalogHoverPanel = ({ setCatalogHover, casinos }) => {
             <Link
               to={href}
               className={classnames(s._link, { [s._link_active]: isActive })}
-              onClick={setCatalogHover.bind(null, false)}
+              onClick={closePanel}
             >
               {title}
             </Link>
@@ -201,5 +224,8 @@ const CatalogHoverPanel = ({ setCatalogHover, casinos }) => {
 };
 
 export default connect((state) => ({ casinos: state.casinos.casinos }), {
-  setCatalogHover,
+  openFoodCasinos,
+  closeFoodCasinos,
+  openClassicCasinos,
+  closeClassicCasinos,
 })(CatalogHoverPanel);
