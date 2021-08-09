@@ -61,10 +61,7 @@ const EquipmentItem = ({
           </span>
         </p>
         <p className={s._count}>{count.title}</p>
-        {!positionIsInCart && (
-          <div className={s._plus} onClick={addToCart}></div>
-        )}
-        {positionIsInCart && (
+        {positionIsInCart ? (
           <div className={s._countSettings}>
             <div
               className={s._minusIconWrapper}
@@ -94,6 +91,8 @@ const EquipmentItem = ({
               <div className={s._plusIcon} style={{ background: "#ffffff" }} />
             </div>
           </div>
+        ) : (
+          <div className={s._plus} onClick={addToCart}></div>
         )}
       </div>
     </div>
