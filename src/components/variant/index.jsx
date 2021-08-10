@@ -1,14 +1,9 @@
 import s from "./index.module.scss";
 import cx from "classnames";
-import { ReactComponent as Minus } from "./src/minus.svg";
-import { ReactComponent as Plus } from "./src/plus.svg";
-import { ReactComponent as MinusPopular } from "./src/minus_popular.svg";
-import { ReactComponent as PlusPopular } from "./src/plus_popular.svg";
 import { addPosition } from "../../redux/modules/cart";
 import { changePositionCount } from "../../redux/modules/positions";
 import { connect } from "react-redux";
 import { Fragment } from "react";
-import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
 
 import InputMask from "react-input-mask";
@@ -25,13 +20,9 @@ const Variant = ({
   color,
   addPosition,
   changePositionCount,
+  ...props
 }) => {
-  /* Media Queries */
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
 
   const [isExpanded, setExpanded] = useState(false);
   const toggleVariant = () => setExpanded(!isExpanded);
@@ -121,7 +112,9 @@ const Variant = ({
               fontFamily: "Roboto",
               fontWeight: 700,
             }}
-          >{" "}₽
+          >
+            {" "}
+            ₽
           </span>
         </div>
         {isDesktop && (

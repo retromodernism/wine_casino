@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import croupier1 from "./src/croupier1.webp";
 import croupier2 from "./src/croupier2.webp";
 import { useState } from "react";
-import { useMediaQuery } from "react-responsive";
 const ShowMoreButton = () => {
   const [isHovered, setHover] = useState(false);
   return (
@@ -23,13 +22,7 @@ const ShowMoreButton = () => {
 };
 
 const Сroupiers = ({ ...props }) => {
-  /* Media Queries */
-
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
 
   return (
     <section className={s.croupiers}>

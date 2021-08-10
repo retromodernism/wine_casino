@@ -20,56 +20,52 @@ const data = {
 };
 
 const MainPageFoodCasino = (props) => {
-  /* Media Queries */
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
+  const mediaQueries = { isDesktop, isTablet, isMobile };
 
   return (
     <>
-      <Header />
+      <Header {...mediaQueries} />
       <main className={s.main}>
         {isDesktop && (
-          <Fragment>
-            <HomeCoulinaryCasino background={data.homeBg} />
-            <Masterclass />
-            <Promotion background={false} />
-            <Additionals />
-            <Form />
-            <Variants />
-            <Tematic />
-          </Fragment>
+          <>
+            <HomeCoulinaryCasino background={data.homeBg} {...mediaQueries} />
+            <Masterclass {...mediaQueries} />
+            <Promotion background={false} {...mediaQueries} />
+            <Additionals {...mediaQueries} />
+            <Form {...mediaQueries} />
+            <Variants {...mediaQueries} />
+            <Tematic {...mediaQueries} />
+          </>
         )}
         {isTablet && (
-          <Fragment>
-            <HomeCoulinaryCasino background={data.homeBg} />
-            <OtherCasinos />
+          <>
+            <HomeCoulinaryCasino background={data.homeBg} {...mediaQueries} />
+            <OtherCasinos {...mediaQueries} />
             {/* Почему мы */}
-            <Tematic />
-            <Promotion />
-            <Masterclass />
-            <Variants />
-            <Additionals />
-            <Croupiers />
-          </Fragment>
+            <Tematic {...mediaQueries} />
+            <Promotion {...mediaQueries} />
+            <Masterclass {...mediaQueries} />
+            <Variants {...mediaQueries} />
+            <Additionals {...mediaQueries} />
+            <Croupiers {...mediaQueries} />
+          </>
         )}
         {isMobile && (
-          <Fragment>
-            <HomeCoulinaryCasino background={data.homeBg} />
-            <OtherCasinos />
-            <Essence />
-            <Masterclass />
-            <Promotion />
-            <Variants />
-            <Additionals />
-            <Tematic />
-            <Croupiers />
-          </Fragment>
+          <>
+            <HomeCoulinaryCasino background={data.homeBg} {...mediaQueries} />
+            <OtherCasinos {...mediaQueries} />
+            <Essence {...mediaQueries} />
+            <Masterclass {...mediaQueries} />
+            <Promotion {...mediaQueries} />
+            <Variants {...mediaQueries} />
+            <Additionals {...mediaQueries} />
+            <Tematic {...mediaQueries} />
+            <Croupiers {...mediaQueries} />
+          </>
         )}
       </main>
-      <Footer />
+      <Footer {...mediaQueries} />
     </>
   );
 };

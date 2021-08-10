@@ -1,7 +1,7 @@
 import s from "./index.module.scss";
 import "./swiper.scss";
 import cx from "classnames";
-import { useLayoutEffect, useState, Fragment } from "react";
+import { useState, Fragment } from "react";
 import image1 from "./src/1.png";
 import image2 from "./src/2.png";
 import image3 from "./src/3.png";
@@ -13,7 +13,6 @@ import image8 from "./src/8.png";
 import image9 from "./src/9.png";
 import prevArrow from "./src/arrow_prev.svg";
 import nextArrow from "./src/arrow_next.svg";
-import { useMediaQuery } from "react-responsive";
 import Slider from "react-slick";
 
 const croupiers = [
@@ -97,21 +96,12 @@ const NextArrow = ({ className, style, onClick }) => {
 };
 
 const sliderParams = {
-  // autoplay: true,
-  // autoplaySpeed: 5000,
-  // pauseOnHover: true,
   infinite: true,
   speed: 500,
   slidesToScroll: 1,
   prevArrow: <PrevArrow />,
   nextArrow: <NextArrow />,
   className: s._slider,
-  // customPaging: (i) => (
-  //   <a>
-  //     <img src={`${dot}`} className={s._paginationDot} />
-  //   </a>
-  // ),
-  // dots: true,
 };
 
 const Item = ({ image, title, casino }) => {
@@ -138,12 +128,7 @@ const Item = ({ image, title, casino }) => {
 };
 
 const OurCroupiers = (props) => {
-  /* Media Queries */
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
 
   return (
     <section className={s.ourCroupiers}>

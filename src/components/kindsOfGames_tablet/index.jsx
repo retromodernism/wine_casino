@@ -1,16 +1,13 @@
 import s from "./index.module.scss";
 import cx from "classnames";
-import image from "./src/image.png";
 import Slider from "react-slick";
 import prevArrow from "./src/arrow_prev.svg";
 import nextArrow from "./src/arrow_next.svg";
 import dot from "./src/dot_active.svg";
 import "./slider.scss";
-import { useMediaQuery } from "react-responsive";
 import { Fragment, useState } from "react";
 import { connect } from "react-redux";
 import { addPosition } from "../../redux/modules/cart";
-import { isTerminatorless } from "@babel/types";
 
 const defaultData = {
   title: "Разновидности Покера",
@@ -74,14 +71,8 @@ const GameItem = connect(
     positions: state.positions.positions,
   }),
   { addPosition }
-)(({ positions, addPosition, id }) => {
-  /* Media Queries */
-
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+)(({ positions, addPosition, id, ...props }) => {
+  const { isDesktop, isTablet, isMobile } = props;
 
   /* State */
 
@@ -186,6 +177,9 @@ const GameItem = connect(
 const KindsOfGames_tablet = ({ positions, ...props }) => {
   const { title, gameType } = props.data || defaultData;
 
+  const { isDesktop, isTablet, isMobile } = props;
+  const mediaQueries = { isDesktop, isTablet, isMobile };
+
   const gamesPositions = positions.filter(
     ({ casinoType }) => casinoType === gameType
   );
@@ -194,9 +188,9 @@ const KindsOfGames_tablet = ({ positions, ...props }) => {
     gamesPositions[0].id
   );
 
-  const [activeGame] = gamesPositions.filter(
-    ({ id }) => id === activePositionId
-  );
+  // const [activeGame] = gamesPositions.filter(
+  //   ({ id }) => id === activePositionId
+  // );
 
   return (
     <section className={s.kindsOfGames}>
@@ -213,7 +207,7 @@ const KindsOfGames_tablet = ({ positions, ...props }) => {
               key={index}
             >
               <div className={s._listItemTitle}>{title}</div>
-              {isActive && <GameItem {...{ id }} />}
+              {isActive && <GameItem id={id} {...mediaQueries} />}
             </li>
           );
         })}

@@ -1,5 +1,4 @@
 import s from "./index.module.scss";
-import { useMediaQuery } from "react-responsive";
 import { Fragment } from "react";
 import { connect } from "react-redux";
 import { useEffect } from "react";
@@ -11,13 +10,8 @@ import Header from '../header';
 import Footer from "../footer";
 
 const PageNews = ({ news, makeHeaderDark, ...props }) => {
-  /* Media Queries */
-
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
+  const mediaQueries = { isDesktop, isTablet, isMobile };
 
   /* State */
 
@@ -48,17 +42,17 @@ const PageNews = ({ news, makeHeaderDark, ...props }) => {
             ]}
             title={newsItem.title}
           />
-          <NewsItem {...newsItem} />
+          <NewsItem {...newsItem} {...mediaQueries} />
         </Fragment>
       )}
       {isTablet && (
         <Fragment>
-          <NewsItem {...newsItem} />
+          <NewsItem {...newsItem} {...mediaQueries} />
         </Fragment>
       )}
       {isMobile && (
         <Fragment>
-          <NewsItem {...newsItem} />
+          <NewsItem {...newsItem} {...mediaQueries} />
         </Fragment>
       )}
     </main>

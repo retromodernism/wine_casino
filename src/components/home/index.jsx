@@ -1,19 +1,15 @@
 import s from "./index.module.scss";
-import Typical from "react-typical";
 import ReactTypingEffect from "react-typing-effect";
 import "react-modal-video/scss/modal-video.scss";
 import ModalVideo from "react-modal-video";
 import { useState } from "react";
 import classname from "classnames";
-import { ReactComponent as Loupe } from "./src/loupe.svg";
-import { ReactComponent as Format } from "./src/format.svg";
 import {
   makeHeaderDark,
   makeHeaderLight,
 } from "../../redux/modules/headerColor";
 import { connect } from "react-redux";
-import { useLayoutEffect, useEffect } from "react";
-import { useMediaQuery } from "react-responsive";
+import { useEffect } from "react";
 
 const Home = ({ makeHeaderDark, ...props }) => {
   /* Change header color theme */
@@ -26,11 +22,7 @@ const Home = ({ makeHeaderDark, ...props }) => {
     props.data;
 
   /* Media Queries */
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
 
   /* Bg Style */
   let bgStyle;

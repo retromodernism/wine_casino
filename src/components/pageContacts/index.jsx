@@ -11,15 +11,18 @@ import Footer from "../footer";
 
 const ContactsPage = ({ makeHeaderDark, ...props }) => {
   makeHeaderDark();
+  
+  const { isDesktop, isTablet, isMobile } = props;
+  const mediaQueries = { isDesktop, isTablet, isMobile };
 
   return (
     <>
-      <Header />
+      <Header {...mediaQueries} />
       <main className={s.main}>
-        <Contacts />
-        <Promotion background={false} />
+        <Contacts {...mediaQueries} />
+        <Promotion background={false} {...mediaQueries} />
       </main>
-      <Footer />
+      <Footer {...mediaQueries} />
     </>
   );
 };

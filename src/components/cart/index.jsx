@@ -1,22 +1,14 @@
 import s from "./index.module.scss";
 import cx from "classnames";
 import InputMask from "react-input-mask";
-import chair from "./src/chair.png";
-import leatherChair from "./src/leatherChair.png";
-import wineCasinoImage from "./src/wineCasinoImage.png";
-import whiskeyCasinoImage from "./src/whiskeyCasinoImage.png";
-import chips from "./src/chips.png";
 import { ReactComponent as XIcon } from "./src/xIcon.svg";
 import { ReactComponent as Minus } from "./src/minus.svg";
 import { ReactComponent as Plus } from "./src/plus.svg";
-import { useState } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { openCartSuccessPopup } from "../../redux/modules/popup";
 import { removePosition, resetCart } from "../../redux/modules/cart";
 import { changePositionCount } from "../../redux/modules/positions";
 import { Fragment } from "react";
-import { useMediaQuery } from "react-responsive";
 import CartOrder from "../cartOrder";
 
 const Cart = ({
@@ -28,60 +20,7 @@ const Cart = ({
   changePositionCount,
   ...props
 }) => {
-  /* Media Queries */
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
-
-  // "picking positions" / "confirmation form processing"
-  const [cartStatus, setCartStatus] = useState("picking positions");
-
-  // Input state
-  const [wrongNameInput, setWrongNameInput] = useState(false);
-  const [wrongPhoneInput, setWrongPhoneInput] = useState(false);
-
-  // Input state
-  const [formName, setFormName] = useState("");
-  const [formPhone, setFormPhone] = useState("");
-
-  const validateName = () => formName.length > 3;
-  const reg =
-    /^(\+7|7|8)?[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/;
-  const validatePhone = () => reg.test(formPhone);
-
-  const handleNameInputChange = (e) => {
-    setFormName(e.target.value);
-  };
-
-  const handlePhoneInputChange = (e) => {
-    setFormPhone(e.target.value);
-  };
-
-  const handleFormSubmit = () => {
-    const nameInputIsCorrect = validateName();
-    const phoneInputIsCorrect = validatePhone();
-
-    const validationPassed = nameInputIsCorrect && phoneInputIsCorrect;
-
-    if (!nameInputIsCorrect) {
-      setWrongNameInput(true);
-    } else {
-      setWrongNameInput(false);
-    }
-
-    if (!phoneInputIsCorrect) {
-      setWrongPhoneInput(true);
-    } else {
-      setWrongPhoneInput(false);
-    }
-
-    if (validationPassed) {
-      // console.log(formName, formPhone);
-      openCartSuccessPopup();
-    }
-  };
+  const { isDesktop, isTablet, isMobile } = props;
 
   // Working with state
 

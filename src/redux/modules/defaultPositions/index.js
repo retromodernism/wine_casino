@@ -1,10 +1,14 @@
 import hash from "object-hash";
 
 // Casinos images
-import wineCasino_mini from "../../../components/variants/src/image1.png";
-import wineCasino_middle from "../../../components/variants/src/image2.png";
-import wineCasino_maxi from "../../../components/variants/src/image3.png";
-import wineCasinoCart from "../../../components/cart/src/wineCasinoImage.png";
+// import wineCasino_mini from "../defaultCasinos/src/";
+// import wineCasino_middle from "../../../components/variants/src/image2.png";
+// import wineCasino_maxi from "../../../components/variants/src/image3.png";
+// import wineCasinoCart from "../../../components/cart/src/wineCasinoImage.png";
+import wineCasino_mini from "../../../components/variants/src/image1.webp";
+import wineCasino_middle from "../../../components/variants/src/image2.webp";
+import wineCasino_maxi from "../../../components/variants/src/image3.webp";
+import wineCasinoCart from "../../../components/cart/src/wineCasinoImage.webp";
 
 // Equipment images
 import chairClassic from "./src/equipments/chairClassic.webp";
@@ -15,65 +19,65 @@ import pillars from "./src/equipments/pillars.webp";
 import hangers from "./src/equipments/hangers.webp";
 
 // Services images
-import pitBoss from "../../../components/additionals/src/pitBoss.png";
-import magician from "../../../components/additionals/src/magician.png";
-import thimblerigger from "../../../components/additionals/src/thimblerigger.png";
+import pitBoss from "../../../components/additionals/src/pitBoss.webp";
+import magician from "../../../components/additionals/src/magician.webp";
+import thimblerigger from "../../../components/additionals/src/thimblerigger.webp";
 import chips from "./src/services/chips.webp";
 import table from "./src/services/table.webp";
 
 /** Casino cart icons */
-import attractionMiniIcon from "../defaultCasinos/src/casinoCartIcons/attraction.png";
-import automatsMiniIcon from "../defaultCasinos/src/casinoCartIcons/automats.png";
-import beerMiniIcon from "../defaultCasinos/src/casinoCartIcons/beer.png";
-import bilyardMiniIcon from "../defaultCasinos/src/casinoCartIcons/bilyard.png";
-import blackJackMiniIcon from "../defaultCasinos/src/casinoCartIcons/blackJack.png";
-import breadMiniIcon from "../defaultCasinos/src/casinoCartIcons/bread.png";
-import champagneMiniIcon from "../defaultCasinos/src/casinoCartIcons/champagne.png";
-import cheeseMiniIcon from "../defaultCasinos/src/casinoCartIcons/cheese.png";
-import chilliMiniIcon from "../defaultCasinos/src/casinoCartIcons/chilli.png";
-import chocolateMiniIcon from "../defaultCasinos/src/casinoCartIcons/chocolate.png";
-import coffeeMiniIcon from "../defaultCasinos/src/casinoCartIcons/coffee.png";
-import crapsMiniIcon from "../defaultCasinos/src/casinoCartIcons/craps.png";
-import fatMiniIcon from "../defaultCasinos/src/casinoCartIcons/fat.png";
-import honeyMiniIcon from "../defaultCasinos/src/casinoCartIcons/honey.png";
-import kolesoMiniIcon from "../defaultCasinos/src/casinoCartIcons/koleso.png";
-import limonadMiniIcon from "../defaultCasinos/src/casinoCartIcons/limonad.png";
-import liquorMiniIcon from "../defaultCasinos/src/casinoCartIcons/liquor.png";
-import molecularMiniIcon from "../defaultCasinos/src/casinoCartIcons/molecular.png";
-import onlineMiniIcon from "../defaultCasinos/src/casinoCartIcons/online.png";
-import pokerMiniIcon from "../defaultCasinos/src/casinoCartIcons/poker.png";
-import ruletkaMiniIcon from "../defaultCasinos/src/casinoCartIcons/ruletka.png";
-import stakeMiniIcon from "../defaultCasinos/src/casinoCartIcons/stake.png";
-import teaMiniIcon from "../defaultCasinos/src/casinoCartIcons/tea.png";
-import tinctureMiniIcon from "../defaultCasinos/src/casinoCartIcons/tincture.png";
-import whiskeyMiniIcon from "../defaultCasinos/src/casinoCartIcons/whiskey.png";
+import attractionMiniIcon from "../defaultCasinos/src/casinoCartIcons/attraction.webp";
+import automatsMiniIcon from "../defaultCasinos/src/casinoCartIcons/automats.webp";
+import beerMiniIcon from "../defaultCasinos/src/casinoCartIcons/beer.webp";
+import bilyardMiniIcon from "../defaultCasinos/src/casinoCartIcons/bilyard.webp";
+import blackJackMiniIcon from "../defaultCasinos/src/casinoCartIcons/blackJack.webp";
+import breadMiniIcon from "../defaultCasinos/src/casinoCartIcons/bread.webp";
+import champagneMiniIcon from "../defaultCasinos/src/casinoCartIcons/champagne.webp";
+import cheeseMiniIcon from "../defaultCasinos/src/casinoCartIcons/cheese.webp";
+import chilliMiniIcon from "../defaultCasinos/src/casinoCartIcons/chilli.webp";
+import chocolateMiniIcon from "../defaultCasinos/src/casinoCartIcons/chocolate.webp";
+import coffeeMiniIcon from "../defaultCasinos/src/casinoCartIcons/coffee.webp";
+import crapsMiniIcon from "../defaultCasinos/src/casinoCartIcons/craps.webp";
+import fatMiniIcon from "../defaultCasinos/src/casinoCartIcons/fat.webp";
+import honeyMiniIcon from "../defaultCasinos/src/casinoCartIcons/honey.webp";
+import kolesoMiniIcon from "../defaultCasinos/src/casinoCartIcons/koleso.webp";
+import limonadMiniIcon from "../defaultCasinos/src/casinoCartIcons/limonad.webp";
+import liquorMiniIcon from "../defaultCasinos/src/casinoCartIcons/liquor.webp";
+import molecularMiniIcon from "../defaultCasinos/src/casinoCartIcons/molecular.webp";
+import onlineMiniIcon from "../defaultCasinos/src/casinoCartIcons/online.webp";
+import pokerMiniIcon from "../defaultCasinos/src/casinoCartIcons/poker.webp";
+import ruletkaMiniIcon from "../defaultCasinos/src/casinoCartIcons/ruletka.webp";
+import stakeMiniIcon from "../defaultCasinos/src/casinoCartIcons/stake.webp";
+import teaMiniIcon from "../defaultCasinos/src/casinoCartIcons/tea.webp";
+import tinctureMiniIcon from "../defaultCasinos/src/casinoCartIcons/tincture.webp";
+import whiskeyMiniIcon from "../defaultCasinos/src/casinoCartIcons/whiskey.webp";
 
 /** Kind of Games image */
 /* Ruletka */
-import roulette from "./src/ruletka/classic.png";
-import frenchRuletka from "./src/ruletka/french.png";
-import gambleRuletka from "./src/ruletka/gamble.png";
-import amateurRuletka from "./src/ruletka/amateur.png";
-import scandinavianRuletka from "./src/ruletka/scandinavian.png";
-import vipRuletka from "./src/ruletka/vip.png";
+import roulette from "./src/ruletka/classic.webp";
+import frenchRuletka from "./src/ruletka/french.webp";
+import gambleRuletka from "./src/ruletka/gamble.webp";
+import amateurRuletka from "./src/ruletka/amateur.webp";
+import scandinavianRuletka from "./src/ruletka/scandinavian.webp";
+import vipRuletka from "./src/ruletka/vip.webp";
 
 /* Poker */
-import fortunaPoker from "./src/poker/fortuna.png";
+import fortunaPoker from "./src/poker/fortuna.webp";
 
 /* BlackJack */
-import gamingBlackJack from "./src/blackJack/gaming.png";
+import gamingBlackJack from "./src/blackJack/gaming.webp";
 
 /* Craps */
-import greenDiceCraps from "./src/craps/greenDice.png";
+import greenDiceCraps from "./src/craps/greenDice.webp";
 
 /* Automats */
-import automatAutomats from "./src/automats/automat.png";
+import automatAutomats from "./src/automats/automat.webp";
 
 /* Online */
-import blackJackonline from "./src/online/blackJack.png";
+import blackJackonline from "./src/online/blackJack.webp";
 
 /* Attractions */
-import magicBallAttraction from "./src/attractions/magicBall.png";
+import magicBallAttraction from "./src/attractions/magicBall.webp";
 
 const positions = [
   {

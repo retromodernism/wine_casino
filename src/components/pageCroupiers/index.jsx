@@ -1,5 +1,4 @@
 import { Fragment } from "react";
-import { useMediaQuery } from "react-responsive";
 import Header from "../header";
 import Footer from "../footer";
 import OurCroupiers from "../ourCroupiers";
@@ -10,35 +9,30 @@ import { connect } from "react-redux";
 const PageCroupiers = ({ makeHeaderDark, ...props }) => {
   makeHeaderDark();
 
-  /* Media Queries */
-
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
+  const mediaQueries = { isDesktop, isTablet, isMobile };
 
   return (
     <>
-      <Header />
-      <main className={s.main}>
+      <Header {...mediaQueries} />
+      <main className={s.main} {...mediaQueries}>
         {isDesktop && (
           <Fragment>
-            <OurCroupiers />
+            <OurCroupiers {...mediaQueries} />
           </Fragment>
         )}
         {isTablet && (
           <Fragment>
-            <OurCroupiers />
+            <OurCroupiers {...mediaQueries} />
           </Fragment>
         )}
         {isMobile && (
           <Fragment>
-            <OurCroupiers />
+            <OurCroupiers {...mediaQueries} />
           </Fragment>
         )}
       </main>
-      <Footer />
+      <Footer {...mediaQueries} />
     </>
   );
 };

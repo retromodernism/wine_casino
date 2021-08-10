@@ -4,12 +4,9 @@ import "react-modal-video/scss/modal-video.scss";
 import ModalVideo from "react-modal-video";
 import { useState } from "react";
 import cx from "classnames";
-// import { ReactComponent as Loupe } from "./src/loupe.svg";
-// import { ReactComponent as Format } from "./src/format.svg";
 import { ReactComponent as Feature1 } from "./src/featureIcon_1.svg";
 import { ReactComponent as Feature2 } from "./src/featureIcon_2.svg";
 import { ReactComponent as Feature3 } from "./src/featureIcon_3.svg";
-import { useMediaQuery } from "react-responsive";
 import { makeHeaderLight } from "../../redux/modules/headerColor";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -37,12 +34,7 @@ const HomeCoulinaryCasino = ({
 }) => {
   makeHeaderLight();
 
-  /* Media Queries */
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
 
   /* Data */
   const foodCasinos = casinos

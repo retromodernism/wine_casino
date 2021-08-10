@@ -4,9 +4,9 @@ import loupe from "./src/loupe.svg";
 import sertificate from "./src/sertificate.svg";
 import chipLeft_red from "./src/chipLeft_red.svg";
 import chipRight_red from "./src/chipRight_red.svg";
-import bgWine_desktop from "./src/bgWine.png";
-import bgWine_tablet from "./src/bgWine_tab.png";
-import bgWine_mobile from "./src/bgWine_mob.png";
+import bgWine_desktop from "./src/bgWine.webp";
+import bgWine_tablet from "./src/bgWine_tab.webp";
+import bgWine_mobile from "./src/bgWine_mob.webp";
 /* Essence */
 import wineglass from "./src/wineglass.webp";
 import chips from "./src/chips.webp";
@@ -24,15 +24,15 @@ import iconConference from "./src/masterclass/iconConference.svg";
 import camera from "./src/promotion/camera.svg";
 import photograph from "./src/promotion/photograph.svg";
 import sertificatePromotion from "./src/promotion/sertificate.svg";
-import promotionBg from "./src/promotion/bg.png";
+import promotionBg from "./src/promotion/bg.webp";
 /* Additionals */
-import wineAdditinalsBg from "./src/additionals/bg.png";
+import wineAdditinalsBg from "./src/additionals/bg.webp";
 /* HowItWas */
-import imageHowItWas_1 from "./src/howItWas/image1.png";
-import imageHowItWas_2 from "./src/howItWas/image2.png";
-import imageHowItWas_3 from "./src/howItWas/image3.png";
-import imageHowItWas_4 from "./src/howItWas/image4.png";
-import bgHowItWas from "./src/howItWas/bg.png";
+import imageHowItWas_1 from "./src/howItWas/image1.webp";
+import imageHowItWas_2 from "./src/howItWas/image2.webp";
+import imageHowItWas_3 from "./src/howItWas/image3.webp";
+import imageHowItWas_4 from "./src/howItWas/image4.webp";
+import bgHowItWas from "./src/howItWas/bg.webp";
 /* Tematic */
 import gatsby1 from "./src/tematic/gatsby1.webp";
 import gatsby2 from "./src/tematic/gatsby2.webp";
@@ -44,104 +44,104 @@ import mafia1 from "./src/tematic/mafia1.webp";
 import mafia2 from "./src/tematic/mafia2.webp";
 import mafia3 from "./src/tematic/mafia3.webp";
 /* About */
-import imageAbout from "./src/about/image.png";
+import imageAbout from "./src/about/image.webp";
 
 /** Cheese */
 /* Home */
 import chipLeft_yellow from "./src/chipLeft_yellow.svg";
 import chipRight_yellow from "./src/chipRight_yellow.svg";
-import bgCheese_desktop from "./src/bgCheese.png";
-import bgCheese_tablet from "./src/bgCheese_tab.png";
-import bgCheese_mobile from "./src/bgCheese_mob.png";
+import bgCheese_desktop from "./src/bgCheese.webp";
+import bgCheese_tablet from "./src/bgCheese_tab.webp";
+import bgCheese_mobile from "./src/bgCheese_mob.webp";
 /* Essence */
-import image1EssenceCheese from "./src/cheeseCasino/essence/image1.png";
-import image4EssenceCheese from "./src/cheeseCasino/essence/image4.png";
-import bgEssenceCheese from "./src/cheeseCasino/essence/bg.png";
+import image1EssenceCheese from "./src/cheeseCasino/essence/image1.webp";
+import image4EssenceCheese from "./src/cheeseCasino/essence/image4.webp";
+import bgEssenceCheese from "./src/cheeseCasino/essence/bg.webp";
 /* Promotion */
-import bgCheesePromotion from "./src/cheeseCasino/promotion/bg.png";
+import bgCheesePromotion from "./src/cheeseCasino/promotion/bg.webp";
 /* Additionals */
-import bgCheeseAdditionals from "./src/cheeseCasino/additionals/bg.png";
+import bgCheeseAdditionals from "./src/cheeseCasino/additionals/bg.webp";
 /* HowItWas */
-import bgHowItWasCheese from "./src/cheeseCasino/howItWas/bg.png";
-import image1HowItWasCheese from "./src/cheeseCasino/howItWas/image1.png";
-import image2HowItWasCheese from "./src/cheeseCasino/howItWas/image2.png";
-import image3HowItWasCheese from "./src/cheeseCasino/howItWas/image3.png";
-import image4HowItWasCheese from "./src/cheeseCasino/howItWas/image4.png";
+import bgHowItWasCheese from "./src/cheeseCasino/howItWas/bg.webp";
+import image1HowItWasCheese from "./src/cheeseCasino/howItWas/image1.webp";
+import image2HowItWasCheese from "./src/cheeseCasino/howItWas/image2.webp";
+import image3HowItWasCheese from "./src/cheeseCasino/howItWas/image3.webp";
+import image4HowItWasCheese from "./src/cheeseCasino/howItWas/image4.webp";
 
 /** Chocolate */
 /* Home */
 import chipLeftChocolate from "./src/chocolateCasino/home/chipsLeft.svg";
 import chipRightChocolate from "./src/chocolateCasino/home/chipsRight.svg";
-import bgHomeChocolate from "./src/chocolateCasino/home/bg.png";
+import bgHomeChocolate from "./src/chocolateCasino/home/bg.webp";
 /* Essence */
-import bgEssenceChocolate from "./src/chocolateCasino/essence/bg.png";
-import image1EssenceChocolate from "./src/chocolateCasino/essence/image1.png";
-import image4EssenceChocolate from "./src/chocolateCasino/essence/image4.png";
+import bgEssenceChocolate from "./src/chocolateCasino/essence/bg.webp";
+import image1EssenceChocolate from "./src/chocolateCasino/essence/image1.webp";
+import image4EssenceChocolate from "./src/chocolateCasino/essence/image4.webp";
 /* Promotion */
-import bgPromotionChocolate from "./src/chocolateCasino/promotion/bg.png";
+import bgPromotionChocolate from "./src/chocolateCasino/promotion/bg.webp";
 /* Additionals */
-import bgAdditionalsChocolate from "./src/chocolateCasino/additionals/bg.png";
+import bgAdditionalsChocolate from "./src/chocolateCasino/additionals/bg.webp";
 /* HowItWas */
-import bgHowItWasChocolate from "./src/chocolateCasino/howItWas/bg.png";
-import image1HowItWasChocolate from "./src/chocolateCasino/howItWas/image1.png";
-import image2HowItWasChocolate from "./src/chocolateCasino/howItWas/image2.png";
-import image3HowItWasChocolate from "./src/chocolateCasino/howItWas/image3.png";
-import image4HowItWasChocolate from "./src/chocolateCasino/howItWas/image4.png";
+import bgHowItWasChocolate from "./src/chocolateCasino/howItWas/bg.webp";
+import image1HowItWasChocolate from "./src/chocolateCasino/howItWas/image1.webp";
+import image2HowItWasChocolate from "./src/chocolateCasino/howItWas/image2.webp";
+import image3HowItWasChocolate from "./src/chocolateCasino/howItWas/image3.webp";
+import image4HowItWasChocolate from "./src/chocolateCasino/howItWas/image4.webp";
 
 /** Tea Casino */
 /* Home */
 import chipsLeftTea from "./src/teaCasino/home/chipsLeft.svg";
 import chipsRightTea from "./src/teaCasino/home/chipsRight.svg";
-import bgHomeTea from "./src/teaCasino/home/bg.png";
+import bgHomeTea from "./src/teaCasino/home/bg.webp";
 /* Essence */
-import bgEssenceTea from "./src/teaCasino/essence/bg.png";
-import image1EssenceTea from "./src/teaCasino/essence/image1.png";
-import image4EssenceTea from "./src/teaCasino/essence/image4.png";
+import bgEssenceTea from "./src/teaCasino/essence/bg.webp";
+import image1EssenceTea from "./src/teaCasino/essence/image1.webp";
+import image4EssenceTea from "./src/teaCasino/essence/image4.webp";
 /* Promotion */
-import bgPromotionTea from "./src/teaCasino/promotion/bg.png";
+import bgPromotionTea from "./src/teaCasino/promotion/bg.webp";
 /* Additionals */
-import bgAdditionalsTea from "./src/teaCasino/additionals/bg.png";
+import bgAdditionalsTea from "./src/teaCasino/additionals/bg.webp";
 /* HowItWas */
-import bgHowItWasTea from "./src/teaCasino/howItWas/bg.png";
-import image1HowItWasTea from "./src/teaCasino/howItWas/image1.png";
-import image2HowItWasTea from "./src/teaCasino/howItWas/image2.png";
-import image3HowItWasTea from "./src/teaCasino/howItWas/image3.png";
-import image4HowItWasTea from "./src/teaCasino/howItWas/image4.png";
+import bgHowItWasTea from "./src/teaCasino/howItWas/bg.webp";
+import image1HowItWasTea from "./src/teaCasino/howItWas/image1.webp";
+import image2HowItWasTea from "./src/teaCasino/howItWas/image2.webp";
+import image3HowItWasTea from "./src/teaCasino/howItWas/image3.webp";
+import image4HowItWasTea from "./src/teaCasino/howItWas/image4.webp";
 
 /** NonAlcoholic Casino */
 /** Home */
-import bgHomeNonAlcoholic from "./src/nonAlcoholicCasino/home/bg.png";
+import bgHomeNonAlcoholic from "./src/nonAlcoholicCasino/home/bg.webp";
 import chipsRightNonAlcoholic from "./src/nonAlcoholicCasino/home/chipsRight.svg";
 import chipsLeftNonAlcoholic from "./src/nonAlcoholicCasino/home/chipsLeft.svg";
 /* Essence */
-import bgEssenceNonAlco from "./src/nonAlcoholicCasino/essence/bg.png";
-import image1EssenceNonAlco from "./src/nonAlcoholicCasino/essence/image1.png";
-import image4EssenceNonAlco from "./src/nonAlcoholicCasino/essence/image4.png";
+import bgEssenceNonAlco from "./src/nonAlcoholicCasino/essence/bg.webp";
+import image1EssenceNonAlco from "./src/nonAlcoholicCasino/essence/image1.webp";
+import image4EssenceNonAlco from "./src/nonAlcoholicCasino/essence/image4.webp";
 /* Promotion */
-import bgPromotionNonAlco from "./src/nonAlcoholicCasino/promotion/bg.png";
+import bgPromotionNonAlco from "./src/nonAlcoholicCasino/promotion/bg.webp";
 /* Additionals */
-import bgAdditionalsNonAlco from "./src/nonAlcoholicCasino/additionals/bg.png";
+import bgAdditionalsNonAlco from "./src/nonAlcoholicCasino/additionals/bg.webp";
 /* HowItWas */
-import bgHowItWasNonAlco from "./src/nonAlcoholicCasino/howitWas/bg.png";
-import image1HowItWasNonAlco from "./src/nonAlcoholicCasino/howitWas/image1.png";
-import image2HowItWasNonAlco from "./src/nonAlcoholicCasino/howitWas/image2.png";
-import image3HowItWasNonAlco from "./src/nonAlcoholicCasino/howitWas/image3.png";
-import image4HowItWasNonAlco from "./src/nonAlcoholicCasino/howitWas/image4.png";
+import bgHowItWasNonAlco from "./src/nonAlcoholicCasino/howitWas/bg.webp";
+import image1HowItWasNonAlco from "./src/nonAlcoholicCasino/howitWas/image1.webp";
+import image2HowItWasNonAlco from "./src/nonAlcoholicCasino/howitWas/image2.webp";
+import image3HowItWasNonAlco from "./src/nonAlcoholicCasino/howitWas/image3.webp";
+import image4HowItWasNonAlco from "./src/nonAlcoholicCasino/howitWas/image4.webp";
 
 /** Coffee */
 /* Home */
-import bgHomeCoffee from "./src/coffee/home/bg.png";
-import bgMobHomeCoffee from "./src/coffee/home/bg_mob.png";
+import bgHomeCoffee from "./src/coffee/home/bg.webp";
+import bgMobHomeCoffee from "./src/coffee/home/bg_mob.webp";
 import chipsRightCoffee from "./src/coffee/home/chipsRight.svg";
 import chipsLeftCoffee from "./src/coffee/home/chipsLeft.svg";
 /* Essence */
-import bgEssenceCoffe from "./src/coffee/essence/bg.png";
-import image1EssenceCoffee from "./src/coffee/essence/image1.png";
-import image4EssenceCoffee from "./src/coffee/essence/image4.png";
+import bgEssenceCoffe from "./src/coffee/essence/bg.webp";
+import image1EssenceCoffee from "./src/coffee/essence/image1.webp";
+import image4EssenceCoffee from "./src/coffee/essence/image4.webp";
 /* Promotion */
 import bgPromotionCoffee from "./src/coffee/promotion/bg.webp";
 /* Additionals */
-import bgAdditionalsCoffee from "./src/coffee/additionals/bg.png";
+import bgAdditionalsCoffee from "./src/coffee/additionals/bg.webp";
 /* HowItWas */
 import bgHowItWasCoffe from "./src/coffee/howItWas/bg.webp";
 import image1HowItWasCoffee from "./src/coffee/howItWas/image1.webp";
@@ -151,25 +151,25 @@ import image4HowItWasCoffee from "./src/coffee/howItWas/image4.webp";
 
 /** Champagne */
 /* Home */
-import bgHomeChampagne from "./src/champagne/home/bg.png";
-import bgTabHomeChampagne from "./src/champagne/home/bg_tab.png";
-import bgMobHomeChampagne from "./src/champagne/home/bg_mob.png";
+import bgHomeChampagne from "./src/champagne/home/bg.webp";
+import bgTabHomeChampagne from "./src/champagne/home/bg_tab.webp";
+import bgMobHomeChampagne from "./src/champagne/home/bg_mob.webp";
 import chipsRightChampagne from "./src/champagne/home/chipsRight.svg";
 import chipsLeftChampagne from "./src/champagne/home/chipsLeft.svg";
 /* Essence */
-import bgEssenceChampagne from "./src/champagne/essence/bg.png";
-import image1EssenceChampagne from "./src/champagne/essence/image1.png";
-import image4EssenceChampagne from "./src/champagne/essence/image4.png";
+import bgEssenceChampagne from "./src/champagne/essence/bg.webp";
+import image1EssenceChampagne from "./src/champagne/essence/image1.webp";
+import image4EssenceChampagne from "./src/champagne/essence/image4.webp";
 /* Promotion */
-import bgPromotionChampagne from "./src/champagne/promotion/bg.png";
+import bgPromotionChampagne from "./src/champagne/promotion/bg.webp";
 /* Additionals */
-import bgAdditionalsChampagne from "./src/champagne/additionals/bg.png";
+import bgAdditionalsChampagne from "./src/champagne/additionals/bg.webp";
 /* HowItWas */
-import bgHowItWasChampagne from "./src/champagne/howItWas/bg.png";
-import image1HowItWasChampagne from "./src/champagne/howItWas/image1.png";
-import image2HowItWasChampagne from "./src/champagne/howItWas/image2.png";
-import image3HowItWasChampagne from "./src/champagne/howItWas/image3.png";
-import image4HowItWasChampagne from "./src/champagne/howItWas/image4.png";
+import bgHowItWasChampagne from "./src/champagne/howItWas/bg.webp";
+import image1HowItWasChampagne from "./src/champagne/howItWas/image1.webp";
+import image2HowItWasChampagne from "./src/champagne/howItWas/image2.webp";
+import image3HowItWasChampagne from "./src/champagne/howItWas/image3.webp";
+import image4HowItWasChampagne from "./src/champagne/howItWas/image4.webp";
 
 /** Honey */
 /* Home */
@@ -194,23 +194,23 @@ import image4HowItWasHoney from "./src/honey/howItWas/image4.webp";
 
 /** Bread */
 /* Home */
-import bgHomeBread from "./src/bread/home/bg.png";
+import bgHomeBread from "./src/bread/home/bg.webp";
 import chipsRightBread from "./src/bread/home/chipsRight.svg";
 import chipsLeftBread from "./src/bread/home/chipsLeft.svg";
 /* Essence */
-import bgEssenceBread from "./src/bread/essence/bg.png";
-import image1EssenceBread from "./src/bread/essence/image1.png";
-import image4EssenceBread from "./src/bread/essence/image4.png";
+import bgEssenceBread from "./src/bread/essence/bg.webp";
+import image1EssenceBread from "./src/bread/essence/image1.webp";
+import image4EssenceBread from "./src/bread/essence/image4.webp";
 /* Promotion */
-import bgPromotionBread from "./src/bread/promotion/bg.png";
+import bgPromotionBread from "./src/bread/promotion/bg.webp";
 /* Additionals */
-import bgAdditionalsBread from "./src/bread/additionals/bg.png";
+import bgAdditionalsBread from "./src/bread/additionals/bg.webp";
 /* HowItWas */
-import bgHowItWasBread from "./src/bread/howItWas/bg.png";
-import image1HowItWasBread from "./src/bread/howItWas/image1.png";
-import image2HowItWasBread from "./src/bread/howItWas/image2.png";
-import image3HowItWasBread from "./src/bread/howItWas/image3.png";
-import image4HowItWasBread from "./src/bread/howItWas/image4.png";
+import bgHowItWasBread from "./src/bread/howItWas/bg.webp";
+import image1HowItWasBread from "./src/bread/howItWas/image1.webp";
+import image2HowItWasBread from "./src/bread/howItWas/image2.webp";
+import image3HowItWasBread from "./src/bread/howItWas/image3.webp";
+import image4HowItWasBread from "./src/bread/howItWas/image4.webp";
 
 /** Fat */
 /* Home */
@@ -234,149 +234,149 @@ import image4HowItWasFat from "./src/fat/howItWas/image4.webp";
 
 /** Meat */
 /* Home */
-import bgHomeMeat from "./src/meat/home/bg.png";
-import bgTabHomeMeat from "./src/meat/home/bg_tab.png";
-import bgMobHomeMeat from "./src/meat/home/bg_mob.png";
+import bgHomeMeat from "./src/meat/home/bg.webp";
+import bgTabHomeMeat from "./src/meat/home/bg_tab.webp";
+import bgMobHomeMeat from "./src/meat/home/bg_mob.webp";
 import chipsRightMeat from "./src/meat/home/chipsRight.svg";
 import chipsLeftMeat from "./src/meat/home/chipsLeft.svg";
 /* Essence */
-import bgEssenceMeat from "./src/meat/essence/bg.png";
-import image1EssenceMeat from "./src/meat/essence/image1.png";
-import image4EssenceMeat from "./src/meat/essence/image4.png";
+import bgEssenceMeat from "./src/meat/essence/bg.webp";
+import image1EssenceMeat from "./src/meat/essence/image1.webp";
+import image4EssenceMeat from "./src/meat/essence/image4.webp";
 /* Promotion */
-import bgPromotionMeat from "./src/meat/promotion/bg.png";
+import bgPromotionMeat from "./src/meat/promotion/bg.webp";
 /* Additionals */
-import bgAdditionalsMeat from "./src/meat/additionals/bg.png";
+import bgAdditionalsMeat from "./src/meat/additionals/bg.webp";
 /* HowItWas */
-import bgHowItWasMeat from "./src/meat/howItWas/bg.png";
-import image1HowItWasMeat from "./src/meat/howItWas/image1.png";
-import image2HowItWasMeat from "./src/meat/howItWas/image2.png";
-import image3HowItWasMeat from "./src/meat/howItWas/image3.png";
-import image4HowItWasMeat from "./src/meat/howItWas/image4.png";
+import bgHowItWasMeat from "./src/meat/howItWas/bg.webp";
+import image1HowItWasMeat from "./src/meat/howItWas/image1.webp";
+import image2HowItWasMeat from "./src/meat/howItWas/image2.webp";
+import image3HowItWasMeat from "./src/meat/howItWas/image3.webp";
+import image4HowItWasMeat from "./src/meat/howItWas/image4.webp";
 
 /** Whiskey */
 /* Home */
-import bgHomeWhiskey from "./src/whiskey/home/bg.png";
+import bgHomeWhiskey from "./src/whiskey/home/bg.webp";
 import chipsRightWhiskey from "./src/whiskey/home/chipsRight.svg";
 import chipsLeftWhiskey from "./src/whiskey/home/chipsLeft.svg";
 /* Essence */
-import bgEssenceWhiskey from "./src/whiskey/essence/bg.png";
-import image1EssenceWhiskey from "./src/whiskey/essence/image1.png";
-import image4EssenceWhiskey from "./src/whiskey/essence/image4.png";
+import bgEssenceWhiskey from "./src/whiskey/essence/bg.webp";
+import image1EssenceWhiskey from "./src/whiskey/essence/image1.webp";
+import image4EssenceWhiskey from "./src/whiskey/essence/image4.webp";
 /* Promotion */
-import bgPromotionWhiskey from "./src/whiskey/promotion/bg.png";
+import bgPromotionWhiskey from "./src/whiskey/promotion/bg.webp";
 /* Additionals */
-import bgAdditionalsWhiskey from "./src/whiskey/additionals/bg.png";
+import bgAdditionalsWhiskey from "./src/whiskey/additionals/bg.webp";
 /* HowItWas */
-import bgHowItWasWhiskey from "./src/whiskey/howItWas/bg.png";
-import image1HowItWasWhiskey from "./src/whiskey/howItWas/image1.png";
-import image2HowItWasWhiskey from "./src/whiskey/howItWas/image2.png";
-import image3HowItWasWhiskey from "./src/whiskey/howItWas/image3.png";
-import image4HowItWasWhiskey from "./src/whiskey/howItWas/image4.png";
+import bgHowItWasWhiskey from "./src/whiskey/howItWas/bg.webp";
+import image1HowItWasWhiskey from "./src/whiskey/howItWas/image1.webp";
+import image2HowItWasWhiskey from "./src/whiskey/howItWas/image2.webp";
+import image3HowItWasWhiskey from "./src/whiskey/howItWas/image3.webp";
+import image4HowItWasWhiskey from "./src/whiskey/howItWas/image4.webp";
 
 /** Beer */
 /* Home */
-import bgHomeBeer from "./src/beer/home/bg.png";
+import bgHomeBeer from "./src/beer/home/bg.webp";
 import chipsRightBeer from "./src/beer/home/chipsRight.svg";
 import chipsLeftBeer from "./src/beer/home/chipsLeft.svg";
 /* Essence */
-import bgEssenceBeer from "./src/beer/essence/bg.png";
-import image1EssenceBeer from "./src/beer/essence/image1.png";
-import image4EssenceBeer from "./src/beer/essence/image4.png";
+import bgEssenceBeer from "./src/beer/essence/bg.webp";
+import image1EssenceBeer from "./src/beer/essence/image1.webp";
+import image4EssenceBeer from "./src/beer/essence/image4.webp";
 /* Promotion */
-import bgPromotionBeer from "./src/beer/promotion/bg.png";
+import bgPromotionBeer from "./src/beer/promotion/bg.webp";
 /* Additionals */
-import bgAdditionalsBeer from "./src/beer/additionals/bg.png";
+import bgAdditionalsBeer from "./src/beer/additionals/bg.webp";
 /* HowItWas */
-import bgHowItWasBeer from "./src/beer/howItWas/bg.png";
-import image1HowItWasBeer from "./src/beer/howItWas/image1.png";
-import image2HowItWasBeer from "./src/beer/howItWas/image2.png";
-import image3HowItWasBeer from "./src/beer/howItWas/image3.png";
-import image4HowItWasBeer from "./src/beer/howItWas/image4.png";
+import bgHowItWasBeer from "./src/beer/howItWas/bg.webp";
+import image1HowItWasBeer from "./src/beer/howItWas/image1.webp";
+import image2HowItWasBeer from "./src/beer/howItWas/image2.webp";
+import image3HowItWasBeer from "./src/beer/howItWas/image3.webp";
+import image4HowItWasBeer from "./src/beer/howItWas/image4.webp";
 
 /** Tincture */
 /* Home */
-import bgHomeTincture from "./src/tincture/home/bg.png";
+import bgHomeTincture from "./src/tincture/home/bg.webp";
 import chipsRightTincture from "./src/tincture/home/chipsRight.svg";
 import chipsLeftTincture from "./src/tincture/home/chipsLeft.svg";
 /* Essence */
-import bgEssenceTincture from "./src/tincture/essence/bg.png";
-import image1EssenceTincture from "./src/tincture/essence/image1.png";
-import image4EssenceTincture from "./src/tincture/essence/image4.png";
+import bgEssenceTincture from "./src/tincture/essence/bg.webp";
+import image1EssenceTincture from "./src/tincture/essence/image1.webp";
+import image4EssenceTincture from "./src/tincture/essence/image4.webp";
 /* Promotion */
-import bgPromotionTincture from "./src/tincture/promotion/bg.png";
+import bgPromotionTincture from "./src/tincture/promotion/bg.webp";
 /* Additionals */
-import bgAdditionalsTincture from "./src/tincture/additionals/bg.png";
+import bgAdditionalsTincture from "./src/tincture/additionals/bg.webp";
 /* HowItWas */
-import bgHowItWasTincture from "./src/tincture/howItWas/bg.png";
-import image1HowItWasTincture from "./src/tincture/howItWas/image1.png";
-import image2HowItWasTincture from "./src/tincture/howItWas/image2.png";
-import image3HowItWasTincture from "./src/tincture/howItWas/image3.png";
-import image4HowItWasTincture from "./src/tincture/howItWas/image4.png";
+import bgHowItWasTincture from "./src/tincture/howItWas/bg.webp";
+import image1HowItWasTincture from "./src/tincture/howItWas/image1.webp";
+import image2HowItWasTincture from "./src/tincture/howItWas/image2.webp";
+import image3HowItWasTincture from "./src/tincture/howItWas/image3.webp";
+import image4HowItWasTincture from "./src/tincture/howItWas/image4.webp";
 
 /** Liqoure */
 /*Home */
-import bgHomeLiquore from "./src/liquore/home/bg.png";
+import bgHomeLiquore from "./src/liquore/home/bg.webp";
 import chipsRightLiquore from "./src/liquore/home/chipsRight.svg";
 import chipsLeftLiquore from "./src/liquore/home/chipsLeft.svg";
 /* Essence */
-import bgEssenceLiquore from "./src/liquore/essence/bg.png";
-import image1EssenceLiquore from "./src/liquore/essence/image1.png";
-import image4EssenceLiquore from "./src/liquore/essence/image4.png";
+import bgEssenceLiquore from "./src/liquore/essence/bg.webp";
+import image1EssenceLiquore from "./src/liquore/essence/image1.webp";
+import image4EssenceLiquore from "./src/liquore/essence/image4.webp";
 /* HowItWas */
-import image1HowItWasLiquore from "./src/liquore/howItWas/image1.png";
-import image2HowItWasLiquore from "./src/liquore/howItWas/image2.png";
-import image3HowItWasLiquore from "./src/liquore/howItWas/image3.png";
-import image4HowItWasLiquore from "./src/liquore/howItWas/image4.png";
+import image1HowItWasLiquore from "./src/liquore/howItWas/image1.webp";
+import image2HowItWasLiquore from "./src/liquore/howItWas/image2.webp";
+import image3HowItWasLiquore from "./src/liquore/howItWas/image3.webp";
+import image4HowItWasLiquore from "./src/liquore/howItWas/image4.webp";
 
 /** Molecular */
 /* Home */
-import bgHomeMolecular from "./src/molecular/home/bg.png";
-import bgTabHomeMolecular from "./src/molecular/home/bg_tab.png";
+import bgHomeMolecular from "./src/molecular/home/bg.webp";
+import bgTabHomeMolecular from "./src/molecular/home/bg_tab.webp";
 import chipsRightMolecular from "./src/molecular/home/chipsRight.svg";
 import chipsLeftMolecular from "./src/molecular/home/chipsLeft.svg";
 /* Essence */
-import bgEssenceMolecular from "./src/molecular/essence/bg.png";
-import image1EssenceMolecular from "./src/molecular/essence/image1.png";
-import image4EssenceMolecular from "./src/molecular/essence/image4.png";
+import bgEssenceMolecular from "./src/molecular/essence/bg.webp";
+import image1EssenceMolecular from "./src/molecular/essence/image1.webp";
+import image4EssenceMolecular from "./src/molecular/essence/image4.webp";
 /* Promotion */
-import bgPromotionMolecular from "./src/molecular/promotion/bg.png";
+import bgPromotionMolecular from "./src/molecular/promotion/bg.webp";
 /* Additionals */
-import bgAdditionalsMolecular from "./src/molecular/additionals/bg.png";
+import bgAdditionalsMolecular from "./src/molecular/additionals/bg.webp";
 /* HowItWas */
-import bgHowItWasMolecular from "./src/molecular/howItWas/bg.png";
-import image1HowItWasMolecular from "./src/molecular/howItWas/image1.png";
-import image2HowItWasMolecular from "./src/molecular/howItWas/image2.png";
-import image3HowItWasMolecular from "./src/molecular/howItWas/image3.png";
-import image4HowItWasMolecular from "./src/molecular/howItWas/image4.png";
+import bgHowItWasMolecular from "./src/molecular/howItWas/bg.webp";
+import image1HowItWasMolecular from "./src/molecular/howItWas/image1.webp";
+import image2HowItWasMolecular from "./src/molecular/howItWas/image2.webp";
+import image3HowItWasMolecular from "./src/molecular/howItWas/image3.webp";
+import image4HowItWasMolecular from "./src/molecular/howItWas/image4.webp";
 
 /** Chili */
 /* Home */
-import bgHomeChili from "./src/chili/home/bg.png";
-import bgTabHomeChili from "./src/chili/home/bg_tab.png";
+import bgHomeChili from "./src/chili/home/bg.webp";
+import bgTabHomeChili from "./src/chili/home/bg_tab.webp";
 import chipsRightChili from "./src/chili/home/chipsRight.svg";
 import chipsLeftChili from "./src/chili/home/chipsLeft.svg";
 /* Essence */
-import bgEssenceChili from "./src/chili/essence/bg.png";
-import image1EssenceChili from "./src/chili/essence/image1.png";
-import image4EssenceChili from "./src/chili/essence/image4.png";
+import bgEssenceChili from "./src/chili/essence/bg.webp";
+import image1EssenceChili from "./src/chili/essence/image1.webp";
+import image4EssenceChili from "./src/chili/essence/image4.webp";
 /* Promotion */
-import bgPromotionChili from "./src/chili/promotion/bg.png";
+import bgPromotionChili from "./src/chili/promotion/bg.webp";
 /* Additionals */
-import bgAdditionalsChili from "./src/chili/additionals/bg.png";
+import bgAdditionalsChili from "./src/chili/additionals/bg.webp";
 /* HowItWas */
-import bgHowItWasChili from "./src/chili/howItWas/bg.png";
+import bgHowItWasChili from "./src/chili/howItWas/bg.webp";
 
 /** Ruletka */
 /* Home */
-import bgHomeRuletka from "./src/ruletka/home/bg.png";
-import bgTabHomeRuletka from "./src/ruletka/home/bg_tab.png";
-import bgMobHomeRuletka from "./src/ruletka/home/bg_mob.png";
+import bgHomeRuletka from "./src/ruletka/home/bg.webp";
+import bgTabHomeRuletka from "./src/ruletka/home/bg_tab.webp";
+import bgMobHomeRuletka from "./src/ruletka/home/bg_mob.webp";
 /* Essence */
-import image1EssenceRuletka from "./src/ruletka/essence/image1.png";
-import image2EssenceRuletka from "./src/ruletka/essence/image2.png";
-import image3EssenceRuletka from "./src/ruletka/essence/image3.png";
-import image4EssenceRuletka from "./src/ruletka/essence/image4.png";
+import image1EssenceRuletka from "./src/ruletka/essence/image1.webp";
+import image2EssenceRuletka from "./src/ruletka/essence/image2.webp";
+import image3EssenceRuletka from "./src/ruletka/essence/image3.webp";
+import image4EssenceRuletka from "./src/ruletka/essence/image4.webp";
 /* Promotion */
 import icon1PromotionRuletka from "./src/ruletka/promotion/icon1.svg";
 import icon2PromotionRuletka from "./src/ruletka/promotion/icon2.svg";
@@ -384,11 +384,11 @@ import icon3PromotionRuletka from "./src/ruletka/promotion/icon3.svg";
 
 /** Poker */
 /** Home */
-import bgHomePoker from "./src/poker/home/bg.png";
+import bgHomePoker from "./src/poker/home/bg.webp";
 
 /** Black Jack */
 /** Home */
-import bgHomeBlackJack from "./src/blackJack/home/bg.png";
+import bgHomeBlackJack from "./src/blackJack/home/bg.webp";
 
 /** Craps */
 /** Home */
@@ -400,48 +400,48 @@ import bgHomeFortuna from "./src/fortunaRing/home/bg.webp";
 
 /** Attraction */
 /** Home */
-import bgHomeAttraction from "./src/attraction/home/bg.png";
+import bgHomeAttraction from "./src/attraction/home/bg.webp";
 
 /** Automats */
 /** Home */
-import bgHomeAutomats from "./src/automats/home/bg.png";
-import bgTabHomeAutomats from "./src/automats/home/bg_tab.png";
+import bgHomeAutomats from "./src/automats/home/bg.webp";
+import bgTabHomeAutomats from "./src/automats/home/bg_tab.webp";
 
 /** Bilyard */
 /** Home */
-import bgHomeBilyard from "./src/bilyard/home/bg.png";
+import bgHomeBilyard from "./src/bilyard/home/bg.webp";
 
 /** Online Casino */
 /** Home */
-import bgHomeOnline from "./src/onlineCasino/home/bg.png";
+import bgHomeOnline from "./src/onlineCasino/home/bg.webp";
 
 /** Casino cart icons */
-import attractionMiniIcon from "./src/casinoCartIcons/attraction.png";
-import automatsMiniIcon from "./src/casinoCartIcons/automats.png";
-import beerMiniIcon from "./src/casinoCartIcons/beer.png";
-import bilyardMiniIcon from "./src/casinoCartIcons/bilyard.png";
-import blackJackMiniIcon from "./src/casinoCartIcons/blackJack.png";
-import breadMiniIcon from "./src/casinoCartIcons/bread.png";
-import champagneMiniIcon from "./src/casinoCartIcons/champagne.png";
-import cheeseMiniIcon from "./src/casinoCartIcons/cheese.png";
-import chilliMiniIcon from "./src/casinoCartIcons/chilli.png";
-import chocolateMiniIcon from "./src/casinoCartIcons/chocolate.png";
-import coffeeMiniIcon from "./src/casinoCartIcons/coffee.png";
-import crapsMiniIcon from "./src/casinoCartIcons/craps.png";
-import fatMiniIcon from "./src/casinoCartIcons/fat.png";
-import honeyMiniIcon from "./src/casinoCartIcons/honey.png";
-import kolesoMiniIcon from "./src/casinoCartIcons/koleso.png";
-import limonadMiniIcon from "./src/casinoCartIcons/limonad.png";
-import liquorMiniIcon from "./src/casinoCartIcons/liquor.png";
-import molecularMiniIcon from "./src/casinoCartIcons/molecular.png";
-import onlineMiniIcon from "./src/casinoCartIcons/online.png";
-import pokerMiniIcon from "./src/casinoCartIcons/poker.png";
-import ruletkaMiniIcon from "./src/casinoCartIcons/ruletka.png";
-import stakeMiniIcon from "./src/casinoCartIcons/stake.png";
-import teaMiniIcon from "./src/casinoCartIcons/tea.png";
-import tinctureMiniIcon from "./src/casinoCartIcons/tincture.png";
-import whiskeyMiniIcon from "./src/casinoCartIcons/whiskey.png";
-import wineMiniIcon from "./src/casinoCartIcons/wine.png";
+import attractionMiniIcon from "./src/casinoCartIcons/attraction.webp";
+import automatsMiniIcon from "./src/casinoCartIcons/automats.webp";
+import beerMiniIcon from "./src/casinoCartIcons/beer.webp";
+import bilyardMiniIcon from "./src/casinoCartIcons/bilyard.webp";
+import blackJackMiniIcon from "./src/casinoCartIcons/blackJack.webp";
+import breadMiniIcon from "./src/casinoCartIcons/bread.webp";
+import champagneMiniIcon from "./src/casinoCartIcons/champagne.webp";
+import cheeseMiniIcon from "./src/casinoCartIcons/cheese.webp";
+import chilliMiniIcon from "./src/casinoCartIcons/chilli.webp";
+import chocolateMiniIcon from "./src/casinoCartIcons/chocolate.webp";
+import coffeeMiniIcon from "./src/casinoCartIcons/coffee.webp";
+import crapsMiniIcon from "./src/casinoCartIcons/craps.webp";
+import fatMiniIcon from "./src/casinoCartIcons/fat.webp";
+import honeyMiniIcon from "./src/casinoCartIcons/honey.webp";
+import kolesoMiniIcon from "./src/casinoCartIcons/koleso.webp";
+import limonadMiniIcon from "./src/casinoCartIcons/limonad.webp";
+import liquorMiniIcon from "./src/casinoCartIcons/liquor.webp";
+import molecularMiniIcon from "./src/casinoCartIcons/molecular.webp";
+import onlineMiniIcon from "./src/casinoCartIcons/online.webp";
+import pokerMiniIcon from "./src/casinoCartIcons/poker.webp";
+import ruletkaMiniIcon from "./src/casinoCartIcons/ruletka.webp";
+import stakeMiniIcon from "./src/casinoCartIcons/stake.webp";
+import teaMiniIcon from "./src/casinoCartIcons/tea.webp";
+import tinctureMiniIcon from "./src/casinoCartIcons/tincture.webp";
+import whiskeyMiniIcon from "./src/casinoCartIcons/whiskey.webp";
+import wineMiniIcon from "./src/casinoCartIcons/wine.webp";
 
 const casinos = [
   {

@@ -3,18 +3,15 @@ import Additionals from "../additionals";
 import Essence from "../essence";
 import Masterclass from "../masterclass";
 import Promotion from "../promotion";
-import Tematic from "../tematic";
-import Variants from "../variants";
-import { useMediaQuery } from "react-responsive";
 import HomeClassicCaisno from "../homeTemplate_classicCasino";
 import { Fragment } from "react";
 import homeBg from "./src/homeBg.png";
 import Form from "../form";
 import BackToAll from "../backToAll";
-import essence1 from "./src/essence/1.png";
-import essence2 from "./src/essence/2.png";
-import essence3 from "./src/essence/3.png";
-import essence4 from "./src/essence/4.png";
+import essence1 from "./src/essence/1.webp";
+import essence2 from "./src/essence/2.webp";
+import essence3 from "./src/essence/3.webp";
+import essence4 from "./src/essence/4.webp";
 import KindsOfGames from "../kindsOfGames";
 import KindsOfGames_tablet from "../kindsOfGames_tablet";
 import Header from "../header";
@@ -90,61 +87,56 @@ const defaultCasino = {
 
 const MainPageFoodCasino = (props) => {
   const casino = props.casino || defaultCasino;
-  
+
   /* Поменяем тайттл страницы */
   useEffect(() => {
     document.title = casino.title ?? "Food Casino";
   });
-  
-  /* Media Queries */
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+
+  const { isDesktop, isTablet, isMobile } = props;
+  const mediaQueries = { isDesktop, isTablet, isMobile };
 
   return (
     <>
-      <Header />
+      <Header {...mediaQueries} />
       <main className={s.main}>
         {isDesktop && (
           <Fragment>
-            <HomeClassicCaisno data={casino.home} />
-            <BackToAll to="/klassicheskoe-kazino" />
-            <Essence data={casino.essence} />
-            <KindsOfGames data={casino.kindsOfGames} />
-            <Masterclass data={casino.masterclass} />
-            <Promotion background={false} data={casino.promotion} />
-            <Additionals data={casino.additionals} />
+            <HomeClassicCaisno data={casino.home} {...mediaQueries} />
+            <BackToAll to="/klassicheskoe-kazino" {...mediaQueries} />
+            <Essence data={casino.essence} {...mediaQueries} />
+            <KindsOfGames data={casino.kindsOfGames} {...mediaQueries} />
+            <Masterclass data={casino.masterclass} {...mediaQueries} />
+            <Promotion
+              background={false}
+              data={casino.promotion}
+              {...mediaQueries}
+            />
+            <Additionals data={casino.additionals} {...mediaQueries} />
             <Form />
-            {/* <Variants /> */}
-            {/* <Tematic /> */}
           </Fragment>
         )}
         {isTablet && (
           <Fragment>
-            <HomeClassicCaisno data={casino.home} />
-            <KindsOfGames_tablet data={casino.kindsOfGames} />
-            <Masterclass data={casino.masterclass} />
-            <Promotion data={casino.promotion} />
-            {/* <Variants /> */}
-            <Additionals data={casino.additionals} />
+            <HomeClassicCaisno data={casino.home} {...mediaQueries} />
+            <KindsOfGames_tablet data={casino.kindsOfGames} {...mediaQueries} />
+            <Masterclass data={casino.masterclass} {...mediaQueries} />
+            <Promotion data={casino.promotion} {...mediaQueries} />
+            <Additionals data={casino.additionals} {...mediaQueries} />
           </Fragment>
         )}
         {isMobile && (
           <Fragment>
-            <HomeClassicCaisno data={casino.home} />
-            <Essence data={casino.essence} />
-            <KindsOfGames_tablet data={casino.kindsOfGames} />
-            <Promotion data={casino.promotion} />
-            {/* <Variants /> */}
-            <Masterclass />
-            <Additionals data={casino.additionals} />
-            {/* <Tematic data={casino.tematic} /> */}
+            <HomeClassicCaisno data={casino.home} {...mediaQueries} />
+            <Essence data={casino.essence} {...mediaQueries} />
+            <KindsOfGames_tablet data={casino.kindsOfGames} {...mediaQueries} />
+            <Promotion data={casino.promotion} {...mediaQueries} />
+            <Masterclass {...mediaQueries} />
+            <Additionals data={casino.additionals} {...mediaQueries} />
           </Fragment>
         )}
       </main>
-      <Footer />
+      <Footer {...mediaQueries} />
     </>
   );
 };

@@ -11,16 +11,12 @@ import { makeHeaderDark } from "../../redux/modules/headerColor";
 const PageNews = ({ news, makeHeaderDark, ...props }) => {
   makeHeaderDark();
 
-  /* Media Queries */
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
+  const mediaQueries = { isDesktop, isTablet, isMobile };
 
   return (
     <>
-      <Header />
+      <Header {...mediaQueries} />
       <main className={s.main}>
         {isDesktop && (
           <Fragment>
@@ -28,7 +24,7 @@ const PageNews = ({ news, makeHeaderDark, ...props }) => {
               tree={[{ title: "Главная", to: "/" }]}
               title="Новости"
             />
-            <News />
+            <News/>
           </Fragment>
         )}
         {isTablet && (
@@ -42,7 +38,7 @@ const PageNews = ({ news, makeHeaderDark, ...props }) => {
           </Fragment>
         )}
       </main>
-      <Footer />
+      <Footer {...mediaQueries} />
     </>
   );
 };

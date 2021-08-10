@@ -1,14 +1,9 @@
 import s from "./index.module.scss";
 import cx from "classnames";
-import image1_desk from "./src/image1.png";
-import image2_desk from "./src/image2.png";
-import image3_desk from "./src/image3.png";
-import image4_desk from "./src/image4.png";
-import image1_tab from "./src/image1_tab.png";
-import image2_tab from "./src/image2_tab.png";
-import image3_tab from "./src/image3_tab.png";
-import image4_tab from "./src/image4_tab.png";
-import { useMediaQuery } from "react-responsive";
+import image1_desk from "./src/image1.webp";
+import image2_desk from "./src/image2.webp";
+import image3_desk from "./src/image3.webp";
+import image4_desk from "./src/image4.webp";
 
 const defaultItems = [
   {
@@ -37,22 +32,16 @@ const defaultItems = [
   },
 ];
 
-const Essence = ({ style, ...props }) => {
-  const defaultData = {
-    title: "В чем суть?",
-    items: defaultItems,
-    itemsColor: "#2a9d76",
-  };
+const defaultData = {
+  title: "В чем суть?",
+  items: defaultItems,
+  itemsColor: "#2a9d76",
+};
 
+const Essence = ({ style, ...props }) => {
   const { title, items, itemsColor, bg } = props.data || defaultData;
 
-  /* Media Queries */
-
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
 
   return (
     <section className={s.essence} style={style}>

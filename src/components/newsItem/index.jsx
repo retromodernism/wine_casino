@@ -1,6 +1,5 @@
 import s from "./index.module.scss";
 import cx from "classnames";
-import { useMediaQuery } from "react-responsive";
 
 const GridItem = ({ text, image }) => {
   if (text) {
@@ -27,14 +26,9 @@ const NewsItem = ({
   date = "14 февраля",
   paragraphs = [],
   images = [],
+  ...props
 }) => {
-  /* Media Queries */
-
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
 
   /* Preparing data */
 

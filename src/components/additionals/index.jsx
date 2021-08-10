@@ -4,7 +4,6 @@ import cx from "classnames";
 import ServiceItem from "../serviceItem";
 import { connect } from "react-redux";
 import { useState } from "react";
-import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
 import "./swiper.scss";
@@ -43,13 +42,7 @@ const ShowMore = ({ onClick }) => {
 
 const Additionals = ({ positions, ...props }) => {
   const { title, color, bg } = props.data || defaultData;
-
-  /* Media Queries */
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
 
   /* State */
 

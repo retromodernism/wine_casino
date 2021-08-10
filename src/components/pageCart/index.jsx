@@ -7,9 +7,7 @@ import {
   makeHeaderDark,
   makeHeaderLight,
 } from "../../redux/modules/headerColor";
-import { Fragment } from "react";
 import CartSuccessPopup from "../cartSuccessPopup";
-import { useMediaQuery } from "react-responsive";
 import CartOrder from "../cartOrder";
 import Header from "../header";
 import Footer from "../footer";
@@ -24,32 +22,27 @@ const CartPage = ({
 }) => {
   makeHeaderDark();
 
-  /* Media Queries */
-
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
+  const mediaQueries = { isDesktop, isTablet, isMobile };
 
   return (
     <>
-      <Header />
+      <Header {...mediaQueries} />
       <main className={s.main}>
         {isDesktop && (
-          <Breadcrumbs tree={[{ title: "Главная", to: "/" }]} title="Корзина" />
+          <Breadcrumbs tree={[{ title: "Главная", to: "/" }]} title="Корзина" {...mediaQueries} />
         )}
-        <Cart />
+        <Cart {...mediaQueries} />
         {!cartIsEmpty && (
           <>
-            {isMobile && <CartOrder />}
-            <Recomendations />
-            {isTablet && <CartOrder />}
+            {isMobile && <CartOrder {...mediaQueries} />}
+            <Recomendations {...mediaQueries} />
+            {isTablet && <CartOrder {...mediaQueries} />}
           </>
         )}
       </main>
-      <Footer />
-      {cartPopupIsOpen && <CartSuccessPopup />}
+      <Footer {...mediaQueries} />
+      {cartPopupIsOpen && <CartSuccessPopup {...mediaQueries} />}
     </>
   );
 };

@@ -3,17 +3,10 @@ import cx from "classnames";
 import yandexIcon from "./src/yandex.png";
 import googleIcon from "./src/google.png";
 import { YMaps, Map, Placemark } from "react-yandex-maps";
-import { useMediaQuery } from "react-responsive";
 import { Fragment } from "react";
 
 const Contacts = (props) => {
-  /* Media Queries */
-
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
 
   return (
     <section className={s.contacts}>

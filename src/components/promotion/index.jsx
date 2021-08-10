@@ -4,7 +4,6 @@ import camera from "./src/camera.svg";
 import promotionBg from "./src/bg.png";
 import photograph from "./src/photograph.svg";
 import sertificatePromotion from "./src/sertificate.svg";
-import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
 import "./swiper.scss";
@@ -103,13 +102,7 @@ const sliderParams = {
 
 const Promotion = ({ background = true, ...props }) => {
   const { color, items, bg } = props.data || defaultData;
-
-  /* Media Queries */
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
 
   return (
     <section className={cx(s.promotion, "promotion")}>

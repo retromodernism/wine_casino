@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Fragment, useState } from "react";
 import { openCartSuccessPopup } from "../../redux/modules/popup";
 import { resetCart } from "../../redux/modules/cart";
-import { useMediaQuery } from "react-responsive";
 import InputMask from "react-input-mask";
 import s from "./index.module.scss";
 import cx from "classnames";
@@ -13,13 +12,9 @@ const CartOrder = ({
   cartPositionsIds,
   openCartSuccessPopup,
   resetCart,
+  props,
 }) => {
-  /* Media Queries */
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
 
   // "picking positions" / "confirmation form processing" / "success"
   const [cartStatus, setCartStatus] = useState("picking positions");

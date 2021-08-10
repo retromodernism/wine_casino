@@ -1,6 +1,6 @@
 import { useMediaQuery } from "react-responsive";
 import s from "./index.module.scss";
-import image from "./src/image.png";
+import image from "./src/image.webp";
 
 const defaultData = {
   title: "О винном фан-казино",
@@ -49,6 +49,8 @@ const About = (props) => {
   });
   const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
+  console.log("mediaQueries");
+
   return (
     <section className={s.about}>
       <div className={s._bg1}></div>
@@ -61,6 +63,7 @@ const About = (props) => {
                 className={s._descriptionItem}
                 dangerouslySetInnerHTML={{ __html: item.text }}
                 style={{ gridColumn: item.column ?? "" }}
+                key={index}
               />
             ) : item.type === "image" ? (
               <div
@@ -73,6 +76,7 @@ const About = (props) => {
                     ? item.mobile.height
                     : item.desktop.height,
                 }}
+                key={index}
               />
             ) : null
           )}

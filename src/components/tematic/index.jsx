@@ -1,18 +1,17 @@
 import s from "./index.module.scss";
 import cx from "classnames";
 import hash from "object-hash";
-import gatsby1 from "./src/gatsby1.png";
-import gatsby2 from "./src/gatsby2.png";
-import gatsby3 from "./src/gatsby3.png";
-import lasVegas1 from "./src/lasVegas1.png";
-import lasVegas2 from "./src/lasVegas2.png";
-import lasVegas3 from "./src/lasVegas3.png";
-import mafia1 from "./src/mafia1.png";
-import mafia2 from "./src/mafia2.png";
-import mafia3 from "./src/mafia3.png";
+import gatsby1 from "./src/gatsby1.webp";
+import gatsby2 from "./src/gatsby2.webp";
+import gatsby3 from "./src/gatsby3.webp";
+import lasVegas1 from "./src/lasVegas1.webp";
+import lasVegas2 from "./src/lasVegas2.webp";
+import lasVegas3 from "./src/lasVegas3.webp";
+import mafia1 from "./src/mafia1.webp";
+import mafia2 from "./src/mafia2.webp";
+import mafia3 from "./src/mafia3.webp";
 import TematicItem from "../tematicItem";
-import { useMediaQuery } from "react-responsive";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 
 const defaultTematicItems = [
   {
@@ -37,14 +36,7 @@ const defaultTematicItems = [
 
 const Tematic = (props) => {
   const tematicItems = props?.data?.items || defaultTematicItems;
-
-  /* Media Queries */
-
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
 
   /* State */
 

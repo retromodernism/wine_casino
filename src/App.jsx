@@ -17,6 +17,7 @@ import PageNews from "./components/pageNews";
 import PageNewsItem from "./components/pageNewsItem";
 import { getNews } from "./redux/modules/news";
 import { getCasinos } from "./redux/modules/casinos";
+import { useMediaQuery } from "react-responsive";
 
 const App = ({
   burgerIsOpen,
@@ -32,6 +33,15 @@ const App = ({
   getCasinos();
   getPositions();
 
+  /* Media Queries */
+  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
+  const isTablet = useMediaQuery({
+    query: "screen and (min-width: 768px) and (max-width: 1299px)",
+  });
+  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  
+  const mediaQueries = { isDesktop, isTablet, isMobile };
+
   const foodCasinos = casinos.filter(({ type }) => type === "foodCasino");
   const classicCasinos = casinos.filter(({ type }) => type === "classicCasino");
 
@@ -40,25 +50,25 @@ const App = ({
       <ScrollToTop />
       <div className={s.app}>
         <Switch>
-          <Route exact path="/" component={MainPageFoodCasino} />
-          <Route path="/klassicheskoe-kazino" component={ClassicCasino} />
-          <Route path="/cart" component={CartPage} />
-          <Route path="/contacts" component={ContactsPage} />
-          <Route path="/croupiers" component={PageCroupiers} />
-          <Route exact path="/news" component={PageNews} />
-          <Route path="/news/:id" component={PageNewsItem} />
+          <Route exact path="/" component={() => <MainPageFoodCasino {...mediaQueries} />} />
+          <Route path="/klassicheskoe-kazino" component={() => <ClassicCasino {...mediaQueries} />} />
+          <Route path="/cart" component={() => <CartPage {...mediaQueries} />} />
+          <Route path="/contacts" component={() => <ContactsPage {...mediaQueries} />} />
+          <Route path="/croupiers" component={() => <PageCroupiers {...mediaQueries} />} />
+          <Route exact path="/news" component={() => <PageNews {...mediaQueries} />} />
+          <Route path="/news/:id" component={() => <PageNewsItem {...mediaQueries} />} />
           {foodCasinos.map((casino, index) => (
             <Route
               path={casino.url}
               key={index}
-              component={() => <WineCasino casino={casino} />}
+              component={() => <WineCasino casino={casino} {...mediaQueries} />}
             />
           ))}
           {classicCasinos.map((casino, index) => (
             <Route
               path={casino.url}
               key={index}
-              component={() => <Poker casino={casino} />}
+              component={() => <Poker casino={casino} {...mediaQueries} />}
             />
           ))}
           {/* <Redirect to="/" /> */}

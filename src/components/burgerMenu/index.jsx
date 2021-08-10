@@ -43,8 +43,13 @@ const BurgerMenu = ({ casinos, closeBurger, ...props }) => {
             <p>Кулинарное казино</p>
             {foodCasinosIsExpanded && (
               <div className={s._itemCasinos}>
-                {foodCasinos.map(({ title, url }) => (
-                  <Link to={url} className={s._casino} onClick={closeBurger}>
+                {foodCasinos.map(({ title, url }, index) => (
+                  <Link
+                    to={url}
+                    className={s._casino}
+                    onClick={closeBurger}
+                    key={index}
+                  >
                     {title.split(" ")[0]}
                   </Link>
                 ))}
@@ -67,8 +72,13 @@ const BurgerMenu = ({ casinos, closeBurger, ...props }) => {
             <p>Классическое казино</p>
             {classicCasinosIsExpanded && (
               <div className={s._itemCasinos}>
-                {classicCasinos.map(({ title, url }) => (
-                  <Link to={url} className={s._casino} onClick={closeBurger}>
+                {classicCasinos.map(({ title, url }, index) => (
+                  <Link
+                    to={url}
+                    className={s._casino}
+                    onClick={closeBurger}
+                    key={index}
+                  >
                     {title}
                   </Link>
                 ))}
@@ -79,7 +89,9 @@ const BurgerMenu = ({ casinos, closeBurger, ...props }) => {
             <p>Наши программы</p>
           </li> */}
           <li className={s._item}>
-            <Link to="/contacts" onClick={closeBurger}>Контакты</Link>
+            <Link to="/contacts" onClick={closeBurger}>
+              Контакты
+            </Link>
           </li>
         </ul>
       </div>

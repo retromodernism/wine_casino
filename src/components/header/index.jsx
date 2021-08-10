@@ -3,9 +3,6 @@ import cx from "classnames";
 import { ReactComponent as Logo } from "./src/logo.svg";
 import { ReactComponent as LogoTablet } from "./src/logo_tab.svg";
 import { ReactComponent as LogoMobile } from "./src/logo_mob.svg";
-import logo from "./src/logo.svg";
-import logoTablet from "./src/logo_tab.svg";
-import logoMobile from "./src/logo_mob.svg";
 import { ReactComponent as WhatsApp } from "./src/whatsapp.svg";
 import { ReactComponent as Telegram } from "./src/tg.svg";
 import { ReactComponent as Viber } from "./src/viber.svg";
@@ -57,13 +54,7 @@ const Header = ({
   data,
   ...props
 }) => {
-  /* Media Queries */
-
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  const { isDesktop, isTablet, isMobile } = props;
 
   /* Header Color Theme */
 
@@ -131,7 +122,9 @@ const Header = ({
               >
                 <div className={s._catalog}>Кулинарное казино</div>
                 <div className={s._catalogArrow}></div>
-                {foodCasinosIsOpen && <CatalogHoverPanel casinosType="foodCasino" />}
+                {foodCasinosIsOpen && (
+                  <CatalogHoverPanel casinosType="foodCasino" />
+                )}
               </li>
               <li
                 className={cx(s._navListItem, s._navListItem_arrow, {
@@ -142,7 +135,9 @@ const Header = ({
               >
                 <div className={s._catalog}>Классическое казино</div>
                 <div className={s._catalogArrow}></div>
-                {classicCasinosIsOpen && <CatalogHoverPanel casinosType="classicCasino" />}
+                {classicCasinosIsOpen && (
+                  <CatalogHoverPanel casinosType="classicCasino" />
+                )}
               </li>
               {/* <li className={s._navListItem}>
                 <a href="/" className={s._catalog}>

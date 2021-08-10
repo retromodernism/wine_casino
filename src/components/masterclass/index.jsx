@@ -5,12 +5,11 @@ import juiceIcon from "./src/beverage.svg";
 import iconWineglass from "./src/bocals.svg";
 import iconParty from "./src/corporative.svg";
 import iconConference from "./src/conference.svg";
-import masterclassImage from "./src/image.png";
+import masterclassImage from "./src/image.webp";
 import classname from "classnames";
 import { Fragment, useState } from "react";
 import ModalVideo from "react-modal-video";
 import "react-modal-video/scss/modal-video.scss";
-import { useMediaQuery } from "react-responsive";
 
 const defaultData = {
   color: "#323232",
@@ -64,13 +63,8 @@ const defaultData = {
 const Masterclass = (props) => {
   const { color, title, holidays, offer, image, rent, video } =
     props.data || defaultData;
-
-  /* Media Queries */
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+  
+    const { isDesktop, isTablet, isMobile } = props;
 
   const [buttonIsHover, setButtonIsHover] = useState(false);
   const [videoIsOpen, setVideoOpen] = useState(false);
