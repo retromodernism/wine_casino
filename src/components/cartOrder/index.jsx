@@ -12,10 +12,10 @@ const CartOrder = ({
   cartPositionsIds,
   openCartSuccessPopup,
   resetCart,
-  props,
+  ...props
 }) => {
   const { isDesktop, isTablet, isMobile } = props;
-
+  
   // "picking positions" / "confirmation form processing" / "success"
   const [cartStatus, setCartStatus] = useState("picking positions");
 

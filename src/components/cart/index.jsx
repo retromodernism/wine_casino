@@ -21,6 +21,7 @@ const Cart = ({
   ...props
 }) => {
   const { isDesktop, isTablet, isMobile } = props;
+  const mediaQueries = { isDesktop, isTablet, isMobile };
 
   // Working with state
 
@@ -180,7 +181,7 @@ const Cart = ({
           </div>
         )}
 
-        {isDesktop && !cartIsEmpty && <CartOrder />}
+        {isDesktop && !cartIsEmpty && <CartOrder {...mediaQueries} />}
       </div>
     </section>
   );

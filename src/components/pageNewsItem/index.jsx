@@ -31,7 +31,7 @@ const PageNews = ({ news, makeHeaderDark, ...props }) => {
 
   return (
     <>
-    <Header />
+    <Header {...mediaQueries} />
     <main className={s.main}>
       {isDesktop && (
         <Fragment>
@@ -56,7 +56,7 @@ const PageNews = ({ news, makeHeaderDark, ...props }) => {
         </Fragment>
       )}
     </main>
-    <Footer />
+    <Footer {...mediaQueries} />
     </>
   );
 };
