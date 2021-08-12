@@ -1,0 +1,11 @@
+@import "./../../variables.scss";
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: url(./src/spin.svg) 100% 100% / contain no-repeat;
+}
