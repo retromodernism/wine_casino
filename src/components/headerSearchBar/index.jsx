@@ -5,7 +5,6 @@ import { ReactComponent as Loupe } from "./src/loupe.svg";
 import { ReactComponent as Loading } from "./src/loading.svg";
 import { ReactComponent as XIcon } from "./src/xIcon.svg";
 import { ReactComponent as XIcon_tablet } from "./src/xIcon_tablet.svg";
-import { useMediaQuery } from "react-responsive";
 import { connect } from "react-redux";
 import { closeSearchBar } from "../../redux/modules/tabletSearchBar";
 import { useHistory } from "react-router";
@@ -158,13 +157,7 @@ const customStylesTablet = {
 
 const DropdownIndicator = connect(null, { closeSearchBar })(
   ({ closeSearchBar, ...props }) => {
-    const isDesktop = useMediaQuery({
-      query: "screen and (min-width: 1300px)",
-    });
-    const isTablet = useMediaQuery({
-      query: "screen and (min-width: 768px) and (max-width: 1299px)",
-    });
-    const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
+    const { isDesktop, isTablet, isMobile } = props;
 
     return isDesktop ? (
       <components.DropdownIndicator {...props}>
@@ -195,7 +188,10 @@ const NoOptionsMessage = (props) => {
   );
 };
 
-const HeaderSearchBar = ({ casinos, className, closeSearchBar }) => {
+const HeaderSearchBar = ({ casinos, className, closeSearchBar, ...props }) => {
+  const { isDesktop, isTablet, isMobile } = props;
+  const mediaQueries = { isDesktop, isTablet, isMobile };
+
   /* Options */
   const casinosPages = casinos.map(({ title, url }) => ({
     label: title,
@@ -214,21 +210,19 @@ const HeaderSearchBar = ({ casinos, className, closeSearchBar }) => {
   /* Routing */
   const history = useHistory();
 
-  /* Media Queries */
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
-
+  /* Styles */
   let customStyles;
   if (isDesktop) customStyles = customStylesDesktop;
   if (isTablet) customStyles = customStylesTablet;
   if (isMobile) customStyles = customStylesTablet;
 
+  const DropDownIndicatorWithMedia = () => (
+    <DropdownIndicator {...mediaQueries} />
+  );
+
   return (
     <Select
-      components={{ DropdownIndicator, NoOptionsMessage }}
+      components={{ DropDownIndicatorWithMedia, NoOptionsMessage }}
       placeholder="Что ищете?"
       options={options}
       styles={customStyles}

@@ -1,5 +1,4 @@
 import s from "./index.module.scss";
-import { useMediaQuery } from "react-responsive";
 import { Fragment } from "react";
 import { connect } from "react-redux";
 import Breadcrumbs from "../breadcrumbs";

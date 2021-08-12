@@ -37,6 +37,7 @@ const defaultTematicItems = [
 const Tematic = (props) => {
   const tematicItems = props?.data?.items || defaultTematicItems;
   const { isDesktop, isTablet, isMobile } = props;
+  const mediaQueries = { isDesktop, isTablet, isMobile };
 
   /* State */
 
@@ -84,10 +85,15 @@ const Tematic = (props) => {
 
           {(isDesktop || isTablet) &&
             items.map((item, i) => (
-              <TematicItem {...item} key={i} odd={i % 2 !== 0} />
+              <TematicItem
+                {...item}
+                {...mediaQueries}
+                key={i}
+                odd={i % 2 !== 0}
+              />
             ))}
 
-          {isMobile && <TematicItem {...activeItem} />}
+          {isMobile && <TematicItem {...activeItem} {...mediaQueries} />}
         </div>
       </div>
     </section>

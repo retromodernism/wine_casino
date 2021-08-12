@@ -1,4 +1,3 @@
-import { useMediaQuery } from "react-responsive";
 import s from "./index.module.scss";
 import image from "./src/image.webp";
 
@@ -40,16 +39,7 @@ const defaultData = {
 
 const About = (props) => {
   const { title, items } = props.data || defaultData;
-
-  /* Media Queries */
-
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
-
-  console.log("mediaQueries");
+  const {isDesktop, isTablet, isMobile} = props;
 
   return (
     <section className={s.about}>

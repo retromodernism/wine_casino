@@ -1,7 +1,6 @@
 import s from "./index.module.scss";
 import cx from "classnames";
 import { ReactComponent as Plus } from "./src/plus.svg";
-import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
 import "./swiper.scss";

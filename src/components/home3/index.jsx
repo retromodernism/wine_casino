@@ -1,20 +1,10 @@
 import s from "./index.module.scss";
-import Typical from "react-typical";
 import ReactTypingEffect from "react-typing-effect";
 import "react-modal-video/scss/modal-video.scss";
 import ModalVideo from "react-modal-video";
 import { useState } from "react";
 import cx from "classnames";
-// import { ReactComponent as Loupe } from "./src/loupe.svg";
-// import { ReactComponent as Format } from "./src/format.svg";
-import { ReactComponent as Feature1 } from "./src/featureIcon_1.svg";
-import { ReactComponent as Feature2 } from "./src/featureIcon_2.svg";
-import { ReactComponent as Feature3 } from "./src/featureIcon_3.svg";
-import { useMediaQuery } from "react-responsive";
-import {
-  makeHeaderDark,
-  makeHeaderLight,
-} from "../../redux/modules/headerColor";
+import { makeHeaderLight } from "../../redux/modules/headerColor";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 

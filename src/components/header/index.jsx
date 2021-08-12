@@ -28,9 +28,7 @@ import { openSearchBar } from "../../redux/modules/tabletSearchBar";
 import { openBurger } from "../../redux/modules/burger";
 import CatalogHoverPanel from "../catalogHoverPanel";
 import { Link } from "react-router-dom";
-import { useMediaQuery } from "react-responsive";
 import { Fragment } from "react";
-import { useState } from "react";
 
 const phone = {
   tel: "74950857604",
@@ -55,6 +53,7 @@ const Header = ({
   ...props
 }) => {
   const { isDesktop, isTablet, isMobile } = props;
+  const mediaQueries = {isDesktop, isTablet, isMobile};
 
   /* Header Color Theme */
 
@@ -108,7 +107,7 @@ const Header = ({
           )}
         </Link>
       )}
-      {searchBarIsOpen && <HeaderSearchBar />}
+      {searchBarIsOpen && <HeaderSearchBar {...mediaQueries} />}
       {isDesktop && (
         <Fragment>
           <nav className={s._nav}>
@@ -150,7 +149,7 @@ const Header = ({
                 </Link>
               </li>
             </ul>
-            <HeaderSearchBar className={s._navSearchBar} />
+            <HeaderSearchBar className={s._navSearchBar} {...mediaQueries} />
           </nav>
           <div className={s._phoneWrapper}>
             <a href={`tel:+${phone.tel}`} className={s._phone}>

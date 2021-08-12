@@ -43,6 +43,7 @@ const ShowMore = ({ onClick }) => {
 const Additionals = ({ positions, ...props }) => {
   const { title, color, bg } = props.data || defaultData;
   const { isDesktop, isTablet, isMobile } = props;
+  const mediaQueries = { isDesktop, isTablet, isMobile };
 
   /* State */
 
@@ -77,7 +78,7 @@ const Additionals = ({ positions, ...props }) => {
           <div className={s._equipment}>
             {equipments.map((item, index) =>
               index < showedEquipmentNumber ? (
-                <EquipmentItem {...item} key={index} color={color} />
+                <EquipmentItem {...item} {...mediaQueries} key={index} color={color} />
               ) : null
             )}
             {equipmentsHasShowMore && (
@@ -101,7 +102,7 @@ const Additionals = ({ positions, ...props }) => {
             >
               {equipments.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <EquipmentItem {...item} color={color} />
+                  <EquipmentItem {...item} {...mediaQueries} color={color} />
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -113,7 +114,7 @@ const Additionals = ({ positions, ...props }) => {
           <div className={s._service}>
             {services.map((item, index) =>
               index < showedServiceNumber ? (
-                <ServiceItem {...item} key={index} color={color} />
+                <ServiceItem {...item} {...mediaQueries} key={index} color={color} />
               ) : null
             )}
             {servicesHasShowMore && (
@@ -131,7 +132,7 @@ const Additionals = ({ positions, ...props }) => {
             <Swiper {...sliderParams}>
               {services.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <ServiceItem {...item} key={index} color={color} />
+                  <ServiceItem {...item} {...mediaQueries} key={index} color={color} />
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -142,7 +143,7 @@ const Additionals = ({ positions, ...props }) => {
             <Swiper {...{ slidesPerView: "auto", spaceBetween: 10 }}>
               {services.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <ServiceItem {...item} key={index} color={color} />
+                  <ServiceItem {...item} {...mediaQueries} key={index} color={color} />
                 </SwiperSlide>
               ))}
             </Swiper>

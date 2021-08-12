@@ -6,12 +6,7 @@ import image2 from "./src/image2.webp";
 import image3 from "./src/image3.webp";
 import image4 from "./src/image4.webp";
 import bg from "./src/bg.webp";
-import prev from "./src/prev.svg";
-import prevHover from "./src/prev_hover.svg";
-import next from "./src/next.svg";
-import nextHover from "./src/next_hover.svg";
 import { useState } from "react";
-import { useMediaQuery } from "react-responsive";
 
 const defaultData = {
   title: "Как это было",
@@ -82,6 +77,7 @@ const PrevArrow = ({ className, style, onClick, color }) => {
 
 const HowItWas = (props) => {
   const { color, images, title, bg } = props.data || defaultData;
+  const { isDesktop, isTablet, isMobile } = props;
 
   /* Slider Params */
   const sliderParams = {
@@ -96,14 +92,6 @@ const HowItWas = (props) => {
     className: s._slider,
   };
 
-  /* Media Queries */
-
-  const isDesktop = useMediaQuery({ query: "screen and (min-width: 1300px)" });
-  const isTablet = useMediaQuery({
-    query: "screen and (min-width: 768px) and (max-width: 1299px)",
-  });
-  const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
-
   let slidesToShow;
   if (isDesktop) {
     slidesToShow = 4;
@@ -117,7 +105,7 @@ const HowItWas = (props) => {
 
   return (
     <section className={s.howItWas}>
-      {(bg && isDesktop) && (
+      {bg && isDesktop && (
         <div
           className={s._bg}
           style={{

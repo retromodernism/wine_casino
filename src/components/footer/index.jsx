@@ -8,7 +8,6 @@ import { ReactComponent as Inst } from "./src/inst.svg";
 import { useState } from "react";
 import * as Router from "react-router-dom";
 import * as Scroll from "react-scroll";
-import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 import { useReducer } from "react";
 
