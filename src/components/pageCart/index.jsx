@@ -11,19 +11,18 @@ import CartSuccessPopup from "../cartSuccessPopup";
 import CartOrder from "../cartOrder";
 import Header from "../header";
 import Footer from "../footer";
-import { getPositions } from "../../redux/modules/positions";
+import { useMemo } from "react";
 
 const CartPage = ({
   cartIsEmpty,
-  getPositions,
   cartPopupIsOpen,
   makeHeaderDark,
   ...props
 }) => {
   makeHeaderDark();
 
-  const { isDesktop, isTablet, isMobile } = props;
-  const mediaQueries = { isDesktop, isTablet, isMobile };
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), []);
 
   return (
     <>
@@ -52,5 +51,5 @@ export default connect(
     cartPopupIsOpen: state.popup.cartPopupIsOpen,
     cartIsEmpty: state.cart.positionsIds.length === 0,
   }),
-  { makeHeaderDark, makeHeaderLight, getPositions }
+  { makeHeaderDark, makeHeaderLight }
 )(CartPage);

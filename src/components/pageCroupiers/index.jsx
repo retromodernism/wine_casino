@@ -5,17 +5,18 @@ import OurCroupiers from "../ourCroupiers";
 import s from "./index.module.scss";
 import { makeHeaderDark } from "../../redux/modules/headerColor";
 import { connect } from "react-redux";
+import { useMemo } from "react";
 
 const PageCroupiers = ({ makeHeaderDark, ...props }) => {
   makeHeaderDark();
 
-  const { isDesktop, isTablet, isMobile } = props;
-  const mediaQueries = { isDesktop, isTablet, isMobile };
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), []);
 
   return (
     <>
       <Header {...mediaQueries} />
-      <main className={s.main} {...mediaQueries}>
+      <main className={s.main}>
         {isDesktop && (
           <Fragment>
             <OurCroupiers {...mediaQueries} />

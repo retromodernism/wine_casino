@@ -7,6 +7,7 @@ import image3 from "./src/image3.webp";
 import image4 from "./src/image4.webp";
 import bg from "./src/bg.webp";
 import { useState } from "react";
+import { useMemo } from "react";
 
 const defaultData = {
   title: "Как это было",
@@ -76,32 +77,39 @@ const PrevArrow = ({ className, style, onClick, color }) => {
 };
 
 const HowItWas = (props) => {
-  const { color, images, title, bg } = props.data || defaultData;
-  const { isDesktop, isTablet, isMobile } = props;
+  const { color, images, title, bg } = useMemo(
+    () => props.data || defaultData,
+    []
+  );
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
 
   /* Slider Params */
-  const sliderParams = {
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    infinite: true,
-    speed: 500,
-    slidesToScroll: 1,
-    nextArrow: <NextArrow color={color} />,
-    prevArrow: <PrevArrow color={color} />,
-    className: s._slider,
-  };
+  const sliderParams = useMemo(
+    () => ({
+      autoplay: true,
+      autoplaySpeed: 3000,
+      pauseOnHover: true,
+      infinite: true,
+      speed: 500,
+      slidesToScroll: 1,
+      nextArrow: <NextArrow color={color} />,
+      prevArrow: <PrevArrow color={color} />,
+      className: s._slider,
+    }),
+    []
+  );
 
-  let slidesToShow;
-  if (isDesktop) {
-    slidesToShow = 4;
-  }
-  if (isTablet) {
-    slidesToShow = 2;
-  }
-  if (isMobile) {
-    slidesToShow = 1;
-  }
+  const slidesToShow = useMemo(() => {
+    if (isDesktop) {
+      return 4;
+    }
+    if (isTablet) {
+      return 2;
+    }
+    if (isMobile) {
+      return 1;
+    }
+  }, []);
 
   return (
     <section className={s.howItWas}>

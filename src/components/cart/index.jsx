@@ -10,6 +10,14 @@ import { removePosition, resetCart } from "../../redux/modules/cart";
 import { changePositionCount } from "../../redux/modules/positions";
 import { Fragment } from "react";
 import CartOrder from "../cartOrder";
+import { useMemo } from "react";
+import { useCallback } from "react";
+
+const categorySinonyms = {
+  casino: "Вид казино",
+  equipment: "Оборудование",
+  service: "Услуги",
+};
 
 const Cart = ({
   positions,
@@ -20,52 +28,61 @@ const Cart = ({
   changePositionCount,
   ...props
 }) => {
-  const { isDesktop, isTablet, isMobile } = props;
-  const mediaQueries = { isDesktop, isTablet, isMobile };
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
+  const mediaQueries = useMemo(
+    () => ({ isDesktop, isTablet, isMobile }),
+    [isDesktop, isTablet, isMobile]
+  );
 
   // Working with state
 
-  const cartPositions = positions.filter(({ id }) =>
-    cartPositionsIds.includes(id)
+  const cartPositions = useMemo(
+    () => positions.filter(({ id }) => cartPositionsIds.includes(id)),
+    [cartPositionsIds, positions]
   );
 
-  const cartIsEmpty = cartPositions.length === 0;
-
-  let finalPrice = 0;
-  cartPositions.forEach(
-    ({ price, count }) => (finalPrice += price * count.value)
+  const cartIsEmpty = useMemo(
+    () => cartPositions.length === 0,
+    [cartPositions]
   );
 
-  const getPositionById = (positionId) => {
-    return positions.filter(({ id }) => positionId === id)[0];
-  };
+  const getPositionById = useCallback(
+    (positionId) => {
+      return positions.filter(({ id }) => positionId === id)[0];
+    },
+    [positions]
+  );
 
-  const cartPositionsCategories = {};
+  const cartPositionsCategories = useMemo(
+    () =>
+      cartPositionsIds.reduce((acc, positionId) => {
+        const position = getPositionById(positionId);
+        const category = position.type;
 
-  cartPositionsIds.forEach((positionId) => {
-    const position = getPositionById(positionId);
-    const category = position.type;
+        if (acc.hasOwnProperty(category)) {
+          acc[category].push(position);
+        } else {
+          acc[category] = [position];
+        }
 
-    if (cartPositionsCategories.hasOwnProperty(category)) {
-      cartPositionsCategories[category].push(position);
-    } else {
-      cartPositionsCategories[category] = [position];
-    }
-  });
+        return acc;
+      }, {}),
+    [cartPositionsIds, getPositionById]
+  );
 
-  const cartPositionsCategoriesArray = [];
-  const categorySinonyms = {
-    casino: "Вид казино",
-    equipment: "Оборудование",
-    service: "Услуги",
-  };
-
-  for (const category in cartPositionsCategories) {
-    cartPositionsCategoriesArray.push({
-      category: categorySinonyms[category],
-      positions: cartPositionsCategories[category],
-    });
-  }
+  const cartPositionsCategoriesArray = useMemo(
+    () =>
+      Object.keys(cartPositionsCategories).reduce((acc, category) => {
+        return [
+          ...acc,
+          {
+            category: categorySinonyms[category],
+            positions: cartPositionsCategories[category],
+          },
+        ];
+      }, []),
+    [cartPositionsCategories]
+  );
 
   return (
     <section className={s.cart}>

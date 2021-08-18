@@ -1,6 +1,7 @@
 import s from "./index.module.scss";
 import Variant from "../variant";
 import { connect } from "react-redux";
+import { useMemo } from "react";
 
 const defaultData = {
   color: {
@@ -11,14 +12,20 @@ const defaultData = {
 };
 
 const Variants = ({ positions, ...props }) => {
-  const { color, currentCasinoType } = props.data || defaultData;
-  const { isDesktop, isTablet, isMobile } = props;
-  const mediaQueries = { isDesktop, isTablet, isMobile };
+  const { color, currentCasinoType } = useMemo(
+    () => props.data || defaultData,
+    []
+  );
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), []);
 
-  // const currentCasinoType = "wine";
-  const casinos = positions.filter(
-    ({ type, casinoType }) =>
-      type === "casino" && casinoType === currentCasinoType
+  const casinos = useMemo(
+    () =>
+      positions.filter(
+        ({ type, casinoType }) =>
+          type === "casino" && casinoType === currentCasinoType
+      ),
+    []
   );
 
   return (

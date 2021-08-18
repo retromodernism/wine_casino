@@ -11,6 +11,16 @@ import { makeHeaderLight } from "../../redux/modules/headerColor";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
+import { useEffect } from "react";
+import { useMemo } from "react";
+import { useCallback } from "react";
+
+const scrollDown = (ref) => {
+  const element = ref.current;
+  const currentScrollPosition = element.scrollTop;
+  const newScrollPosition = currentScrollPosition + 97;
+  element.scroll({ left: 0, top: newScrollPosition, behavior: "smooth" });
+};
 
 const LinkItem = ({ title, href }) => {
   const [isHovered, setHover] = useState(false);
@@ -32,39 +42,53 @@ const HomeCoulinaryCasino = ({
   makeHeaderLight,
   ...props
 }) => {
-  makeHeaderLight();
+  useEffect(() => {
+    makeHeaderLight();
+  }, []);
 
-  const { isDesktop, isTablet, isMobile } = props;
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
 
   /* Data */
-  const foodCasinos = casinos
-    .filter(
-      ({ type, foodType }) => type === "foodCasino" && foodType === "Съедобное"
-    )
-    .map(({ url, title }) => ({ title, href: url }));
+  const foodCasinos = useMemo(
+    () =>
+      casinos
+        .filter(
+          ({ type, foodType }) =>
+            type === "foodCasino" && foodType === "Съедобное"
+        )
+        .map(({ url, title }) => ({ title, href: url })),
+    []
+  );
 
-  const drinkCasinos = casinos
-    .filter(
-      ({ type, foodType }) => type === "foodCasino" && foodType === "Drink"
-    )
-    .map(({ url, title }) => ({ title, href: url }));
+  const drinkCasinos = useMemo(
+    () =>
+      casinos
+        .filter(
+          ({ type, foodType }) => type === "foodCasino" && foodType === "Drink"
+        )
+        .map(({ url, title }) => ({ title, href: url })),
+    []
+  );
 
   /* State */
 
   const [videoIsOpen, setVideoOpen] = useState(false);
 
-  const foodCasinosIsScrolling = foodCasinos.length > 5;
-  const drinkCasinosIsScrolling = drinkCasinos.length > 5;
+  const foodCasinosIsScrolling = useMemo(() => foodCasinos.length > 5, []);
+  const drinkCasinosIsScrolling = useMemo(() => drinkCasinos.length > 5, []);
 
   const foodLinksList = useRef(null);
   const drinkLinksList = useRef(null);
 
-  const scrollDown = (ref) => {
-    const element = ref.current;
-    const currentScrollPosition = element.scrollTop;
-    const newScrollPosition = currentScrollPosition + 97;
-    element.scroll({ left: 0, top: newScrollPosition, behavior: "smooth" });
-  };
+  const scrollFoodCasinosDown = useCallback(
+    scrollDown.bind(null, foodLinksList),
+    []
+  );
+
+  const scrollDrinkCasinosDown = useCallback(
+    scrollDown.bind(null, drinkLinksList),
+    []
+  );
 
   return (
     <section
@@ -132,7 +156,7 @@ const HomeCoulinaryCasino = ({
                 {foodCasinosIsScrolling && (
                   <button
                     className={s._showMore}
-                    onClick={scrollDown.bind(null, foodLinksList)}
+                    onClick={scrollFoodCasinosDown}
                   />
                 )}
               </div>
@@ -154,7 +178,7 @@ const HomeCoulinaryCasino = ({
                 {drinkCasinosIsScrolling && (
                   <button
                     className={s._showMore}
-                    onClick={scrollDown.bind(null, drinkLinksList)}
+                    onClick={scrollDrinkCasinosDown}
                   />
                 )}
               </div>

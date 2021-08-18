@@ -3,23 +3,28 @@ import classnames from "classnames";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { useMemo } from "react";
+import { useCallback } from "react";
+
+const declOfNum = (number, titles) => {
+  const cases = [2, 0, 1, 1, 1, 2];
+  return titles[
+    number % 100 > 4 && number % 100 < 20
+      ? 2
+      : cases[number % 10 < 5 ? number % 10 : 5]
+  ];
+};
 
 const GoToCartButton = ({ cartPositions, headerColor }) => {
-  const isDark = headerColor === "dark";
-  const isLight = headerColor === "light";
+  const isDark = useMemo(() => headerColor === "dark", [headerColor]);
+  const isLight = useMemo(() => headerColor === "light", [headerColor]);
 
-  const positionsInCart = cartPositions.length;
+  const positionsInCart = useMemo(() => cartPositions.length, [cartPositions]);
 
-  const declOfNum = (number, titles) => {
-    const cases = [2, 0, 1, 1, 1, 2];
-    return titles[
-      number % 100 > 4 && number % 100 < 20
-        ? 2
-        : cases[number % 10 < 5 ? number % 10 : 5]
-    ];
-  };
-
-  const suffix = declOfNum(positionsInCart, ["позиция", "позиции", "позиций"]);
+  const suffix = useCallback(
+    declOfNum(positionsInCart, ["позиция", "позиции", "позиций"]),
+    [positionsInCart]
+  );
 
   const [isHover, setHover] = useState(false);
 

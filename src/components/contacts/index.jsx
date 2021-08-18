@@ -4,9 +4,10 @@ import yandexIcon from "./src/yandex.png";
 import googleIcon from "./src/google.png";
 import { YMaps, Map, Placemark } from "react-yandex-maps";
 import { Fragment } from "react";
+import { useMemo } from "react";
 
 const Contacts = (props) => {
-  const { isDesktop, isTablet, isMobile } = props;
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
 
   return (
     <section className={s.contacts}>

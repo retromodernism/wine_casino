@@ -6,19 +6,47 @@ import { ReactComponent as XIcon } from "./src/xIcon.svg";
 import { closeBurger } from "../../redux/modules/burger";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useMemo } from "react";
+import { useCallback } from "react";
 
 const BurgerMenu = ({ casinos, closeBurger, ...props }) => {
-  const foodCasinos = casinos
-    .filter(({ type }) => type === "foodCasino")
-    .map(({ title, url }) => ({ title, url }));
+  const foodCasinos = useMemo(
+    () =>
+      casinos
+        .filter(({ type }) => type === "foodCasino")
+        .map(({ title, url }) => ({ title, url })),
+    [casinos]
+  );
 
-  const classicCasinos = casinos
-    .filter(({ type }) => type === "classicCasino")
-    .map(({ title, url }) => ({ title, url }));
+  const classicCasinos = useMemo(
+    () =>
+      casinos
+        .filter(({ type }) => type === "classicCasino")
+        .map(({ title, url }) => ({ title, url })),
+    [casinos]
+  );
 
   const [foodCasinosIsExpanded, setFoodCasinosIsExpanded] = useState(true);
   const [classicCasinosIsExpanded, setClassicCasinosIsExpanded] =
     useState(false);
+
+  const expandFoodCasinos = useCallback(() => {
+    if (classicCasinosIsExpanded) {
+      setClassicCasinosIsExpanded(false);
+      setFoodCasinosIsExpanded(true);
+    } else {
+      setFoodCasinosIsExpanded(!foodCasinosIsExpanded);
+    }
+  }, [classicCasinosIsExpanded, foodCasinosIsExpanded]);
+
+  const expandClassicCasinos = useCallback(() => {
+    if (foodCasinosIsExpanded) {
+      setFoodCasinosIsExpanded(false);
+      setClassicCasinosIsExpanded(true);
+    } else {
+      setClassicCasinosIsExpanded(!classicCasinosIsExpanded);
+    }
+  }, [classicCasinosIsExpanded, foodCasinosIsExpanded]);
 
   return (
     <Popup>
@@ -31,14 +59,7 @@ const BurgerMenu = ({ casinos, closeBurger, ...props }) => {
             className={cx(s._item, s._item_expanded, {
               [s._item_collapsed]: foodCasinosIsExpanded,
             })}
-            onClick={() => {
-              if (classicCasinosIsExpanded) {
-                setClassicCasinosIsExpanded(false);
-                setFoodCasinosIsExpanded(true);
-              } else {
-                setFoodCasinosIsExpanded(!foodCasinosIsExpanded);
-              }
-            }}
+            onClick={expandFoodCasinos}
           >
             <p>Кулинарное казино</p>
             {foodCasinosIsExpanded && (
@@ -60,14 +81,7 @@ const BurgerMenu = ({ casinos, closeBurger, ...props }) => {
             className={cx(s._item, s._item_expanded, {
               [s._item_collapsed]: classicCasinosIsExpanded,
             })}
-            onClick={() => {
-              if (foodCasinosIsExpanded) {
-                setFoodCasinosIsExpanded(false);
-                setClassicCasinosIsExpanded(true);
-              } else {
-                setClassicCasinosIsExpanded(!classicCasinosIsExpanded);
-              }
-            }}
+            onClick={expandClassicCasinos}
           >
             <p>Классическое казино</p>
             {classicCasinosIsExpanded && (

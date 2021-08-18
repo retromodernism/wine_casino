@@ -10,50 +10,51 @@ import {
 } from "../../redux/modules/headerColor";
 import { connect } from "react-redux";
 import { useEffect } from "react";
+import { useMemo } from "react";
 
 const Home = ({ makeHeaderDark, ...props }) => {
   /* Change header color theme */
   useEffect(() => {
     makeHeaderDark();
-  });
+  }, []);
 
   /* Props decomposition */
   const { logo, title, video, features, chips, background, greenBgMobile } =
-    props.data;
+    useMemo(() => props.data, []);
 
   /* Media Queries */
-  const { isDesktop, isTablet, isMobile } = props;
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
 
   /* Bg Style */
-  let bgStyle;
-  if (isDesktop) {
-    bgStyle = {
-      background: `url(${background.desktop.image}) 100% 100% / contain no-repeat`,
-      width: background.desktop.width,
-      height: background.desktop.height,
-      position: "absolute",
-      top: background.desktop.top,
-      right: background.desktop.right,
-    };
-  } else if (isTablet) {
-    bgStyle = {
-      background: `url(${background.tablet.image}) 100% 100% / contain no-repeat`,
-      width: background.tablet.width,
-      height: background.tablet.height,
-      position: "absolute",
-      top: background.tablet.top,
-      right: background.tablet.right,
-    };
-  } else if (isMobile) {
-    bgStyle = {
-      background: `url(${background.mobile.image}) 100% 100% / contain no-repeat`,
-      width: background.mobile.width,
-      height: background.mobile.height,
-      position: "absolute",
-      top: background.mobile.top,
-      right: background.mobile.right,
-    };
-  }
+  const bgStyle = useMemo(() => {
+    if (isDesktop)
+      return {
+        background: `url(${background.desktop.image}) 100% 100% / contain no-repeat`,
+        width: background.desktop.width,
+        height: background.desktop.height,
+        position: "absolute",
+        top: background.desktop.top,
+        right: background.desktop.right,
+      };
+    else if (isTablet)
+      return {
+        background: `url(${background.tablet.image}) 100% 100% / contain no-repeat`,
+        width: background.tablet.width,
+        height: background.tablet.height,
+        position: "absolute",
+        top: background.tablet.top,
+        right: background.tablet.right,
+      };
+    else if (isMobile)
+      return {
+        background: `url(${background.mobile.image}) 100% 100% / contain no-repeat`,
+        width: background.mobile.width,
+        height: background.mobile.height,
+        position: "absolute",
+        top: background.mobile.top,
+        right: background.mobile.right,
+      };
+  }, []);
 
   /* Local state */
   const [videoIsOpen, setVideoOpen] = useState(false);
@@ -178,4 +179,4 @@ const Home = ({ makeHeaderDark, ...props }) => {
   );
 };
 
-export default connect((state) => ({}), { makeHeaderDark })(Home);
+export default connect(null, { makeHeaderDark })(Home);

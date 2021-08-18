@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { addPosition } from "../../redux/modules/cart";
 import { changePositionCount } from "../../redux/modules/positions";
 import InputMask from "react-input-mask";
+import { useMemo } from "react";
+import { useCallback } from "react";
 
 const EquipmentItem = ({
   cartPositionsIds,
@@ -16,16 +18,25 @@ const EquipmentItem = ({
   color,
   ...props
 }) => {
-  const {isDesktop, isTablet, isMobile} = props;
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
 
   /* State */
 
-  const addToCart = addPosition.bind(null, id);
+  const addToCart = useCallback(addPosition.bind(null, id), [id]);
 
-  const positionIsInCart = cartPositionsIds.includes(id);
+  const positionIsInCart = useMemo(
+    () => cartPositionsIds.includes(id),
+    [cartPositionsIds, id]
+  );
 
-  const incrementCount = changePositionCount.bind(null, count.value + 1, id);
-  const decrementCount = changePositionCount.bind(null, count.value - 1, id);
+  const incrementCount = useCallback(
+    changePositionCount.bind(null, count.value + 1, id),
+    [id, count]
+  );
+  const decrementCount = useCallback(
+    changePositionCount.bind(null, count.value - 1, id),
+    [id, count]
+  );
 
   return (
     <div

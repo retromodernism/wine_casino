@@ -13,14 +13,15 @@ import homeBg from "./src/homeBg.png";
 import Form from "../form";
 import Header from "../header";
 import Footer from "../footer";
+import { useMemo } from "react";
 
 const data = {
   homeBg: homeBg,
 };
 
 const MainPageFoodCasino = (props) => {
-  const { isDesktop, isTablet, isMobile } = props;
-  const mediaQueries = { isDesktop, isTablet, isMobile };
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), []);
 
   return (
     <>

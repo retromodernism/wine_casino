@@ -1,5 +1,6 @@
 import s from "./index.module.scss";
 import cx from "classnames";
+import { useMemo } from "react";
 
 const TematicItem = ({
   images = [],
@@ -9,11 +10,11 @@ const TematicItem = ({
   odd = false,
   ...props
 }) => {
-  const { isDesktop, isTablet, isMobile } = props;
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
 
   /* Local */
 
-  const even = !odd;
+  const even = useMemo(() => !odd, []);
 
   return (
     <div className={s.tematicItem}>

@@ -28,7 +28,7 @@ const MainPageFoodCasino = (props) => {
   return (
     <>
       <Header data={casino.header} {...mediaQueries} />
-      <main className={s.main} {...mediaQueries}>
+      <main className={s.main}>
         <Home data={casino.home} {...mediaQueries} />
         <BackToAll data={casino.back} {...mediaQueries} />
         <Essence data={casino.essence} {...mediaQueries} />

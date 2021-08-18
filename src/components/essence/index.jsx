@@ -4,6 +4,7 @@ import image1_desk from "./src/image1.webp";
 import image2_desk from "./src/image2.webp";
 import image3_desk from "./src/image3.webp";
 import image4_desk from "./src/image4.webp";
+import { useMemo } from "react";
 
 const defaultItems = [
   {
@@ -39,15 +40,20 @@ const defaultData = {
 };
 
 const Essence = ({ style, ...props }) => {
-  const { title, items, itemsColor, bg } = props.data || defaultData;
+  const { title, items, itemsColor, bg } = useMemo(
+    () => props.data || defaultData,
+    []
+  );
 
-  const { isDesktop, isTablet, isMobile } = props;
+  const { isDesktop, isTablet, isMobile } = useMemo(() => {
+    return props;
+  }, []);
 
   return (
     <section className={s.essence} style={style}>
       <div className={s._bg1}></div>
       <div className={s._bg2}></div>
-      {(bg && isDesktop) && (
+      {bg && isDesktop && (
         <div
           className={s._bg}
           style={{

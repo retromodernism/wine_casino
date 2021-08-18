@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import s from "./index.module.scss";
 import image from "./src/image.webp";
 
@@ -38,8 +39,11 @@ const defaultData = {
 };
 
 const About = (props) => {
-  const { title, items } = props.data || defaultData;
-  const {isDesktop, isTablet, isMobile} = props;
+  const { title, items } = useMemo(
+    () => props.data || defaultData,
+    [props.data]
+  );
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
 
   return (
     <section className={s.about}>

@@ -12,6 +12,8 @@ import mafia2 from "./src/mafia2.webp";
 import mafia3 from "./src/mafia3.webp";
 import TematicItem from "../tematicItem";
 import { useState } from "react";
+import { useMemo } from "react";
+import { useCallback } from "react";
 
 const defaultTematicItems = [
   {
@@ -35,30 +37,40 @@ const defaultTematicItems = [
 ];
 
 const Tematic = (props) => {
-  const tematicItems = props?.data?.items || defaultTematicItems;
-  const { isDesktop, isTablet, isMobile } = props;
-  const mediaQueries = { isDesktop, isTablet, isMobile };
+  const tematicItems = useMemo(
+    () => props?.data?.items || defaultTematicItems,
+    []
+  );
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), []);
 
   /* State */
 
-  const initialItemsState = tematicItems.map((item, i) => ({
-    ...item,
-    isActive: i === 0,
-    id: hash(item),
-  }));
+  const initialItemsState = useMemo(
+    () =>
+      tematicItems.map((item, i) => ({
+        ...item,
+        isActive: i === 0,
+        id: hash(item),
+      })),
+    [tematicItems]
+  );
 
   const [items, setItems] = useState(initialItemsState);
 
-  const toggleItem = (itemId) => {
+  const toggleItem = useCallback((itemId) => {
     const newState = items.map((item) => ({
       ...item,
       isActive: item.id === itemId,
     }));
 
     setItems(newState);
-  };
+  }, []);
 
-  const [activeItem] = items.filter(({ isActive }) => isActive);
+  const [activeItem] = useMemo(
+    () => items.filter(({ isActive }) => isActive),
+    [items]
+  );
 
   return (
     <section className={s.tematic}>

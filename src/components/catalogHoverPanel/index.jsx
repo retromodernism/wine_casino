@@ -11,6 +11,8 @@ import { ReactComponent as Apple } from "./src/apple.svg";
 import { ReactComponent as Cards } from "./src/cards.svg";
 import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
+import { useCallback } from "react";
+import { useMemo } from "react";
 
 const linksInit = [
   {
@@ -130,54 +132,52 @@ const CatalogHoverPanel = ({
   closeClassicCasinos,
   casinos,
 }) => {
-  const casinosToPrint = casinos.filter(({ type }) => type === casinosType);
+  const casinosToPrint = useMemo(
+    () => casinos.filter(({ type }) => type === casinosType),
+    [casinosType, casinos]
+  );
 
-  // const foodCasinos = casinos.filter(({ type }) => type === "foodCasino");
-  // const classicCasinos = casinos.filter(({ type }) => type === "classicCasino");
+  const openPanel = useMemo(
+    () => (casinosType === "foodCasino" ? openFoodCasinos : openClassicCasinos),
+    [casinosType]
+  );
 
-  const openPanel =
-    casinosType === "foodCasino" ? openFoodCasinos : openClassicCasinos;
-
-  const closePanel =
-    casinosType === "foodCasino" ? closeFoodCasinos : closeClassicCasinos;
+  const closePanel = useMemo(
+    () =>
+      casinosType === "foodCasino" ? closeFoodCasinos : closeClassicCasinos,
+    [casinosType]
+  );
 
   const currentPath = useLocation().pathname;
 
-  const casinosLinks = [
-    {
-      title:
-        casinosType === "foodCasino"
-          ? "Кулинарное казино"
-          : "Классическое казино",
-      link: casinosType === "foodCasino" ? "/" : "/klassicheskoe-kazino",
-      isActive: true,
-      links: casinosToPrint.map(({ url, title }) => ({
-        title,
-        href: url,
-        isActive: currentPath === url,
-      })),
-    },
-    // {
-    //   title: "Классическое казино",
-    //   link: "/klassicheskoe-kazino",
-    //   isActive: false,
-    //   links: classicCasinos.map(({ url, title }) => ({
-    //     title,
-    //     href: url,
-    //     isActive: currentPath === url,
-    //   })),
-    // },
-  ];
+  const casinosLinks = useMemo(
+    () => [
+      {
+        title:
+          casinosType === "foodCasino"
+            ? "Кулинарное казино"
+            : "Классическое казино",
+        link: casinosType === "foodCasino" ? "/" : "/klassicheskoe-kazino",
+        isActive: true,
+        links: casinosToPrint.map(({ url, title }) => ({
+          title,
+          href: url,
+          isActive: currentPath === url,
+        })),
+      },
+    ],
+    [casinosType, casinosToPrint, currentPath]
+  );
 
   const [links, setLinks] = useState(casinosLinks);
-  const activateCategory = (title) => {
+  const activateCategory = useCallback((title) => {
     const newLinks = links.map((item) =>
       item.title === title
         ? { ...item, isActive: true }
         : { ...item, isActive: false }
     );
     setLinks(newLinks);
-  };
+  });
 
   return (
     <div
@@ -194,6 +194,7 @@ const CatalogHoverPanel = ({
             to={link}
             onMouseEnter={activateCategory.bind(null, title)}
             onClick={closePanel}
+            key={index}
           >
             {index === 0 ? (
               <Apple className={s._categoriesItemIcon_apple} />
@@ -209,11 +210,12 @@ const CatalogHoverPanel = ({
       <div className={s._links}>
         {links
           .filter(({ isActive }) => isActive)[0]
-          .links.map(({ title, href, isActive }) => (
+          .links.map(({ title, href, isActive }, index) => (
             <Link
               to={href}
               className={classnames(s._link, { [s._link_active]: isActive })}
               onClick={closePanel}
+              key={index}
             >
               {title}
             </Link>

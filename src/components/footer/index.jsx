@@ -10,12 +10,53 @@ import * as Router from "react-router-dom";
 import * as Scroll from "react-scroll";
 import { Link } from "react-router-dom";
 import { useReducer } from "react";
+import { useMemo } from "react";
+import { useCallback } from "react";
 
 const defaultData = {
   textColor: "#323232", // цвет текста правого блока
   mainColor: "#323232", // цвет левого блока, лого, инпутов у формы
   iconColor: "#ffffff", // цвет иконок в футере
   innerTextColor: "#ffffff", // цвет текста в левом блоке
+};
+
+const HOVER_COMMUNICATION_WAY = "HOVER_WAY_COMMUNICATION";
+const UNHOVER_COMMUNICATION_WAY = "UNHOVER_WAY_COMMUNICATION";
+const CHANGE_COMMUNICATION_WAY = "CHANGE_COMMUNICATION_WAY";
+
+const communicationWays = [
+  { communicationWay: "Телефон", placeholder: "Ваш телефон" },
+  { communicationWay: "WhatsApp", placeholder: "Ваш WhatsApp" },
+  { communicationWay: "Телеграм", placeholder: "Ваш телеграм" },
+];
+
+const initialState = {
+  communicationWayIsOpen: false,
+  communicationWay: "Телефон",
+  placeholder: "Ваш телефон",
+};
+
+const reducer = (state, { type, payload }) => {
+  switch (type) {
+    case HOVER_COMMUNICATION_WAY:
+      return {
+        ...state,
+        communicationWayIsOpen: true,
+      };
+    case UNHOVER_COMMUNICATION_WAY:
+      return {
+        ...state,
+        communicationWayIsOpen: false,
+      };
+    case CHANGE_COMMUNICATION_WAY:
+      return {
+        ...state,
+        communicationWay: payload.communicationWay,
+        placeholder: payload.placeholder,
+      };
+    default:
+      return state;
+  }
 };
 
 const Submit = ({ mainColor }) => {
@@ -55,77 +96,40 @@ const ComminucationWayOption = ({ onClick, mainColor, ...props }) => {
 };
 
 const Footer = (props) => {
-  const { mainColor, innerTextColor, iconColor, textColor } =
-    props.data || defaultData;
+  const { mainColor, innerTextColor, iconColor, textColor } = useMemo(
+    () => props.data || defaultData,
+    []
+  );
 
   const isMainPage = Router.useLocation().pathname === "/";
 
-  const { isDesktop, isTablet, isMobile } = props;
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
 
   /* State */
-
-  const HOVER_COMMUNICATION_WAY = "HOVER_WAY_COMMUNICATION";
-  const UNHOVER_COMMUNICATION_WAY = "UNHOVER_WAY_COMMUNICATION";
-  const CHANGE_COMMUNICATION_WAY = "CHANGE_COMMUNICATION_WAY";
-
-  const communicationWays = [
-    { communicationWay: "Телефон", placeholder: "Ваш телефон" },
-    { communicationWay: "WhatsApp", placeholder: "Ваш WhatsApp" },
-    { communicationWay: "Телеграм", placeholder: "Ваш телеграм" },
-  ];
-
-  const initialState = {
-    communicationWayIsOpen: false,
-    communicationWay: "Телефон",
-    placeholder: "Ваш телефон",
-  };
-
-  const reducer = (state, { type, payload }) => {
-    switch (type) {
-      case HOVER_COMMUNICATION_WAY:
-        return {
-          ...state,
-          communicationWayIsOpen: true,
-        };
-      case UNHOVER_COMMUNICATION_WAY:
-        return {
-          ...state,
-          communicationWayIsOpen: false,
-        };
-      case CHANGE_COMMUNICATION_WAY:
-        return {
-          ...state,
-          communicationWay: payload.communicationWay,
-          placeholder: payload.placeholder,
-        };
-      default:
-        return state;
-    }
-  };
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
   /* State Hooks */
 
-  const openCommunicationSelectionPanel = () => {
+  const openCommunicationSelectionPanel = useCallback(() => {
     dispatch({ type: HOVER_COMMUNICATION_WAY, payload: {} });
-  };
+  }, []);
 
-  const closeCommunicationSelectionPanel = () => {
+  const closeCommunicationSelectionPanel = useCallback(() => {
     dispatch({ type: UNHOVER_COMMUNICATION_WAY, payload: {} });
-  };
+  }, []);
 
-  const toggleCommunicationSelectionPanel = () => {
+  const toggleCommunicationSelectionPanel = useCallback(() => {
     if (state.communicationWayIsOpen) {
       closeCommunicationSelectionPanel();
     } else {
       openCommunicationSelectionPanel();
     }
-  };
+  }, [state]);
 
-  const toggleCommunicationWay = (communicationItem) => {
+  const toggleCommunicationWay = useCallback((communicationItem) => {
     dispatch({ type: CHANGE_COMMUNICATION_WAY, payload: communicationItem });
-  };
+  }, []);
 
   return (
     <footer className={s.footer}>

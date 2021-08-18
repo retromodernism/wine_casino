@@ -29,6 +29,7 @@ import { openBurger } from "../../redux/modules/burger";
 import CatalogHoverPanel from "../catalogHoverPanel";
 import { Link } from "react-router-dom";
 import { Fragment } from "react";
+import { useMemo } from "react";
 
 const phone = {
   tel: "74950857604",
@@ -52,13 +53,13 @@ const Header = ({
   data,
   ...props
 }) => {
-  const { isDesktop, isTablet, isMobile } = props;
-  const mediaQueries = {isDesktop, isTablet, isMobile};
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), []);
 
   /* Header Color Theme */
 
-  const isDark = headerColor === "dark";
-  const isLight = headerColor === "light";
+  const isDark = useMemo(() => headerColor === "dark", [headerColor]);
+  const isLight = useMemo(() => headerColor === "light", [headerColor]);
 
   return (
     <div

@@ -7,6 +7,9 @@ import cx from "classnames";
 import { makeHeaderLight } from "../../redux/modules/headerColor";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useMemo } from "react";
+import { useCallback } from "react";
 
 const LinkItem = ({ title, href }) => {
   const [isHovered, setHover] = useState(false);
@@ -28,24 +31,38 @@ const HomeCoulinaryCasino = ({
   makeHeaderLight,
   ...props
 }) => {
-  makeHeaderLight();
-  const { isDesktop, isTablet, isMobile } = props;
+  useEffect(() => {
+    makeHeaderLight();
+  }, []);
+
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
 
   /* Data */
-  const half =
-    casinos.filter(({ type }) => type === "classicCasino").length / 2;
-
-  const classicCasinos = casinos.filter(
-    ({ type }, index) => type === "classicCasino"
+  const half = useMemo(
+    () => casinos.filter(({ type }) => type === "classicCasino").length / 2,
+    []
   );
 
-  const foodCasinos = classicCasinos
-    .filter((casino, index) => index < half)
-    .map(({ url, title }) => ({ title, href: url }));
+  const classicCasinos = useMemo(
+    () => casinos.filter(({ type }, index) => type === "classicCasino"),
+    []
+  );
 
-  const drinkCasinos = classicCasinos
-    .filter((casino, index) => index >= half)
-    .map(({ url, title }) => ({ title, href: url }));
+  const foodCasinos = useMemo(
+    () =>
+      classicCasinos
+        .filter((casino, index) => index < half)
+        .map(({ url, title }) => ({ title, href: url })),
+    []
+  );
+
+  const drinkCasinos = useMemo(
+    () =>
+      classicCasinos
+        .filter((casino, index) => index >= half)
+        .map(({ url, title }) => ({ title, href: url })),
+    []
+  );
 
   /* State */
   const [videoIsOpen, setVideoOpen] = useState(false);
@@ -53,16 +70,22 @@ const HomeCoulinaryCasino = ({
   const [showedFoodCasinos, setShowedFoodCasinos] = useState(100);
   const [showedDrinkCasinos, setShowedDrinkCasinos] = useState(100);
 
-  const hasShowMoreFoodCasinos = showedFoodCasinos < foodCasinos.length;
-  const hasShowMoreDrinkCasinos = showedDrinkCasinos < drinkCasinos.length;
-
-  const showMoreFoodCasinos = setShowedFoodCasinos.bind(
-    null,
-    showedFoodCasinos + 2
+  const hasShowMoreFoodCasinos = useMemo(
+    () => showedFoodCasinos < foodCasinos.length,
+    [showedFoodCasinos]
   );
-  const showMoreDrinkCasinos = setShowedDrinkCasinos.bind(
-    null,
-    showedDrinkCasinos + 2
+  const hasShowMoreDrinkCasinos = useMemo(
+    () => showedDrinkCasinos < drinkCasinos.length,
+    [showedDrinkCasinos]
+  );
+
+  const showMoreFoodCasinos = useCallback(
+    () => setShowedFoodCasinos(showedFoodCasinos + 2),
+    [showedFoodCasinos]
+  );
+  const showMoreDrinkCasinos = useCallback(
+    () => setShowedDrinkCasinos(showedDrinkCasinos + 2),
+    [showedDrinkCasinos]
   );
 
   return (

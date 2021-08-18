@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { useState } from "react";
 import TextTruncate from "react-text-truncate";
 import { Link } from "react-router-dom";
+import { useMemo } from "react";
+import { useCallback } from "react";
 
 const ShowMoreButton = ({ onClick }) => {
   const [isHover, setHover] = useState(false);
@@ -51,8 +53,8 @@ const NewsItem = ({ title, date, paragraphs = [""], mainImage, id = 0 }) => {
 
 const News = ({ news, ...props }) => {
   const [showedNews, setSHowedNews] = useState(6);
-  const hasShowMore = showedNews < news.length;
-  const showMore = setSHowedNews.bind(null, showedNews + 3);
+  const hasShowMore = useMemo(() => showedNews < news.length, []);
+  const showMore = useCallback(setSHowedNews.bind(null, showedNews + 3), [showedNews]);
 
   return (
     <section className={s.news}>

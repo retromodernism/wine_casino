@@ -8,6 +8,8 @@ import "./slider.scss";
 import { Fragment, useState } from "react";
 import { connect } from "react-redux";
 import { addPosition } from "../../redux/modules/cart";
+import { useMemo } from "react";
+import { useCallback } from "react";
 
 const defaultData = {
   title: "Разновидности Покера",
@@ -72,19 +74,34 @@ const GameItem = connect(
   }),
   { addPosition }
 )(({ positions, addPosition, id, ...props }) => {
-  const { isDesktop, isTablet, isMobile } = props;
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
 
   /* State */
 
   const [activeInfo, setActiveInfo] = useState("characteristics");
 
-  const characteristicsIsActive = activeInfo === "characteristics";
-  const descriptionIsActive = activeInfo === "description";
+  const characteristicsIsActive = useMemo(
+    () => activeInfo === "characteristics",
+    [activeInfo]
+  );
+  const descriptionIsActive = useMemo(
+    () => activeInfo === "description",
+    [activeInfo]
+  );
 
-  const activateCharacteristics = setActiveInfo.bind(null, "characteristics");
-  const activateDescription = setActiveInfo.bind(null, "description");
+  const activateCharacteristics = useCallback(
+    setActiveInfo.bind(null, "characteristics"),
+    []
+  );
+  const activateDescription = useCallback(
+    setActiveInfo.bind(null, "description"),
+    []
+  );
 
-  const [game] = positions.filter((item) => item.id === id);
+  const [game] = useMemo(
+    () => positions.filter((item) => item.id === id),
+    [id, positions]
+  );
 
   return (
     <div className={s._game}>
@@ -175,22 +192,19 @@ const GameItem = connect(
 });
 
 const KindsOfGames_tablet = ({ positions, ...props }) => {
-  const { title, gameType } = props.data || defaultData;
+  const { title, gameType } = useMemo(() => props.data || defaultData, []);
 
-  const { isDesktop, isTablet, isMobile } = props;
-  const mediaQueries = { isDesktop, isTablet, isMobile };
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), []);
 
-  const gamesPositions = positions.filter(
-    ({ casinoType }) => casinoType === gameType
+  const gamesPositions = useMemo(
+    () => positions.filter(({ casinoType }) => casinoType === gameType),
+    []
   );
 
   const [activePositionId, setActivePositionId] = useState(
     gamesPositions[0].id
   );
-
-  // const [activeGame] = gamesPositions.filter(
-  //   ({ id }) => id === activePositionId
-  // );
 
   return (
     <section className={s.kindsOfGames}>

@@ -2,11 +2,15 @@ import s from "./index.module.scss";
 import cx from "classnames";
 import InputMask from "react-input-mask";
 import { useState } from "react";
+import { useCallback } from "react";
+
+const reg =
+  /^(\+7|7|8)?[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/;
 
 const Form = (props) => {
   /* Form State */
   const [formSuccess, setFormSuccess] = useState(false);
-  const openSuccess = setFormSuccess.bind(null, true);
+  const openSuccess = useCallback(setFormSuccess.bind(null, true), []);
 
   const [wrongNameInput, setWrongNameInput] = useState(false);
   const [wrongPhoneInput, setWrongPhoneInput] = useState(false);
@@ -14,43 +18,44 @@ const Form = (props) => {
   const [formName, setFormName] = useState("");
   const [formPhone, setFormPhone] = useState("");
 
-  const validateName = () => formName.length > 3;
-  const reg =
-    /^(\+7|7|8)?[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/;
-  const validatePhone = () => reg.test(formPhone);
+  const validateName = useCallback(() => formName.length > 3, [formName]);
+  const validatePhone = useCallback(() => reg.test(formPhone), [formPhone]);
 
-  const handleNameInputChange = (e) => {
+  const handleNameInputChange = useCallback((e) => {
     setFormName(e.target.value);
-  };
+  }, []);
 
-  const handlePhoneInputChange = (e) => {
+  const handlePhoneInputChange = useCallback((e) => {
     setFormPhone(e.target.value);
-  };
+  }, []);
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  const handleFormSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
 
-    const nameInputIsCorrect = validateName();
-    const phoneInputIsCorrect = validatePhone();
+      const nameInputIsCorrect = validateName();
+      const phoneInputIsCorrect = validatePhone();
 
-    const validationPassed = nameInputIsCorrect && phoneInputIsCorrect;
+      const validationPassed = nameInputIsCorrect && phoneInputIsCorrect;
 
-    if (!nameInputIsCorrect) {
-      setWrongNameInput(true);
-    } else {
-      setWrongNameInput(false);
-    }
+      if (!nameInputIsCorrect) {
+        setWrongNameInput(true);
+      } else {
+        setWrongNameInput(false);
+      }
 
-    if (!phoneInputIsCorrect) {
-      setWrongPhoneInput(true);
-    } else {
-      setWrongPhoneInput(false);
-    }
+      if (!phoneInputIsCorrect) {
+        setWrongPhoneInput(true);
+      } else {
+        setWrongPhoneInput(false);
+      }
 
-    if (validationPassed) {
-      openSuccess();
-    }
-  };
+      if (validationPassed) {
+        openSuccess();
+      }
+    },
+    [validateName, validatePhone]
+  );
 
   return (
     <section className={s.form}>

@@ -3,6 +3,8 @@ import s from "./index.module.scss";
 import cx from "classnames";
 import { useState } from "react";
 import { connect } from "react-redux";
+import { useMemo } from "react";
+import { useCallback } from "react";
 
 const defaultData = {
   color: "#323232",
@@ -26,31 +28,46 @@ const ShowMore = ({ onClick }) => {
 };
 
 const OtherCasinos = ({ allCasinos, ...props }) => {
-  const { color, fontColor, type } = props.data || defaultData;
-  const { isDesktop, isTablet, isMobile } = props;
+  const { color, fontColor, type } = useMemo(
+    () => props.data || defaultData,
+    []
+  );
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
 
   /* Data */
-  const casinos = allCasinos
-    .filter((casino) => casino.type === type)
-    .map(({ miniTitle, url, miniIcon }) => ({
-      title: miniTitle,
-      image: miniIcon,
-      to: url,
-    }));
+  const casinos = useMemo(
+    () =>
+      allCasinos
+        .filter((casino) => casino.type === type)
+        .map(({ miniTitle, url, miniIcon }) => ({
+          title: miniTitle,
+          image: miniIcon,
+          to: url,
+        })),
+    []
+  );
 
-  let showedCasinos, countAddedCasinos;
-  if (isDesktop) {
-    [showedCasinos, countAddedCasinos] = [8, 8];
-  }
-  if (isTablet) {
-    [showedCasinos, countAddedCasinos] = [9, 6];
-  }
-  if (isMobile) {
-    [showedCasinos, countAddedCasinos] = [4, 4];
-  }
+  const [showedCasinos, countAddedCasinos] = useMemo(() => {
+    if (isDesktop) {
+      return [8, 8];
+    }
+    if (isTablet) {
+      return [9, 6];
+    }
+    if (isMobile) {
+      return [4, 4];
+    }
+  }, []);
 
   const [showedCasinosNumber, setShowedCasinoNumber] = useState(showedCasinos);
-  const hasShowMore = showedCasinosNumber < casinos.length;
+  const hasShowMore = useMemo(
+    () => showedCasinosNumber < casinos.length,
+    [showedCasinosNumber, casinos]
+  );
+  const showMoreCasinos = useCallback(
+    setShowedCasinoNumber.bind(null, showedCasinosNumber + countAddedCasinos),
+    [showedCasinosNumber]
+  );
 
   return (
     <section className={s.otherCasinos}>
@@ -69,14 +86,7 @@ const OtherCasinos = ({ allCasinos, ...props }) => {
               />
             ) : null
           )}
-          {hasShowMore && (
-            <ShowMore
-              onClick={setShowedCasinoNumber.bind(
-                null,
-                showedCasinosNumber + countAddedCasinos
-              )}
-            />
-          )}
+          {hasShowMore && <ShowMore onClick={showMoreCasinos} />}
         </div>
       </div>
     </section>

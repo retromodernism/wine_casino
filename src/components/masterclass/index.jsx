@@ -7,7 +7,7 @@ import iconParty from "./src/corporative.svg";
 import iconConference from "./src/conference.svg";
 import masterclassImage from "./src/image.webp";
 import classname from "classnames";
-import { Fragment, useState } from "react";
+import { Fragment, useState, useMemo } from "react";
 import ModalVideo from "react-modal-video";
 import "react-modal-video/scss/modal-video.scss";
 
@@ -61,10 +61,12 @@ const defaultData = {
 };
 
 const Masterclass = (props) => {
-  const { color, title, holidays, offer, image, rent, video } =
-    props.data || defaultData;
-  
-    const { isDesktop, isTablet, isMobile } = props;
+  const { color, title, holidays, offer, image, rent, video } = useMemo(
+    () => props.data || defaultData,
+    []
+  );
+
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
 
   const [buttonIsHover, setButtonIsHover] = useState(false);
   const [videoIsOpen, setVideoOpen] = useState(false);

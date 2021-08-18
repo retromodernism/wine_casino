@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import croupier1 from "./src/croupier1.webp";
 import croupier2 from "./src/croupier2.webp";
 import { useState } from "react";
+import { useMemo } from "react";
 const ShowMoreButton = () => {
   const [isHovered, setHover] = useState(false);
   return (
@@ -22,7 +23,7 @@ const ShowMoreButton = () => {
 };
 
 const Сroupiers = ({ ...props }) => {
-  const { isDesktop, isTablet, isMobile } = props;
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
 
   return (
     <section className={s.croupiers}>

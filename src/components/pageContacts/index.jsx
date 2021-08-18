@@ -8,12 +8,13 @@ import {
 import { connect } from "react-redux";
 import Header from "../header";
 import Footer from "../footer";
+import { useMemo } from "react";
 
 const ContactsPage = ({ makeHeaderDark, ...props }) => {
   makeHeaderDark();
-  
-  const { isDesktop, isTablet, isMobile } = props;
-  const mediaQueries = { isDesktop, isTablet, isMobile };
+
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props);
+  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), []);
 
   return (
     <>

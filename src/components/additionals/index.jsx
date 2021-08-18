@@ -8,6 +8,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
 import "./swiper.scss";
 import wineAdditinalsBg from "./src/bg.png";
+import { useCallback } from "react";
+import { useMemo } from "react";
 
 const defaultData = {
   title: "Так же вы можете добавить",
@@ -41,20 +43,46 @@ const ShowMore = ({ onClick }) => {
 };
 
 const Additionals = ({ positions, ...props }) => {
-  const { title, color, bg } = props.data || defaultData;
-  const { isDesktop, isTablet, isMobile } = props;
-  const mediaQueries = { isDesktop, isTablet, isMobile };
+  const { title, color, bg } = useMemo(
+    () => props.data || defaultData,
+    [props.data]
+  );
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
+  const mediaQueries = useMemo(
+    () => ({ isDesktop, isTablet, isMobile }),
+    [isDesktop, isTablet, isMobile]
+  );
 
   /* State */
 
-  const equipments = positions.filter(({ type }) => type === "equipment");
-  const services = positions.filter(({ type }) => type === "service");
+  const equipments = useMemo(
+    () => positions.filter(({ type }) => type === "equipment"),
+    [positions]
+  );
+  const services = useMemo(
+    () => positions.filter(({ type }) => type === "service"),
+    [positions]
+  );
 
   const [showedEquipmentNumber, setShowedEquipmentNumber] = useState(4);
-  const equipmentsHasShowMore = equipments.length > showedEquipmentNumber;
+  const equipmentsHasShowMore = useMemo(
+    () => equipments.length > showedEquipmentNumber,
+    [equipments, showedEquipmentNumber]
+  );
+  const showMoreEquipments = useCallback(
+    setShowedEquipmentNumber.bind(null, showedEquipmentNumber + 4),
+    [showedEquipmentNumber]
+  );
 
   const [showedServiceNumber, setShowedServiceNumber] = useState(3);
-  const servicesHasShowMore = services.length > showedServiceNumber;
+  const servicesHasShowMore = useMemo(
+    () => services.length > showedServiceNumber,
+    [services, showedServiceNumber]
+  );
+  const showMoreServices = useCallback(
+    setShowedServiceNumber.bind(null, showedServiceNumber + 3),
+    [showedServiceNumber]
+  );
 
   return (
     <section className={cx(s.additionals, "additionals")}>
@@ -78,17 +106,15 @@ const Additionals = ({ positions, ...props }) => {
           <div className={s._equipment}>
             {equipments.map((item, index) =>
               index < showedEquipmentNumber ? (
-                <EquipmentItem {...item} {...mediaQueries} key={index} color={color} />
+                <EquipmentItem
+                  {...item}
+                  {...mediaQueries}
+                  key={index}
+                  color={color}
+                />
               ) : null
             )}
-            {equipmentsHasShowMore && (
-              <ShowMore
-                onClick={setShowedEquipmentNumber.bind(
-                  null,
-                  showedEquipmentNumber + 4
-                )}
-              />
-            )}
+            {equipmentsHasShowMore && <ShowMore onClick={showMoreEquipments} />}
           </div>
         )}
 
@@ -114,17 +140,15 @@ const Additionals = ({ positions, ...props }) => {
           <div className={s._service}>
             {services.map((item, index) =>
               index < showedServiceNumber ? (
-                <ServiceItem {...item} {...mediaQueries} key={index} color={color} />
+                <ServiceItem
+                  {...item}
+                  {...mediaQueries}
+                  key={index}
+                  color={color}
+                />
               ) : null
             )}
-            {servicesHasShowMore && (
-              <ShowMore
-                onClick={setShowedServiceNumber.bind(
-                  null,
-                  showedServiceNumber + 3
-                )}
-              />
-            )}
+            {servicesHasShowMore && <ShowMore onClick={showMoreServices} />}
           </div>
         )}
         {isTablet && (
@@ -132,7 +156,12 @@ const Additionals = ({ positions, ...props }) => {
             <Swiper {...sliderParams}>
               {services.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <ServiceItem {...item} {...mediaQueries} key={index} color={color} />
+                  <ServiceItem
+                    {...item}
+                    {...mediaQueries}
+                    key={index}
+                    color={color}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -143,7 +172,12 @@ const Additionals = ({ positions, ...props }) => {
             <Swiper {...{ slidesPerView: "auto", spaceBetween: 10 }}>
               {services.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <ServiceItem {...item} {...mediaQueries} key={index} color={color} />
+                  <ServiceItem
+                    {...item}
+                    {...mediaQueries}
+                    key={index}
+                    color={color}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>

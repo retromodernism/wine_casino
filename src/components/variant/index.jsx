@@ -7,6 +7,8 @@ import { Fragment } from "react";
 import { useState } from "react";
 
 import InputMask from "react-input-mask";
+import { useMemo } from "react";
+import { useCallback } from "react";
 
 const Variant = ({
   image,
@@ -22,14 +24,23 @@ const Variant = ({
   changePositionCount,
   ...props
 }) => {
-  const { isDesktop, isTablet, isMobile } = props;
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
 
   const [isExpanded, setExpanded] = useState(false);
-  const toggleVariant = () => setExpanded(!isExpanded);
+  const toggleVariant = useCallback(
+    () => setExpanded(!isExpanded),
+    [isExpanded]
+  );
 
-  const addToCart = addPosition.bind(null, id);
-  const incrementCount = changePositionCount.bind(null, count.value + 1, id);
-  const decrementCount = changePositionCount.bind(null, count.value - 1, id);
+  const addToCart = useCallback(addPosition.bind(null, id), []);
+  const incrementCount = useCallback(
+    changePositionCount.bind(null, count.value + 1, id),
+    [count.value]
+  );
+  const decrementCount = useCallback(
+    changePositionCount.bind(null, count.value - 1, id),
+    [count.value]
+  );
 
   return (
     <div

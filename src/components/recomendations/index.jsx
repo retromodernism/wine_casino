@@ -6,6 +6,8 @@ import "swiper/swiper.scss";
 import "./swiper.scss";
 import { connect } from "react-redux";
 import { addPosition } from "../../redux/modules/cart";
+import { useMemo } from "react";
+import { useCallback } from "react";
 
 const shuffle = (o) => {
   for (
@@ -22,13 +24,17 @@ const Recomendations = ({
   addPosition,
   ...props
 }) => {
-  const positionsNotInCart = positions.filter(
-    ({ id }) => !positionsIdsInCart.includes(id)
+  const positionsNotInCart = useMemo(
+    () => positions.filter(({ id }) => !positionsIdsInCart.includes(id)),
+    [positions, positionsIdsInCart]
   );
 
-  const recomendations = shuffle(positionsNotInCart).slice(0, 3);
+  const recomendations = useMemo(
+    () => shuffle(positionsNotInCart).slice(0, 3),
+    [positionsNotInCart]
+  );
 
-  const { isDesktop, isTablet, isMobile } = props;
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
 
   return (
     <section className={cx(s.recomendations, "recomendations")}>

@@ -8,6 +8,8 @@ import { ReactComponent as XIcon_tablet } from "./src/xIcon_tablet.svg";
 import { connect } from "react-redux";
 import { closeSearchBar } from "../../redux/modules/tabletSearchBar";
 import { useHistory } from "react-router";
+import { useCallback, useMemo } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const customStylesDesktop = {
   container: (provied, state) => ({
@@ -157,7 +159,13 @@ const customStylesTablet = {
 
 const DropdownIndicator = connect(null, { closeSearchBar })(
   ({ closeSearchBar, ...props }) => {
-    const { isDesktop, isTablet, isMobile } = props;
+    const isDesktop = useMediaQuery({
+      query: "screen and (min-width: 1300px)",
+    });
+    const isTablet = useMediaQuery({
+      query: "screen and (min-width: 768px) and (max-width: 1299px)",
+    });
+    const isMobile = useMediaQuery({ query: "screen and (max-width: 767px)" });
 
     return isDesktop ? (
       <components.DropdownIndicator {...props}>
@@ -189,48 +197,53 @@ const NoOptionsMessage = (props) => {
 };
 
 const HeaderSearchBar = ({ casinos, className, closeSearchBar, ...props }) => {
-  const { isDesktop, isTablet, isMobile } = props;
-  const mediaQueries = { isDesktop, isTablet, isMobile };
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), []);
 
   /* Options */
-  const casinosPages = casinos.map(({ title, url }) => ({
-    label: title,
-    value: url,
-  }));
+  const casinosPages = useMemo(
+    () =>
+      casinos.map(({ title, url }) => ({
+        label: title,
+        value: url,
+      })),
+    []
+  );
 
-  const options = [
-    ...casinosPages,
-    { value: "/news", label: "Новости" },
-    { value: "/croupiers", label: "Крупье" },
-    { value: "/klassicheskoe-kazino", label: "Классическое казино" },
-    { value: "/", label: "Food Casino" },
-    { value: "/contacts", label: "Контакты" },
-  ];
+  const options = useMemo(
+    () => [
+      ...casinosPages,
+      { value: "/news", label: "Новости" },
+      { value: "/croupiers", label: "Крупье" },
+      { value: "/klassicheskoe-kazino", label: "Классическое казино" },
+      { value: "/", label: "Food Casino" },
+      { value: "/contacts", label: "Контакты" },
+    ],
+    []
+  );
 
   /* Routing */
   const history = useHistory();
 
   /* Styles */
-  let customStyles;
-  if (isDesktop) customStyles = customStylesDesktop;
-  if (isTablet) customStyles = customStylesTablet;
-  if (isMobile) customStyles = customStylesTablet;
+  const customStyles = useMemo(() => {
+    if (isDesktop) return customStylesDesktop;
+    if (isTablet) return customStylesTablet;
+    if (isMobile) return customStylesTablet;
+  }, []);
 
-  const DropDownIndicatorWithMedia = () => (
-    <DropdownIndicator {...mediaQueries} />
-  );
+  const handleChange = useCallback(({ value }) => {
+    closeSearchBar();
+    history.push(value);
+  }, []);
 
   return (
     <Select
-      components={{ DropDownIndicatorWithMedia, NoOptionsMessage }}
+      components={{ DropdownIndicator, NoOptionsMessage }}
       placeholder="Что ищете?"
       options={options}
       styles={customStyles}
-      onChange={({ value }) => {
-        console.log(value);
-        closeSearchBar();
-        history.push(value);
-      }}
+      onChange={handleChange}
     />
   );
 };

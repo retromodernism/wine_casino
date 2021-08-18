@@ -8,6 +8,8 @@ import dot from "./src/dot_active.svg";
 import "./slider.scss";
 import { connect } from "react-redux";
 import { addPosition } from "../../redux/modules/cart";
+import { useMemo } from "react";
+import { useCallback } from "react";
 
 const defaultData = {
   title: "Разновидности Покера",
@@ -85,31 +87,47 @@ const KindItem = connect(
   }),
   { addPosition }
 )(({ positions, addPosition, gameType }) => {
-
   /* State */
 
   const [activeInfo, setActiveInfo] = useState("characteristics");
 
-  const characteristicsIsActive = activeInfo === "characteristics";
-  const descriptionIsActive = activeInfo === "description";
+  const characteristicsIsActive = useMemo(
+    () => activeInfo === "characteristics",
+    [activeInfo]
+  );
+  const descriptionIsActive = useMemo(
+    () => activeInfo === "description",
+    [activeInfo]
+  );
 
-  const activateCharacteristics = setActiveInfo.bind(null, "characteristics");
-  const activateDescription = setActiveInfo.bind(null, "description");
+  const activateCharacteristics = useCallback(
+    setActiveInfo.bind(null, "characteristics"),
+    []
+  );
+  const activateDescription = useCallback(
+    setActiveInfo.bind(null, "description"),
+    []
+  );
 
-  const gamesPositions = positions.filter(
-    ({ casinoType }) => casinoType === gameType
+  const gamesPositions = useMemo(
+    () => positions.filter(({ casinoType }) => casinoType === gameType),
+    []
   );
 
   const [activePositionId, setActivePositionId] = useState(
     gamesPositions[0].id
   );
 
-  const [activeGame] = gamesPositions.filter(
-    ({ id }) => id === activePositionId
+  const [activeGame] = useMemo(
+    () => gamesPositions.filter(({ id }) => id === activePositionId),
+    [activePositionId, gamesPositions]
   );
 
   /* IsScrolling */
-  const isScrolling = gamesPositions.length > 5;
+  const isScrolling = useMemo(
+    () => gamesPositions.length > 5,
+    [gamesPositions]
+  );
 
   return (
     <div className={s._kindItem}>
@@ -216,7 +234,7 @@ const KindItem = connect(
 });
 
 const KindsOfGames = (props) => {
-  const { title, gameType } = props.data || defaultData;
+  const { title, gameType } = useMemo(() => props.data || defaultData, []);
 
   return (
     <section className={s.kindsOfGames}>

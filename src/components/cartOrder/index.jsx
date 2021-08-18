@@ -6,6 +6,11 @@ import { resetCart } from "../../redux/modules/cart";
 import InputMask from "react-input-mask";
 import s from "./index.module.scss";
 import cx from "classnames";
+import { useCallback } from "react";
+import { useMemo } from "react";
+
+const reg =
+  /^(\+7|7|8)?[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/;
 
 const CartOrder = ({
   positions,
@@ -15,7 +20,7 @@ const CartOrder = ({
   ...props
 }) => {
   const { isDesktop, isTablet, isMobile } = props;
-  
+
   // "picking positions" / "confirmation form processing" / "success"
   const [cartStatus, setCartStatus] = useState("picking positions");
 
@@ -27,20 +32,18 @@ const CartOrder = ({
   const [formName, setFormName] = useState("");
   const [formPhone, setFormPhone] = useState("");
 
-  const validateName = () => formName.length > 3;
-  const reg =
-    /^(\+7|7|8)?[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/;
-  const validatePhone = () => reg.test(formPhone);
+  const validateName = useCallback(() => formName.length > 3);
+  const validatePhone = useCallback(() => reg.test(formPhone));
 
-  const handleNameInputChange = (e) => {
+  const handleNameInputChange = useCallback((e) => {
     setFormName(e.target.value);
-  };
+  });
 
-  const handlePhoneInputChange = (e) => {
+  const handlePhoneInputChange = useCallback((e) => {
     setFormPhone(e.target.value);
-  };
+  });
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = useCallback(() => {
     const nameInputIsCorrect = validateName();
     const phoneInputIsCorrect = validatePhone();
 
@@ -68,7 +71,7 @@ const CartOrder = ({
         openCartSuccessPopup();
       }
     }
-  };
+  });
 
   /* State */
 
@@ -76,9 +79,13 @@ const CartOrder = ({
     cartPositionsIds.includes(id)
   );
 
-  let finalPrice = 0;
-  cartPositions.forEach(
-    ({ price, count }) => (finalPrice += price * count.value)
+  const finalPrice = useMemo(
+    () =>
+      cartPositions.reduce(
+        (acc, { price, count }) => (acc += price * count.value),
+        0
+      ),
+    [cartPositions]
   );
 
   switch (cartStatus) {

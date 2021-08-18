@@ -12,6 +12,8 @@ import { connect } from "react-redux";
 import { useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 import bg from "./src/homeBg.png";
+import { useMemo } from "react";
+import { useCallback } from "react";
 
 const defaultData = {
   bg: {
@@ -48,44 +50,54 @@ const defaultData = {
 const Home = ({ makeHeaderLight, ...props }) => {
   useLayoutEffect(() => {
     makeHeaderLight();
-  });
+  }, []);
 
-  const { bg, title, description, video } = props.data || defaultData;
+  const { bg, title, description, video } = useMemo(
+    () => props.data || defaultData,
+    []
+  );
 
-  const { isDesktop, isTablet, isMobile } = props;
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
 
   /* Background Style */
-  let bgStyle;
-  if (isDesktop) {
-    bgStyle = {
-      background: `url(${bg.desktop.image}) 100% 100% / contain no-repeat`,
-      width: bg.desktop.width,
-      height: bg.desktop.height,
-      top: bg.desktop.top,
-      right: bg.desktop.right,
-    };
-  } else if (isTablet) {
-    bgStyle = {
-      background: `url(${bg.tablet.image}) 100% 100% / contain no-repeat`,
-      width: bg.tablet.width,
-      height: bg.tablet.height,
-      top: bg.tablet.top,
-      right: bg.tablet.right,
-    };
-  } else if (isMobile) {
-    bgStyle = {
-      background: `url(${bg.mobile.image}) 100% 100% / contain no-repeat`,
-      width: bg.mobile.width,
-      height: bg.mobile.height,
-      top: bg.mobile.top,
-      right: bg.mobile.right,
-    };
-  }
+  const bgStyle = useMemo(() => {
+    if (isDesktop) {
+      return {
+        background: `url(${bg.desktop.image}) 100% 100% / contain no-repeat`,
+        width: bg.desktop.width,
+        height: bg.desktop.height,
+        top: bg.desktop.top,
+        right: bg.desktop.right,
+      };
+    } else if (isTablet) {
+      return {
+        background: `url(${bg.tablet.image}) 100% 100% / contain no-repeat`,
+        width: bg.tablet.width,
+        height: bg.tablet.height,
+        top: bg.tablet.top,
+        right: bg.tablet.right,
+      };
+    } else if (isMobile) {
+      return {
+        background: `url(${bg.mobile.image}) 100% 100% / contain no-repeat`,
+        width: bg.mobile.width,
+        height: bg.mobile.height,
+        top: bg.mobile.top,
+        right: bg.mobile.right,
+      };
+    }
+  }, []);
 
   /* State */
 
   const [videoIsOpen, setVideoOpen] = useState(false);
   const [buttonIsHover, setButtonIsHover] = useState(false);
+
+  /* Callbacks */
+  const openVideo = useCallback(setVideoOpen.bind(null, true), []);
+  const closeVideo = useCallback(setVideoOpen.bind(null, false), []);
+  const buttonHover = useCallback(setButtonIsHover.bind(null, true), []);
+  const buttonUnhover = useCallback(setButtonIsHover.bind(null, false), []);
 
   return (
     <section className={s.home}>
@@ -120,9 +132,9 @@ const Home = ({ makeHeaderLight, ...props }) => {
           className={classname(s._videoButton, {
             [s._videoButton_hover]: buttonIsHover,
           })}
-          onClick={setVideoOpen.bind(null, true)}
-          onMouseEnter={setButtonIsHover.bind(null, true)}
-          onMouseLeave={setButtonIsHover.bind(null, false)}
+          onClick={openVideo}
+          onMouseEnter={buttonHover}
+          onMouseLeave={buttonUnhover}
         >
           <p>Смотреть видео</p>
           <div className={s._videoButtonIcon}></div>
@@ -140,7 +152,7 @@ const Home = ({ makeHeaderLight, ...props }) => {
         autoplay={1}
         isOpen={videoIsOpen}
         videoId={video.id}
-        onClose={setVideoOpen.bind(null, false)}
+        onClose={closeVideo}
       />
     </section>
   );
