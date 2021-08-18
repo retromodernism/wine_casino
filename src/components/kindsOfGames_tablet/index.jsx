@@ -74,7 +74,7 @@ const GameItem = connect(
   }),
   { addPosition }
 )(({ positions, addPosition, id, ...props }) => {
-  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
 
   /* State */
 
@@ -192,10 +192,10 @@ const GameItem = connect(
 });
 
 const KindsOfGames_tablet = ({ positions, ...props }) => {
-  const { title, gameType } = useMemo(() => props.data || defaultData, []);
+  const { title, gameType } = useMemo(() => props.data || defaultData, [props.data]);
 
-  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
-  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), []);
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
+  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), [props]);
 
   const gamesPositions = useMemo(
     () => positions.filter(({ casinoType }) => casinoType === gameType),

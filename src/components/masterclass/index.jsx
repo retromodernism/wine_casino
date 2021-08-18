@@ -63,10 +63,10 @@ const defaultData = {
 const Masterclass = (props) => {
   const { color, title, holidays, offer, image, rent, video } = useMemo(
     () => props.data || defaultData,
-    []
+    [props.data]
   );
 
-  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
 
   const [buttonIsHover, setButtonIsHover] = useState(false);
   const [videoIsOpen, setVideoOpen] = useState(false);

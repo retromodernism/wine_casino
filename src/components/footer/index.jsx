@@ -98,12 +98,12 @@ const ComminucationWayOption = ({ onClick, mainColor, ...props }) => {
 const Footer = (props) => {
   const { mainColor, innerTextColor, iconColor, textColor } = useMemo(
     () => props.data || defaultData,
-    []
+    [props.data]
   );
 
   const isMainPage = Router.useLocation().pathname === "/";
 
-  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
 
   /* State */
 

@@ -197,8 +197,8 @@ const NoOptionsMessage = (props) => {
 };
 
 const HeaderSearchBar = ({ casinos, className, closeSearchBar, ...props }) => {
-  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
-  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), []);
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
+  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), [props]);
 
   /* Options */
   const casinosPages = useMemo(

@@ -234,7 +234,7 @@ const KindItem = connect(
 });
 
 const KindsOfGames = (props) => {
-  const { title, gameType } = useMemo(() => props.data || defaultData, []);
+  const { title, gameType } = useMemo(() => props.data || defaultData, [props.data]);
 
   return (
     <section className={s.kindsOfGames}>

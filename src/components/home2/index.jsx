@@ -46,7 +46,7 @@ const HomeCoulinaryCasino = ({
     makeHeaderLight();
   }, []);
 
-  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
 
   /* Data */
   const foodCasinos = useMemo(

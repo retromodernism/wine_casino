@@ -79,9 +79,9 @@ const PrevArrow = ({ className, style, onClick, color }) => {
 const HowItWas = (props) => {
   const { color, images, title, bg } = useMemo(
     () => props.data || defaultData,
-    []
+    [props.data]
   );
-  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
 
   /* Slider Params */
   const sliderParams = useMemo(

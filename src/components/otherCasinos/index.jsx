@@ -30,9 +30,9 @@ const ShowMore = ({ onClick }) => {
 const OtherCasinos = ({ allCasinos, ...props }) => {
   const { color, fontColor, type } = useMemo(
     () => props.data || defaultData,
-    []
+    [props.data]
   );
-  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
 
   /* Data */
   const casinos = useMemo(
@@ -57,7 +57,8 @@ const OtherCasinos = ({ allCasinos, ...props }) => {
     if (isMobile) {
       return [4, 4];
     }
-  }, []);
+    return [8, 8];
+  }, [isDesktop, isTablet, isMobile]);
 
   const [showedCasinosNumber, setShowedCasinoNumber] = useState(showedCasinos);
   const hasShowMore = useMemo(

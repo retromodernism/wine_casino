@@ -34,7 +34,7 @@ const Recomendations = ({
     [positionsNotInCart]
   );
 
-  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
 
   return (
     <section className={cx(s.recomendations, "recomendations")}>

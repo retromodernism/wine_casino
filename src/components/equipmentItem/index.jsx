@@ -18,7 +18,7 @@ const EquipmentItem = ({
   color,
   ...props
 }) => {
-  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
 
   /* State */
 

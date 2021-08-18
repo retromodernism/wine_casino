@@ -57,7 +57,7 @@ const Home = ({ makeHeaderLight, ...props }) => {
     []
   );
 
-  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
 
   /* Background Style */
   const bgStyle = useMemo(() => {

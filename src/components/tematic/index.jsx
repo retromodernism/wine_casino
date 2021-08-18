@@ -41,8 +41,8 @@ const Tematic = (props) => {
     () => props?.data?.items || defaultTematicItems,
     []
   );
-  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
-  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), []);
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
+  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), [props]);
 
   /* State */
 

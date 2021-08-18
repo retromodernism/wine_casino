@@ -14,10 +14,10 @@ const defaultData = {
 const Variants = ({ positions, ...props }) => {
   const { color, currentCasinoType } = useMemo(
     () => props.data || defaultData,
-    []
+    [props.data]
   );
-  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
-  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), []);
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
+  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), [props]);
 
   const casinos = useMemo(
     () =>

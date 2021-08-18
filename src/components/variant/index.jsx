@@ -24,7 +24,7 @@ const Variant = ({
   changePositionCount,
   ...props
 }) => {
-  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
 
   const [isExpanded, setExpanded] = useState(false);
   const toggleVariant = useCallback(

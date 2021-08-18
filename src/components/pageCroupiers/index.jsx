@@ -10,8 +10,8 @@ import { useMemo } from "react";
 const PageCroupiers = ({ makeHeaderDark, ...props }) => {
   makeHeaderDark();
 
-  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
-  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), []);
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
+  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), [props]);
 
   return (
     <>

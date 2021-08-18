@@ -23,7 +23,7 @@ const Home = ({ makeHeaderDark, ...props }) => {
     useMemo(() => props.data, []);
 
   /* Media Queries */
-  const { isDesktop, isTablet, isMobile } = useMemo(() => props, []);
+  const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
 
   /* Bg Style */
   const bgStyle = useMemo(() => {

@@ -42,7 +42,7 @@ const defaultData = {
 const Essence = ({ style, ...props }) => {
   const { title, items, itemsColor, bg } = useMemo(
     () => props.data || defaultData,
-    []
+    [props.data]
   );
 
   const { isDesktop, isTablet, isMobile } = useMemo(() => {
