@@ -2013,9 +2013,9 @@ const casinos = [
       background: {
         desktop: {
           image: bgHomeNonAlcoholic,
-          width: "1068px",
+          width: "668px",
           height: "952px",
-          right: "130px",
+          right: "156px",
           top: "-111px",
         },
         tablet: {
