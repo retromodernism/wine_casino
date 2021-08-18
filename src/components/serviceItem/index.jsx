@@ -39,6 +39,11 @@ const ServiceItem = ({
     [count.value]
   );
 
+  const handlePlusClick = useCallback(() => {
+    if (positionIsInCart) incrementCount();
+    else addToCart();
+  }, [incrementCount, positionIsInCart]);
+
   return (
     <div
       className={s.serviceItem}
@@ -71,39 +76,41 @@ const ServiceItem = ({
           </div>
         </div>
         {/* <div className={s._plus} onClick={addToCart}></div> */}
-        {positionIsInCart ? (
-          <div className={s._countSettings}>
-            <div
-              className={s._minusIconWrapper}
-              onClick={() => {
-                decrementCount();
-              }}
-            >
-              <div className={s._minusIcon} style={{ background: "#ffffff" }} />
-            </div>
-            <InputMask
-              mask="999"
-              maskChar=""
-              className={s._countSetting}
-              value={count.value}
-              onChange={(e) => {
-                addToCart();
-                changePositionCount(+e.target.value, id);
-              }}
-              style={{ color: "#ffffff" }}
-            />
-            <div
-              className={s._plusIconWrapper}
-              onClick={() => {
-                incrementCount();
-              }}
-            >
-              <div className={s._plusIcon} style={{ background: "#ffffff" }} />
-            </div>
+        {/* {positionIsInCart ? ( */}
+        <div className={s._countSettings}>
+          {positionIsInCart && (
+            <>
+              <div
+                className={s._minusIconWrapper}
+                onClick={() => {
+                  decrementCount();
+                }}
+              >
+                <div
+                  className={s._minusIcon}
+                  style={{ background: "#ffffff" }}
+                />
+              </div>
+              <InputMask
+                mask="999"
+                maskChar=""
+                className={s._countSetting}
+                value={count.value}
+                onChange={(e) => {
+                  addToCart();
+                  changePositionCount(+e.target.value, id);
+                }}
+                style={{ color: "#ffffff" }}
+              />
+            </>
+          )}
+          <div className={s._plusIconWrapper} onClick={handlePlusClick}>
+            <div className={s._plusIcon} style={{ background: "#ffffff" }} />
           </div>
-        ) : (
+        </div>
+        {/* ) : (
           <div className={s._plus} onClick={addToCart}></div>
-        )}
+        )} */}
       </div>
     </div>
   );
