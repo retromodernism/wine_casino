@@ -19,7 +19,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: 275px 31px 31px 1fr 64.5px;
     width: 375px;
-    height: 832px;
+    height: 870px;
     box-shadow: 0 0 0 4px $green;
     border-radius: 18.2152px;
     padding: 34px 34px 42px 34px;
@@ -55,6 +55,7 @@
 
       box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
     }
+
     ._image {
       height: 100%;
     }
@@ -83,8 +84,8 @@
       font-family: Lato;
       font-style: normal;
       font-weight: normal;
-      font-size: 20px;
-      line-height: 24px;
+      font-size: 18px;
+      line-height: 22px;
       color: #ffffff;
       &::before {
         background: #ffffff;
@@ -155,6 +156,8 @@
     padding-left: 33px;
     color: $green;
     position: relative;
+    font-size: 18px;
+    line-height: 22px;
     &:not(:last-child) {
       margin-bottom: 13px;
     }
