@@ -724,9 +724,10 @@ const casinos = [
       },
     },
     otherCasinos: {
-      type: "foodCasino",
-      color: "#A2000C",
-      fontColor: "#FFFFFF",
+      type: "foodCasino", // тип для меню в бургере и Home Food Casino
+      color: "#A2000C", // цвет
+      fontColor: "#FFFFFF", // цвет текста
+      currentCasino: "Винное", // текущее казино
     },
     howItWas: {
       title: "Как это было",
@@ -1103,6 +1104,7 @@ const casinos = [
       type: "foodCasino",
       color: "#CF972A",
       fontColor: "#323232",
+      currentCasino: "Сырное", // текущее казино
     },
     howItWas: {
       title: "Как это было",
@@ -1479,6 +1481,7 @@ const casinos = [
       type: "foodCasino",
       color: "#553800",
       fontColor: "#ffffff",
+      currentCasino: "Шоколадное", // текущее казино
     },
     howItWas: {
       title: "Как это было",
@@ -1855,6 +1858,7 @@ const casinos = [
       type: "foodCasino",
       color: "#B07608",
       fontColor: "#ffffff",
+      currentCasino: "Чайное", // текущее казино
     },
     howItWas: {
       title: "Как это было",
@@ -2231,6 +2235,7 @@ const casinos = [
       type: "foodCasino",
       color: "#6A9C00",
       fontColor: "#ffffff",
+      currentCasino: "Безалкогольное", // текущее казино
     },
     howItWas: {
       title: "Как это было",
@@ -2607,6 +2612,7 @@ const casinos = [
       type: "foodCasino",
       color: "#31200B",
       fontColor: "#ffffff",
+      currentCasino: "Кофейное", // текущее казино
     },
     howItWas: {
       title: "Как это было",
@@ -2983,6 +2989,7 @@ const casinos = [
       type: "foodCasino",
       color: "#AD9514",
       fontColor: "#ffffff",
+      currentCasino: "Шампанское", // текущее казино
     },
     howItWas: {
       title: "Как это было",
@@ -3359,6 +3366,7 @@ const casinos = [
       type: "foodCasino",
       color: "#E39600",
       fontColor: "#ffffff",
+      currentCasino: "Медовое", // текущее казино
     },
     howItWas: {
       title: "Как это было",
@@ -3735,6 +3743,7 @@ const casinos = [
       type: "foodCasino",
       color: "#96773C",
       fontColor: "#ffffff",
+      currentCasino: "Хлебное", // текущее казино
     },
     howItWas: {
       title: "Как это было",
@@ -4111,6 +4120,7 @@ const casinos = [
       type: "foodCasino",
       color: "#D17777",
       fontColor: "#ffffff",
+      currentCasino: "Сало", // текущее казино
     },
     howItWas: {
       title: "Как это было",
@@ -4487,6 +4497,7 @@ const casinos = [
       type: "foodCasino",
       color: "#8C5055",
       fontColor: "#ffffff",
+      currentCasino: "Мясное", // текущее казино
     },
     howItWas: {
       title: "Как это было",
@@ -4863,6 +4874,7 @@ const casinos = [
       type: "foodCasino",
       color: "#CC6607",
       fontColor: "#ffffff",
+      currentCasino: "Виски", // текущее казино
     },
     howItWas: {
       title: "Как это было",
@@ -5239,6 +5251,7 @@ const casinos = [
       type: "foodCasino",
       color: "#ED8000",
       fontColor: "#ffffff",
+      currentCasino: "Пивное", // текущее казино
     },
     howItWas: {
       title: "Как это было",
@@ -5615,6 +5628,7 @@ const casinos = [
       type: "foodCasino",
       color: "#ED8000",
       fontColor: "#ffffff",
+      currentCasino: "Настойки", // текущее казино
     },
     howItWas: {
       title: "Как это было",
@@ -5991,6 +6005,7 @@ const casinos = [
       type: "foodCasino",
       color: "#4B2D2D",
       fontColor: "#ffffff",
+      currentCasino: "Ликерное", // текущее казино
     },
     howItWas: {
       title: "Как это было",
@@ -6373,6 +6388,7 @@ const casinos = [
       type: "foodCasino",
       color: "#0CA387",
       fontColor: "#ffffff",
+      currentCasino: "Молекулярное", // текущее казино
     },
     howItWas: {
       title: "Как это было",
@@ -6749,6 +6765,7 @@ const casinos = [
       type: "foodCasino",
       color: "#ED0E1C",
       fontColor: "#ffffff",
+      currentCasino: "Чили", // текущее казино
     },
     howItWas: {
       title: "Как это было",

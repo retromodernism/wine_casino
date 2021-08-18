@@ -10,6 +10,7 @@ const defaultData = {
   color: "#323232",
   fontColor: "#ffffff",
   type: "classicCasino",
+  currentCasino: "",
 };
 
 const ShowMore = ({ onClick }) => {
@@ -28,7 +29,7 @@ const ShowMore = ({ onClick }) => {
 };
 
 const OtherCasinos = ({ allCasinos, ...props }) => {
-  const { color, fontColor, type } = useMemo(
+  const { color, fontColor, type, currentCasino } = useMemo(
     () => props.data || defaultData,
     [props.data]
   );
@@ -38,7 +39,9 @@ const OtherCasinos = ({ allCasinos, ...props }) => {
   const casinos = useMemo(
     () =>
       allCasinos
-        .filter((casino) => casino.type === type)
+        .filter(
+          (casino) => casino.type === type && casino.miniTitle !== currentCasino
+        )
         .map(({ miniTitle, url, miniIcon }) => ({
           title: miniTitle,
           image: miniIcon,
@@ -46,6 +49,8 @@ const OtherCasinos = ({ allCasinos, ...props }) => {
         })),
     []
   );
+
+  console.log(casinos);
 
   const [showedCasinos, countAddedCasinos] = useMemo(() => {
     if (isDesktop) {
