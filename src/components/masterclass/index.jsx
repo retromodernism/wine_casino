@@ -13,7 +13,7 @@ import "react-modal-video/scss/modal-video.scss";
 
 const defaultData = {
   color: "#323232",
-  title: "Проведем мастеркласс у вас или у нас",
+  title: "Проведем мастер-класс у вас или у нас",
   holidays: {
     title: "Организация праздников на выезде",
     description:

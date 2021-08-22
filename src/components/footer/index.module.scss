@@ -65,6 +65,7 @@
   }
 
   ._socialsLeft {
+    display: flex;
     ._socialLink {
       &:not(:last-child) {
         margin-right: 18px;
@@ -73,11 +74,18 @@
   }
 
   ._socialsRight {
+    display: flex;
     ._socialLink {
       &:not(:last-child) {
         margin-right: 22px;
       }
     }
+  }
+
+  ._socialLink {
+    display: flex;
+    width: max-content;
+    height: max-content;
   }
 
   ._contactsPhone {

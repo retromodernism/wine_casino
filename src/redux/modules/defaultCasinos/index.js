@@ -570,7 +570,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:
@@ -943,7 +943,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:
@@ -1320,7 +1320,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:
@@ -1697,7 +1697,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:
@@ -2074,7 +2074,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:
@@ -2451,7 +2451,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:
@@ -2828,7 +2828,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:
@@ -3205,7 +3205,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:
@@ -3582,7 +3582,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:
@@ -3959,7 +3959,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:
@@ -4336,7 +4336,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:
@@ -4713,7 +4713,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:
@@ -5090,7 +5090,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:
@@ -5467,7 +5467,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:
@@ -5844,7 +5844,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:
@@ -6227,7 +6227,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:
@@ -6604,7 +6604,7 @@ const casinos = [
     },
     masterclass: {
       color: "#2A9D76",
-      title: "Проведем мастеркласс у вас или у нас",
+      title: "Проведем мастер-класс у вас или у нас",
       holidays: {
         title: "Организация праздников на выезде",
         description:

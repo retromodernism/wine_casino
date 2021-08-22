@@ -33,6 +33,7 @@ const Variant = ({
   );
 
   const addToCart = useCallback(addPosition.bind(null, id), []);
+
   const incrementCount = useCallback(
     changePositionCount.bind(null, count.value + 1, id),
     [count.value]
@@ -41,6 +42,21 @@ const Variant = ({
     changePositionCount.bind(null, count.value - 1, id),
     [count.value]
   );
+  const handlePlusClick = useCallback(() => {
+    addToCart();
+    incrementCount();
+  }, [incrementCount]);
+  
+  const handleInputChange = useCallback((e) => {
+    addToCart();
+    changePositionCount(+e.target.value, id);
+  }, []);
+
+  const handleVariantClick = useCallback(() => {
+    // Если не раскрыт и разрешение "таблет" или "мобайл"
+    // Раскрыть при нажатии на элемент
+    if (!isExpanded && (isTablet || isMobile)) toggleVariant();
+  }, [isExpanded, isTablet, isMobile]);
 
   return (
     <div
@@ -48,11 +64,7 @@ const Variant = ({
         [s._variant_popular]: isPopular,
         [s._variant_expanded]: isExpanded,
       })}
-      onClick={() => {
-        // Если не раскрыт и разрешение "таблет" или "мобайл"
-        // Раскрыть при нажатии на элемент
-        if (!isExpanded && (isTablet || isMobile)) toggleVariant();
-      }}
+      onClick={handleVariantClick}
       style={{
         color: isPopular ? "#ffffff" : color.item,
         boxShadow: `inset 0 0 0 4px ${color.item}`,
@@ -130,12 +142,7 @@ const Variant = ({
         </div>
         {isDesktop && (
           <Fragment>
-            <div
-              className={s._minusIconWrapper}
-              onClick={() => {
-                decrementCount();
-              }}
-            >
+            <div className={s._minusIconWrapper} onClick={decrementCount}>
               <div
                 className={s._minusIcon}
                 style={{ background: isPopular ? "#ffffff" : color.item }}
@@ -146,17 +153,15 @@ const Variant = ({
               maskChar=""
               className={s._count}
               value={count.value}
-              onChange={(e) => {
-                addToCart();
-                changePositionCount(+e.target.value, id);
-              }}
+              onChange={handleInputChange}
               style={{ color: isPopular ? "#ffffff" : color.item }}
             />
             <div
               className={s._plusIconWrapper}
+              // onClick={handlePlusClick}
               onClick={() => {
-                addToCart();
                 incrementCount();
+                addToCart();
               }}
             >
               <div

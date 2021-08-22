@@ -17,7 +17,10 @@ const Variants = ({ positions, ...props }) => {
     [props.data]
   );
   const { isDesktop, isTablet, isMobile } = useMemo(() => props, [props]);
-  const mediaQueries = useMemo(() => ({ isDesktop, isTablet, isMobile }), [props]);
+  const mediaQueries = useMemo(
+    () => ({ isDesktop, isTablet, isMobile }),
+    [props]
+  );
 
   const casinos = useMemo(
     () =>
@@ -25,7 +28,7 @@ const Variants = ({ positions, ...props }) => {
         ({ type, casinoType }) =>
           type === "casino" && casinoType === currentCasinoType
       ),
-    []
+    [positions]
   );
 
   return (
