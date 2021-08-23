@@ -1,6 +1,6 @@
 import s from "./index.module.scss";
 import { connect } from "react-redux";
-import { addPosition } from "../../redux/modules/cart";
+import { addPosition, removePosition } from "../../redux/modules/cart";
 import { changePositionCount } from "../../redux/modules/positions";
 import InputMask from "react-input-mask";
 import { useMemo } from "react";
@@ -16,6 +16,7 @@ const ServiceItem = ({
   count,
   color,
   addPosition,
+  removePosition,
   changePositionCount,
   ...props
 }) => {
@@ -38,6 +39,11 @@ const ServiceItem = ({
     changePositionCount.bind(null, count.value - 1, id),
     [count.value]
   );
+
+  const handleMinusClick = useCallback(() => {
+    if (count.value === 1) removePosition(id);
+    decrementCount();
+  }, [decrementCount, count.value]);
 
   const handlePlusClick = useCallback(() => {
     if (positionIsInCart) incrementCount();
@@ -80,12 +86,7 @@ const ServiceItem = ({
         <div className={s._countSettings}>
           {positionIsInCart && (
             <>
-              <div
-                className={s._minusIconWrapper}
-                onClick={() => {
-                  decrementCount();
-                }}
-              >
+              <div className={s._minusIconWrapper} onClick={handleMinusClick}>
                 <div
                   className={s._minusIcon}
                   style={{ background: "#ffffff" }}
@@ -120,5 +121,5 @@ export default connect(
   (state) => ({
     cartPositionsIds: state.cart.positionsIds,
   }),
-  { addPosition, changePositionCount }
+  { addPosition, changePositionCount, removePosition }
 )(ServiceItem);

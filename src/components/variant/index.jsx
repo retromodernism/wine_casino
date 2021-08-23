@@ -1,6 +1,6 @@
 import s from "./index.module.scss";
 import cx from "classnames";
-import { addPosition } from "../../redux/modules/cart";
+import { addPosition, removePosition } from "../../redux/modules/cart";
 import { changePositionCount } from "../../redux/modules/positions";
 import { connect } from "react-redux";
 import { Fragment } from "react";
@@ -21,6 +21,8 @@ const Variant = ({
   id,
   color,
   addPosition,
+  removePosition,
+  cartPositionsIds,
   changePositionCount,
   ...props
 }) => {
@@ -38,15 +40,27 @@ const Variant = ({
     changePositionCount.bind(null, count.value + 1, id),
     [count.value]
   );
+
   const decrementCount = useCallback(
     changePositionCount.bind(null, count.value - 1, id),
     [count.value]
   );
+
+  const positionIsInCart = useMemo(
+    () => cartPositionsIds.includes(id),
+    [cartPositionsIds]
+  );
+
+  const handleMinusClick = useCallback(() => {
+    if (count.value === 1) removePosition(id);
+    decrementCount();
+  }, [count.value, decrementCount]);
+
   const handlePlusClick = useCallback(() => {
-    addToCart();
-    incrementCount();
-  }, [incrementCount]);
-  
+    if (!positionIsInCart) addToCart();
+    else incrementCount();
+  }, [incrementCount, positionIsInCart]);
+
   const handleInputChange = useCallback((e) => {
     addToCart();
     changePositionCount(+e.target.value, id);
@@ -141,35 +155,37 @@ const Variant = ({
           </span>
         </div>
         {isDesktop && (
-          <Fragment>
-            <div className={s._minusIconWrapper} onClick={decrementCount}>
-              <div
-                className={s._minusIcon}
-                style={{ background: isPopular ? "#ffffff" : color.item }}
-              />
-            </div>
-            <InputMask
-              mask="999"
-              maskChar=""
-              className={s._count}
-              value={count.value}
-              onChange={handleInputChange}
-              style={{ color: isPopular ? "#ffffff" : color.item }}
-            />
+          <>
+            {positionIsInCart && (
+              <>
+                <div className={s._minusIconWrapper} onClick={handleMinusClick}>
+                  <div
+                    className={s._minusIcon}
+                    style={{ background: isPopular ? "#ffffff" : color.item }}
+                  />
+                </div>
+                <InputMask
+                  mask="999"
+                  maskChar=""
+                  className={s._count}
+                  value={count.value}
+                  onChange={handleInputChange}
+                  style={{ color: isPopular ? "#ffffff" : color.item }}
+                />
+              </>
+            )}
             <div
               className={s._plusIconWrapper}
               // onClick={handlePlusClick}
-              onClick={() => {
-                incrementCount();
-                addToCart();
-              }}
+              onClick={handlePlusClick}
+              style={{gridColumn: positionIsInCart ? "unset": 4}}
             >
               <div
                 className={s._plusIcon}
                 style={{ background: isPopular ? "#ffffff" : color.item }}
               />
             </div>
-          </Fragment>
+          </>
         )}
         {(isTablet || isMobile) && (
           <div className={s._plusIcon}>
@@ -185,4 +201,13 @@ const Variant = ({
   );
 };
 
-export default connect(null, { addPosition, changePositionCount })(Variant);
+export default connect(
+  (state) => ({
+    cartPositionsIds: state.cart.positionsIds,
+  }),
+  {
+    addPosition,
+    changePositionCount,
+    removePosition,
+  }
+)(Variant);
