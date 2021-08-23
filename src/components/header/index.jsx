@@ -120,7 +120,7 @@ const Header = ({
                 onMouseEnter={openFoodCasinos}
                 onMouseLeave={closeFoodCasinos}
               >
-                <div className={s._catalog}>Кулинарное казино</div>
+                <Link className={s._catalog} to="/">Кулинарное казино</Link>
                 <div className={s._catalogArrow}></div>
                 {foodCasinosIsOpen && (
                   <CatalogHoverPanel casinosType="foodCasino" />
@@ -133,7 +133,7 @@ const Header = ({
                 onMouseEnter={openClassicCasinos}
                 onMouseLeave={closeClassicCasinos}
               >
-                <div className={s._catalog}>Классическое казино</div>
+                <Link to="/klassicheskoe-kazino" className={s._catalog}>Классическое казино</Link>
                 <div className={s._catalogArrow}></div>
                 {classicCasinosIsOpen && (
                   <CatalogHoverPanel casinosType="classicCasino" />

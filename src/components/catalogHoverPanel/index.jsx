@@ -185,7 +185,7 @@ const CatalogHoverPanel = ({
       onMouseEnter={openPanel}
       onMouseLeave={closePanel}
     >
-      <div className={s._cateories}>
+      <div className={s._cateories} style={{ display: "none" }}>
         {links.map(({ title, isActive, link }, index) => (
           <Link
             className={classnames(s._categoriesItem, {
